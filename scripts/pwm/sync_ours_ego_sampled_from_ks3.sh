@@ -72,7 +72,11 @@ proxy="$(awk -F= '$1 == "proxy" {print $2}' "${KS3_CONFIG}")"
   exit 2
 }
 
-mkdir -p "${DEST_ROOT}" "${RUN_ROOT}" "${RUN_ROOT}/ks3util-logs"
+mkdir -p \
+  "${DEST_ROOT}" \
+  "${RUN_ROOT}/checkpoint" \
+  "${RUN_ROOT}/ks3util-logs" \
+  "${RUN_ROOT}/ks3util-output"
 project_used_before="$(filesystem_used_bytes /share/project)"
 project_available_before="$(filesystem_available_bytes /share/project)"
 mixed_available_before="$(filesystem_available_bytes /share/mixed/projset)"
@@ -119,6 +123,8 @@ printf '[transfer] %s -> %s\n' "${SOURCE_URI}" "${DEST_ROOT}"
 "${KS3UTIL}" -c "${KS3_CONFIG}" \
   sync -u -f --jobs=32 --parallel=2 \
   "${SOURCE_URI}" "${DEST_ROOT}/" --read-timeout 6 \
+  --checkpoint-dir="${RUN_ROOT}/checkpoint" \
+  --output-dir="${RUN_ROOT}/ks3util-output" \
   --log-path="${RUN_ROOT}/ks3util-logs" --loglevel=info \
   2>&1 | tee "${TRANSFER_LOG}"
 
