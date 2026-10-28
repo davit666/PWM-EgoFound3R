@@ -25,13 +25,35 @@ for example in "${EXAMPLES[@]}"; do
     > "${OUTPUT_ROOT}/${example}/validation.json"
 done
 
-for artifact in README.md manifest.json gallery.jpg montage.mp4; do
-  path="${PUBLISH_DIR}/${artifact}"
-  [[ -s "${path}" ]] || {
-    printf 'missing publish artifact: %s\n' "${path}" >&2
-    exit 2
-  }
+mkdir -p "${PUBLISH_DIR}"
+for example in "${EXAMPLES[@]}"; do
+  ffmpeg -hide_banner -loglevel error -y \
+    -ss 1 -i "${OUTPUT_ROOT}/${example}/overlay_multimode.mp4" \
+    -frames:v 1 -q:v 2 "${PUBLISH_DIR}/${example}.jpg"
 done
+
+ffmpeg -hide_banner -loglevel error -y \
+  -i "${PUBLISH_DIR}/arctic_scissors.jpg" \
+  -i "${PUBLISH_DIR}/taco_dust_roller.jpg" \
+  -i "${PUBLISH_DIR}/stera_workbench.jpg" \
+  -filter_complex \
+  "[0:v]scale=960:540:force_original_aspect_ratio=decrease,pad=960:580:(ow-iw)/2:40:color=black,drawtext=text='ARCTIC - scissors use':x=16:y=10:fontsize=24:fontcolor=white[a];\
+   [1:v]scale=960:540:force_original_aspect_ratio=decrease,pad=960:580:(ow-iw)/2:40:color=black,drawtext=text='TACO - dust / roller / pan':x=16:y=10:fontsize=24:fontcolor=white[b];\
+   [2:v]scale=960:540:force_original_aspect_ratio=decrease,pad=960:580:(ow-iw)/2:40:color=black,drawtext=text='STERA-10M - workbench':x=16:y=10:fontsize=24:fontcolor=white[c];\
+   [a][b][c]vstack=inputs=3[gallery]" \
+  -map '[gallery]' -frames:v 1 -q:v 2 "${PUBLISH_DIR}/gallery.jpg"
+
+ffmpeg -hide_banner -loglevel error -y \
+  -i "${OUTPUT_ROOT}/arctic_scissors/overlay_multimode.mp4" \
+  -i "${OUTPUT_ROOT}/taco_dust_roller/overlay_multimode.mp4" \
+  -i "${OUTPUT_ROOT}/stera_workbench/overlay_multimode.mp4" \
+  -filter_complex \
+  "[0:v]fps=15,scale=960:540:force_original_aspect_ratio=decrease,pad=960:580:(ow-iw)/2:40:color=black,drawtext=text='ARCTIC - scissors use':x=16:y=10:fontsize=24:fontcolor=white,setsar=1[a];\
+   [1:v]fps=15,scale=960:540:force_original_aspect_ratio=decrease,pad=960:580:(ow-iw)/2:40:color=black,drawtext=text='TACO - dust / roller / pan':x=16:y=10:fontsize=24:fontcolor=white,setsar=1[b];\
+   [2:v]fps=15,scale=960:540:force_original_aspect_ratio=decrease,pad=960:580:(ow-iw)/2:40:color=black,drawtext=text='STERA-10M - workbench':x=16:y=10:fontsize=24:fontcolor=white,setsar=1[c];\
+   [a][b][c]concat=n=3:v=1:a=0[montage]" \
+  -map '[montage]' -an -c:v libx264 -preset fast -crf 23 -pix_fmt yuv420p \
+  -movflags +faststart "${PUBLISH_DIR}/montage.mp4"
 
 "${PYTHON_BIN}" scripts/pwm/publish_visual_demo.py \
   --output-root "${OUTPUT_ROOT}" --publish-dir "${PUBLISH_DIR}" \
