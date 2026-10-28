@@ -8,11 +8,16 @@ import json
 import math
 import os
 import subprocess
+import sys
 from pathlib import Path
 
 import cv2
 import numpy as np
 import torch
+
+REPO_ROOT = Path(__file__).resolve().parents[2]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
 
 from egohandmetric_prompt.hand_upsampling import build_mano778_hand
 from egohandmetric_prompt.inference_visualization import (
