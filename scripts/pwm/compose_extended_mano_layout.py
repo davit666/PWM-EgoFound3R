@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Compose the 2x2 semantic overlay with canonical MANO and original RGB panels."""
+"""Compose the 2x2 overlay with fixed-neutral MANO signals and original RGB."""
 
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import math
 import os
@@ -33,6 +34,10 @@ HEADER_HEIGHT = 42
 BACKGROUND_BGR = (20, 22, 26)
 BORDER_BGR = (72, 76, 84)
 TEXT_BGR = (245, 245, 245)
+MANO_FINGERTIP_VERTEX_IDS = np.asarray((320, 443, 555, 672), dtype=np.int64)
+MANO_INDEX_TIP_VERTEX_ID = 320
+MANO_PINKY_TIP_VERTEX_ID = 672
+MANO_THUMB_TIP_VERTEX_ID = 744
 
 
 def atomic_json(path: Path, value: object) -> None:
@@ -51,106 +56,91 @@ def normalize(vector: np.ndarray, fallback: np.ndarray) -> np.ndarray:
     return (vector / norm).astype(np.float32)
 
 
-def derive_basis(
-    joints: np.ndarray,
-    *,
-    side_index: int,
-    previous: tuple[np.ndarray, np.ndarray] | None,
-) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
-    wrist = joints[0]
-    fingertips = joints[[8, 12, 16, 20]].mean(axis=0)
-    y_axis = normalize(fingertips - wrist, np.array((0.0, -1.0, 0.0), dtype=np.float32))
-    across = joints[5] - joints[17]
+def canonicalize_neutral_template(vertices: np.ndarray, *, side_index: int) -> np.ndarray:
+    """Place one fixed neutral MANO mesh palm-forward with fingertips up."""
+    if vertices.shape != (778, 3) or not np.isfinite(vertices).all():
+        raise ValueError(f"expected finite neutral MANO vertices [778,3], got {vertices.shape}")
+    center = vertices.mean(axis=0)
+    fingertips = vertices[MANO_FINGERTIP_VERTEX_IDS].mean(axis=0)
+    y_axis = normalize(fingertips - center, np.array((0.0, 1.0, 0.0), dtype=np.float32))
+    projection = (vertices - center) @ y_axis
+    wrist = vertices[projection <= np.quantile(projection, 0.10)].mean(axis=0)
+    y_axis = normalize(fingertips - wrist, y_axis)
+
+    across = (
+        vertices[MANO_INDEX_TIP_VERTEX_ID] - vertices[MANO_PINKY_TIP_VERTEX_ID]
+    )
     across = across - y_axis * float(np.dot(across, y_axis))
     x_axis = normalize(across, np.array((1.0, 0.0, 0.0), dtype=np.float32))
-
-    palm_center = joints[[0, 5, 9, 13, 17]].mean(axis=0)
-    thumb_direction = joints[4] - palm_center
+    thumb_direction = vertices[MANO_THUMB_TIP_VERTEX_ID] - center
     desired_thumb_sign = 1.0 if side_index == 0 else -1.0
     if float(np.dot(thumb_direction, x_axis)) * desired_thumb_sign < 0.0:
         x_axis = -x_axis
 
-    if previous is not None:
-        previous_x, previous_y = previous
-        if float(np.dot(y_axis, previous_y)) < 0.0:
-            y_axis = -y_axis
-        y_axis = normalize(0.30 * y_axis + 0.70 * previous_y, previous_y)
-        x_axis = x_axis - y_axis * float(np.dot(x_axis, y_axis))
-        if float(np.dot(x_axis, previous_x)) < 0.0:
-            x_axis = -x_axis
-        x_axis = normalize(0.30 * x_axis + 0.70 * previous_x, previous_x)
-        x_axis = normalize(x_axis - y_axis * float(np.dot(x_axis, y_axis)), previous_x)
-    z_axis = normalize(np.cross(x_axis, y_axis), np.array((0.0, 0.0, 1.0), dtype=np.float32))
-    return x_axis, y_axis, z_axis
+    # PaXini's confirmed MANO calibration places palm-surface normals toward
+    # negative model Y.  Negating the right-handed cross product therefore puts
+    # the palm surface at positive display depth (toward the viewer).
+    z_axis = normalize(-np.cross(x_axis, y_axis), np.array((0.0, 0.0, 1.0), dtype=np.float32))
+    local = vertices - center
+    return np.stack((local @ x_axis, local @ y_axis, local @ z_axis), axis=-1)
 
 
-def canonicalize_sequence(
-    vertices: np.ndarray,
-    joints: np.ndarray,
-    hand_valid: np.ndarray,
-) -> tuple[np.ndarray, np.ndarray]:
-    if vertices.ndim != 4 or vertices.shape[1:] != (2, 778, 3):
-        raise ValueError(f"expected MANO vertices [T,2,778,3], got {vertices.shape}")
-    if joints.shape[:2] != vertices.shape[:2] or joints.shape[-1] != 3:
-        raise ValueError("joint and vertex axes do not align")
-    canonical = np.full_like(vertices, np.nan, dtype=np.float32)
-    valid = hand_valid.astype(bool, copy=True)
-    previous: list[tuple[np.ndarray, np.ndarray] | None] = [None, None]
-    for frame_index in range(vertices.shape[0]):
-        for side_index in range(2):
-            if not valid[frame_index, side_index]:
-                continue
-            current_vertices = vertices[frame_index, side_index]
-            current_joints = joints[frame_index, side_index]
-            if not (
-                np.isfinite(current_vertices).all()
-                and np.isfinite(current_joints).all()
-                and current_joints.shape[0] >= 21
-            ):
-                valid[frame_index, side_index] = False
-                continue
-            x_axis, y_axis, z_axis = derive_basis(
-                current_joints,
-                side_index=side_index,
-                previous=previous[side_index],
-            )
-            previous[side_index] = (x_axis, y_axis)
-            palm_center = current_joints[[0, 5, 9, 13, 17]].mean(axis=0)
-            local = current_vertices - palm_center
-            canonical[frame_index, side_index] = np.stack(
-                (
-                    local @ x_axis,
-                    local @ y_axis,
-                    local @ z_axis,
-                ),
-                axis=-1,
-            )
-    return canonical, valid
+def face_topology(faces: np.ndarray) -> set[tuple[int, int, int]]:
+    return {tuple(sorted(int(index) for index in face)) for face in faces}
+
+
+def sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def load_neutral_templates(
+    paths: tuple[Path, Path], prediction_faces: np.ndarray
+) -> tuple[np.ndarray, list[dict[str, object]]]:
+    templates = []
+    metadata = []
+    expected_topology = face_topology(prediction_faces)
+    for side_index, (side, path) in enumerate(zip(("left", "right"), paths, strict=True)):
+        resolved = path.resolve()
+        with np.load(resolved, allow_pickle=False) as asset:
+            vertices = np.asarray(asset["vertices"], dtype=np.float32)
+            faces = np.asarray(asset["faces"], dtype=np.int64)
+            asset_side = str(asset["side"].item()) if "side" in asset.files else side
+        if asset_side != side:
+            raise ValueError(f"neutral MANO side mismatch: expected {side}, got {asset_side}")
+        if faces.shape != prediction_faces.shape or face_topology(faces) != expected_topology:
+            raise ValueError(f"neutral MANO topology mismatch: {resolved}")
+        templates.append(canonicalize_neutral_template(vertices, side_index=side_index))
+        metadata.append(
+            {
+                "side": side,
+                "path": str(resolved),
+                "sha256": sha256(resolved),
+                "vertices": int(vertices.shape[0]),
+                "faces": int(faces.shape[0]),
+            }
+        )
+    return np.stack(templates).astype(np.float32), metadata
 
 
 def canonical_scale(
     canonical: np.ndarray,
-    valid: np.ndarray,
     *,
     panel_width: int,
     panel_height: int,
 ) -> float:
-    spans_x = []
-    spans_y = []
-    for frame_index in range(canonical.shape[0]):
-        for side_index in range(2):
-            if not valid[frame_index, side_index]:
-                continue
-            points = canonical[frame_index, side_index]
-            spans_x.append(float(np.ptp(points[:, 0])))
-            spans_y.append(float(np.ptp(points[:, 1])))
-    if not spans_x or not spans_y:
-        raise ValueError("no valid canonical hands")
+    if canonical.shape != (2, 778, 3):
+        raise ValueError(f"expected two canonical neutral templates, got {canonical.shape}")
+    spans_x = [float(np.ptp(points[:, 0])) for points in canonical]
+    spans_y = [float(np.ptp(points[:, 1])) for points in canonical]
     slot_width = panel_width / 2.0
     body_height = panel_height - HEADER_HEIGHT
-    robust_x = max(float(np.quantile(spans_x, 0.98)), 1e-5)
-    robust_y = max(float(np.quantile(spans_y, 0.98)), 1e-5)
-    return min(slot_width * 0.88 / robust_x, body_height * 0.92 / robust_y)
+    widest = max(max(spans_x), 1e-5)
+    tallest = max(max(spans_y), 1e-5)
+    return min(slot_width * 0.91 / widest, body_height * 0.94 / tallest)
 
 
 def face_colors(
@@ -261,7 +251,7 @@ def label(
 
 
 def mano_panel(
-    canonical_frame: np.ndarray,
+    neutral_templates: np.ndarray,
     valid_frame: np.ndarray,
     values_frame: np.ndarray,
     faces: np.ndarray,
@@ -281,7 +271,7 @@ def mano_panel(
         if valid_frame[side_index]:
             draw_mesh(
                 panel,
-                canonical_frame[side_index],
+                neutral_templates[side_index],
                 values_frame[side_index],
                 faces,
                 mode=mode,
@@ -309,8 +299,6 @@ def load_predictions(path: Path) -> dict[str, np.ndarray]:
     if not isinstance(hand_778, dict):
         hand_778 = build_mano778_hand(hand)
     required = {
-        "vertices": hand_778.get("vertex_xyz_metric"),
-        "joints": hand.get("joint_xyz_metric"),
         "valid": hand_778.get("valid"),
         "contact": hand_778.get("vertex_contact_probability"),
         "distance": hand_778.get("vertex_contact_distance_metric"),
@@ -319,7 +307,7 @@ def load_predictions(path: Path) -> dict[str, np.ndarray]:
     missing = [name for name, value in required.items() if not isinstance(value, torch.Tensor)]
     if missing:
         raise ValueError(f"inference payload is missing MANO fields: {missing}")
-    return {
+    result = {
         name: value.detach().cpu().float().numpy()
         if name not in {"valid", "faces"}
         else (
@@ -329,6 +317,13 @@ def load_predictions(path: Path) -> dict[str, np.ndarray]:
         )
         for name, value in required.items()
     }
+    if result["contact"].ndim != 3 or result["contact"].shape[1:] != (2, 778):
+        raise ValueError(f"unexpected contact shape: {result['contact'].shape}")
+    if result["distance"].shape != result["contact"].shape:
+        raise ValueError("contact and distance tensors do not align")
+    if result["valid"].shape != result["contact"].shape[:2]:
+        raise ValueError("hand validity does not align with contact tensors")
+    return result
 
 
 def video_info(capture: cv2.VideoCapture, path: Path) -> dict[str, object]:
@@ -348,6 +343,8 @@ def main() -> None:
     parser.add_argument("--multimode-video", type=Path, required=True)
     parser.add_argument("--rgb-video", type=Path, required=True)
     parser.add_argument("--inference-output", type=Path, required=True)
+    parser.add_argument("--mano-left-template", type=Path, required=True)
+    parser.add_argument("--mano-right-template", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--manifest", type=Path, required=True)
     parser.add_argument("--fps", type=float, default=10.0)
@@ -357,14 +354,13 @@ def main() -> None:
     if args.fps <= 0 or (args.max_frames is not None and args.max_frames < 1):
         parser.error("invalid FPS or max frame count")
     predictions = load_predictions(args.inference_output.resolve())
-    canonical, canonical_valid = canonicalize_sequence(
-        predictions["vertices"], predictions["joints"], predictions["valid"]
+    neutral_templates, template_metadata = load_neutral_templates(
+        (args.mano_left_template, args.mano_right_template), predictions["faces"]
     )
     panel_width, full_height = DEFAULT_MANO_SIZE
     panel_height = full_height // 2
     scale = canonical_scale(
-        canonical,
-        canonical_valid,
+        neutral_templates,
         panel_width=panel_width,
         panel_height=panel_height,
     )
@@ -375,7 +371,7 @@ def main() -> None:
     rgb_capture = cv2.VideoCapture(str(rgb_path))
     multimode_info = video_info(multimode_capture, multimode_path)
     rgb_info = video_info(rgb_capture, rgb_path)
-    prediction_frames = int(canonical.shape[0])
+    prediction_frames = int(predictions["contact"].shape[0])
     available_frames = min(
         int(multimode_info["frames"]), int(rgb_info["frames"]), prediction_frames
     )
@@ -436,8 +432,8 @@ def main() -> None:
             left = cv2.resize(multimode, (left_width, output_height), interpolation=cv2.INTER_AREA)
             original = cv2.resize(rgb, (rgb_width, rgb_height), interpolation=cv2.INTER_AREA)
             contact = mano_panel(
-                canonical[frame_index],
-                canonical_valid[frame_index],
+                neutral_templates,
+                predictions["valid"][frame_index],
                 predictions["contact"][frame_index],
                 predictions["faces"],
                 mode="contact",
@@ -446,8 +442,8 @@ def main() -> None:
                 scale=scale,
             )
             distance = mano_panel(
-                canonical[frame_index],
-                canonical_valid[frame_index],
+                neutral_templates,
+                predictions["valid"][frame_index],
                 predictions["distance"][frame_index],
                 predictions["faces"],
                 mode="distance",
@@ -490,7 +486,7 @@ def main() -> None:
         raise subprocess.CalledProcessError(return_code, command)
     temporary.replace(output)
     manifest = {
-        "schema_version": "pwm.extended_mano_layout.v1",
+        "schema_version": "pwm.extended_mano_layout.v2",
         "multimode_video": multimode_info,
         "rgb_video": rgb_info,
         "inference_output": str(args.inference_output.resolve()),
@@ -501,16 +497,18 @@ def main() -> None:
         "output_size_wh": [output_width, output_height],
         "layout": {
             "left": "2x2 Geometry / Visibility / Contact / Distance",
-            "middle_top": "canonical palm-facing MANO Contact; left hand left, right hand right",
-            "middle_bottom": "canonical palm-facing MANO Distance 0-50 mm; left hand left, right hand right",
+            "middle_top": "fixed neutral-pose palm-facing MANO Contact; left hand left, right hand right",
+            "middle_bottom": "fixed neutral-pose palm-facing MANO Distance 0-50 mm; left hand left, right hand right",
             "right": "original RGB",
         },
         "mano": {
             "vertices_per_hand": 778,
             "faces": int(predictions["faces"].shape[0]),
-            "projection": "orthographic canonical palm plane",
-            "orientation": "mean four fingertips up; thumbs toward layout center",
+            "geometry": "fixed per-side neutral MANO template; prediction pose is not rendered",
+            "projection": "orthographic neutral-template palm view",
+            "orientation": "palms forward; four fingertips up; thumbs toward layout center",
             "fixed_scale_pixels_per_meter": scale,
+            "templates": template_metadata,
         },
     }
     atomic_json(args.manifest.resolve(), manifest)

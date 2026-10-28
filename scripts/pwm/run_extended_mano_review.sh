@@ -6,8 +6,11 @@ cd "${REPO_ROOT}"
 
 PYTHON="${PYTHON:-${REPO_ROOT}/.venv/bin/python}"
 BASE_ROOT="${BASE_ROOT:-${REPO_ROOT}/outputs/8task_review_v0}"
-OUTPUT_ROOT="${OUTPUT_ROOT:-${REPO_ROOT}/outputs/8task_review_v1_extended}"
-PUBLISH_DIR="${PUBLISH_DIR:-${REPO_ROOT}/docs/results/egofound3r_8task_review_v1_extended}"
+OUTPUT_ROOT="${OUTPUT_ROOT:-${REPO_ROOT}/outputs/8task_review_v2_neutral}"
+PUBLISH_DIR="${PUBLISH_DIR:-${REPO_ROOT}/docs/results/egofound3r_8task_review_v2_neutral}"
+MANO_TEMPLATE_DIR="${MANO_TEMPLATE_DIR:-${REPO_ROOT}/other/mano_neutral}"
+MANO_LEFT_TEMPLATE="${MANO_LEFT_TEMPLATE:-${MANO_TEMPLATE_DIR}/mano_left_neutral.npz}"
+MANO_RIGHT_TEMPLATE="${MANO_RIGHT_TEMPLATE:-${MANO_TEMPLATE_DIR}/mano_right_neutral.npz}"
 STATUS_PATH="${STATUS_PATH:-${OUTPUT_ROOT}/status.json}"
 DATASETS="${DATASETS:-guocai jianzhi stera}"
 MAX_FRAMES="${MAX_FRAMES:-}"
@@ -58,7 +61,7 @@ for command in ffmpeg ffprobe git; do
     exit 2
   }
 done
-for path in "${PYTHON}" "${BASE_ROOT}"; do
+for path in "${PYTHON}" "${BASE_ROOT}" "${MANO_LEFT_TEMPLATE}" "${MANO_RIGHT_TEMPLATE}"; do
   [[ -e "${path}" ]] || {
     printf 'missing required input: %s\n' "${path}" >&2
     exit 2
@@ -89,6 +92,8 @@ for dataset in ${DATASETS}; do
     --multimode-video "${multimode}"
     --rgb-video "${rgb}"
     --inference-output "${predictions}"
+    --mano-left-template "${MANO_LEFT_TEMPLATE}"
+    --mano-right-template "${MANO_RIGHT_TEMPLATE}"
     --output "${output}"
     --manifest "${layout_manifest}"
     --fps 10
@@ -141,7 +146,7 @@ if [[ "${PUBLISH_RESULTS}" == "1" ]]; then
   if ! git diff --cached --quiet; then
     git -c user.name="${GIT_RESULT_AUTHOR_NAME}" \
       -c user.email="${GIT_RESULT_AUTHOR_EMAIL}" \
-      commit -m "results: add canonical MANO extended visual reviews"
+      commit -m "results: add fixed neutral MANO visual reviews"
   fi
   git push origin HEAD:main
 fi
