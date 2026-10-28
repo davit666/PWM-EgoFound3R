@@ -72,7 +72,11 @@ def main() -> int:
     args = parser.parse_args()
     try:
         from huggingface_hub import hf_hub_download
-        from huggingface_hub.errors import GatedRepoError, HfHubHTTPError
+        from huggingface_hub.errors import (
+            GatedRepoError,
+            HfHubHTTPError,
+            LocalTokenNotFoundError,
+        )
     except ModuleNotFoundError:
         print(
             "huggingface_hub is not installed; run scripts/pwm/bootstrap_env.sh first",
@@ -102,7 +106,7 @@ def main() -> int:
                     )
             print(f"Verifying {destination} ...", flush=True)
             verified.append(verify(destination, asset))
-    except (GatedRepoError, HfHubHTTPError) as error:
+    except (GatedRepoError, HfHubHTTPError, LocalTokenNotFoundError) as error:
         print(
             "Checkpoint access was denied. Log in with `hf auth login` and accept "
             "the terms for both gated model pages:",
