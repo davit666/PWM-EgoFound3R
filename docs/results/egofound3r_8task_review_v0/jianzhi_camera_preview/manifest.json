@@ -1,0 +1,61 @@
+{
+  "schema_version": "pwm.mcap_camera_preview.v1",
+  "source": "/share-mixed/projset/eai_pwm/datasets/ours-ego-sampled/jianzhi-ego/012b7299c6044e31bfff001a296d8226.mcap",
+  "contact_sheet": "/share-mixed/projset/eai_pwm/home/liwenhao/wm/PWM-EgoFound3R/docs/results/egofound3r_8task_review_v0/jianzhi_camera_preview/camera_contact_sheet.jpg",
+  "cameras": [
+    {
+      "topic": "/robot0/sensor/camera0/compressed",
+      "timestamp_ns": 1772680660353043000,
+      "size_wh": [
+        1600,
+        1300
+      ],
+      "image": "/share-mixed/projset/eai_pwm/home/liwenhao/wm/PWM-EgoFound3R/docs/results/egofound3r_8task_review_v0/jianzhi_camera_preview/camera_00.jpg"
+    },
+    {
+      "topic": "/robot0/sensor/camera1/compressed",
+      "timestamp_ns": 1772680659353159000,
+      "size_wh": [
+        1600,
+        1300
+      ],
+      "image": "/share-mixed/projset/eai_pwm/home/liwenhao/wm/PWM-EgoFound3R/docs/results/egofound3r_8task_review_v0/jianzhi_camera_preview/camera_01.jpg"
+    },
+    {
+      "topic": "/robot0/sensor/camera2/compressed",
+      "timestamp_ns": 1772680660353017000,
+      "size_wh": [
+        1600,
+        1300
+      ],
+      "image": "/share-mixed/projset/eai_pwm/home/liwenhao/wm/PWM-EgoFound3R/docs/results/egofound3r_8task_review_v0/jianzhi_camera_preview/camera_02.jpg"
+    },
+    {
+      "topic": "/robot0/sensor/camera3/compressed",
+      "timestamp_ns": 1772680660353033000,
+      "size_wh": [
+        1600,
+        1300
+      ],
+      "image": "/share-mixed/projset/eai_pwm/home/liwenhao/wm/PWM-EgoFound3R/docs/results/egofound3r_8task_review_v0/jianzhi_camera_preview/camera_03.jpg"
+    },
+    {
+      "topic": "/robot0/sensor/camera4/compressed",
+      "timestamp_ns": 1772680659353168000,
+      "size_wh": [
+        1600,
+        1300
+      ],
+      "image": "/share-mixed/projset/eai_pwm/home/liwenhao/wm/PWM-EgoFound3R/docs/results/egofound3r_8task_review_v0/jianzhi_camera_preview/camera_04.jpg"
+    },
+    {
+      "topic": "/robot0/sensor/camera5/compressed",
+      "timestamp_ns": 1772680660353053000,
+      "size_wh": [
+        1600,
+        1300
+      ],
+      "image": "/share-mixed/projset/eai_pwm/home/liwenhao/wm/PWM-EgoFound3R/docs/results/egofound3r_8task_review_v0/jianzhi_camera_preview/camera_05.jpg"
+    }
+  ]
+}
