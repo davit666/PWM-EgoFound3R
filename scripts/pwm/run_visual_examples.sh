@@ -16,6 +16,8 @@ TACO_ZIP="${TACO_ZIP:-/share/project/eai_pwm/datasets/TACO/Egocentric_RGB_Videos
 TACO_MEMBER="${TACO_MEMBER:-Egocentric_RGB_Videos/(dust, roller, pan)/20230927_032/color.mp4}"
 ARCTIC_ZIP="${ARCTIC_ZIP:-/share/project/eai_pwm/datasets/ARCTIC/downloads/data/images_zips/s01/scissors_use_01.zip}"
 PUBLISH_RESULTS="${PUBLISH_RESULTS:-1}"
+GIT_RESULT_AUTHOR_NAME="${GIT_RESULT_AUTHOR_NAME:-Wenhao Li}"
+GIT_RESULT_AUTHOR_EMAIL="${GIT_RESULT_AUTHOR_EMAIL:-wl2655@columbia.edu}"
 
 EXAMPLES=(arctic_scissors taco_dust_roller stera_workbench)
 FINALIZED=0
@@ -156,7 +158,9 @@ TMP_WORK=""
 if [[ "${PUBLISH_RESULTS}" == "1" ]]; then
   git add -- "${PUBLISH_DIR}"
   if ! git diff --cached --quiet; then
-    git commit -m "results: add EgoFound3R paper-style visual examples"
+    git -c user.name="${GIT_RESULT_AUTHOR_NAME}" \
+      -c user.email="${GIT_RESULT_AUTHOR_EMAIL}" \
+      commit -m "results: add EgoFound3R paper-style visual examples"
   fi
   git push origin HEAD:main
 fi
