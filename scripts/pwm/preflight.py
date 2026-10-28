@@ -63,6 +63,7 @@ def main() -> int:
     imported: dict[str, object] = {}
     for label, module_name in modules.items():
         try:
+            print(f"[preflight] importing {module_name}", file=sys.stderr, flush=True)
             module = importlib.import_module(module_name)
             imported[label] = module
             dependencies[label] = str(getattr(module, "__version__", "unknown"))
