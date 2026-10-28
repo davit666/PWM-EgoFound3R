@@ -1,0 +1,6 @@
+[project]
+default_name = "pwm_egofound3r_baseline"
+seed = 0
+
+[marker_runtime]
+vggt_checkpoint_path = "checkpoints/vggt_omega_1b_512.pt"

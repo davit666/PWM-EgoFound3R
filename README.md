@@ -1,4 +1,17 @@
-# EgoFound3R: End-to-End Egocentric Hand Reconstruction in World Space with Point-Wise Interaction Attributes
+# PWM-EgoFound3R
+
+PWM research fork of **EgoFound3R**, pinned to upstream commit
+`264f4df9fd42536aae4dba982d18272cc3334077`. The first PWM milestone is a
+validated pretrained-inference reproduction on Cuihu; the upstream release
+does not include its training pipeline.
+
+See [docs/PWM_BASELINE.md](docs/PWM_BASELINE.md) for the exact environment,
+checkpoint, data and validation workflow. Model/package names that form part
+of the published checkpoint contract remain unchanged for compatibility.
+
+## Upstream project
+
+### EgoFound3R: End-to-End Egocentric Hand Reconstruction in World Space with Point-Wise Interaction Attributes
 
 [**Hongming Fu**](https://frank-f2022.github.io/)<sup>1,2</sup>, **Jingcheng Shi**<sup>2,3</sup>, [**Wenjia Wang**](https://wenjiawang0312.github.io/)<sup>4</sup>, **Binhua Zuo**<sup>2,\*</sup>, [**Bo Zhao**](https://www.bozhao.me/)<sup>1,\*</sup>
 
