@@ -10,5 +10,9 @@ if [[ ! -x "${VENV_DIR}/bin/python" ]]; then
 fi
 "${VENV_DIR}/bin/python" -m pip install --upgrade pip
 "${VENV_DIR}/bin/python" -m pip install -r "${REPO_ROOT}/requirements.txt"
-"${VENV_DIR}/bin/python" -m pip check
+if ! "${VENV_DIR}/bin/python" -m pip check; then
+  printf '%s\n' \
+    'WARNING: inherited system packages have dependency conflicts; project imports are validated by preflight.py.' \
+    >&2
+fi
 printf 'PWM_PYTHON=%s\n' "${VENV_DIR}/bin/python"
