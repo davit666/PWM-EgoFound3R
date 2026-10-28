@@ -1,0 +1,4 @@
+mcap>=1.2,<2
+mcap-protobuf-support>=0.5,<1
+av>=12,<17
+
