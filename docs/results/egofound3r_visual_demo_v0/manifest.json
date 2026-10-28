@@ -1,0 +1,231 @@
+{
+  "artifacts": {
+    "gallery": "gallery.jpg",
+    "montage": "montage.mp4"
+  },
+  "examples": [
+    {
+      "clips": 1,
+      "forward_seconds": 1.05180430598557,
+      "frames": 60,
+      "name": "arctic_scissors",
+      "peak_reserved_gib": 6.15234375,
+      "remote_result_dir": "/share-mixed/projset/eai_pwm/home/liwenhao/wm/PWM-EgoFound3R/outputs/visual_examples/paper_style_v0/arctic_scissors",
+      "source_video": "/share-mixed/projset/eai_pwm/home/liwenhao/wm/PWM-EgoFound3R/outputs/visual_examples/paper_style_v0/inputs/arctic_scissors.mp4",
+      "title": "ARCTIC · scissors use",
+      "validation": {
+        "clips": 1,
+        "frames": 60,
+        "inference_schema_version": "egofound3r.metric_inference.v1",
+        "ok": true,
+        "output_dir": "/share-mixed/projset/eai_pwm/home/liwenhao/wm/PWM-EgoFound3R/outputs/visual_examples/paper_style_v0/arctic_scissors",
+        "schema_version": "pwm.egofound3r.validation.v1",
+        "tensors": {
+          "camera_pose": {
+            "dtype": "torch.float32",
+            "shape": [
+              60,
+              4,
+              4
+            ]
+          },
+          "intrinsics": {
+            "dtype": "torch.float32",
+            "shape": [
+              60,
+              3,
+              3
+            ]
+          },
+          "joint_contact_logits": {
+            "dtype": "torch.bfloat16",
+            "shape": [
+              60,
+              2,
+              21
+            ]
+          },
+          "joint_xyz": {
+            "dtype": "torch.float32",
+            "shape": [
+              60,
+              2,
+              21,
+              3
+            ]
+          },
+          "vertex_contact_logits": {
+            "dtype": "torch.bfloat16",
+            "shape": [
+              60,
+              2,
+              195
+            ]
+          },
+          "vertex_xyz": {
+            "dtype": "torch.float32",
+            "shape": [
+              60,
+              2,
+              195,
+              3
+            ]
+          }
+        }
+      }
+    },
+    {
+      "clips": 1,
+      "forward_seconds": 1.0419841054826975,
+      "frames": 59,
+      "name": "taco_dust_roller",
+      "peak_reserved_gib": 6.0859375,
+      "remote_result_dir": "/share-mixed/projset/eai_pwm/home/liwenhao/wm/PWM-EgoFound3R/outputs/visual_examples/paper_style_v0/taco_dust_roller",
+      "source_video": "/share-mixed/projset/eai_pwm/home/liwenhao/wm/PWM-EgoFound3R/outputs/visual_examples/paper_style_v0/inputs/taco_dust_roller.mp4",
+      "title": "TACO · dust / roller / pan",
+      "validation": {
+        "clips": 1,
+        "frames": 59,
+        "inference_schema_version": "egofound3r.metric_inference.v1",
+        "ok": true,
+        "output_dir": "/share-mixed/projset/eai_pwm/home/liwenhao/wm/PWM-EgoFound3R/outputs/visual_examples/paper_style_v0/taco_dust_roller",
+        "schema_version": "pwm.egofound3r.validation.v1",
+        "tensors": {
+          "camera_pose": {
+            "dtype": "torch.float32",
+            "shape": [
+              59,
+              4,
+              4
+            ]
+          },
+          "intrinsics": {
+            "dtype": "torch.float32",
+            "shape": [
+              59,
+              3,
+              3
+            ]
+          },
+          "joint_contact_logits": {
+            "dtype": "torch.bfloat16",
+            "shape": [
+              59,
+              2,
+              21
+            ]
+          },
+          "joint_xyz": {
+            "dtype": "torch.float32",
+            "shape": [
+              59,
+              2,
+              21,
+              3
+            ]
+          },
+          "vertex_contact_logits": {
+            "dtype": "torch.bfloat16",
+            "shape": [
+              59,
+              2,
+              195
+            ]
+          },
+          "vertex_xyz": {
+            "dtype": "torch.float32",
+            "shape": [
+              59,
+              2,
+              195,
+              3
+            ]
+          }
+        }
+      }
+    },
+    {
+      "clips": 1,
+      "forward_seconds": 1.061173239722848,
+      "frames": 30,
+      "name": "stera_workbench",
+      "peak_reserved_gib": 6.0859375,
+      "remote_result_dir": "/share-mixed/projset/eai_pwm/home/liwenhao/wm/PWM-EgoFound3R/outputs/visual_examples/paper_style_v0/stera_workbench",
+      "source_video": "/share-mixed/projset/eai_pwm/home/liwenhao/wm/PWM-EgoFound3R/outputs/visual_examples/paper_style_v0/inputs/stera_workbench.mp4",
+      "title": "STERA-10M · continuous workbench capture",
+      "validation": {
+        "clips": 1,
+        "frames": 30,
+        "inference_schema_version": "egofound3r.metric_inference.v1",
+        "ok": true,
+        "output_dir": "/share-mixed/projset/eai_pwm/home/liwenhao/wm/PWM-EgoFound3R/outputs/visual_examples/paper_style_v0/stera_workbench",
+        "schema_version": "pwm.egofound3r.validation.v1",
+        "tensors": {
+          "camera_pose": {
+            "dtype": "torch.float32",
+            "shape": [
+              30,
+              4,
+              4
+            ]
+          },
+          "intrinsics": {
+            "dtype": "torch.float32",
+            "shape": [
+              30,
+              3,
+              3
+            ]
+          },
+          "joint_contact_logits": {
+            "dtype": "torch.bfloat16",
+            "shape": [
+              30,
+              2,
+              21
+            ]
+          },
+          "joint_xyz": {
+            "dtype": "torch.float32",
+            "shape": [
+              30,
+              2,
+              21,
+              3
+            ]
+          },
+          "vertex_contact_logits": {
+            "dtype": "torch.bfloat16",
+            "shape": [
+              30,
+              2,
+              195
+            ]
+          },
+          "vertex_xyz": {
+            "dtype": "torch.float32",
+            "shape": [
+              30,
+              2,
+              195,
+              3
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "paper_protocol": {
+    "clip_seconds": 2.0,
+    "global_stride": 5,
+    "modes": [
+      "Geometry",
+      "Visibility",
+      "Contact",
+      "Distance 0-50 mm"
+    ],
+    "native_input_fps": true,
+    "overlay_marker_count": 778
+  },
+  "schema_version": "pwm.egofound3r.visual_demo.v1"
+}
