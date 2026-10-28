@@ -19,6 +19,18 @@ from mcap_protobuf.decoder import DecoderFactory
 NANOSECONDS = Fraction(1, 1_000_000_000)
 
 
+def h264_nal_types(payload: bytes) -> list[int]:
+    result = []
+    cursor = 0
+    while True:
+        start = payload.find(b"\x00\x00\x01", cursor)
+        if start < 0:
+            return result
+        if start + 3 < len(payload):
+            result.append(payload[start + 3] & 31)
+        cursor = start + 3
+
+
 def atomic_json(path: Path, value: object) -> None:
     temporary = path.with_name(f".{path.name}.{os.getpid()}.tmp")
     temporary.write_text(
@@ -52,7 +64,7 @@ def main() -> None:
             for channel in summary.channels.values()
             if channel.topic.endswith("/compressed")
         )
-        decoders = {topic: av.CodecContext.create("h264", "r") for topic in topics}
+        decoders: dict[str, av.CodecContext | None] = {topic: None for topic in topics}
         frames: dict[str, np.ndarray] = {}
         timestamps: dict[str, int] = {}
         for _, channel, message, decoded in reader.iter_decoded_messages(topics=topics):
@@ -61,10 +73,19 @@ def main() -> None:
                 continue
             if str(decoded.format).lower() != "h264":
                 raise ValueError(f"unsupported camera format on {topic}: {decoded.format}")
-            packet = av.Packet(bytes(decoded.data))
+            payload = bytes(decoded.data)
+            if decoders[topic] is None:
+                if not ({5, 7, 8} <= set(h264_nal_types(payload))):
+                    continue
+                decoders[topic] = av.CodecContext.create("h264", "r")
+            packet = av.Packet(payload)
             packet.pts = packet.dts = message.log_time
             packet.time_base = NANOSECONDS
-            produced = decoders[topic].decode(packet)
+            try:
+                produced = decoders[topic].decode(packet)
+            except av.error.InvalidDataError:
+                decoders[topic] = None
+                continue
             if not produced:
                 continue
             frames[topic] = produced[0].to_ndarray(format="bgr24")
