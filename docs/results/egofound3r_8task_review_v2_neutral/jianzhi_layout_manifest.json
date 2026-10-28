@@ -1,0 +1,56 @@
+{
+  "schema_version": "pwm.extended_mano_layout.v2",
+  "multimode_video": {
+    "path": "/share-mixed/projset/eai_pwm/home/liwenhao/wm/PWM-EgoFound3R/outputs/8task_review_v0/inference/jianzhi/overlay_multimode.mp4",
+    "frames": 640,
+    "fps": 10.0,
+    "width": 1920,
+    "height": 1088
+  },
+  "rgb_video": {
+    "path": "/share-mixed/projset/eai_pwm/home/liwenhao/wm/PWM-EgoFound3R/outputs/8task_review_v0/inputs/jianzhi/jianzhi_8tasks_source.mp4",
+    "frames": 640,
+    "fps": 10.0,
+    "width": 960,
+    "height": 540
+  },
+  "inference_output": "/share-mixed/projset/eai_pwm/home/liwenhao/wm/PWM-EgoFound3R/outputs/8task_review_v0/inference/jianzhi/inference_output.pt",
+  "output": "/share-mixed/projset/eai_pwm/home/liwenhao/wm/PWM-EgoFound3R/docs/results/egofound3r_8task_review_v2_neutral/jianzhi_8tasks_extended.mp4",
+  "frame_count": 640,
+  "fps": 10.0,
+  "duration_seconds": 64.0,
+  "output_size_wh": [
+    2280,
+    540
+  ],
+  "layout": {
+    "left": "2x2 Geometry / Visibility / Contact / Distance",
+    "middle_top": "fixed neutral-pose palm-facing MANO Contact; left hand left, right hand right",
+    "middle_bottom": "fixed neutral-pose palm-facing MANO Distance 0-50 mm; left hand left, right hand right",
+    "right": "original RGB"
+  },
+  "mano": {
+    "vertices_per_hand": 778,
+    "faces": 1538,
+    "geometry": "fixed per-side neutral MANO template; prediction pose is not rendered",
+    "projection": "orthographic neutral-template palm view",
+    "orientation": "palms forward; four fingertips up; thumbs toward layout center",
+    "fixed_scale_pixels_per_meter": 1065.9513982498604,
+    "templates": [
+      {
+        "side": "left",
+        "path": "/share-mixed/projset/eai_pwm/home/liwenhao/wm/PWM-EgoFound3R/other/mano_neutral/mano_left_neutral.npz",
+        "sha256": "1d2d1ceb73b8ba647df7afa6f76daac3cdad7c49259a997c6f3b95c19dc4a342",
+        "vertices": 778,
+        "faces": 1538
+      },
+      {
+        "side": "right",
+        "path": "/share-mixed/projset/eai_pwm/home/liwenhao/wm/PWM-EgoFound3R/other/mano_neutral/mano_right_neutral.npz",
+        "sha256": "ea2e2524cb7ad83246b87c0d6ba9e5b294cfaf6b639abaa853cd3fbc28f3eacb",
+        "vertices": 778,
+        "faces": 1538
+      }
+    ]
+  }
+}

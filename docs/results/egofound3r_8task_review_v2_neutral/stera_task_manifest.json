@@ -1,0 +1,122 @@
+{
+  "schema_version": "pwm.task_montage.v1",
+  "dataset": "stera",
+  "source_root": "/share-mixed/projset/eai_pwm/datasets/Stera-10M",
+  "candidate_count": 575,
+  "usable_candidate_count": 575,
+  "task_count": 8,
+  "target_fps": 10,
+  "output_size_wh": [
+    960,
+    540
+  ],
+  "common_clip_duration_seconds": 8.0,
+  "montage_duration_seconds": 64.0,
+  "montage_path": "/share-mixed/projset/eai_pwm/home/liwenhao/wm/PWM-EgoFound3R/outputs/8task_review_v0/inputs/stera/stera_8tasks_source.mp4",
+  "tasks": [
+    {
+      "path": "/share-mixed/projset/eai_pwm/datasets/Stera-10M/session_data_20260405_014739/rgb.mp4",
+      "label": "session_data_20260405_014739",
+      "group": "session_data_20260405_014739",
+      "duration_seconds": 729.066667,
+      "width": 1280,
+      "height": 720,
+      "source_fps": "15/1",
+      "selection_index": 1,
+      "clip_start_seconds": 360.5333335,
+      "clip_duration_seconds": 8.0,
+      "prepared_path": "/share-mixed/projset/eai_pwm/home/liwenhao/wm/PWM-EgoFound3R/outputs/8task_review_v0/inputs/stera/clips/task_01.mp4"
+    },
+    {
+      "path": "/share-mixed/projset/eai_pwm/datasets/Stera-10M/session_data_20260412_111945/rgb.mp4",
+      "label": "session_data_20260412_111945",
+      "group": "session_data_20260412_111945",
+      "duration_seconds": 725.0,
+      "width": 1280,
+      "height": 720,
+      "source_fps": "15/1",
+      "selection_index": 2,
+      "clip_start_seconds": 358.5,
+      "clip_duration_seconds": 8.0,
+      "prepared_path": "/share-mixed/projset/eai_pwm/home/liwenhao/wm/PWM-EgoFound3R/outputs/8task_review_v0/inputs/stera/clips/task_02.mp4"
+    },
+    {
+      "path": "/share-mixed/projset/eai_pwm/datasets/Stera-10M/session_data_20260413_051653/rgb.mp4",
+      "label": "session_data_20260413_051653",
+      "group": "session_data_20260413_051653",
+      "duration_seconds": 723.6,
+      "width": 1280,
+      "height": 720,
+      "source_fps": "15/1",
+      "selection_index": 3,
+      "clip_start_seconds": 357.8,
+      "clip_duration_seconds": 8.0,
+      "prepared_path": "/share-mixed/projset/eai_pwm/home/liwenhao/wm/PWM-EgoFound3R/outputs/8task_review_v0/inputs/stera/clips/task_03.mp4"
+    },
+    {
+      "path": "/share-mixed/projset/eai_pwm/datasets/Stera-10M/session_data_20260414_121353/rgb.mp4",
+      "label": "session_data_20260414_121353",
+      "group": "session_data_20260414_121353",
+      "duration_seconds": 725.4,
+      "width": 1280,
+      "height": 720,
+      "source_fps": "15/1",
+      "selection_index": 4,
+      "clip_start_seconds": 358.7,
+      "clip_duration_seconds": 8.0,
+      "prepared_path": "/share-mixed/projset/eai_pwm/home/liwenhao/wm/PWM-EgoFound3R/outputs/8task_review_v0/inputs/stera/clips/task_04.mp4"
+    },
+    {
+      "path": "/share-mixed/projset/eai_pwm/datasets/Stera-10M/session_data_20260419_093058/rgb.mp4",
+      "label": "session_data_20260419_093058",
+      "group": "session_data_20260419_093058",
+      "duration_seconds": 724.0,
+      "width": 1280,
+      "height": 720,
+      "source_fps": "15/1",
+      "selection_index": 5,
+      "clip_start_seconds": 358.0,
+      "clip_duration_seconds": 8.0,
+      "prepared_path": "/share-mixed/projset/eai_pwm/home/liwenhao/wm/PWM-EgoFound3R/outputs/8task_review_v0/inputs/stera/clips/task_05.mp4"
+    },
+    {
+      "path": "/share-mixed/projset/eai_pwm/datasets/Stera-10M/session_data_20260423_152113/rgb.mp4",
+      "label": "session_data_20260423_152113",
+      "group": "session_data_20260423_152113",
+      "duration_seconds": 729.066667,
+      "width": 1280,
+      "height": 720,
+      "source_fps": "15/1",
+      "selection_index": 6,
+      "clip_start_seconds": 360.5333335,
+      "clip_duration_seconds": 8.0,
+      "prepared_path": "/share-mixed/projset/eai_pwm/home/liwenhao/wm/PWM-EgoFound3R/outputs/8task_review_v0/inputs/stera/clips/task_06.mp4"
+    },
+    {
+      "path": "/share-mixed/projset/eai_pwm/datasets/Stera-10M/session_data_20260427_070823/rgb.mp4",
+      "label": "session_data_20260427_070823",
+      "group": "session_data_20260427_070823",
+      "duration_seconds": 723.533333,
+      "width": 1280,
+      "height": 720,
+      "source_fps": "15/1",
+      "selection_index": 7,
+      "clip_start_seconds": 357.7666665,
+      "clip_duration_seconds": 8.0,
+      "prepared_path": "/share-mixed/projset/eai_pwm/home/liwenhao/wm/PWM-EgoFound3R/outputs/8task_review_v0/inputs/stera/clips/task_07.mp4"
+    },
+    {
+      "path": "/share-mixed/projset/eai_pwm/datasets/Stera-10M/session_data_20260511_184442/rgb.mp4",
+      "label": "session_data_20260511_184442",
+      "group": "session_data_20260511_184442",
+      "duration_seconds": 725.133333,
+      "width": 1280,
+      "height": 720,
+      "source_fps": "15/1",
+      "selection_index": 8,
+      "clip_start_seconds": 358.5666665,
+      "clip_duration_seconds": 8.0,
+      "prepared_path": "/share-mixed/projset/eai_pwm/home/liwenhao/wm/PWM-EgoFound3R/outputs/8task_review_v0/inputs/stera/clips/task_08.mp4"
+    }
+  ]
+}
