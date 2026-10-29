@@ -27,3 +27,9 @@ To https://github.com/davit666/PWM-EgoFound3R.git
 {"dataset": "STERA-10M", "split": "val", "prepared_sessions": 1, "clips": 34}
 {"dataset": "STERA-10M", "split": "val", "prepared_sessions": 2, "clips": 36}
 {"rows": 36, "frames_per_clip": 60, "scope": "TACO/STERA pilot; not original seven-dataset training split", "native_taco_split": "train versus test_1/test_2", "stera_split": "our source-session holdout", "counts": {"TACO/train": 0, "TACO/val": 0, "STERA-10M/train": 32, "STERA-10M/val": 4}}
+[pwm/training-reconstruction d8fff86] results: wm1 benchmark prepare-taco-starting at step 0
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+To https://github.com/davit666/PWM-EgoFound3R.git
+   f9a961c..d8fff86  HEAD -> pwm/wm1-benchmark100
+{"dataset": "TACO", "split": "train", "prepared_sequences": 1, "clips": 2}
+{"skipped": "20230930_044", "log": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_train_20230930_044/adapter.log"}
