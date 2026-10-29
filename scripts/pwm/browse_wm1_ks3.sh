@@ -15,8 +15,4 @@ publish() {
   exit "$code"
 }
 trap publish EXIT
-for prefix in data/ backup_20261023/ ARCTIC/body_models/mano/; do
-  name=${prefix//\//_}
-  timeout 60s outputs/tools/ks3util -c outputs/secrets/ks3util-config ls "ks3://baai-eai/$prefix" \
-    --log-path="$PWD/outputs/ks3-browse/logs" > "$RESULT/ks3_${name}.txt" 2>&1
-done
+timeout 180s python3 scripts/pwm/browse_wm1_ks3.py "$RESULT/ks3_listing.json" > "$RESULT/ks3_browse.log" 2>&1
