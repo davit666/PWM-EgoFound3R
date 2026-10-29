@@ -37,3 +37,6 @@ To https://github.com/davit666/PWM-EgoFound3R.git
 {"skipped": "20230930_054", "log": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_train_20230930_054/adapter.log"}
 {"skipped": "20231019_221", "log": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_train_20231019_221/adapter.log"}
 {"dataset": "TACO", "split": "train", "prepared_sequences": 3, "clips": 6}
+{"dataset": "TACO", "split": "train", "prepared_sequences": 4, "clips": 8}
+{"skipped": "20231005_033", "log": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_train_20231005_033/adapter.log"}
+{"skipped": "20231103_189", "log": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_train_20231103_189/adapter.log"}
