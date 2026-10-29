@@ -17,3 +17,8 @@ publish() {
 trap publish EXIT
 PYTHON_BIN=/home-mixed/liwenhao666/wm/PWM-EgoFound3R/.venv/bin/python
 "$PYTHON_BIN" scripts/pwm/audit_training_sources.py "$RESULT_DIR/inventory.json" > "$RESULT_DIR/run.log" 2>&1
+if [[ "${ANNOTATIONS:-0}" == 1 ]]; then
+  "$PYTHON_BIN" -m pip install --disable-pip-version-check --target outputs/training-deps --no-deps h5py > "$RESULT_DIR/dependencies.log" 2>&1
+  export PYTHONPATH="$PWD/outputs/training-deps${PYTHONPATH:+:$PYTHONPATH}"
+  "$PYTHON_BIN" scripts/pwm/audit_training_annotations.py "$RESULT_DIR/annotations.json" >> "$RESULT_DIR/run.log" 2>&1
+fi
