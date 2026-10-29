@@ -13,7 +13,7 @@ export TMPDIR="$RUN/tmp" TORCH_EXTENSIONS_DIR="$RUN/extensions"
 export PWM_DISTRIBUTED_TIMEOUT_SECONDS=180
 export TORCH_DISTRIBUTED_DEBUG=DETAIL
 export DS_BUILD_OPS=0
-MONITOR_PID=''; GPU_PID=''
+MONITOR_PID=''; GPU_PID=''; PHASE_OK=0
 exec 3>&1 4>&2
 publish() { python3 scripts/pwm/publish_benchmark_progress.py "$RUN" "$RESULT" "$1"; }
 stop_monitors() {
@@ -25,6 +25,7 @@ stop_monitors() {
 finish() {
   code=$?
   trap - EXIT
+  if (( code==0 && PHASE_OK==0 )); then code=130; fi
   stop_monitors
   exec 1>&3 2>&4
   [[ -z "${LOG_TEE_PID:-}" ]] || wait "$LOG_TEE_PID" || true
@@ -36,6 +37,8 @@ finish() {
   exit "$code"
 }
 trap finish EXIT
+trap 'exit 130' INT
+trap 'exit 143' TERM
 exec > >(tee -a "$RUN/run.log") 2>&1
 LOG_TEE_PID=$!
 for gpu in {0..7}; do
@@ -100,3 +103,4 @@ case "$MODE" in
     ;;
   *) echo 'unknown phase'; exit 2 ;;
 esac
+PHASE_OK=1
