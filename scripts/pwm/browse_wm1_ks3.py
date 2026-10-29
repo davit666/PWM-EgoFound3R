@@ -6,7 +6,7 @@ from ks3_client import client
 
 api=client()
 report={}
-for prefix in ('','data/','backup_20261023/','ARCTIC/body_models/mano/'):
+for prefix in (sys.argv[2:] or ('','data/','backup_20261023/','ARCTIC/body_models/mano/')):
     response=api.list_objects(Bucket='baai-eai',Prefix=prefix,Delimiter='/',MaxKeys=1000)
     report[prefix]={'prefixes':[x['Prefix'] for x in response.get('CommonPrefixes',[])],
         'objects':[{'key':x['Key'],'bytes':x['Size']} for x in response.get('Contents',[])],

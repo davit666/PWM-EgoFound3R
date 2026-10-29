@@ -15,4 +15,4 @@ publish() {
   exit "$code"
 }
 trap publish EXIT
-timeout 180s python3 scripts/pwm/browse_wm1_ks3.py "$RESULT/ks3_listing.json" > "$RESULT/ks3_browse.log" 2>&1
+timeout 180s python3 scripts/pwm/browse_wm1_ks3.py "$RESULT/ks3_listing.json" "$@" > "$RESULT/ks3_browse.log" 2>&1
