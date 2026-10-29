@@ -64,3 +64,10 @@ To https://github.com/davit666/PWM-EgoFound3R.git
 {"dataset": "TACO", "split": "train", "prepared_sequences": 10, "clips": 20}
 {"dataset": "TACO", "split": "train", "prepared_sequences": 11, "clips": 22}
 {"dataset": "TACO", "split": "train", "prepared_sequences": 12, "clips": 24}
+{"dataset": "TACO", "split": "train", "prepared_sequences": 13, "clips": 26}
+{"dataset": "TACO", "split": "train", "prepared_sequences": 14, "clips": 28}
+{"dataset": "TACO", "split": "train", "prepared_sequences": 15, "clips": 30}
+{"skipped": "20231002_063", "log": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_train_20231002_063/adapter.log"}
+{"dataset": "TACO", "split": "train", "prepared_sequences": 16, "clips": 32}
+{"skipped": "20230930_123", "log": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_train_20230930_123/adapter.log"}
+{"skipped": "20231024_246", "log": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_train_20231024_246/adapter.log"}
