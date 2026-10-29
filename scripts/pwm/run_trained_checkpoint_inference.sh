@@ -5,10 +5,13 @@ PYTHON_BIN=/home-mixed/liwenhao666/wm/PWM-EgoFound3R/.venv/bin/python
 RUN=/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/training_smoke_taco_20261029
 RESULT=docs/results/trained_checkpoint_inference_20261029
 mkdir -p "$RESULT"
+exec 3>&1 4>&2
 export CUDA_VISIBLE_DEVICES=0
 publish() {
   code=$?
   trap - EXIT
+  exec 1>&3 2>&4
+  [[ -z "${LOG_TEE_PID:-}" ]] || wait "$LOG_TEE_PID"
   printf '{"exit_code":%s}\n' "$code" > "$RESULT/status.json"
   for file in summary.json overlay.mp4; do
     [[ ! -f "$RUN/inference/$file" ]] || cp "$RUN/inference/$file" "$RESULT/"
@@ -22,6 +25,7 @@ publish() {
 }
 trap publish EXIT
 exec > >(tee "$RESULT/run.log") 2>&1
+LOG_TEE_PID=$!
 used=$(nvidia-smi --id=0 --query-gpu=memory.used --format=csv,noheader,nounits)
 (( used < 100 )) || { echo 'GPU0 is busy'; exit 2; }
 "$PYTHON_BIN" scripts/pwm/prepared_clip_video.py "$RUN/taco_hands.npz" "$RUN/prepared.mp4"

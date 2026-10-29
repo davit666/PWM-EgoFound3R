@@ -6,6 +6,7 @@ BASE=/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/training_smoke_taco_202
 RUN=/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/training_zero2_smoke_20261029
 RESULT=docs/results/training_zero2_smoke_20261029
 mkdir -p "$RUN" "$RESULT"
+exec 3>&1 4>&2
 export CUDA_VISIBLE_DEVICES=0,1
 export PYTHONPATH="$PWD/outputs/training-deps:$PWD${PYTHONPATH:+:$PYTHONPATH}"
 export DS_BUILD_OPS=0
@@ -13,6 +14,8 @@ export OMP_NUM_THREADS=4
 publish() {
   code=$?
   trap - EXIT
+  exec 1>&3 2>&4
+  [[ -z "${LOG_TEE_PID:-}" ]] || wait "$LOG_TEE_PID"
   printf '{"exit_code":%s}\n' "$code" > "$RESULT/status.json"
   for file in rank0.jsonl rank1.jsonl deepspeed_config.json status.json; do
     [[ ! -f "$RUN/run/$file" ]] || cp "$RUN/run/$file" "$RESULT/training_$file"
@@ -27,6 +30,7 @@ publish() {
 }
 trap publish EXIT
 exec > >(tee "$RESULT/run.log") 2>&1
+LOG_TEE_PID=$!
 for gpu in 0 1; do
   used=$(nvidia-smi --id="$gpu" --query-gpu=memory.used --format=csv,noheader,nounits)
   (( used < 100 )) || { echo "GPU${gpu} is busy"; exit 2; }
