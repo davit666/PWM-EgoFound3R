@@ -6,6 +6,7 @@ different supervision keys; 8 accumulated clips x 8 GPUs gives effective64.
 """
 import argparse
 from dataclasses import asdict
+from datetime import timedelta
 import hashlib
 import json
 import os
@@ -78,7 +79,7 @@ def main():
     install_scalar_broadcast_compat()
     local_rank=int(os.environ['LOCAL_RANK'])
     torch.cuda.set_device(local_rank)
-    dist.init_process_group('nccl')
+    dist.init_process_group('nccl',timeout=timedelta(seconds=int(os.environ.get('PWM_DISTRIBUTED_TIMEOUT_SECONDS','600'))))
     rank,world=dist.get_rank(),dist.get_world_size()
     recipe=json.loads(args.recipe.read_text())
     if not recipe.get('assumptions_acknowledged') or recipe['precision']!='bfloat16':
@@ -103,7 +104,9 @@ def main():
     optimizer=torch.optim.AdamW([p for p in model.parameters() if p.requires_grad],lr=recipe['lr'],
         betas=(.9,.999),eps=1e-8,weight_decay=recipe['weight_decay'])
     settings=zero_config(recipe,world)
+    print(json.dumps({'rank':rank,'phase':'engine_initializing'}),flush=True)
     engine,_,_,_=deepspeed.initialize(model=model,optimizer=optimizer,config=settings,dist_init_required=False)
+    print(json.dumps({'rank':rank,'phase':'engine_ready'}),flush=True)
     args.output.mkdir(parents=True,exist_ok=True)
     checkpoint_dir=args.output/'sharded'
     start=0
@@ -141,11 +144,14 @@ def main():
             mapping=build_multirate_frame_map(high_frame_present=present,high_temporal_pair_valid=present[:,:-1],
                 global_stride=stride,global_anchor_phase=min(2,stride-1))
             # The engine owns autocast; geometry modules explicitly retain fp32.
+            print(json.dumps({'rank':rank,'step':step+1,'phase':'forward','source':sources[-1]}),flush=True)
             output=native_training_outputs(engine(images,multirate_frame_map=mapping))
             total,terms=objective(output,gather_scene_targets(targets,mapping),recipe['loss_weights'],
                 confidence_alpha=recipe['confidence_alpha'],heatmap_positive_weight=recipe.get('heatmap_positive_weight',1.))
             # DeepSpeed alone scales accumulated losses and clips/reduces gradients.
+            print(json.dumps({'rank':rank,'step':step+1,'phase':'backward'}),flush=True)
             engine.backward(total)
+            print(json.dumps({'rank':rank,'step':step+1,'phase':'optimizer_step'}),flush=True)
             engine.step()
             reports.append({k:float(v.detach()) for k,v in terms.items()})
         if engine.global_steps!=step+1:

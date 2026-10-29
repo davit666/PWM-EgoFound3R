@@ -11,7 +11,7 @@ publish() {
   code=$?
   trap - EXIT
   exec 1>&3 2>&4
-  [[ -z "${LOG_TEE_PID:-}" ]] || wait "$LOG_TEE_PID"
+  [[ -z "${LOG_TEE_PID:-}" ]] || wait "$LOG_TEE_PID" || true
   printf '{"exit_code":%s}\n' "$code" > "$RESULT/status.json"
   for file in summary.json overlay.mp4; do
     [[ ! -f "$RUN/inference/$file" ]] || cp "$RUN/inference/$file" "$RESULT/"
