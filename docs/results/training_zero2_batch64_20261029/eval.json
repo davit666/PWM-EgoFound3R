@@ -1,0 +1,182 @@
+{
+  "loaded_state_keys": 636,
+  "split": "train",
+  "windows": [
+    {
+      "identity": {
+        "dataset": "TACO",
+        "source_episode_id": "(dust, roller, pan)/20230927_032",
+        "split": "train",
+        "path": "/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/training_smoke_taco_20261029/taco_hands.npz",
+        "sha256": "5de662949f64660469b4062743a25f2707e5a0a464df0515bc7857fc3ee5579f",
+        "adapter": "taco_v1_hand_contact_v1",
+        "source_frames": [
+          30,
+          31,
+          32
+        ]
+      },
+      "metrics": {
+        "loss": 10.730217933654785,
+        "loss/joint_offset": 0.5067322850227356,
+        "loss/joint_contact": 0.2379058450460434,
+        "loss/joint_distance": 0.14652521908283234,
+        "loss/vertex_offset": 0.5979434847831726,
+        "loss/vertex_contact": 0.39704132080078125,
+        "loss/vertex_distance": 0.26584360003471375,
+        "loss/heatmap": 0.07220204174518585,
+        "loss/offset2d": 0.08037670701742172,
+        "loss/reprojection": 8.425647735595703,
+        "joint_contact/precision": 0.8088235294117647,
+        "joint_contact/recall": 0.9322033898305084,
+        "joint_contact/f1": 0.8661417322834646,
+        "joint/distance_mae_mm/all": 6.831789493560791,
+        "joint/distance_mae_mm/pred_contact": 5.2236151695251465,
+        "joint/distance_mae_mm/gt_contact": 4.013422966003418,
+        "vertex_contact/precision": 0.5443864229765013,
+        "vertex_contact/recall": 0.9928571428571429,
+        "vertex_contact/f1": 0.7032040472175379,
+        "vertex/distance_mae_mm/all": 12.60103988647461,
+        "vertex/distance_mae_mm/pred_contact": 7.72111177444458,
+        "vertex/distance_mae_mm/gt_contact": 4.233737468719482
+      }
+    },
+    {
+      "identity": {
+        "dataset": "STERA-10M",
+        "source_episode_id": "session_data_20260330_014905",
+        "split": "train",
+        "path": "/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/training_smoke_20261029/stera_scene.npz",
+        "sha256": "7959fceb5a95caef2b1f79415743a3266e78689069ef4b5b7d13d64842c316cf",
+        "adapter": "stera_scene_v1",
+        "source_frames": [
+          31,
+          32,
+          33
+        ],
+        "scope": "real scene labels; smoke only; no hand/contact labels",
+        "source": "/share-mixed/projset/eai_pwm/datasets/Stera-10M/session_data_20260330_014905",
+        "image_undistorted": true
+      },
+      "metrics": {
+        "loss": 6.19143533706665,
+        "loss/scene_K": 6.116708755493164,
+        "loss/scene_depth": 0.056523311883211136,
+        "loss/scene_translation": 0.002638372592628002,
+        "loss/scene_rotation": 3.867042323690839e-06,
+        "loss/scene_metric": 0.01556087564677
+      }
+    }
+  ],
+  "macro": {
+    "joint/distance_mae_mm/all": {
+      "mean": 6.831789493560791,
+      "windows": 1
+    },
+    "joint/distance_mae_mm/gt_contact": {
+      "mean": 4.013422966003418,
+      "windows": 1
+    },
+    "joint/distance_mae_mm/pred_contact": {
+      "mean": 5.2236151695251465,
+      "windows": 1
+    },
+    "joint_contact/f1": {
+      "mean": 0.8661417322834646,
+      "windows": 1
+    },
+    "joint_contact/precision": {
+      "mean": 0.8088235294117647,
+      "windows": 1
+    },
+    "joint_contact/recall": {
+      "mean": 0.9322033898305084,
+      "windows": 1
+    },
+    "loss": {
+      "mean": 8.460826635360718,
+      "windows": 2
+    },
+    "loss/heatmap": {
+      "mean": 0.07220204174518585,
+      "windows": 1
+    },
+    "loss/joint_contact": {
+      "mean": 0.2379058450460434,
+      "windows": 1
+    },
+    "loss/joint_distance": {
+      "mean": 0.14652521908283234,
+      "windows": 1
+    },
+    "loss/joint_offset": {
+      "mean": 0.5067322850227356,
+      "windows": 1
+    },
+    "loss/offset2d": {
+      "mean": 0.08037670701742172,
+      "windows": 1
+    },
+    "loss/reprojection": {
+      "mean": 8.425647735595703,
+      "windows": 1
+    },
+    "loss/scene_K": {
+      "mean": 6.116708755493164,
+      "windows": 1
+    },
+    "loss/scene_depth": {
+      "mean": 0.056523311883211136,
+      "windows": 1
+    },
+    "loss/scene_metric": {
+      "mean": 0.01556087564677,
+      "windows": 1
+    },
+    "loss/scene_rotation": {
+      "mean": 3.867042323690839e-06,
+      "windows": 1
+    },
+    "loss/scene_translation": {
+      "mean": 0.002638372592628002,
+      "windows": 1
+    },
+    "loss/vertex_contact": {
+      "mean": 0.39704132080078125,
+      "windows": 1
+    },
+    "loss/vertex_distance": {
+      "mean": 0.26584360003471375,
+      "windows": 1
+    },
+    "loss/vertex_offset": {
+      "mean": 0.5979434847831726,
+      "windows": 1
+    },
+    "vertex/distance_mae_mm/all": {
+      "mean": 12.60103988647461,
+      "windows": 1
+    },
+    "vertex/distance_mae_mm/gt_contact": {
+      "mean": 4.233737468719482,
+      "windows": 1
+    },
+    "vertex/distance_mae_mm/pred_contact": {
+      "mean": 7.72111177444458,
+      "windows": 1
+    },
+    "vertex_contact/f1": {
+      "mean": 0.7032040472175379,
+      "windows": 1
+    },
+    "vertex_contact/precision": {
+      "mean": 0.5443864229765013,
+      "windows": 1
+    },
+    "vertex_contact/recall": {
+      "mean": 0.9928571428571429,
+      "windows": 1
+    }
+  },
+  "protocol": "prepared-native-H-validation; not paper benchmark"
+}
