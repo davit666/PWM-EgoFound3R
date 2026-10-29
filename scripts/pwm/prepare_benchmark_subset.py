@@ -11,6 +11,9 @@ from pathlib import Path
 import subprocess
 import sys
 import zipfile
+import os
+import threading
+from concurrent.futures import ThreadPoolExecutor
 import numpy as np
 
 
@@ -38,6 +41,7 @@ def main():
     parser.add_argument('--frames',type=int,default=60)
     parser.add_argument('--taco-train-sequences',type=int,default=16)
     parser.add_argument('--taco-val-sequences',type=int,default=4)
+    parser.add_argument('--taco-workers',type=int,default=1)
     parser.add_argument('--datasets',nargs='+',choices=['TACO','STERA-10M'],default=['TACO','STERA-10M'])
     args=parser.parse_args()
     args.output.mkdir(parents=True,exist_ok=True)
@@ -60,36 +64,59 @@ def main():
     if 'TACO' in args.datasets:
         with zipfile.ZipFile(args.taco_root/'Egocentric_RGB_Videos.zip') as archive:
             available={x.filename:x.file_size for x in archive.infolist()}
-    def execute(command,directory):
+    attempt_lock=threading.Lock()
+    def execute(command,directory,gpu=None):
         directory.mkdir(parents=True,exist_ok=True)
-        with (directory/'adapter.log').open('w') as log:
-            result=subprocess.run(command,stdout=log,stderr=subprocess.STDOUT)
-        attempts.append({'command':list(map(str,command)),'returncode':result.returncode,'log':str(directory/'adapter.log')})
-        (args.output/'attempts.json').write_text(json.dumps(attempts,indent=2))
-        return result.returncode==0
+        reused=False
+        if (directory/'index.jsonl').is_file() and (directory/'preparation.json').is_file():
+            row=json.loads((directory/'index.jsonl').read_text())
+            wanted=int(command[command.index('--frames')+1])
+            start=int(command[command.index('--start')+1])
+            path=directory/row['path']
+            reused=(row['source_frames']==list(range(start,start+wanted)) and path.is_file()
+                and hashlib.sha256(path.read_bytes()).hexdigest()==row['sha256'])
+        code=0
+        if not reused:
+            env=os.environ.copy()
+            if gpu is not None: env['CUDA_VISIBLE_DEVICES']=str(gpu)
+            with (directory/'adapter.log').open('w') as log:
+                code=subprocess.run(command,stdout=log,stderr=subprocess.STDOUT,env=env).returncode
+        with attempt_lock:
+            attempts.append({'command':list(map(str,command)),'returncode':code,'reused':reused,'log':str(directory/'adapter.log')})
+            temporary=args.output/'attempts.tmp'
+            temporary.write_text(json.dumps(attempts,indent=2))
+            temporary.replace(args.output/'attempts.json')
+        return code==0
     for split,needed in [('train',args.taco_train_sequences),('val',args.taco_val_sequences)]:
         if 'TACO' not in args.datasets: break
-        count=0; tried=0
+        count=0; jobs=[]
         for triplet,sequence in candidates:
             native=split_map[sequence]
             if (split=='train')!=(native=='train'): continue
             member=f'Egocentric_RGB_Videos/{triplet}/{sequence}/color.mp4'
             if member not in available or available[member]>256*1024*1024: continue
-            tried+=1
-            if tried>needed*3: break
+            if len(jobs)>=needed*3: break
             directory=args.output/f'taco_{split}_{sequence}'
             length=args.frames*(2 if split=='train' else 1)
             command=[sys.executable,str(script/'prepare_taco_hands.py'),'--root',str(args.taco_root),
                 '--taco-code',str(args.taco_code),'--mano-root',str(args.mano_root),'--output',str(directory),
                 '--triplet',triplet,'--sequence',sequence,'--start','30','--frames',str(length),'--split',split]
-            if not execute(command,directory):
-                print(json.dumps({'skipped':sequence,'log':str(directory/'adapter.log')}),flush=True)
-                continue
-            child=split_prepared(directory,directory,args.frames)
-            for row in child: row['dataset_native_split']=native
-            rows.extend(child);count+=1
-            print(json.dumps({'dataset':'TACO','split':split,'prepared_sequences':count,'clips':len(rows)}),flush=True)
-            if count==needed: break
+            jobs.append((sequence,native,directory,command))
+        if not 1<=args.taco_workers<=8: raise ValueError('one to eight TACO workers supported')
+        with ThreadPoolExecutor(max_workers=args.taco_workers) as pool:
+            for offset in range(0,len(jobs),args.taco_workers):
+                batch=jobs[offset:offset+args.taco_workers]
+                futures=[pool.submit(execute,command,directory,gpu) for gpu,(_,_,directory,command) in enumerate(batch)]
+                for (sequence,native,directory,_),future in zip(batch,futures):
+                    if not future.result():
+                        print(json.dumps({'skipped':sequence,'log':str(directory/'adapter.log')}),flush=True)
+                        continue
+                    if count>=needed: continue
+                    child=split_prepared(directory,directory,args.frames)
+                    for row in child: row['dataset_native_split']=native
+                    rows.extend(child);count+=1
+                    print(json.dumps({'dataset':'TACO','split':split,'prepared_sequences':count,'clips':len(rows)}),flush=True)
+                if count==needed: break
         if count!=needed: raise RuntimeError(f'not enough valid TACO {split} sequences: {count}/{needed}')
     sessions=[p for p in sorted(args.stera_root.glob('session*')) if (p/'rgb.mp4').is_file() and (p/'annotation.hdf5').is_file()]
     used=set()
