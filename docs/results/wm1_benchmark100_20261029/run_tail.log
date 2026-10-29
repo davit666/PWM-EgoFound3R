@@ -40,3 +40,21 @@ To https://github.com/davit666/PWM-EgoFound3R.git
 {"dataset": "TACO", "split": "train", "prepared_sequences": 4, "clips": 8}
 {"skipped": "20231005_033", "log": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_train_20231005_033/adapter.log"}
 {"skipped": "20231103_189", "log": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_train_20231103_189/adapter.log"}
+[pwm/training-reconstruction b8626c4] results: wm1 benchmark prepare-taco-starting at step 0
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+To https://github.com/davit666/PWM-EgoFound3R.git
+   2893e0c..b8626c4  HEAD -> pwm/wm1-benchmark100
+{"dataset": "TACO", "split": "train", "prepared_sequences": 1, "clips": 2}
+{"skipped": "20230930_044", "log": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_train_20230930_044/adapter.log"}
+{"dataset": "TACO", "split": "train", "prepared_sequences": 2, "clips": 4}
+{"skipped": "20230930_054", "log": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_train_20230930_054/adapter.log"}
+{"skipped": "20231019_221", "log": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_train_20231019_221/adapter.log"}
+{"dataset": "TACO", "split": "train", "prepared_sequences": 3, "clips": 6}
+{"dataset": "TACO", "split": "train", "prepared_sequences": 4, "clips": 8}
+{"skipped": "20231005_033", "log": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_train_20231005_033/adapter.log"}
+{"skipped": "20231103_189", "log": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_train_20231103_189/adapter.log"}
+{"dataset": "TACO", "split": "train", "prepared_sequences": 5, "clips": 10}
+{"skipped": "20231104_018", "log": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_train_20231104_018/adapter.log"}
+{"skipped": "20231103_124", "log": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_train_20231103_124/adapter.log"}
+{"dataset": "TACO", "split": "train", "prepared_sequences": 6, "clips": 12}
+{"skipped": "20230930_124", "log": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_train_20230930_124/adapter.log"}
