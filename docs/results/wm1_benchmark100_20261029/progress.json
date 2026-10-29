@@ -1,9 +1,9 @@
 {
-  "phase": "prepare-stera",
+  "phase": "prepare-stera-completed",
   "step": 0,
   "target_steps": 100,
   "world_size": 8,
   "effective_batch_size": 64,
-  "stera_adapter_attempts": 22,
-  "stera_adapter_successes": 22
+  "stera_adapter_attempts": 36,
+  "stera_adapter_successes": 36
 }

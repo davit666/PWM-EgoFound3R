@@ -22,3 +22,8 @@ To https://github.com/davit666/PWM-EgoFound3R.git
    cbdaacc..bdb4ea4  HEAD -> pwm/wm1-benchmark100
 {"dataset": "STERA-10M", "split": "train", "prepared_sessions": 1, "clips": 8}
 {"dataset": "STERA-10M", "split": "train", "prepared_sessions": 2, "clips": 16}
+{"dataset": "STERA-10M", "split": "train", "prepared_sessions": 3, "clips": 24}
+{"dataset": "STERA-10M", "split": "train", "prepared_sessions": 4, "clips": 32}
+{"dataset": "STERA-10M", "split": "val", "prepared_sessions": 1, "clips": 34}
+{"dataset": "STERA-10M", "split": "val", "prepared_sessions": 2, "clips": 36}
+{"rows": 36, "frames_per_clip": 60, "scope": "TACO/STERA pilot; not original seven-dataset training split", "native_taco_split": "train versus test_1/test_2", "stera_split": "our source-session holdout", "counts": {"TACO/train": 0, "TACO/val": 0, "STERA-10M/train": 32, "STERA-10M/val": 4}}

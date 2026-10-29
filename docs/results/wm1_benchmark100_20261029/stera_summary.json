@@ -1,0 +1,13 @@
+{
+  "rows": 36,
+  "frames_per_clip": 60,
+  "scope": "TACO/STERA pilot; not original seven-dataset training split",
+  "native_taco_split": "train versus test_1/test_2",
+  "stera_split": "our source-session holdout",
+  "counts": {
+    "TACO/train": 0,
+    "TACO/val": 0,
+    "STERA-10M/train": 32,
+    "STERA-10M/val": 4
+  }
+}
