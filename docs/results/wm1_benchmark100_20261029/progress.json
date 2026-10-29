@@ -1,11 +1,11 @@
 {
-  "phase": "prepare-taco",
+  "phase": "prepare-taco-completed",
   "step": 0,
   "target_steps": 100,
   "world_size": 8,
   "effective_batch_size": 64,
   "stera_adapter_attempts": 36,
   "stera_adapter_successes": 36,
-  "taco_adapter_attempts": 32,
-  "taco_adapter_successes": 21
+  "taco_adapter_attempts": 40,
+  "taco_adapter_successes": 29
 }
