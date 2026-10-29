@@ -1,0 +1,216 @@
+{
+  "host": "job-99427431-aec3-4e6c-8b61-d2f9205ff508-master-0",
+  "python": "/opt/venv/bin/python3",
+  "modules": {
+    "torch": {
+      "origin": "/usr/local/lib/python3.12/dist-packages/torch/__init__.py",
+      "version": "2.12.0a0+0291f960b6.nv26.4.48445190"
+    },
+    "torchvision": {
+      "origin": "/usr/local/lib/python3.12/dist-packages/torchvision/__init__.py",
+      "version": "0.26.0a0+48956e05.nv26.4.48445190"
+    },
+    "numpy": {
+      "origin": "/opt/venv/lib/python3.12/site-packages/numpy/__init__.py",
+      "version": "1.26.4"
+    },
+    "cv2": {
+      "origin": "/usr/local/lib/python3.12/dist-packages/cv2/__init__.py"
+    },
+    "scipy": {
+      "origin": "/opt/venv/lib/python3.12/site-packages/scipy/__init__.py",
+      "version": "1.16.3"
+    },
+    "einops": {
+      "origin": "/opt/venv/lib/python3.12/site-packages/einops/__init__.py",
+      "version": "0.8.1"
+    },
+    "safetensors": {
+      "origin": "/opt/venv/lib/python3.12/site-packages/safetensors/__init__.py",
+      "version": "0.8.0"
+    },
+    "huggingface_hub": {
+      "origin": "/opt/venv/lib/python3.12/site-packages/huggingface_hub/__init__.py",
+      "version": "1.9.2"
+    },
+    "h5py": {
+      "origin": null
+    },
+    "trimesh": {
+      "origin": null
+    },
+    "deepspeed": {
+      "origin": null
+    },
+    "chumpy": {
+      "origin": null
+    },
+    "boto3": {
+      "origin": "/opt/venv/lib/python3.12/site-packages/boto3/__init__.py",
+      "version": "1.43.8"
+    }
+  },
+  "tools": {
+    "python": "/opt/venv/bin/python",
+    "python3": "/opt/venv/bin/python3",
+    "uv": "/root/.local/bin/uv",
+    "git": "/usr/bin/git",
+    "ffmpeg": "/usr/bin/ffmpeg",
+    "ks3": null,
+    "rclone": null,
+    "nvidia-smi": "/usr/bin/nvidia-smi",
+    "tmux": "/usr/bin/tmux"
+  },
+  "paths": {
+    "/share/project/ks3util/ks3util-linux-amd64": {
+      "exists": false,
+      "directory": false
+    },
+    "/share/project/ks3util/ks3util-config": {
+      "exists": false,
+      "directory": false
+    },
+    "/share-mixed/project/ks3util/ks3util-linux-amd64": {
+      "exists": false,
+      "directory": false
+    },
+    "/share-mixed/project/ks3util/ks3util-config": {
+      "exists": false,
+      "directory": false
+    },
+    "/home/liwenhao666/.cache/huggingface/token": {
+      "exists": false,
+      "directory": false
+    },
+    "/root/.cache/huggingface/token": {
+      "exists": false,
+      "directory": false
+    },
+    "/share-mixed/projset/eai_pwm/datasets/TACO": {
+      "exists": false,
+      "directory": false
+    },
+    "/share-mixed/projset/eai_pwm/datasets/Stera-10M": {
+      "exists": true,
+      "directory": true
+    },
+    "/share-mixed/projset/eai_pwm/datasets/ARCTIC": {
+      "exists": false,
+      "directory": false
+    },
+    "/home/liwenhao666/.venv/bin/python": {
+      "exists": false,
+      "directory": false
+    }
+  },
+  "gpu": "0, NVIDIA H100 80GB HBM3, 81559 MiB, 0 MiB, 0 %\n1, NVIDIA H100 80GB HBM3, 81559 MiB, 0 MiB, 0 %\n2, NVIDIA H100 80GB HBM3, 81559 MiB, 0 MiB, 0 %\n3, NVIDIA H100 80GB HBM3, 81559 MiB, 0 MiB, 0 %\n4, NVIDIA H100 80GB HBM3, 81559 MiB, 0 MiB, 0 %\n5, NVIDIA H100 80GB HBM3, 81559 MiB, 0 MiB, 0 %\n6, NVIDIA H100 80GB HBM3, 81559 MiB, 0 MiB, 0 %\n7, NVIDIA H100 80GB HBM3, 81559 MiB, 0 MiB, 0 %\n",
+  "disk": "Filesystem                                                                               1B-blocks             Used        Available Use% Mounted on\nwww.nfs.com:/mnt/zhiyuan/airs/sharefs/a5833582-1c4a-49af-8d0b-be91b4088ca3/PUBLIC 5629499534213120 2908188228714496 2721311305498624  52% /share-mixed/projset\n",
+  "dataset_names": [
+    ".agibot_proxy21_multitest",
+    ".baai-download-watchdog.lock",
+    ".dependency-reflink-test-bsMfNJ",
+    ".ks3util_checkpoint",
+    "ACE-Data-0",
+    "AgiBotWorld2026",
+    "AssemblyHands",
+    "EPFL-Smart-Kitchen-30",
+    "Ego-1K",
+    "Ego-EXTRA",
+    "Ego-Exo4D",
+    "EgoBody3M",
+    "EgoDex",
+    "EgoEdit",
+    "EgoEv-Gesture",
+    "EgoLive",
+    "EgoPro",
+    "EgoStandard",
+    "Egocentric-10K-intrinsics",
+    "Egocentric-10K-unpacked",
+    "F-PHAB",
+    "FEEL",
+    "Galaxea-Open-World-Dataset_20260826_hf",
+    "Hoi",
+    "HoloAssist",
+    "IndEgo",
+    "Lightwheel-Purchased-0901_1",
+    "Nymeria",
+    "OpenAoE-2000h",
+    "OpenVidHD",
+    "PE-Video",
+    "PH2D",
+    "RealOmin-OpenData",
+    "RealOmin-OpenData.bf-download-skill-j16-p2.log",
+    "RoboDojo_20260914",
+    "RoboDojo_20260914.bf-download-skill-j16-p2.log",
+    "RoboMIND",
+    "RoboMIND2.0",
+    "RoboMIND2.0-Agilex",
+    "RoboMIND2.0-Agilex-mobile",
+    "RoboMIND2.0-Ark",
+    "RoboMIND2.0-Ark-mobile",
+    "RoboMIND2.0-Franka-Part-1",
+    "RoboMIND2.0-Franka-Part-2",
+    "RoboMIND2.0-Franka-Part-3",
+    "RoboMIND2.0-Franka-Part-4",
+    "RoboMIND2.0-Franka-Part-5",
+    "RoboMIND2.0-Franka-sim",
+    "RoboMIND2.0-Tianyi",
+    "RoboMIND2.0-Tianyi-mobile",
+    "RoboMIND2.0-Tienkung",
+    "RoboMIND2.0-Tienkung-sim",
+    "RoboMIND2.0-UR5",
+    "RoboMIND2.0-UR5-Dex",
+    "Sekai",
+    "Stera-10M",
+    "TARS-WIYH",
+    "TouchScale",
+    "UltraVideo",
+    "UltraVideo-Long",
+    "UmeTrack_data",
+    "_pilot_action_tactile_pretraining_20261027_omnisharing_sampledb",
+    "_pilot_action_tactile_processed_20261027_omnisharing_sampledb",
+    "_pilot_action_tactile_r3_20261027_omnisharing_sampledb",
+    "action_l1_l5_20261028_v1",
+    "action_policy_lwh_1021",
+    "action_policy_lwh_1021_pilot",
+    "action_policy_lwh_1021_pilot_v2",
+    "action_processed_r1",
+    "action_processed_r2",
+    "action_processed_r2_new",
+    "action_processed_r3",
+    "action_sft_v1",
+    "action_tactile_pretraining_20261026",
+    "action_tactile_pretraining_20261027_omnisharing_sampledb",
+    "action_tactile_processed_20261026",
+    "action_tactile_processed_20261027_omnisharing_sampledb",
+    "action_tactile_r3_20261027_omnisharing_sampledb",
+    "baai-download-watchdog.log",
+    "bench2dex_a100_sft_20261028",
+    "bench2dex_a100_sft_20261028_pilot_8ec7d45",
+    "cleanup-r2-retired-20261015.log",
+    "combine-r2-state-20261015.log",
+    "detach-r2-v1-20261015.log",
+    "finish-r2-v1-20261015.log",
+    "install-r2-state-v1-20261015.log",
+    "ks3util_output",
+    "logs",
+    "molmobot-data_20260914",
+    "molmobot-data_20260914.bf-download-skill-j16-p2.log",
+    "ours-ego-sampled",
+    "platform_274868095812632650",
+    "r2_representation_split_20261012.log",
+    "retire-r2-scaffolding-20261015.log",
+    "robocasa365",
+    "robocasa365.bf-download-skill-j16-p2.log",
+    "stereo-550",
+    "tactile",
+    "trex_dataset",
+    "xingchen_s1_data",
+    "xingchen_s1_data.download.log"
+  ],
+  "home_names": {
+    "/share-mixed/projset/eai_pwm/home": [
+      "liwenhao"
+    ]
+  }
+}
