@@ -38,6 +38,7 @@ def main():
     parser.add_argument('--frames',type=int,default=60)
     parser.add_argument('--taco-train-sequences',type=int,default=16)
     parser.add_argument('--taco-val-sequences',type=int,default=4)
+    parser.add_argument('--datasets',nargs='+',choices=['TACO','STERA-10M'],default=['TACO','STERA-10M'])
     args=parser.parse_args()
     args.output.mkdir(parents=True,exist_ok=True)
     script=Path(__file__).resolve().parent
@@ -55,8 +56,10 @@ def main():
     candidates=[(triplet,sequences[i]) for i in range(max(map(len,by_group.values())))
                 for triplet,sequences in sorted(by_group.items()) if i<len(sequences)]
     rows=[]; attempts=[]
-    with zipfile.ZipFile(args.taco_root/'Egocentric_RGB_Videos.zip') as archive:
-        available={x.filename:x.file_size for x in archive.infolist()}
+    available={}
+    if 'TACO' in args.datasets:
+        with zipfile.ZipFile(args.taco_root/'Egocentric_RGB_Videos.zip') as archive:
+            available={x.filename:x.file_size for x in archive.infolist()}
     def execute(command,directory):
         directory.mkdir(parents=True,exist_ok=True)
         with (directory/'adapter.log').open('w') as log:
@@ -65,6 +68,7 @@ def main():
         (args.output/'attempts.json').write_text(json.dumps(attempts,indent=2))
         return result.returncode==0
     for split,needed in [('train',args.taco_train_sequences),('val',args.taco_val_sequences)]:
+        if 'TACO' not in args.datasets: break
         count=0; tried=0
         for triplet,sequence in candidates:
             native=split_map[sequence]
@@ -90,6 +94,7 @@ def main():
     sessions=[p for p in sorted(args.stera_root.glob('session*')) if (p/'rgb.mp4').is_file() and (p/'annotation.hdf5').is_file()]
     used=set()
     for split,needed,clips_per_session in [('train',4,8),('val',2,2)]:
+        if 'STERA-10M' not in args.datasets: break
         count=0; tried=0
         for session in sessions:
             if session.name in used: continue

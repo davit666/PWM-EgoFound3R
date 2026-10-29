@@ -11,6 +11,6 @@ def client(config_path=Path('outputs/secrets/ks3util-config')):
     config=parser['Credentials']
     return boto3.client('s3',endpoint_url='https://'+config['endpoint'],
         aws_access_key_id=config['accessKeyID'],aws_secret_access_key=config['accessKeySecret'],
-        config=Config(signature_version='s3',s3={'addressing_style':'path'},
+        config=Config(signature_version='s3',s3={'addressing_style':'virtual'},
             proxies={'https':config['proxy'],'http':config['proxy']},
             connect_timeout=10,read_timeout=40,retries={'max_attempts':1}))
