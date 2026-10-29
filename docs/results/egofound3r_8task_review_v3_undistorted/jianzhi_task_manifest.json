@@ -1,0 +1,614 @@
+{
+  "schema_version": "pwm.task_montage.v1",
+  "dataset": "jianzhi",
+  "source_root": "/share-mixed/projset/eai_pwm/datasets/ours-ego-sampled/jianzhi-ego",
+  "candidate_count": 100,
+  "usable_candidate_count": 100,
+  "task_count": 8,
+  "topic": "/robot0/sensor/camera2/compressed",
+  "source_duration_spread_seconds": 0.36487879199999895,
+  "target_fps": 10,
+  "output_size_wh": [
+    960,
+    540
+  ],
+  "common_clip_duration_seconds": 8.0,
+  "montage_duration_seconds": 64.0,
+  "montage_path": "/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/8task_review_v3_undistorted_base/inputs/jianzhi/jianzhi_8tasks_source.mp4",
+  "undistortion_required": true,
+  "all_inputs_undistorted": true,
+  "tasks": [
+    {
+      "path": "/share-mixed/projset/eai_pwm/datasets/ours-ego-sampled/jianzhi-ego/f45d5b4312b94e9caf5b5fbee2e54339.mcap",
+      "duration_seconds": 34.092668088,
+      "start_time_ns": 1772559558372358912,
+      "end_time_ns": 1772559592465027000,
+      "size_bytes": 113348390,
+      "topic": "/robot0/sensor/camera2/compressed",
+      "clip_start_ns": 1772559571418692956,
+      "clip_end_ns": 1772559579418692956,
+      "clip_duration_seconds": 8.0,
+      "target_fps": 10,
+      "written_frames": 80,
+      "duplicated_tail_frames": 0,
+      "source_decoded_frames": 600,
+      "first_written_source_time_ns": 1772559571439568000,
+      "last_written_source_time_ns": 1772559579339899000,
+      "prepared_path": "/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/8task_review_v3_undistorted_base/inputs/jianzhi/clips/task_01.mp4",
+      "rectification": {
+        "output_is_undistorted": true,
+        "undistortion_applied": true,
+        "source_already_rectified": false,
+        "model": "double-sphere",
+        "method": "double-sphere destination-to-source projection (3DV 2018 eq. 40)",
+        "calibration_sha256": "1f61e182aa56edeb13aef42dfdd998b04a268100ac2e449d481205a49b44c7e8",
+        "source_size_wh": [
+          1600,
+          1300
+        ],
+        "source_k": [
+          [
+            507.87387315510574,
+            0.0,
+            796.7150518282281
+          ],
+          [
+            0.0,
+            509.4144511814894,
+            655.6687369325308
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "distortion_parameters_fx_fy_cx_cy_xi_alpha": [
+          507.87387315510574,
+          509.4144511814894,
+          796.7150518282281,
+          655.6687369325308,
+          -0.005512095399300616,
+          0.567063669804753
+        ],
+        "output_k": [
+          [
+            509.4144511814894,
+            0.0,
+            799.5
+          ],
+          [
+            0.0,
+            509.4144511814894,
+            649.5
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "valid_pixel_fraction": 1.0
+      },
+      "selection_index": 1
+    },
+    {
+      "path": "/share-mixed/projset/eai_pwm/datasets/ours-ego-sampled/jianzhi-ego/bec1781e94b449d4b0a4c36d7f6bc831.mcap",
+      "duration_seconds": 34.147366864,
+      "start_time_ns": 1772715223946011136,
+      "end_time_ns": 1772715258093378000,
+      "size_bytes": 108080598,
+      "topic": "/robot0/sensor/camera2/compressed",
+      "clip_start_ns": 1772715237019694568,
+      "clip_end_ns": 1772715245019694568,
+      "clip_duration_seconds": 8.0,
+      "target_fps": 10,
+      "written_frames": 80,
+      "duplicated_tail_frames": 0,
+      "source_decoded_frames": 601,
+      "first_written_source_time_ns": 1772715237046018000,
+      "last_written_source_time_ns": 1772715244946012000,
+      "prepared_path": "/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/8task_review_v3_undistorted_base/inputs/jianzhi/clips/task_02.mp4",
+      "rectification": {
+        "output_is_undistorted": true,
+        "undistortion_applied": true,
+        "source_already_rectified": false,
+        "model": "double-sphere",
+        "method": "double-sphere destination-to-source projection (3DV 2018 eq. 40)",
+        "calibration_sha256": "6b6aaf7c0de225224a6db432250b4b8a1f7b24a8ab59a2d06c61db0cf98c88dc",
+        "source_size_wh": [
+          1600,
+          1300
+        ],
+        "source_k": [
+          [
+            509.8881302922959,
+            0.0,
+            802.2054227191181
+          ],
+          [
+            0.0,
+            511.41326521034597,
+            653.5385533786593
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "distortion_parameters_fx_fy_cx_cy_xi_alpha": [
+          509.8881302922959,
+          511.41326521034597,
+          802.2054227191181,
+          653.5385533786593,
+          -0.005104142528829477,
+          0.5694538791458014
+        ],
+        "output_k": [
+          [
+            511.41326521034597,
+            0.0,
+            799.5
+          ],
+          [
+            0.0,
+            511.41326521034597,
+            649.5
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "valid_pixel_fraction": 1.0
+      },
+      "selection_index": 2
+    },
+    {
+      "path": "/share-mixed/projset/eai_pwm/datasets/ours-ego-sampled/jianzhi-ego/90ef1ace4b084db4a90e5d9fd4c7146b.mcap",
+      "duration_seconds": 34.257970112,
+      "start_time_ns": 1772640996905381888,
+      "end_time_ns": 1772641031163352000,
+      "size_bytes": 109435635,
+      "topic": "/robot0/sensor/camera2/compressed",
+      "clip_start_ns": 1772641010034366944,
+      "clip_end_ns": 1772641018034366944,
+      "clip_duration_seconds": 8.0,
+      "target_fps": 10,
+      "written_frames": 80,
+      "duplicated_tail_frames": 0,
+      "source_decoded_frames": 603,
+      "first_written_source_time_ns": 1772641010065469000,
+      "last_written_source_time_ns": 1772641017961521000,
+      "prepared_path": "/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/8task_review_v3_undistorted_base/inputs/jianzhi/clips/task_03.mp4",
+      "rectification": {
+        "output_is_undistorted": true,
+        "undistortion_applied": true,
+        "source_already_rectified": false,
+        "model": "double-sphere",
+        "method": "double-sphere destination-to-source projection (3DV 2018 eq. 40)",
+        "calibration_sha256": "e124c70642a4d680ec2ec5015ae52598bad75037d48f580bc1aefc0182bdfed1",
+        "source_size_wh": [
+          1600,
+          1300
+        ],
+        "source_k": [
+          [
+            522.7665163646144,
+            0.0,
+            802.4165273626087
+          ],
+          [
+            0.0,
+            524.5456258404975,
+            654.5985884311497
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "distortion_parameters_fx_fy_cx_cy_xi_alpha": [
+          522.7665163646144,
+          524.5456258404975,
+          802.4165273626087,
+          654.5985884311497,
+          -0.015330524432660595,
+          0.595947353663246
+        ],
+        "output_k": [
+          [
+            524.5456258404975,
+            0.0,
+            799.5
+          ],
+          [
+            0.0,
+            524.5456258404975,
+            649.5
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "valid_pixel_fraction": 1.0
+      },
+      "selection_index": 3
+    },
+    {
+      "path": "/share-mixed/projset/eai_pwm/datasets/ours-ego-sampled/jianzhi-ego/bf8997dd4f774288860b905c6fb867db.mcap",
+      "duration_seconds": 34.345420128,
+      "start_time_ns": 1772715362413007872,
+      "end_time_ns": 1772715396758428000,
+      "size_bytes": 109968319,
+      "topic": "/robot0/sensor/camera2/compressed",
+      "clip_start_ns": 1772715375585717936,
+      "clip_end_ns": 1772715383585717936,
+      "clip_duration_seconds": 8.0,
+      "target_fps": 10,
+      "written_frames": 80,
+      "duplicated_tail_frames": 0,
+      "source_decoded_frames": 604,
+      "first_written_source_time_ns": 1772715375612693000,
+      "last_written_source_time_ns": 1772715383512882000,
+      "prepared_path": "/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/8task_review_v3_undistorted_base/inputs/jianzhi/clips/task_04.mp4",
+      "rectification": {
+        "output_is_undistorted": true,
+        "undistortion_applied": true,
+        "source_already_rectified": false,
+        "model": "double-sphere",
+        "method": "double-sphere destination-to-source projection (3DV 2018 eq. 40)",
+        "calibration_sha256": "85d6f26fb2d435222bb82bce2e9026fcf2bcd95f331925731ddb33b8df5de625",
+        "source_size_wh": [
+          1600,
+          1300
+        ],
+        "source_k": [
+          [
+            509.8881302922959,
+            0.0,
+            802.2054227191181
+          ],
+          [
+            0.0,
+            511.41326521034597,
+            653.5385533786593
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "distortion_parameters_fx_fy_cx_cy_xi_alpha": [
+          509.8881302922959,
+          511.41326521034597,
+          802.2054227191181,
+          653.5385533786593,
+          -0.005104142528829477,
+          0.5694538791458014
+        ],
+        "output_k": [
+          [
+            511.41326521034597,
+            0.0,
+            799.5
+          ],
+          [
+            0.0,
+            511.41326521034597,
+            649.5
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "valid_pixel_fraction": 1.0
+      },
+      "selection_index": 4
+    },
+    {
+      "path": "/share-mixed/projset/eai_pwm/datasets/ours-ego-sampled/jianzhi-ego/719a3b83ee054195874284f09bf80a08.mcap",
+      "duration_seconds": 34.354660928,
+      "start_time_ns": 1772711004312611072,
+      "end_time_ns": 1772711038667272000,
+      "size_bytes": 113096891,
+      "topic": "/robot0/sensor/camera2/compressed",
+      "clip_start_ns": 1772711017489941536,
+      "clip_end_ns": 1772711025489941536,
+      "clip_duration_seconds": 8.0,
+      "target_fps": 10,
+      "written_frames": 80,
+      "duplicated_tail_frames": 0,
+      "source_decoded_frames": 633,
+      "first_written_source_time_ns": 1772711017513043000,
+      "last_written_source_time_ns": 1772711025413299000,
+      "prepared_path": "/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/8task_review_v3_undistorted_base/inputs/jianzhi/clips/task_05.mp4",
+      "rectification": {
+        "output_is_undistorted": true,
+        "undistortion_applied": true,
+        "source_already_rectified": false,
+        "model": "double-sphere",
+        "method": "double-sphere destination-to-source projection (3DV 2018 eq. 40)",
+        "calibration_sha256": "dd2b79e2d5f42f701d9ee67987f6779d359ca5585e4b058175b7c3e0c6727461",
+        "source_size_wh": [
+          1600,
+          1300
+        ],
+        "source_k": [
+          [
+            509.8881302922959,
+            0.0,
+            802.2054227191181
+          ],
+          [
+            0.0,
+            511.41326521034597,
+            653.5385533786593
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "distortion_parameters_fx_fy_cx_cy_xi_alpha": [
+          509.8881302922959,
+          511.41326521034597,
+          802.2054227191181,
+          653.5385533786593,
+          -0.005104142528829477,
+          0.5694538791458014
+        ],
+        "output_k": [
+          [
+            511.41326521034597,
+            0.0,
+            799.5
+          ],
+          [
+            0.0,
+            511.41326521034597,
+            649.5
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "valid_pixel_fraction": 1.0
+      },
+      "selection_index": 5
+    },
+    {
+      "path": "/share-mixed/projset/eai_pwm/datasets/ours-ego-sampled/jianzhi-ego/89e9f3d579594766942eb0ab70ee3f8f.mcap",
+      "duration_seconds": 34.379552048,
+      "start_time_ns": 1772712945270301952,
+      "end_time_ns": 1772712979649854000,
+      "size_bytes": 108939532,
+      "topic": "/robot0/sensor/camera2/compressed",
+      "clip_start_ns": 1772712958460077976,
+      "clip_end_ns": 1772712966460077976,
+      "clip_duration_seconds": 8.0,
+      "target_fps": 10,
+      "written_frames": 80,
+      "duplicated_tail_frames": 0,
+      "source_decoded_frames": 603,
+      "first_written_source_time_ns": 1772712958470680000,
+      "last_written_source_time_ns": 1772712966370909000,
+      "prepared_path": "/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/8task_review_v3_undistorted_base/inputs/jianzhi/clips/task_06.mp4",
+      "rectification": {
+        "output_is_undistorted": true,
+        "undistortion_applied": true,
+        "source_already_rectified": false,
+        "model": "double-sphere",
+        "method": "double-sphere destination-to-source projection (3DV 2018 eq. 40)",
+        "calibration_sha256": "6c2a5bc6775f91ed4b142c1eb68153c854f7ef6d66d61f4a21fbf13dae6b09d8",
+        "source_size_wh": [
+          1600,
+          1300
+        ],
+        "source_k": [
+          [
+            509.8881302922959,
+            0.0,
+            802.2054227191181
+          ],
+          [
+            0.0,
+            511.41326521034597,
+            653.5385533786593
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "distortion_parameters_fx_fy_cx_cy_xi_alpha": [
+          509.8881302922959,
+          511.41326521034597,
+          802.2054227191181,
+          653.5385533786593,
+          -0.005104142528829477,
+          0.5694538791458014
+        ],
+        "output_k": [
+          [
+            511.41326521034597,
+            0.0,
+            799.5
+          ],
+          [
+            0.0,
+            511.41326521034597,
+            649.5
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "valid_pixel_fraction": 1.0
+      },
+      "selection_index": 6
+    },
+    {
+      "path": "/share-mixed/projset/eai_pwm/datasets/ours-ego-sampled/jianzhi-ego/29eea29e1dba414195c80064962356c3.mcap",
+      "duration_seconds": 34.42694288,
+      "start_time_ns": 1772596239528997120,
+      "end_time_ns": 1772596273955940000,
+      "size_bytes": 108915171,
+      "topic": "/robot0/sensor/camera2/compressed",
+      "clip_start_ns": 1772596252742468560,
+      "clip_end_ns": 1772596260742468560,
+      "clip_duration_seconds": 8.0,
+      "target_fps": 10,
+      "written_frames": 80,
+      "duplicated_tail_frames": 0,
+      "source_decoded_frames": 605,
+      "first_written_source_time_ns": 1772596252763267000,
+      "last_written_source_time_ns": 1772596260662860000,
+      "prepared_path": "/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/8task_review_v3_undistorted_base/inputs/jianzhi/clips/task_07.mp4",
+      "rectification": {
+        "output_is_undistorted": true,
+        "undistortion_applied": true,
+        "source_already_rectified": false,
+        "model": "double-sphere",
+        "method": "double-sphere destination-to-source projection (3DV 2018 eq. 40)",
+        "calibration_sha256": "b577591738dc6f7c99b3c68d2ed6fdb6496d958461925edbac55f501da8487c2",
+        "source_size_wh": [
+          1600,
+          1300
+        ],
+        "source_k": [
+          [
+            509.8881302922959,
+            0.0,
+            802.2054227191181
+          ],
+          [
+            0.0,
+            511.41326521034597,
+            653.5385533786593
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "distortion_parameters_fx_fy_cx_cy_xi_alpha": [
+          509.8881302922959,
+          511.41326521034597,
+          802.2054227191181,
+          653.5385533786593,
+          -0.005104142528829477,
+          0.5694538791458014
+        ],
+        "output_k": [
+          [
+            511.41326521034597,
+            0.0,
+            799.5
+          ],
+          [
+            0.0,
+            511.41326521034597,
+            649.5
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "valid_pixel_fraction": 1.0
+      },
+      "selection_index": 7
+    },
+    {
+      "path": "/share-mixed/projset/eai_pwm/datasets/ours-ego-sampled/jianzhi-ego/8ee7f667e31247a890e7c064ceea2d55.mcap",
+      "duration_seconds": 34.45754688,
+      "start_time_ns": 1772612863510213120,
+      "end_time_ns": 1772612897967760000,
+      "size_bytes": 112821984,
+      "topic": "/robot0/sensor/camera2/compressed",
+      "clip_start_ns": 1772612876738986560,
+      "clip_end_ns": 1772612884738986560,
+      "clip_duration_seconds": 8.0,
+      "target_fps": 10,
+      "written_frames": 80,
+      "duplicated_tail_frames": 0,
+      "source_decoded_frames": 605,
+      "first_written_source_time_ns": 1772612876744414000,
+      "last_written_source_time_ns": 1772612884645698000,
+      "prepared_path": "/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/8task_review_v3_undistorted_base/inputs/jianzhi/clips/task_08.mp4",
+      "rectification": {
+        "output_is_undistorted": true,
+        "undistortion_applied": true,
+        "source_already_rectified": false,
+        "model": "double-sphere",
+        "method": "double-sphere destination-to-source projection (3DV 2018 eq. 40)",
+        "calibration_sha256": "2c4e5a064ca9958ef781b1b4da702de40c427b79dc71985ddf07de01307541dd",
+        "source_size_wh": [
+          1600,
+          1300
+        ],
+        "source_k": [
+          [
+            522.7665163646144,
+            0.0,
+            802.4165273626087
+          ],
+          [
+            0.0,
+            524.5456258404975,
+            654.5985884311497
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "distortion_parameters_fx_fy_cx_cy_xi_alpha": [
+          522.7665163646144,
+          524.5456258404975,
+          802.4165273626087,
+          654.5985884311497,
+          -0.015330524432660595,
+          0.595947353663246
+        ],
+        "output_k": [
+          [
+            524.5456258404975,
+            0.0,
+            799.5
+          ],
+          [
+            0.0,
+            524.5456258404975,
+            649.5
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "valid_pixel_fraction": 1.0
+      },
+      "selection_index": 8
+    }
+  ]
+}

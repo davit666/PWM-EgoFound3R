@@ -1,0 +1,532 @@
+{
+  "schema_version": "pwm.task_montage.v1",
+  "dataset": "stera",
+  "source_root": "/share-mixed/projset/eai_pwm/datasets/Stera-10M",
+  "candidate_count": 575,
+  "usable_candidate_count": 575,
+  "task_count": 8,
+  "target_fps": 10,
+  "output_size_wh": [
+    960,
+    540
+  ],
+  "common_clip_duration_seconds": 8.0,
+  "montage_duration_seconds": 64.0,
+  "montage_path": "/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/8task_review_v3_undistorted_base/inputs/stera/stera_8tasks_source.mp4",
+  "undistortion_required": true,
+  "all_inputs_undistorted": true,
+  "tasks": [
+    {
+      "path": "/share-mixed/projset/eai_pwm/datasets/Stera-10M/session_data_20260405_014739/rgb.mp4",
+      "label": "session_data_20260405_014739",
+      "group": "session_data_20260405_014739",
+      "duration_seconds": 729.066667,
+      "width": 1280,
+      "height": 720,
+      "source_fps": "15/1",
+      "selection_index": 1,
+      "clip_start_seconds": 360.5333335,
+      "clip_duration_seconds": 8.0,
+      "prepared_path": "/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/8task_review_v3_undistorted_base/inputs/stera/clips/task_01.mp4",
+      "written_frames": 80,
+      "duplicated_tail_frames": 0,
+      "rectification": {
+        "output_is_undistorted": true,
+        "model": "plumb_bob",
+        "calibration_path": "/share-mixed/projset/eai_pwm/datasets/Stera-10M/session_data_20260405_014739/calibrations",
+        "calibration_sha256": "6ccec8207a8513877a43b29ff36df3554269c85af4fbea6c1f02d368ead3c8cb",
+        "source_size_wh": [
+          1280,
+          720
+        ],
+        "source_k": [
+          [
+            849.8285522460938,
+            0.0,
+            638.0439453125
+          ],
+          [
+            0.0,
+            849.8285522460938,
+            362.3567810058594
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "distortion_coefficients": [],
+        "output_k": [
+          [
+            849.8285522460938,
+            0.0,
+            638.0439453125
+          ],
+          [
+            0.0,
+            849.8285522460938,
+            362.3567810058594
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "undistortion_applied": false,
+        "source_already_rectified": true,
+        "method": "identity (distributed RGB has no distortion coefficients)",
+        "valid_pixel_fraction": 1.0
+      }
+    },
+    {
+      "path": "/share-mixed/projset/eai_pwm/datasets/Stera-10M/session_data_20260412_111945/rgb.mp4",
+      "label": "session_data_20260412_111945",
+      "group": "session_data_20260412_111945",
+      "duration_seconds": 725.0,
+      "width": 1280,
+      "height": 720,
+      "source_fps": "15/1",
+      "selection_index": 2,
+      "clip_start_seconds": 358.5,
+      "clip_duration_seconds": 8.0,
+      "prepared_path": "/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/8task_review_v3_undistorted_base/inputs/stera/clips/task_02.mp4",
+      "written_frames": 80,
+      "duplicated_tail_frames": 0,
+      "rectification": {
+        "output_is_undistorted": true,
+        "model": "plumb_bob",
+        "calibration_path": "/share-mixed/projset/eai_pwm/datasets/Stera-10M/session_data_20260412_111945/calibrations",
+        "calibration_sha256": "22256d691f0248f8fd17c349e2fdcc788dbdf38e83cc01925acc6212640b6d21",
+        "source_size_wh": [
+          1280,
+          720
+        ],
+        "source_k": [
+          [
+            915.454345703125,
+            0.0,
+            639.4152221679688
+          ],
+          [
+            0.0,
+            915.454345703125,
+            361.4784240722656
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "distortion_coefficients": [],
+        "output_k": [
+          [
+            915.454345703125,
+            0.0,
+            639.4152221679688
+          ],
+          [
+            0.0,
+            915.454345703125,
+            361.4784240722656
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "undistortion_applied": false,
+        "source_already_rectified": true,
+        "method": "identity (distributed RGB has no distortion coefficients)",
+        "valid_pixel_fraction": 1.0
+      }
+    },
+    {
+      "path": "/share-mixed/projset/eai_pwm/datasets/Stera-10M/session_data_20260413_051653/rgb.mp4",
+      "label": "session_data_20260413_051653",
+      "group": "session_data_20260413_051653",
+      "duration_seconds": 723.6,
+      "width": 1280,
+      "height": 720,
+      "source_fps": "15/1",
+      "selection_index": 3,
+      "clip_start_seconds": 357.8,
+      "clip_duration_seconds": 8.0,
+      "prepared_path": "/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/8task_review_v3_undistorted_base/inputs/stera/clips/task_03.mp4",
+      "written_frames": 80,
+      "duplicated_tail_frames": 0,
+      "rectification": {
+        "output_is_undistorted": true,
+        "model": "plumb_bob",
+        "calibration_path": "/share-mixed/projset/eai_pwm/datasets/Stera-10M/session_data_20260413_051653/calibrations",
+        "calibration_sha256": "c13d6df0d552c897e42ff386bb1f8f32a86547a33fb1819332bb5c6e0017d9b0",
+        "source_size_wh": [
+          1280,
+          720
+        ],
+        "source_k": [
+          [
+            915.9168090820312,
+            0.0,
+            639.8651123046875
+          ],
+          [
+            0.0,
+            915.9168090820312,
+            360.66949462890625
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "distortion_coefficients": [],
+        "output_k": [
+          [
+            915.9168090820312,
+            0.0,
+            639.8651123046875
+          ],
+          [
+            0.0,
+            915.9168090820312,
+            360.66949462890625
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "undistortion_applied": false,
+        "source_already_rectified": true,
+        "method": "identity (distributed RGB has no distortion coefficients)",
+        "valid_pixel_fraction": 1.0
+      }
+    },
+    {
+      "path": "/share-mixed/projset/eai_pwm/datasets/Stera-10M/session_data_20260414_121353/rgb.mp4",
+      "label": "session_data_20260414_121353",
+      "group": "session_data_20260414_121353",
+      "duration_seconds": 725.4,
+      "width": 1280,
+      "height": 720,
+      "source_fps": "15/1",
+      "selection_index": 4,
+      "clip_start_seconds": 358.7,
+      "clip_duration_seconds": 8.0,
+      "prepared_path": "/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/8task_review_v3_undistorted_base/inputs/stera/clips/task_04.mp4",
+      "written_frames": 80,
+      "duplicated_tail_frames": 0,
+      "rectification": {
+        "output_is_undistorted": true,
+        "model": "plumb_bob",
+        "calibration_path": "/share-mixed/projset/eai_pwm/datasets/Stera-10M/session_data_20260414_121353/calibrations",
+        "calibration_sha256": "e79b473858e32d7d5cde0ba980ba358c03f35d0432385cc1859e1ea8d5306218",
+        "source_size_wh": [
+          1280,
+          720
+        ],
+        "source_k": [
+          [
+            915.5931396484375,
+            0.0,
+            639.13818359375
+          ],
+          [
+            0.0,
+            915.5931396484375,
+            361.7283935546875
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "distortion_coefficients": [],
+        "output_k": [
+          [
+            915.5931396484375,
+            0.0,
+            639.13818359375
+          ],
+          [
+            0.0,
+            915.5931396484375,
+            361.7283935546875
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "undistortion_applied": false,
+        "source_already_rectified": true,
+        "method": "identity (distributed RGB has no distortion coefficients)",
+        "valid_pixel_fraction": 1.0
+      }
+    },
+    {
+      "path": "/share-mixed/projset/eai_pwm/datasets/Stera-10M/session_data_20260419_093058/rgb.mp4",
+      "label": "session_data_20260419_093058",
+      "group": "session_data_20260419_093058",
+      "duration_seconds": 724.0,
+      "width": 1280,
+      "height": 720,
+      "source_fps": "15/1",
+      "selection_index": 5,
+      "clip_start_seconds": 358.0,
+      "clip_duration_seconds": 8.0,
+      "prepared_path": "/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/8task_review_v3_undistorted_base/inputs/stera/clips/task_05.mp4",
+      "written_frames": 80,
+      "duplicated_tail_frames": 0,
+      "rectification": {
+        "output_is_undistorted": true,
+        "model": "plumb_bob",
+        "calibration_path": "/share-mixed/projset/eai_pwm/datasets/Stera-10M/session_data_20260419_093058/calibrations",
+        "calibration_sha256": "ba2ca52867174f32ea00f99fa686657168ab2678fde6d1162fdb48e6a5555762",
+        "source_size_wh": [
+          1280,
+          720
+        ],
+        "source_k": [
+          [
+            915.5784912109375,
+            0.0,
+            639.28271484375
+          ],
+          [
+            0.0,
+            915.5784912109375,
+            361.2372741699219
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "distortion_coefficients": [],
+        "output_k": [
+          [
+            915.5784912109375,
+            0.0,
+            639.28271484375
+          ],
+          [
+            0.0,
+            915.5784912109375,
+            361.2372741699219
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "undistortion_applied": false,
+        "source_already_rectified": true,
+        "method": "identity (distributed RGB has no distortion coefficients)",
+        "valid_pixel_fraction": 1.0
+      }
+    },
+    {
+      "path": "/share-mixed/projset/eai_pwm/datasets/Stera-10M/session_data_20260423_152113/rgb.mp4",
+      "label": "session_data_20260423_152113",
+      "group": "session_data_20260423_152113",
+      "duration_seconds": 729.066667,
+      "width": 1280,
+      "height": 720,
+      "source_fps": "15/1",
+      "selection_index": 6,
+      "clip_start_seconds": 360.5333335,
+      "clip_duration_seconds": 8.0,
+      "prepared_path": "/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/8task_review_v3_undistorted_base/inputs/stera/clips/task_06.mp4",
+      "written_frames": 80,
+      "duplicated_tail_frames": 0,
+      "rectification": {
+        "output_is_undistorted": true,
+        "model": "plumb_bob",
+        "calibration_path": "/share-mixed/projset/eai_pwm/datasets/Stera-10M/session_data_20260423_152113/calibrations",
+        "calibration_sha256": "768b6a308a431de7c07c6a88b737d686e5b60151d90b6e1edc6278e3f6ebffd2",
+        "source_size_wh": [
+          1280,
+          720
+        ],
+        "source_k": [
+          [
+            915.8681030273438,
+            0.0,
+            640.379150390625
+          ],
+          [
+            0.0,
+            915.8681030273438,
+            361.0152282714844
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "distortion_coefficients": [],
+        "output_k": [
+          [
+            915.8681030273438,
+            0.0,
+            640.379150390625
+          ],
+          [
+            0.0,
+            915.8681030273438,
+            361.0152282714844
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "undistortion_applied": false,
+        "source_already_rectified": true,
+        "method": "identity (distributed RGB has no distortion coefficients)",
+        "valid_pixel_fraction": 1.0
+      }
+    },
+    {
+      "path": "/share-mixed/projset/eai_pwm/datasets/Stera-10M/session_data_20260427_070823/rgb.mp4",
+      "label": "session_data_20260427_070823",
+      "group": "session_data_20260427_070823",
+      "duration_seconds": 723.533333,
+      "width": 1280,
+      "height": 720,
+      "source_fps": "15/1",
+      "selection_index": 7,
+      "clip_start_seconds": 357.7666665,
+      "clip_duration_seconds": 8.0,
+      "prepared_path": "/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/8task_review_v3_undistorted_base/inputs/stera/clips/task_07.mp4",
+      "written_frames": 80,
+      "duplicated_tail_frames": 0,
+      "rectification": {
+        "output_is_undistorted": true,
+        "model": "plumb_bob",
+        "calibration_path": "/share-mixed/projset/eai_pwm/datasets/Stera-10M/session_data_20260427_070823/calibrations",
+        "calibration_sha256": "f75a3e99c158487c6c52402ebd8ed02e041a886a6dad7d06c241c6557e28d7b9",
+        "source_size_wh": [
+          1280,
+          720
+        ],
+        "source_k": [
+          [
+            849.5897216796875,
+            0.0,
+            638.1953125
+          ],
+          [
+            0.0,
+            849.5897216796875,
+            362.9905090332031
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "distortion_coefficients": [],
+        "output_k": [
+          [
+            849.5897216796875,
+            0.0,
+            638.1953125
+          ],
+          [
+            0.0,
+            849.5897216796875,
+            362.9905090332031
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "undistortion_applied": false,
+        "source_already_rectified": true,
+        "method": "identity (distributed RGB has no distortion coefficients)",
+        "valid_pixel_fraction": 1.0
+      }
+    },
+    {
+      "path": "/share-mixed/projset/eai_pwm/datasets/Stera-10M/session_data_20260511_184442/rgb.mp4",
+      "label": "session_data_20260511_184442",
+      "group": "session_data_20260511_184442",
+      "duration_seconds": 725.133333,
+      "width": 1280,
+      "height": 720,
+      "source_fps": "15/1",
+      "selection_index": 8,
+      "clip_start_seconds": 358.5666665,
+      "clip_duration_seconds": 8.0,
+      "prepared_path": "/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/8task_review_v3_undistorted_base/inputs/stera/clips/task_08.mp4",
+      "written_frames": 80,
+      "duplicated_tail_frames": 0,
+      "rectification": {
+        "output_is_undistorted": true,
+        "model": "plumb_bob",
+        "calibration_path": "/share-mixed/projset/eai_pwm/datasets/Stera-10M/session_data_20260511_184442/calibrations",
+        "calibration_sha256": "68eb683c50f44a74edc7c666164d5ce879fdce479636651eb97edcd9035f9389",
+        "source_size_wh": [
+          1280,
+          720
+        ],
+        "source_k": [
+          [
+            851.5302734375,
+            0.0,
+            638.3890380859375
+          ],
+          [
+            0.0,
+            851.5302734375,
+            361.9734802246094
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "distortion_coefficients": [],
+        "output_k": [
+          [
+            851.5302734375,
+            0.0,
+            638.3890380859375
+          ],
+          [
+            0.0,
+            851.5302734375,
+            361.9734802246094
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "undistortion_applied": false,
+        "source_already_rectified": true,
+        "method": "identity (distributed RGB has no distortion coefficients)",
+        "valid_pixel_fraction": 1.0
+      }
+    }
+  ]
+}

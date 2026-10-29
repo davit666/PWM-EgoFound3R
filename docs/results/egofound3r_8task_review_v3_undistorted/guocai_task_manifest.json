@@ -1,0 +1,612 @@
+{
+  "schema_version": "pwm.task_montage.v1",
+  "dataset": "guocai",
+  "source_root": "/share-mixed/projset/eai_pwm/datasets/ours-ego-sampled/guocai-ego",
+  "candidate_count": 294,
+  "usable_candidate_count": 294,
+  "task_count": 8,
+  "target_fps": 10,
+  "output_size_wh": [
+    960,
+    540
+  ],
+  "common_clip_duration_seconds": 8.0,
+  "montage_duration_seconds": 64.0,
+  "montage_path": "/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/8task_review_v3_undistorted_base/inputs/guocai/guocai_8tasks_source.mp4",
+  "undistortion_required": true,
+  "all_inputs_undistorted": true,
+  "tasks": [
+    {
+      "path": "/share-mixed/projset/eai_pwm/datasets/ours-ego-sampled/guocai-ego/3/cp_0003_session_20261008_152732/videos/left.mkv",
+      "label": "书桌_擦眼镜",
+      "group": "3",
+      "duration_seconds": 36.999999,
+      "width": 1920,
+      "height": 1200,
+      "source_fps": "30/1",
+      "selection_index": 1,
+      "clip_start_seconds": 14.499999500000001,
+      "clip_duration_seconds": 8.0,
+      "prepared_path": "/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/8task_review_v3_undistorted_base/inputs/guocai/clips/task_01.mp4",
+      "written_frames": 80,
+      "duplicated_tail_frames": 0,
+      "rectification": {
+        "output_is_undistorted": true,
+        "undistortion_applied": true,
+        "source_already_rectified": false,
+        "model": "pinhole-equidistant",
+        "method": "opencv.fisheye.initUndistortRectifyMap",
+        "calibration_path": "/share-mixed/projset/eai_pwm/datasets/ours-ego-sampled/guocai-ego/3/cp_0003_session_20261008_152732/calibrations/camera-camchain.yaml",
+        "calibration_sha256": "63bb7dc7007524af570671a79fec72a215d8344698e08bad9f3466b8002a689d",
+        "source_size_wh": [
+          1920,
+          1200
+        ],
+        "calibration_size_wh": [
+          1920,
+          1088
+        ],
+        "centered_vertical_extension_pixels": 112,
+        "source_k_adjusted": [
+          [
+            558.364034826727,
+            0.0,
+            959.4145632885588
+          ],
+          [
+            0.0,
+            562.8447306088242,
+            582.2164118067974
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "distortion_coefficients": [
+          0.05891255616112752,
+          0.12794564649392134,
+          -0.09771324505164986,
+          0.02665655281541378
+        ],
+        "output_k": [
+          [
+            562.8447306088242,
+            0.0,
+            959.5
+          ],
+          [
+            0.0,
+            562.8447306088242,
+            599.5
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "valid_pixel_fraction": 1.0
+      }
+    },
+    {
+      "path": "/share-mixed/projset/eai_pwm/datasets/ours-ego-sampled/guocai-ego/3/cp_0003_session_20261008_153715/videos/left.mkv",
+      "label": "书桌_擦眼镜",
+      "group": "3",
+      "duration_seconds": 37.833332,
+      "width": 1920,
+      "height": 1200,
+      "source_fps": "30/1",
+      "selection_index": 2,
+      "clip_start_seconds": 14.916666,
+      "clip_duration_seconds": 8.0,
+      "prepared_path": "/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/8task_review_v3_undistorted_base/inputs/guocai/clips/task_02.mp4",
+      "written_frames": 80,
+      "duplicated_tail_frames": 0,
+      "rectification": {
+        "output_is_undistorted": true,
+        "undistortion_applied": true,
+        "source_already_rectified": false,
+        "model": "pinhole-equidistant",
+        "method": "opencv.fisheye.initUndistortRectifyMap",
+        "calibration_path": "/share-mixed/projset/eai_pwm/datasets/ours-ego-sampled/guocai-ego/3/cp_0003_session_20261008_153715/calibrations/camera-camchain.yaml",
+        "calibration_sha256": "63bb7dc7007524af570671a79fec72a215d8344698e08bad9f3466b8002a689d",
+        "source_size_wh": [
+          1920,
+          1200
+        ],
+        "calibration_size_wh": [
+          1920,
+          1088
+        ],
+        "centered_vertical_extension_pixels": 112,
+        "source_k_adjusted": [
+          [
+            558.364034826727,
+            0.0,
+            959.4145632885588
+          ],
+          [
+            0.0,
+            562.8447306088242,
+            582.2164118067974
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "distortion_coefficients": [
+          0.05891255616112752,
+          0.12794564649392134,
+          -0.09771324505164986,
+          0.02665655281541378
+        ],
+        "output_k": [
+          [
+            562.8447306088242,
+            0.0,
+            959.5
+          ],
+          [
+            0.0,
+            562.8447306088242,
+            599.5
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "valid_pixel_fraction": 1.0
+      }
+    },
+    {
+      "path": "/share-mixed/projset/eai_pwm/datasets/ours-ego-sampled/guocai-ego/4/cp_0002_session_20261008_164654/videos/left.mkv",
+      "label": "厨房灶台_收纳砂纸",
+      "group": "4",
+      "duration_seconds": 27.266666,
+      "width": 1920,
+      "height": 1200,
+      "source_fps": "30/1",
+      "selection_index": 3,
+      "clip_start_seconds": 9.633333,
+      "clip_duration_seconds": 8.0,
+      "prepared_path": "/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/8task_review_v3_undistorted_base/inputs/guocai/clips/task_03.mp4",
+      "written_frames": 80,
+      "duplicated_tail_frames": 0,
+      "rectification": {
+        "output_is_undistorted": true,
+        "undistortion_applied": true,
+        "source_already_rectified": false,
+        "model": "pinhole-equidistant",
+        "method": "opencv.fisheye.initUndistortRectifyMap",
+        "calibration_path": "/share-mixed/projset/eai_pwm/datasets/ours-ego-sampled/guocai-ego/4/cp_0002_session_20261008_164654/calibrations/camera-camchain.yaml",
+        "calibration_sha256": "0b957276f4e7e9449866da7a07efb98421003e37508c44f5f62d58adb74fcf12",
+        "source_size_wh": [
+          1920,
+          1200
+        ],
+        "calibration_size_wh": [
+          1920,
+          1088
+        ],
+        "centered_vertical_extension_pixels": 112,
+        "source_k_adjusted": [
+          [
+            553.5007536024833,
+            0.0,
+            977.9847950419968
+          ],
+          [
+            0.0,
+            558.3869753112608,
+            601.3839543835901
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "distortion_coefficients": [
+          0.12419686371322872,
+          -0.0032997083369261148,
+          -0.0003040268490911274,
+          0.0030004592379663424
+        ],
+        "output_k": [
+          [
+            558.3869753112608,
+            0.0,
+            959.5
+          ],
+          [
+            0.0,
+            558.3869753112608,
+            599.5
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "valid_pixel_fraction": 1.0
+      }
+    },
+    {
+      "path": "/share-mixed/projset/eai_pwm/datasets/ours-ego-sampled/guocai-ego/4/cp_0002_session_20261008_164832/videos/left.mkv",
+      "label": "厨房灶台_收纳砂纸",
+      "group": "4",
+      "duration_seconds": 25.199999,
+      "width": 1920,
+      "height": 1200,
+      "source_fps": "30/1",
+      "selection_index": 4,
+      "clip_start_seconds": 8.5999995,
+      "clip_duration_seconds": 8.0,
+      "prepared_path": "/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/8task_review_v3_undistorted_base/inputs/guocai/clips/task_04.mp4",
+      "written_frames": 80,
+      "duplicated_tail_frames": 0,
+      "rectification": {
+        "output_is_undistorted": true,
+        "undistortion_applied": true,
+        "source_already_rectified": false,
+        "model": "pinhole-equidistant",
+        "method": "opencv.fisheye.initUndistortRectifyMap",
+        "calibration_path": "/share-mixed/projset/eai_pwm/datasets/ours-ego-sampled/guocai-ego/4/cp_0002_session_20261008_164832/calibrations/camera-camchain.yaml",
+        "calibration_sha256": "0b957276f4e7e9449866da7a07efb98421003e37508c44f5f62d58adb74fcf12",
+        "source_size_wh": [
+          1920,
+          1200
+        ],
+        "calibration_size_wh": [
+          1920,
+          1088
+        ],
+        "centered_vertical_extension_pixels": 112,
+        "source_k_adjusted": [
+          [
+            553.5007536024833,
+            0.0,
+            977.9847950419968
+          ],
+          [
+            0.0,
+            558.3869753112608,
+            601.3839543835901
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "distortion_coefficients": [
+          0.12419686371322872,
+          -0.0032997083369261148,
+          -0.0003040268490911274,
+          0.0030004592379663424
+        ],
+        "output_k": [
+          [
+            558.3869753112608,
+            0.0,
+            959.5
+          ],
+          [
+            0.0,
+            558.3869753112608,
+            599.5
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "valid_pixel_fraction": 1.0
+      }
+    },
+    {
+      "path": "/share-mixed/projset/eai_pwm/datasets/ours-ego-sampled/guocai-ego/5/cp_0003_session_20261008_111936/videos/left.mkv",
+      "label": "书桌_把笔归位放入笔筒",
+      "group": "5",
+      "duration_seconds": 27.166666,
+      "width": 1920,
+      "height": 1200,
+      "source_fps": "30/1",
+      "selection_index": 5,
+      "clip_start_seconds": 9.583333,
+      "clip_duration_seconds": 8.0,
+      "prepared_path": "/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/8task_review_v3_undistorted_base/inputs/guocai/clips/task_05.mp4",
+      "written_frames": 80,
+      "duplicated_tail_frames": 0,
+      "rectification": {
+        "output_is_undistorted": true,
+        "undistortion_applied": true,
+        "source_already_rectified": false,
+        "model": "pinhole-equidistant",
+        "method": "opencv.fisheye.initUndistortRectifyMap",
+        "calibration_path": "/share-mixed/projset/eai_pwm/datasets/ours-ego-sampled/guocai-ego/5/cp_0003_session_20261008_111936/calibrations/camera-camchain.yaml",
+        "calibration_sha256": "63bb7dc7007524af570671a79fec72a215d8344698e08bad9f3466b8002a689d",
+        "source_size_wh": [
+          1920,
+          1200
+        ],
+        "calibration_size_wh": [
+          1920,
+          1088
+        ],
+        "centered_vertical_extension_pixels": 112,
+        "source_k_adjusted": [
+          [
+            558.364034826727,
+            0.0,
+            959.4145632885588
+          ],
+          [
+            0.0,
+            562.8447306088242,
+            582.2164118067974
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "distortion_coefficients": [
+          0.05891255616112752,
+          0.12794564649392134,
+          -0.09771324505164986,
+          0.02665655281541378
+        ],
+        "output_k": [
+          [
+            562.8447306088242,
+            0.0,
+            959.5
+          ],
+          [
+            0.0,
+            562.8447306088242,
+            599.5
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "valid_pixel_fraction": 1.0
+      }
+    },
+    {
+      "path": "/share-mixed/projset/eai_pwm/datasets/ours-ego-sampled/guocai-ego/5/cp_0003_session_20261008_112641/videos/left.mkv",
+      "label": "书桌_把笔归位放入笔筒",
+      "group": "5",
+      "duration_seconds": 27.233333,
+      "width": 1920,
+      "height": 1200,
+      "source_fps": "30/1",
+      "selection_index": 6,
+      "clip_start_seconds": 9.6166665,
+      "clip_duration_seconds": 8.0,
+      "prepared_path": "/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/8task_review_v3_undistorted_base/inputs/guocai/clips/task_06.mp4",
+      "written_frames": 80,
+      "duplicated_tail_frames": 0,
+      "rectification": {
+        "output_is_undistorted": true,
+        "undistortion_applied": true,
+        "source_already_rectified": false,
+        "model": "pinhole-equidistant",
+        "method": "opencv.fisheye.initUndistortRectifyMap",
+        "calibration_path": "/share-mixed/projset/eai_pwm/datasets/ours-ego-sampled/guocai-ego/5/cp_0003_session_20261008_112641/calibrations/camera-camchain.yaml",
+        "calibration_sha256": "63bb7dc7007524af570671a79fec72a215d8344698e08bad9f3466b8002a689d",
+        "source_size_wh": [
+          1920,
+          1200
+        ],
+        "calibration_size_wh": [
+          1920,
+          1088
+        ],
+        "centered_vertical_extension_pixels": 112,
+        "source_k_adjusted": [
+          [
+            558.364034826727,
+            0.0,
+            959.4145632885588
+          ],
+          [
+            0.0,
+            562.8447306088242,
+            582.2164118067974
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "distortion_coefficients": [
+          0.05891255616112752,
+          0.12794564649392134,
+          -0.09771324505164986,
+          0.02665655281541378
+        ],
+        "output_k": [
+          [
+            562.8447306088242,
+            0.0,
+            959.5
+          ],
+          [
+            0.0,
+            562.8447306088242,
+            599.5
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "valid_pixel_fraction": 1.0
+      }
+    },
+    {
+      "path": "/share-mixed/projset/eai_pwm/datasets/ours-ego-sampled/guocai-ego/6/cp_0001_session_20261008_114127/videos/left.mkv",
+      "label": "厨房灶台_蒸馒头",
+      "group": "6",
+      "duration_seconds": 26.533333,
+      "width": 1920,
+      "height": 1200,
+      "source_fps": "30/1",
+      "selection_index": 7,
+      "clip_start_seconds": 9.2666665,
+      "clip_duration_seconds": 8.0,
+      "prepared_path": "/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/8task_review_v3_undistorted_base/inputs/guocai/clips/task_07.mp4",
+      "written_frames": 80,
+      "duplicated_tail_frames": 0,
+      "rectification": {
+        "output_is_undistorted": true,
+        "undistortion_applied": true,
+        "source_already_rectified": false,
+        "model": "pinhole-equidistant",
+        "method": "opencv.fisheye.initUndistortRectifyMap",
+        "calibration_path": "/share-mixed/projset/eai_pwm/datasets/ours-ego-sampled/guocai-ego/6/cp_0001_session_20261008_114127/calibrations/camera-camchain.yaml",
+        "calibration_sha256": "ae28d0d49e321304bc2be0f80ef08d3a2d60bbdcdaf77c94ae600c6354fe38d2",
+        "source_size_wh": [
+          1920,
+          1200
+        ],
+        "calibration_size_wh": [
+          1920,
+          1088
+        ],
+        "centered_vertical_extension_pixels": 112,
+        "source_k_adjusted": [
+          [
+            554.1671146301431,
+            0.0,
+            955.5837372906747
+          ],
+          [
+            0.0,
+            557.7326303943528,
+            624.832371593862
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "distortion_coefficients": [
+          0.12628966533604966,
+          -0.004410104542379777,
+          -0.001763259960161845,
+          0.0035951162463601794
+        ],
+        "output_k": [
+          [
+            557.7326303943528,
+            0.0,
+            959.5
+          ],
+          [
+            0.0,
+            557.7326303943528,
+            599.5
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "valid_pixel_fraction": 1.0
+      }
+    },
+    {
+      "path": "/share-mixed/projset/eai_pwm/datasets/ours-ego-sampled/guocai-ego/6/cp_0001_session_20261008_131731/videos/left.mkv",
+      "label": "厨房灶台_蒸馒头",
+      "group": "6",
+      "duration_seconds": 27.299999,
+      "width": 1920,
+      "height": 1200,
+      "source_fps": "30/1",
+      "selection_index": 8,
+      "clip_start_seconds": 9.6499995,
+      "clip_duration_seconds": 8.0,
+      "prepared_path": "/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/8task_review_v3_undistorted_base/inputs/guocai/clips/task_08.mp4",
+      "written_frames": 80,
+      "duplicated_tail_frames": 0,
+      "rectification": {
+        "output_is_undistorted": true,
+        "undistortion_applied": true,
+        "source_already_rectified": false,
+        "model": "pinhole-equidistant",
+        "method": "opencv.fisheye.initUndistortRectifyMap",
+        "calibration_path": "/share-mixed/projset/eai_pwm/datasets/ours-ego-sampled/guocai-ego/6/cp_0001_session_20261008_131731/calibrations/camera-camchain.yaml",
+        "calibration_sha256": "ae28d0d49e321304bc2be0f80ef08d3a2d60bbdcdaf77c94ae600c6354fe38d2",
+        "source_size_wh": [
+          1920,
+          1200
+        ],
+        "calibration_size_wh": [
+          1920,
+          1088
+        ],
+        "centered_vertical_extension_pixels": 112,
+        "source_k_adjusted": [
+          [
+            554.1671146301431,
+            0.0,
+            955.5837372906747
+          ],
+          [
+            0.0,
+            557.7326303943528,
+            624.832371593862
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "distortion_coefficients": [
+          0.12628966533604966,
+          -0.004410104542379777,
+          -0.001763259960161845,
+          0.0035951162463601794
+        ],
+        "output_k": [
+          [
+            557.7326303943528,
+            0.0,
+            959.5
+          ],
+          [
+            0.0,
+            557.7326303943528,
+            599.5
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "valid_pixel_fraction": 1.0
+      }
+    }
+  ]
+}
