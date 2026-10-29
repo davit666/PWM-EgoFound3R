@@ -4,7 +4,11 @@
   "train_batch_size": 2,
   "gradient_clipping": 1.0,
   "bf16": {
-    "enabled": true
+    "enabled": false
+  },
+  "torch_autocast": {
+    "enabled": true,
+    "dtype": "bfloat16"
   },
   "zero_optimization": {
     "stage": 2,

@@ -1,13 +1,13 @@
 Collecting deepspeed==0.19.8
   Downloading deepspeed-0.19.8.tar.gz (2.0 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 2.4 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 17.1 MB/s  0:00:00
   Preparing metadata (pyproject.toml): started
   Preparing metadata (pyproject.toml): finished with status 'done'
 Building wheels for collected packages: deepspeed
   Building wheel for deepspeed (pyproject.toml): started
   Building wheel for deepspeed (pyproject.toml): finished with status 'done'
-  Created wheel for deepspeed: filename=deepspeed-0.19.8-py3-none-any.whl size=2168952 sha256=65f16002a3911a9b169d0588a8f282d0d14aaeeac9dcec7881719d530724060f
-  Stored in directory: /tmp/pip-ephem-wheel-cache-66grpw66/wheels/bf/95/59/7ac51f546056b2b52e57b04a2aa2cb024e7035195906e45c4c
+  Created wheel for deepspeed: filename=deepspeed-0.19.8-py3-none-any.whl size=2168951 sha256=c38ef66c61bef0145e120197b839596f96a8e3974cae4d9fe22a515f3025ebb1
+  Stored in directory: /tmp/pip-ephem-wheel-cache-jm8r4qkp/wheels/bf/95/59/7ac51f546056b2b52e57b04a2aa2cb024e7035195906e45c4c
 Successfully built deepspeed
 Installing collected packages: deepspeed
 Successfully installed deepspeed-0.19.8
@@ -36,7 +36,7 @@ Collecting typing-inspection>=0.4.4 (from pydantic)
   Downloading typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)
 Downloading pydantic-2.14.1-py3-none-any.whl (488 kB)
 Downloading pydantic_core-2.50.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.2 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 28.2 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 32.0 MB/s  0:00:00
 Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
 Downloading ninja-1.13.2-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (183 kB)
 Downloading hjson-3.1.0-py3-none-any.whl (54 kB)
@@ -74,204 +74,13 @@ WARNING: Target directory /home-mixed/liwenhao666/wm/PWM-training-reconstruction
   self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
 /home-mixed/liwenhao666/wm/PWM-training-reconstruction/egohandmetric_prompt/models/temporal_hand_prompt_adapter.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
   self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
-[2026-10-29 17:57:40,699] [WARNING] [torch_autocast.py:122:autocast_if_enabled] torch.autocast is enabled outside DeepSpeed but disabled within the DeepSpeed engine. If you are using DeepSpeed's built-in mixed precision, the engine will follow the settings in bf16/fp16 section. To use torch's native autocast instead, configure the `torch_autocast` section in the DeepSpeed config.
-[rank0]: Traceback (most recent call last):
-[rank0]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/scripts/pwm/train_zero2.py", line 171, in <module>
-[rank0]:     main()
-[rank0]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/scripts/pwm/train_zero2.py", line 143, in main
-[rank0]:     output=native_training_outputs(engine(images,multirate_frame_map=mapping))
-[rank0]:                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
-[rank0]:     return self._call_impl(*args, **kwargs)
-[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
-[rank0]:     return forward_call(*args, **kwargs)
-[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank0]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/deepspeed/utils/nvtx.py", line 33, in wrapped_fn
-[rank0]:     ret_val = func(*args, **kwargs)
-[rank0]:               ^^^^^^^^^^^^^^^^^^^^^
-[rank0]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/deepspeed/runtime/engine.py", line 3007, in forward
-[rank0]:     loss = self.module(*inputs, **kwargs)
-[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
-[rank0]:     return self._call_impl(*args, **kwargs)
-[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1884, in _call_impl
-[rank0]:     return inner()
-[rank0]:            ^^^^^^^
-[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1832, in inner
-[rank0]:     result = forward_call(*args, **kwargs)
-[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank0]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/egohandmetric_prompt/models/marker_model.py", line 909, in forward
-[rank0]:     return self._forward_prompt_injected_multirate(
-[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank0]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/egohandmetric_prompt/models/marker_model.py", line 1127, in _forward_prompt_injected_multirate
-[rank0]:     dino_high = self.backbone.encode_dino_high_rate(images_high)
-[rank0]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank0]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/egohandmetric_prompt/models/vggt_omega_frozen_wrapper.py", line 279, in encode_dino_high_rate
-[rank0]:     _, dino_tokens, dino_feature_map = self._prepare_patch_tokens(images_high)
-[rank0]:                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank0]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/egohandmetric_prompt/models/vggt_omega_frozen_wrapper.py", line 203, in _prepare_patch_tokens
-[rank0]:     patch_tokens = self.aggregator.patch_embed(normalized.view(batch_size * num_frames, channels, height, width))
-[rank0]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
-[rank0]:     return self._call_impl(*args, **kwargs)
-[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
-[rank0]:     return forward_call(*args, **kwargs)
-[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank0]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/other/vggt-omega/vggt_omega/models/layers/vision_transformer.py", line 333, in forward
-[rank0]:     ret = self.forward_features(*args, **kwargs)
-[rank0]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank0]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/other/vggt-omega/vggt_omega/models/layers/vision_transformer.py", line 271, in forward_features
-[rank0]:     return self.forward_features_list([x], [masks])[0]
-[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank0]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/other/vggt-omega/vggt_omega/models/layers/vision_transformer.py", line 232, in forward_features_list
-[rank0]:     t2_x, hw_tuple = self.prepare_tokens_with_masks(t_x, t_masks)
-[rank0]:                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank0]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/other/vggt-omega/vggt_omega/models/layers/vision_transformer.py", line 197, in prepare_tokens_with_masks
-[rank0]:     x = self.patch_embed(x)
-[rank0]:         ^^^^^^^^^^^^^^^^^^^
-[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
-[rank0]:     return self._call_impl(*args, **kwargs)
-[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
-[rank0]:     return forward_call(*args, **kwargs)
-[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank0]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/other/vggt-omega/vggt_omega/models/layers/patch_embed.py", line 76, in forward
-[rank0]:     x = self.proj(x)  # B C H W
-[rank0]:         ^^^^^^^^^^^^
-[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
-[rank0]:     return self._call_impl(*args, **kwargs)
-[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
-[rank0]:     return forward_call(*args, **kwargs)
-[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/conv.py", line 553, in forward
-[rank0]:     return self._conv_forward(input, self.weight, self.bias)
-[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/conv.py", line 548, in _conv_forward
-[rank0]:     return F.conv2d(
-[rank0]:            ^^^^^^^^^
-[rank0]: RuntimeError: Input type (float) and bias type (c10::BFloat16) should be the same
-[rank1]: Traceback (most recent call last):
-[rank1]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/scripts/pwm/train_zero2.py", line 171, in <module>
-[rank1]:     main()
-[rank1]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/scripts/pwm/train_zero2.py", line 143, in main
-[rank1]:     output=native_training_outputs(engine(images,multirate_frame_map=mapping))
-[rank1]:                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank1]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
-[rank1]:     return self._call_impl(*args, **kwargs)
-[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank1]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
-[rank1]:     return forward_call(*args, **kwargs)
-[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank1]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/deepspeed/utils/nvtx.py", line 33, in wrapped_fn
-[rank1]:     ret_val = func(*args, **kwargs)
-[rank1]:               ^^^^^^^^^^^^^^^^^^^^^
-[rank1]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/deepspeed/runtime/engine.py", line 3007, in forward
-[rank1]:     loss = self.module(*inputs, **kwargs)
-[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank1]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
-[rank1]:     return self._call_impl(*args, **kwargs)
-[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank1]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1884, in _call_impl
-[rank1]:     return inner()
-[rank1]:            ^^^^^^^
-[rank1]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1832, in inner
-[rank1]:     result = forward_call(*args, **kwargs)
-[rank1]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank1]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/egohandmetric_prompt/models/marker_model.py", line 909, in forward
-[rank1]:     return self._forward_prompt_injected_multirate(
-[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank1]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/egohandmetric_prompt/models/marker_model.py", line 1127, in _forward_prompt_injected_multirate
-[rank1]:     dino_high = self.backbone.encode_dino_high_rate(images_high)
-[rank1]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank1]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/egohandmetric_prompt/models/vggt_omega_frozen_wrapper.py", line 279, in encode_dino_high_rate
-[rank1]:     _, dino_tokens, dino_feature_map = self._prepare_patch_tokens(images_high)
-[rank1]:                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank1]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/egohandmetric_prompt/models/vggt_omega_frozen_wrapper.py", line 203, in _prepare_patch_tokens
-[rank1]:     patch_tokens = self.aggregator.patch_embed(normalized.view(batch_size * num_frames, channels, height, width))
-[rank1]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank1]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
-[rank1]:     return self._call_impl(*args, **kwargs)
-[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank1]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
-[rank1]:     return forward_call(*args, **kwargs)
-[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank1]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/other/vggt-omega/vggt_omega/models/layers/vision_transformer.py", line 333, in forward
-[rank1]:     ret = self.forward_features(*args, **kwargs)
-[rank1]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank1]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/other/vggt-omega/vggt_omega/models/layers/vision_transformer.py", line 271, in forward_features
-[rank1]:     return self.forward_features_list([x], [masks])[0]
-[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank1]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/other/vggt-omega/vggt_omega/models/layers/vision_transformer.py", line 232, in forward_features_list
-[rank1]:     t2_x, hw_tuple = self.prepare_tokens_with_masks(t_x, t_masks)
-[rank1]:                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank1]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/other/vggt-omega/vggt_omega/models/layers/vision_transformer.py", line 197, in prepare_tokens_with_masks
-[rank1]:     x = self.patch_embed(x)
-[rank1]:         ^^^^^^^^^^^^^^^^^^^
-[rank1]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
-[rank1]:     return self._call_impl(*args, **kwargs)
-[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank1]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
-[rank1]:     return forward_call(*args, **kwargs)
-[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank1]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/other/vggt-omega/vggt_omega/models/layers/patch_embed.py", line 76, in forward
-[rank1]:     x = self.proj(x)  # B C H W
-[rank1]:         ^^^^^^^^^^^^
-[rank1]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
-[rank1]:     return self._call_impl(*args, **kwargs)
-[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank1]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
-[rank1]:     return forward_call(*args, **kwargs)
-[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank1]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/conv.py", line 553, in forward
-[rank1]:     return self._conv_forward(input, self.weight, self.bias)
-[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank1]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/conv.py", line 548, in _conv_forward
-[rank1]:     return F.conv2d(
-[rank1]:            ^^^^^^^^^
-[rank1]: RuntimeError: Input type (float) and bias type (c10::BFloat16) should be the same
-[rank0]:[W1029 17:57:41.192592864 ProcessGroupNCCL.cpp:1601] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
-W1029 17:57:42.154000 16573 torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 16582 closing signal SIGTERM
-E1029 17:57:42.319000 16573 torch/distributed/elastic/multiprocessing/api.py:988] failed (exitcode: 1) local_rank: 1 (pid: 16583) of binary: /home-mixed/liwenhao666/wm/PWM-EgoFound3R/.venv/bin/python
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/run.py", line 1020, in <module>
-    main()
-  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 367, in wrapper
-    return f(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/run.py", line 1016, in main
-    run(args)
-  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/run.py", line 1007, in run
-    elastic_launch(
-  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/launcher/api.py", line 184, in __call__
-    return launch_agent(self._config, self._entrypoint, list(args))
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/launcher/api.py", line 332, in launch_agent
-    raise ChildFailedError(
-torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
-============================================================
-scripts/pwm/train_zero2.py FAILED
-------------------------------------------------------------
-Failures:
-[1]:
-  time      : 2026-10-29_17:57:42
-  host      : job-18c466f4-db66-4b0d-bfb4-7c8531ce94f1-master-0
-  rank      : 0 (local_rank: 0)
-  exitcode  : 1 (pid: 16582) 
-  error_file: <N/A>
-  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
-------------------------------------------------------------
-Root Cause (first observed failure):
-[0]:
-  time      : 2026-10-29_17:57:42
-  host      : job-18c466f4-db66-4b0d-bfb4-7c8531ce94f1-master-0
-  rank      : 1 (local_rank: 1)
-  exitcode  : 1 (pid: 16583) 
-  error_file: <N/A>
-  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
-============================================================
+{"rank": 0, "phase": "engine_initializing"}
+{"rank": 1, "phase": "engine_initializing"}
+{"rank": 0, "phase": "engine_ready"}
+{"rank": 1, "phase": "engine_ready"}
+{"rank": 0, "step": 1, "phase": "forward", "source": "STERA-10M/session_data_20260330_014905"}
+{"rank": 1, "step": 1, "phase": "forward", "source": "TACO/(dust, roller, pan)/20230927_032"}
+{"rank": 0, "step": 1, "phase": "backward"}
+{"rank": 1, "step": 1, "phase": "backward"}
+{"rank": 0, "step": 1, "phase": "optimizer_step"}
+{"rank": 1, "step": 1, "phase": "optimizer_step"}
