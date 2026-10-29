@@ -51,6 +51,7 @@ def learning_rate(step, recipe):
 
 
 def save_checkpoint(path, model, optimizer, step, config, recipe, index_hash):
+    model_device = next(model.parameters()).device
     payload = {
         "checkpoint_schema_version": MARKER_CHECKPOINT_SCHEMA_VERSION,
         "checkpoint_namespace": MARKER_CHECKPOINT_NAMESPACE,
@@ -62,7 +63,8 @@ def save_checkpoint(path, model, optimizer, step, config, recipe, index_hash):
         "config": asdict(config), "rng_numpy": np.random.get_state(),
         "index_sha256": index_hash, "rng_python": random.getstate(),
         "rng_torch": torch.get_rng_state(),
-        "rng_cuda": torch.cuda.get_rng_state_all() if torch.cuda.is_available() else [],
+        "rng_cuda": [torch.cuda.get_rng_state(model_device)] if model_device.type == 'cuda' else [],
+        "rng_cuda_scope": "model_device",
     }
     temporary = path.with_suffix(".tmp")
     torch.save(payload, temporary)
@@ -139,7 +141,12 @@ def main():
         np.random.set_state(saved['rng_numpy'])
         torch.set_rng_state(saved["rng_torch"])
         if saved["rng_cuda"]:
-            torch.cuda.set_rng_state_all(saved["rng_cuda"])
+            if torch.device(args.device).type != 'cuda':
+                raise ValueError('CUDA training resume requires a CUDA device; use --initialize for device migration')
+            if saved.get('rng_cuda_scope') == 'model_device':
+                torch.cuda.set_rng_state(saved['rng_cuda'][0],args.device)
+            else:
+                torch.cuda.set_rng_state_all(saved["rng_cuda"])
     try:
         with (args.output / "metrics.jsonl").open("a") as log:
             end = min(recipe['steps'], args.stop_after or recipe['steps'])
