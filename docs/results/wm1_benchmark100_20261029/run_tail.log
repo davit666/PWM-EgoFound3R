@@ -1,57 +1,4 @@
-:56.311000 830361 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
-[rank3]:W1030 00:07:56.311000 830362 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
-{"rank": 6, "step": 100, "phase": "forward", "source": "TACO/(empty, plate, box)/20230927_050"}{"rank": 7, "step": 100, "phase": "forward", "source": "TACO/(empty, teapot, plate)/20231031_097"}
-
-{"rank": 4, "step": 100, "phase": "forward", "source": "TACO/(empty, teapot, cup)/20230927_040"}
-{"rank": 5, "step": 100, "phase": "forward", "source": "TACO/(empty, plate, teapot)/20230927_046"}
-{"rank": 0, "step": 100, "phase": "forward", "source": "TACO/(empty, teapot, cup)/20230927_040"}
-{"rank": 1, "step": 100, "phase": "forward", "source": "TACO/(dust, brush, kettle)/20231103_156"}
-{"rank": 3, "step": 100, "phase": "forward", "source": "TACO/(empty, teapot, plate)/20231031_097"}
-{"rank": 2, "step": 100, "phase": "forward", "source": "TACO/(dust, roller, pan)/20230927_032"}
-[rank6]:W1030 00:07:56.810000 830365 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 151 hash value: 7661788585133374117
-[rank4]:W1030 00:07:56.811000 830363 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 151 hash value: 7661788585133374117
-[rank7]:W1030 00:07:56.811000 830366 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 151 hash value: 7661788585133374117
-[rank0]:W1030 00:07:56.815000 830359 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 151 hash value: 7661788585133374117
-[rank5]:W1030 00:07:56.816000 830364 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 151 hash value: 7661788585133374117
-[rank2]:W1030 00:07:56.818000 830361 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 151 hash value: 7661788585133374117
-[rank1]:W1030 00:07:56.819000 830360 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 151 hash value: 7661788585133374117
-[rank3]:W1030 00:07:56.819000 830362 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 151 hash value: 7661788585133374117
-[rank2]:W1030 00:07:56.824000 830361 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
-[rank5]:W1030 00:07:56.824000 830364 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
-[rank6]:W1030 00:07:56.824000 830365 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
-[rank4]:W1030 00:07:56.824000 830363 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
-[rank3]:W1030 00:07:56.824000 830362 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
-[rank7]:W1030 00:07:56.824000 830366 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
-[rank1]:W1030 00:07:56.824000 830360 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
-[rank0]:W1030 00:07:56.824000 830359 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
-[rank2]:W1030 00:07:56.824000 830361 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
-[rank5]:W1030 00:07:56.824000 830364 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
-[rank6]:W1030 00:07:56.824000 830365 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
-[rank4]:W1030 00:07:56.824000 830363 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
-[rank3]:W1030 00:07:56.824000 830362 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
-[rank2]:W1030 00:07:56.824000 830361 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
-[rank6]:W1030 00:07:56.824000 830365 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
-[rank5]:W1030 00:07:56.824000 830364 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
-[rank7]:W1030 00:07:56.824000 830366 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
-[rank1]:W1030 00:07:56.824000 830360 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
-[rank0]:W1030 00:07:56.824000 830359 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
-[rank4]:W1030 00:07:56.824000 830363 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
-[rank3]:W1030 00:07:56.824000 830362 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
-[rank6]:W1030 00:07:56.824000 830365 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
-[rank2]:W1030 00:07:56.824000 830361 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
-[rank5]:W1030 00:07:56.824000 830364 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
-[rank1]:W1030 00:07:56.824000 830360 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
-[rank0]:W1030 00:07:56.824000 830359 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
-[rank7]:W1030 00:07:56.824000 830366 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
-[rank4]:W1030 00:07:56.824000 830363 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
-[rank3]:W1030 00:07:56.824000 830362 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
-[rank6]:W1030 00:07:56.824000 830365 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
-[rank2]:W1030 00:07:56.824000 830361 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
-[rank5]:W1030 00:07:56.824000 830364 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
-[rank7]:W1030 00:07:56.824000 830366 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
-[rank0]:W1030 00:07:56.824000 830359 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
-[rank1]:W1030 00:07:56.824000 830360 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
-[rank4]:W1030 00:07:56.824000 830363 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+: 151 hash value: 2298493599114662934
 [rank3]:W1030 00:07:56.824000 830362 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
 [rank6]:W1030 00:07:56.824000 830365 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
 [rank2]:W1030 00:07:56.824000 830361 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
@@ -544,3 +491,240 @@ Traceback (most recent call last):
   File "/usr/lib/python3.12/subprocess.py", line 571, in run
     raise CalledProcessError(retcode, process.args,
 subprocess.CalledProcessError: Command '['/opt/venv/bin/python3', 'infer_marker_video.py', '--config', 'configs/pwm_baseline.toml', '--checkpoint', '/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/run/initial.pt', '--video-path', '/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/previews/TACO_input.mp4', '--output-dir', '/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/previews/TACO_initial', '--device', 'cuda:0', '--input-height', '256', '--input-width', '256', '--high-fps', '30.000000000000107', '--global-stride', '5', '--upsample-mano', '--overlay-marker-count', '778', '--no-overlay-frame-images']' returned non-zero exit status 1.
+[pwm/training-reconstruction 9646508] results: wm1 benchmark visualize-starting at step 100
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+To https://github.com/davit666/PWM-EgoFound3R.git
+   7d8cae5..9646508  HEAD -> pwm/wm1-benchmark100
+project=pwm_egofound3r_baseline config=configs/pwm_baseline.toml
+/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/egohandmetric_prompt/models/temporal_hand_prompt_adapter.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
+{
+  "T_R": 60,
+  "T_H_canonical": 60,
+  "pipeline_wall_seconds": 3.6621410977095366,
+  "overlay_frame_images": false,
+  "R_fps": 30.0,
+  "H_fps": 30.0,
+  "G_fps": 6.0,
+  "global_stride": 5,
+  "global_anchor_phase": 2,
+  "clip_count": 1,
+  "T_G": 12,
+  "inference_schema_version": "egofound3r.metric_inference.v1",
+  "metric_scale_valid_clips": 1,
+  "forward_seconds_total": 0.9518771301954985,
+  "hand_h_root_smoothing": {
+    "enabled": false,
+    "mode": "none",
+    "applied_count": 0
+  },
+  "provenance": {
+    "schema_version": "egofound3r.metric_inference.v1",
+    "config_path": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/configs/pwm_baseline.toml",
+    "config_sha256": "d761e32f38aeea707c215038e8919d03c3cb4902af4821af4445d356799d460e",
+    "checkpoint_path": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/run/initial.pt",
+    "checkpoint_size_bytes": 846828167,
+    "video_path": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/previews/TACO_input.mp4",
+    "temporal_architecture_id": "egofound3r_multirate",
+    "git_commit": "9646508fcad30c7b59ff487486e9bb138f79be35",
+    "git_branch": "pwm/training-reconstruction",
+    "git_dirty": true,
+    "decoded_video_fps": 30.0,
+    "effective_r_fps": 30.0,
+    "model_input_size_hw": [
+      256,
+      256
+    ],
+    "source_video_size_hw": [
+      256,
+      256
+    ],
+    "command_argv": [
+      "/opt/venv/bin/python3",
+      "infer_marker_video.py",
+      "--config",
+      "configs/pwm_baseline.toml",
+      "--checkpoint",
+      "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/run/initial.pt",
+      "--video-path",
+      "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/previews/TACO_input.mp4",
+      "--output-dir",
+      "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/previews/TACO_initial",
+      "--device",
+      "cuda:0",
+      "--input-height",
+      "256",
+      "--input-width",
+      "256",
+      "--input-fps",
+      "30.0",
+      "--high-fps",
+      "30.0",
+      "--global-stride",
+      "5",
+      "--upsample-mano",
+      "--overlay-marker-count",
+      "778",
+      "--no-overlay-frame-images",
+      "--allow-output-overwrite"
+    ],
+    "model_compute_dtype": "torch.float32",
+    "input_resize_mode": "keep_aspect",
+    "requested_input_size_hw": [
+      256,
+      256
+    ],
+    "input_affine_source_to_model": [
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  },
+  "output_path": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/previews/TACO_initial/inference_output.pt",
+  "hand_778_exported": true,
+  "overlay_marker_count": 778,
+  "root_k_source": "pred",
+  "root_z_postprocessing": {
+    "options": {
+      "smooth": true,
+      "depth_source": "none",
+      "depth_file": null,
+      "smooth_strength": 1.0,
+      "depth_strength": 1.0,
+      "max_relative_change": 0.2,
+      "visibility_threshold": 0.5
+    },
+    "applied_count": 0,
+    "depth_accepted_count": 0
+  },
+  "hand_depth_scale": {
+    "enabled": true,
+    "seconds": 0.002689773216843605,
+    "raw_to_meter_pred": [
+      0.6927457451820374
+    ],
+    "raw_to_meter_fused": [
+      0.6927457451820374
+    ],
+    "raw_to_meter_effective": [
+      0.6927457451820374
+    ]
+  },
+  "video_io": {
+    "decoded_frames": 60,
+    "retrieved_frames": 60,
+    "cache_hits": 0,
+    "backward_seeks": 0,
+    "peak_cached_frames": 60,
+    "peak_cached_bytes": 58982400
+  },
+  "performance": {
+    "schema_version": "egofound3r.inference_performance.v1",
+    "device": "cuda:0",
+    "device_name": "NVIDIA H100 80GB HBM3",
+    "device_total_memory_bytes": 84942979072,
+    "model_dtype": "torch.float32",
+    "input_r_fps": 30.0,
+    "output_r_frames": 60,
+    "unique_h_frames": 60,
+    "unique_g_frames": 12,
+    "processed_h_frames": 60,
+    "processed_g_frames": 12,
+    "forward_calls": 1,
+    "includes_first_forward": true,
+    "extra_warmup_forwards": 0,
+    "forward_seconds_total": 0.9518771301954985,
+    "forward_seconds_first": 0.9518771301954985,
+    "forward_seconds_mean": 0.9518771301954985,
+    "forward_seconds_p50": 0.9518771301954985,
+    "forward_seconds_p95": 0.9518771301954985,
+    "pipeline_wall_seconds": 3.6621410977095366,
+    "end_to_end_wall_seconds": 21.73217218928039,
+    "forward_output_fps": 63.03334547776883,
+    "forward_processed_h_fps": 63.03334547776883,
+    "forward_processed_g_fps": 12.606669095553768,
+    "pipeline_output_fps": 16.3838580762294,
+    "end_to_end_output_fps": 2.760883701703578,
+    "end_to_end_realtime_speedup": 0.09202945672345261,
+    "forward_peak_allocated_bytes": 7200268288,
+    "forward_peak_reserved_bytes": 8617197568,
+    "forward_peak_allocated_gib": 6.705772399902344,
+    "forward_peak_reserved_gib": 8.025390625,
+    "overlay_enabled": true
+  }
+}
+{
+  "clips": 1,
+  "frames": 60,
+  "inference_schema_version": "egofound3r.metric_inference.v1",
+  "ok": true,
+  "output_dir": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/previews/TACO_initial",
+  "schema_version": "pwm.egofound3r.validation.v1",
+  "tensors": {
+    "camera_pose": {
+      "dtype": "torch.float32",
+      "shape": [
+        60,
+        4,
+        4
+      ]
+    },
+    "intrinsics": {
+      "dtype": "torch.float32",
+      "shape": [
+        60,
+        3,
+        3
+      ]
+    },
+    "joint_contact_logits": {
+      "dtype": "torch.float32",
+      "shape": [
+        60,
+        2,
+        21
+      ]
+    },
+    "joint_xyz": {
+      "dtype": "torch.float32",
+      "shape": [
+        60,
+        2,
+        21,
+        3
+      ]
+    },
+    "vertex_contact_logits": {
+      "dtype": "torch.float32",
+      "shape": [
+        60,
+        2,
+        195
+      ]
+    },
+    "vertex_xyz": {
+      "dtype": "torch.float32",
+      "shape": [
+        60,
+        2,
+        195,
+        3
+      ]
+    }
+  }
+}
+project=pwm_egofound3r_baseline config=configs/pwm_baseline.toml
+/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/egohandmetric_prompt/models/temporal_hand_prompt_adapter.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
