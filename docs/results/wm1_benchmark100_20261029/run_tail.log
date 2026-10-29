@@ -1,22 +1,4 @@
-615755
-[rank5]:W1030 00:07:56.311000 830364 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
-[rank6]:W1030 00:07:56.311000 830365 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
-[rank4]:W1030 00:07:56.311000 830363 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
-[rank1]:W1030 00:07:56.311000 830360 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
-[rank2]:W1030 00:07:56.311000 830361 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
-[rank3]:W1030 00:07:56.311000 830362 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
-[rank7]:W1030 00:07:56.311000 830366 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
-[rank0]:W1030 00:07:56.311000 830359 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
-[rank6]:W1030 00:07:56.311000 830365 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
-[rank5]:W1030 00:07:56.311000 830364 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
-[rank4]:W1030 00:07:56.311000 830363 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
-[rank1]:W1030 00:07:56.311000 830360 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
-[rank2]:W1030 00:07:56.311000 830361 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
-[rank3]:W1030 00:07:56.311000 830362 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
-[rank0]:W1030 00:07:56.311000 830359 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
-[rank4]:W1030 00:07:56.311000 830363 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
-[rank1]:W1030 00:07:56.311000 830360 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
-[rank2]:W1030 00:07:56.311000 830361 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
+:56.311000 830361 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
 [rank3]:W1030 00:07:56.311000 830362 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
 {"rank": 6, "step": 100, "phase": "forward", "source": "TACO/(empty, plate, box)/20230927_050"}{"rank": 7, "step": 100, "phase": "forward", "source": "TACO/(empty, teapot, plate)/20231031_097"}
 
@@ -539,3 +521,26 @@ To https://github.com/davit666/PWM-EgoFound3R.git
 /share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/egohandmetric_prompt/models/temporal_hand_prompt_adapter.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
   self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
 {"ok": true, "scope": "100-step TACO/STERA pilot; not original seven-dataset paper reproduction", "timing": {"measured_steps": 100, "training_step_seconds_total": 539.4442958831787, "steady_steps": 95, "discarded_startup_steps": 5, "steady_mean_step_seconds": 5.285832024659765, "steady_median_step_seconds": 5.252426216378808, "steady_p95_step_seconds": 5.803459053859115, "projected_steps": 3200, "projected_training_hours": 4.698517355253124, "scope": "step time includes data loading and GPU work; excludes initialization, checkpoint saving and evaluation"}, "world_size": 8, "effective_batch_size": 64, "frames_per_clip": [60], "peak_allocated_gib": 28.59262752532959, "unique_training_clips_seen": 64, "validation_windows": 8}
+[pwm/training-reconstruction 80d1a85] results: wm1 benchmark visualize-starting at step 100
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+To https://github.com/davit666/PWM-EgoFound3R.git
+   f235e7f..80d1a85  HEAD -> pwm/wm1-benchmark100
+project=pwm_egofound3r_baseline config=configs/pwm_baseline.toml
+/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/egohandmetric_prompt/models/temporal_hand_prompt_adapter.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
+Traceback (most recent call last):
+  File "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/infer_marker_video.py", line 850, in <module>
+    main()
+  File "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/infer_marker_video.py", line 828, in main
+    rate_contract=TemporalRateContract(
+                  ^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 6, in __init__
+  File "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/egohandmetric_prompt/temporal_rate_contract.py", line 37, in __post_init__
+    raise ValueError("H fps cannot exceed R fps")
+ValueError: H fps cannot exceed R fps
+Traceback (most recent call last):
+  File "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/scripts/pwm/preview_benchmark100.py", line 24, in <module>
+    subprocess.run([sys.executable,'infer_marker_video.py','--config','configs/pwm_baseline.toml',
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/venv/bin/python3', 'infer_marker_video.py', '--config', 'configs/pwm_baseline.toml', '--checkpoint', '/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/run/initial.pt', '--video-path', '/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/previews/TACO_input.mp4', '--output-dir', '/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/previews/TACO_initial', '--device', 'cuda:0', '--input-height', '256', '--input-width', '256', '--high-fps', '30.000000000000107', '--global-stride', '5', '--upsample-mano', '--overlay-marker-count', '778', '--no-overlay-frame-images']' returned non-zero exit status 1.

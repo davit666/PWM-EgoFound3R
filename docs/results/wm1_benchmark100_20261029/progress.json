@@ -1,5 +1,5 @@
 {
-  "phase": "visualize-starting",
+  "phase": "visualize-failed",
   "step": 100,
   "target_steps": 100,
   "world_size": 8,
