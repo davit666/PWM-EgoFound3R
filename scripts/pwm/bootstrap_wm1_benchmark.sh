@@ -30,7 +30,11 @@ python3 -m pip install --disable-pip-version-check --target outputs/training-dep
 [[ -d outputs/TACO-Instructions/.git ]] || git clone https://github.com/leolyliu/TACO-Instructions.git outputs/TACO-Instructions
 git -C outputs/TACO-Instructions checkout --detach fd3b5a6b39565ca6935a91d35d5e91dde03c5142
 if [[ ! -x outputs/tools/ks3util ]]; then
-  curl -fL --retry 2 https://ks3util-version-update.ks3-cn-beijing.ksyuncs.com/2.15.0/ks3util-linux-amd64 -o outputs/tools/ks3util
-  chmod 755 outputs/tools/ks3util
+  if curl -fL --retry 2 https://ks3util-version-update.ks3-cn-beijing.ksyuncs.com/2.15.0/ks3util-linux-amd64 -o outputs/tools/ks3util.download; then
+    mv outputs/tools/ks3util.download outputs/tools/ks3util
+    chmod 755 outputs/tools/ks3util
+  else
+    echo 'ks3util download unavailable; use the installed Boto3 client for bounded reads'
+  fi
 fi
 PYTHONPATH="$PWD/outputs/training-deps:$PWD" python3 -c 'import torch, deepspeed, h5py, trimesh; print("IMPORTS_OK",torch.__version__,deepspeed.__version__)'
