@@ -1,5 +1,5 @@
 {
-  "phase": "prepare-taco-completed",
+  "phase": "prepare-taco-starting",
   "step": 0,
   "target_steps": 100,
   "world_size": 8,
