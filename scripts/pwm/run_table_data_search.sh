@@ -16,3 +16,4 @@ publish() {
 }
 trap publish EXIT
 python3 scripts/pwm/locate_table_sources.py "$RESULT/search.json" > "$RESULT/run.log" 2>&1
+python3 scripts/pwm/probe_wm1_benchmark.py "$RESULT/wm1.json" >> "$RESULT/run.log" 2>&1
