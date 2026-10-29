@@ -42,17 +42,28 @@ for gpu in {0..7}; do
   used=$(nvidia-smi --id="$gpu" --query-gpu=memory.used --format=csv,noheader,nounits)
   (( used<100 )) || { echo "GPU $gpu is busy"; exit 2; }
 done
-df -B1 /share/project /share-mixed/projset > "$RUN/storage_before.txt"
-df -hT /share/project /share-mixed/projset >> "$RUN/storage_before.txt"
+df -B1 /share-mixed/projset > "$RUN/storage_before.txt"
+df -hT /share-mixed/projset >> "$RUN/storage_before.txt"
+if [[ -d /share/project ]]; then
+  df -B1 /share/project >> "$RUN/storage_before.txt"
+else
+  echo '/share/project absent; no writes possible there' >> "$RUN/storage_before.txt"
+fi
 publish "$MODE-starting"
 (
   while sleep 60; do
-    df -B1 /share/project /share-mixed/projset >> "$RUN/storage_watchdog.log"
+    df -B1 /share-mixed/projset >> "$RUN/storage_watchdog.log"
+    [[ ! -d /share/project ]] || df -B1 /share/project >> "$RUN/storage_watchdog.log"
     python3 scripts/pwm/publish_benchmark_progress.py "$RUN" "$RESULT" "$MODE" >> "$RUN/publish.log" 2>&1 || true
   done
 ) &
 MONITOR_PID=$!
 case "$MODE" in
+  stage)
+    export HF_HOME="$PWD/outputs/hf-cache" HF_HUB_DISABLE_XET=1 HF_HUB_DOWNLOAD_TIMEOUT=120
+    export XDG_CACHE_HOME="$PWD/outputs/cache"
+    python3 scripts/pwm/stage_wm1_benchmark_data.py
+    ;;
   prepare-stera|prepare-taco)
     dataset=STERA-10M; subdir=stera
     [[ "$MODE" != prepare-taco ]] || { dataset=TACO; subdir=taco; }

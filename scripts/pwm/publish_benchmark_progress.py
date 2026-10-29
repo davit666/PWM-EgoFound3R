@@ -22,7 +22,7 @@ progress=result/'progress.json'
 if progress.exists() and json.loads(progress.read_text())==state and phase=='training':
     sys.exit(0)
 progress.write_text(json.dumps(state,indent=2)+'\n')
-for name in ('recipe.json','data/preflight.json','data/summary.json','run/timing.json','run/timing_step1.json',
+for name in ('recipe.json','staging.json','storage_before.txt','storage_watchdog.log','stera/summary.json','taco/summary.json','data/preflight.json','data/summary.json','run/timing.json','run/timing_step1.json',
     'run/initialization.json','run/deepspeed_config.json','run/status.json','eval_initial.json','eval_100.json','report.json'):
     source=run/name
     if source.is_file(): shutil.copy2(source,result/name.replace('/','_'))
