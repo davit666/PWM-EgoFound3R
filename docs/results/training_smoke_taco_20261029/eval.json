@@ -1,0 +1,136 @@
+{
+  "loaded_state_keys": 636,
+  "split": "train",
+  "windows": [
+    {
+      "identity": {
+        "dataset": "TACO",
+        "source_episode_id": "(dust, roller, pan)/20230927_032",
+        "split": "train",
+        "path": "taco_hands.npz",
+        "sha256": "5de662949f64660469b4062743a25f2707e5a0a464df0515bc7857fc3ee5579f",
+        "adapter": "taco_v1_hand_contact_v1",
+        "source_frames": [
+          30,
+          31,
+          32
+        ]
+      },
+      "metrics": {
+        "loss": 9.25187873840332,
+        "loss/joint_offset": 0.45784133672714233,
+        "loss/joint_contact": 0.256471186876297,
+        "loss/joint_distance": 0.1563042253255844,
+        "loss/vertex_offset": 0.6203795075416565,
+        "loss/vertex_contact": 0.4776594638824463,
+        "loss/vertex_distance": 0.40505605936050415,
+        "loss/heatmap": 0.0721849650144577,
+        "loss/offset2d": 0.08032999187707901,
+        "loss/reprojection": 6.72565221786499,
+        "joint_contact/precision": 0.8,
+        "joint_contact/recall": 0.8813559322033898,
+        "joint_contact/f1": 0.8387096774193549,
+        "joint/distance_mae_mm/all": 7.954859256744385,
+        "joint/distance_mae_mm/pred_contact": 5.41104793548584,
+        "joint/distance_mae_mm/gt_contact": 4.83913516998291,
+        "vertex_contact/precision": 0.48777648428405124,
+        "vertex_contact/recall": 0.9976190476190476,
+        "vertex_contact/f1": 0.655199374511337,
+        "vertex/distance_mae_mm/all": 15.55187702178955,
+        "vertex/distance_mae_mm/pred_contact": 10.755592346191406,
+        "vertex/distance_mae_mm/gt_contact": 4.1580657958984375
+      }
+    }
+  ],
+  "macro": {
+    "joint/distance_mae_mm/all": {
+      "mean": 7.954859256744385,
+      "windows": 1
+    },
+    "joint/distance_mae_mm/gt_contact": {
+      "mean": 4.83913516998291,
+      "windows": 1
+    },
+    "joint/distance_mae_mm/pred_contact": {
+      "mean": 5.41104793548584,
+      "windows": 1
+    },
+    "joint_contact/f1": {
+      "mean": 0.8387096774193549,
+      "windows": 1
+    },
+    "joint_contact/precision": {
+      "mean": 0.8,
+      "windows": 1
+    },
+    "joint_contact/recall": {
+      "mean": 0.8813559322033898,
+      "windows": 1
+    },
+    "loss": {
+      "mean": 9.25187873840332,
+      "windows": 1
+    },
+    "loss/heatmap": {
+      "mean": 0.0721849650144577,
+      "windows": 1
+    },
+    "loss/joint_contact": {
+      "mean": 0.256471186876297,
+      "windows": 1
+    },
+    "loss/joint_distance": {
+      "mean": 0.1563042253255844,
+      "windows": 1
+    },
+    "loss/joint_offset": {
+      "mean": 0.45784133672714233,
+      "windows": 1
+    },
+    "loss/offset2d": {
+      "mean": 0.08032999187707901,
+      "windows": 1
+    },
+    "loss/reprojection": {
+      "mean": 6.72565221786499,
+      "windows": 1
+    },
+    "loss/vertex_contact": {
+      "mean": 0.4776594638824463,
+      "windows": 1
+    },
+    "loss/vertex_distance": {
+      "mean": 0.40505605936050415,
+      "windows": 1
+    },
+    "loss/vertex_offset": {
+      "mean": 0.6203795075416565,
+      "windows": 1
+    },
+    "vertex/distance_mae_mm/all": {
+      "mean": 15.55187702178955,
+      "windows": 1
+    },
+    "vertex/distance_mae_mm/gt_contact": {
+      "mean": 4.1580657958984375,
+      "windows": 1
+    },
+    "vertex/distance_mae_mm/pred_contact": {
+      "mean": 10.755592346191406,
+      "windows": 1
+    },
+    "vertex_contact/f1": {
+      "mean": 0.655199374511337,
+      "windows": 1
+    },
+    "vertex_contact/precision": {
+      "mean": 0.48777648428405124,
+      "windows": 1
+    },
+    "vertex_contact/recall": {
+      "mean": 0.9976190476190476,
+      "windows": 1
+    }
+  },
+  "protocol": "prepared-native-H-validation; not paper benchmark"
+}

@@ -1,0 +1,66 @@
+{
+  "manifest": {
+    "dataset": "TACO",
+    "source_episode_id": "(dust, roller, pan)/20230927_032",
+    "split": "train",
+    "path": "taco_hands.npz",
+    "sha256": "5de662949f64660469b4062743a25f2707e5a0a464df0515bc7857fc3ee5579f",
+    "adapter": "taco_v1_hand_contact_v1",
+    "source_frames": [
+      30,
+      31,
+      32
+    ]
+  },
+  "source_sha256": {
+    "Egocentric_Camera_Parameters_2.zip::Egocentric_Camera_Parameters/(dust, roller, pan)/20230927_032/egocentric_intrinsic.txt": "f791adc426a186c3a13849e83a18c6104fdafc9edef295c3f850ffd10cadd3ce",
+    "Egocentric_Camera_Parameters_2.zip::Egocentric_Camera_Parameters/(dust, roller, pan)/20230927_032/egocentric_frame_extrinsic.npy": "5492e22e9237d746d7d20836a29af185f7db4407a9b3f77afd818229047af6ca",
+    "Egocentric_RGB_Videos.zip::Egocentric_RGB_Videos/(dust, roller, pan)/20230927_032/color.mp4": "0fa5b8bc311a5661f7529d96eb3043bb27d6f83db79f7bcc9cc6cbde67f25307",
+    "Hand_Poses.zip::Hand_Poses/(dust, roller, pan)/20230927_032/left_hand.pkl": "3608ac7573b5a27fe6c31381b3fb03ff59dc2ae09d0aeba7e7f0775efd5d410c",
+    "Hand_Poses.zip::Hand_Poses/(dust, roller, pan)/20230927_032/left_hand_shape.pkl": "97956334eea23cc859c937102d9ba26b8dead9f64913d54ea6cb90a2cc50531c",
+    "Hand_Poses.zip::Hand_Poses/(dust, roller, pan)/20230927_032/right_hand.pkl": "198ba516814e63d8358d0780ad780589316ec582852cbdf07e7c38d378d9337c",
+    "Hand_Poses.zip::Hand_Poses/(dust, roller, pan)/20230927_032/right_hand_shape.pkl": "ae8bd692a12c2b18bdae4e8f031f364930e9bad7c0a4d78afc2d8eb9d03d5d13",
+    "Object_Models.zip::object_models_released/164_cm.obj": "b23dabbbfb5bde0c3e3645a42d9314c80bb232b34a2aa6f7beed9825ece44f83",
+    "Object_Poses.zip::Object_Poses/(dust, roller, pan)/20230927_032/tool_164.npy": "8685ed5b29ce26be29d7ed317b991508b61f14a071d0dc4d8933a36e265dba11",
+    "Object_Models.zip::object_models_released/057_cm.obj": "f1cae54f7f27073012d05675da014d0a4aea108b827267693678328065e3c464",
+    "Object_Poses.zip::Object_Poses/(dust, roller, pan)/20230927_032/target_057.npy": "02db58af299f625d64adeedad7d131b3dcbd33bb90c6ddf4040c92c5cd47a545"
+  },
+  "targets": [
+    "joint_offset",
+    "vertex_offset",
+    "heatmap",
+    "offset2d",
+    "reprojection",
+    "projection_K",
+    "joint_distance",
+    "joint_contact",
+    "vertex_distance",
+    "vertex_contact"
+  ],
+  "K": [
+    [
+      183.56682942708332,
+      0.0,
+      128.59144694010416
+    ],
+    [
+      0.0,
+      326.21993634259263,
+      124.49366319444444
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "paper_contact_labels": "union of tool, target and opposite hand triangles",
+  "joint_depth_range_m": [
+    0.5176616311073303,
+    0.6797451972961426
+  ],
+  "visibility": "not generated; unavailable annotation",
+  "distortion": "TACO official ego rendering uses pinhole K; no separate D in camera release",
+  "joint_contact_fraction": 0.4682539701461792,
+  "vertex_contact_fraction": 0.3589743673801422
+}
