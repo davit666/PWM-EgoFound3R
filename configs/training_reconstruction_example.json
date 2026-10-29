@@ -1,0 +1,24 @@
+{
+  "assumptions_acknowledged": true,
+  "steps": 3200,
+  "batch_size": 8,
+  "lr": 0.00025,
+  "min_lr": 0.00001,
+  "warmup_steps": 100,
+  "weight_decay": 0.01,
+  "confidence_alpha": 0.1,
+  "heatmap_positive_weight": 10.0,
+  "stride_probabilities": [0.2, 0.2, 0.2, 0.2, 0.2],
+  "seed": 0,
+  "save_every": 100,
+  "precision": "bfloat16",
+  "loss_weights": {
+    "joint_offset": 1.0, "vertex_offset": 1.0,
+    "joint_visibility": 1.0, "vertex_visibility": 1.0,
+    "joint_contact": 1.0, "vertex_contact": 1.0,
+    "joint_distance": 1.0, "vertex_distance": 1.0,
+    "heatmap": 1.0, "offset2d": 1.0, "in_view": 1.0, "log_metric": 1.0,
+    "reprojection": 1.0, "scene_depth": 1.0, "scene_K": 1.0,
+    "scene_translation": 1.0, "scene_rotation": 1.0
+  }
+}
