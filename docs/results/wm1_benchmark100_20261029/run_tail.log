@@ -14,3 +14,5 @@ Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF
 {"phase": "download", "file": "Object_Models.zip", "bytes": 424209827}
 {"phase": "verified", "file": "Object_Models.zip", "sha256": "7b5209c7e856246cf20b379a599d756d18e8bbbbf7820bf9fe48a334f9a06cfe"}
 {"phase": "verified", "file": "Egocentric_RGB_Videos.zip", "sha256": "fc2c472091bfb6a170efa681c8eab099fab4f78294ef2dace43ebcb54f618f29"}
+{"phase": "verified", "file": "Hand_Poses.zip", "sha256": "db649d185ae818e63e9f14577067c1318d0751d35b213de8a06688637a1ece51"}
+STAGING_COMPLETE

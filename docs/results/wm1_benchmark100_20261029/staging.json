@@ -1,0 +1,49 @@
+{
+  "taco_source": "https://huggingface.co/datasets/leolyliu/TACO",
+  "revision": "fa8ed8b4cf5d46949b90ef852128811a2854066a",
+  "taco": [
+    {
+      "file": "Egocentric_Camera_Parameters.zip",
+      "bytes": 18689683,
+      "sha256": "6e03b9e54d2de0e04bb968a8ec49de65e6737b44bf9b86d6dd3f27a756c01245"
+    },
+    {
+      "file": "Egocentric_RGB_Videos.zip",
+      "bytes": 24666017548,
+      "sha256": "fc2c472091bfb6a170efa681c8eab099fab4f78294ef2dace43ebcb54f618f29"
+    },
+    {
+      "file": "Hand_Poses.zip",
+      "bytes": 15231790511,
+      "sha256": "db649d185ae818e63e9f14577067c1318d0751d35b213de8a06688637a1ece51"
+    },
+    {
+      "file": "Object_Poses.zip",
+      "bytes": 34340303,
+      "sha256": "39c0478395529b550fd218fdbcb9d0c866282c4dfc0d5bac1116461b85e91b64"
+    },
+    {
+      "file": "Object_Models.zip",
+      "bytes": 424209827,
+      "sha256": "7b5209c7e856246cf20b379a599d756d18e8bbbbf7820bf9fe48a334f9a06cfe"
+    }
+  ],
+  "mano": [
+    {
+      "key": "ARCTIC/body_models/mano/MANO_LEFT.pkl",
+      "bytes": 3821391,
+      "local_sha256": "c4022f7083f2ca7c78b2b3d595abbab52debd32b09d372b16923a801f0ea6a30"
+    },
+    {
+      "key": "ARCTIC/body_models/mano/MANO_RIGHT.pkl",
+      "bytes": 3821356,
+      "local_sha256": "45d60aa3b27ef9107a7afd4e00808f307fd91111e1cfa35afd5c4a62de264767"
+    },
+    {
+      "key": "ARCTIC/body_models/mano/LICENSE.txt",
+      "bytes": 4330,
+      "local_sha256": "75fc4da03259504ce9a4ed2418ab98dd59647add7ff95e7691c4d55fb0e3cf63"
+    }
+  ],
+  "camera_alias": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/data/TACO/Egocentric_Camera_Parameters_2.zip"
+}
