@@ -1,0 +1,74 @@
+Collecting deepspeed==0.19.8
+  Downloading deepspeed-0.19.8.tar.gz (2.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 16.5 MB/s  0:00:00
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting h5py
+  Downloading h5py-3.16.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (3.0 kB)
+Collecting trimesh
+  Downloading trimesh-5.2.0-py3-none-any.whl.metadata (13 kB)
+Collecting chumpy
+  Downloading chumpy-0.70.tar.gz (50 kB)
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Downloading h5py-3.16.0-cp312-cp312-manylinux_2_28_x86_64.whl (5.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 33.2 MB/s  0:00:00
+Downloading trimesh-5.2.0-py3-none-any.whl (751 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 751.5/751.5 kB 109.9 MB/s  0:00:00
+Building wheels for collected packages: deepspeed, chumpy
+  Building wheel for deepspeed (pyproject.toml): started
+  Building wheel for deepspeed (pyproject.toml): finished with status 'done'
+  Created wheel for deepspeed: filename=deepspeed-0.19.8-py3-none-any.whl size=2168965 sha256=d0cd484f30260cd640a33d62cf2c068b46a95b1e283eff8117ef2c8f3858680f
+  Stored in directory: /share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/bootstrap/pip-ephem-wheel-cache-puuf4_q4/wheels/bf/95/59/7ac51f546056b2b52e57b04a2aa2cb024e7035195906e45c4c
+  Building wheel for chumpy (pyproject.toml): started
+  Building wheel for chumpy (pyproject.toml): finished with status 'done'
+  Created wheel for chumpy: filename=chumpy-0.70-py3-none-any.whl size=58303 sha256=b9575a9062b56a3666edd7e1a9b7ce5f9b7c93a8cda06133db1c6060800a1612
+  Stored in directory: /share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/bootstrap/pip-ephem-wheel-cache-puuf4_q4/wheels/ae/b7/0e/6f56330e9077b8a6aad99bdb76981b07a7e8b3f056def662a6
+Successfully built deepspeed chumpy
+Installing collected packages: deepspeed, chumpy, trimesh, h5py
+
+Successfully installed chumpy-0.70 deepspeed-0.19.8 h5py-3.16.0 trimesh-5.2.0
+Collecting pydantic
+  Downloading pydantic-2.14.1-py3-none-any.whl.metadata (133 kB)
+Collecting psutil
+  Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl.metadata (22 kB)
+Collecting ninja
+  Downloading ninja-1.13.2-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.4 kB)
+Collecting hjson
+  Downloading hjson-3.1.0-py3-none-any.whl.metadata (2.6 kB)
+Collecting py-cpuinfo
+  Downloading py_cpuinfo-9.0.0-py3-none-any.whl.metadata (794 bytes)
+Collecting msgpack
+  Downloading msgpack-1.2.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.3 kB)
+Collecting annotated-types>=0.6.0 (from pydantic)
+  Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.50.1 (from pydantic)
+  Downloading pydantic_core-2.50.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.5 kB)
+Collecting typing-extensions>=4.16.0 (from pydantic)
+  Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting typing-inspection>=0.4.4 (from pydantic)
+  Downloading typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)
+Downloading pydantic-2.14.1-py3-none-any.whl (488 kB)
+Downloading pydantic_core-2.50.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 8.9 MB/s  0:00:00
+Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
+Downloading ninja-1.13.2-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (183 kB)
+Downloading hjson-3.1.0-py3-none-any.whl (54 kB)
+Downloading py_cpuinfo-9.0.0-py3-none-any.whl (22 kB)
+Downloading msgpack-1.2.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (475 kB)
+Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+Installing collected packages: py-cpuinfo, hjson, typing-extensions, psutil, ninja, msgpack, annotated-types, typing-inspection, pydantic-core, pydantic
+
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+torchx 0.7.0 requires urllib3<1.27,>=1.21.1, but you have urllib3 2.7.0 which is incompatible.
+Successfully installed annotated-types-0.8.0 hjson-3.1.0 msgpack-1.2.4 ninja-1.13.2 psutil-7.2.2 py-cpuinfo-9.0.0 pydantic-2.14.1 pydantic-core-2.50.1 typing-extensions-4.16.0 typing-inspection-0.4.4
+WARNING: Target directory /share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/training-deps/bin already exists. Specify --upgrade to force replacement.
+Cloning into 'outputs/TACO-Instructions'...
+Updating files:  74% (52/70)Updating files:  75% (53/70)Updating files:  77% (54/70)Updating files:  78% (55/70)Updating files:  80% (56/70)Updating files:  81% (57/70)Updating files:  82% (58/70)Updating files:  84% (59/70)Updating files:  85% (60/70)Updating files:  87% (61/70)Updating files:  88% (62/70)Updating files:  90% (63/70)Updating files:  91% (64/70)Updating files:  92% (65/70)Updating files:  94% (66/70)Updating files:  95% (67/70)Updating files:  97% (68/70)Updating files:  98% (69/70)Updating files: 100% (70/70)Updating files: 100% (70/70), done.
+HEAD is now at fd3b5a6 Update README with additional dataset links
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 500
