@@ -1,88 +1,34 @@
 {
-  "TACO/": {
-    "prefixes": [],
-    "objects": [],
-    "truncated": false
-  },
-  "backup_20261023/share-mixed/": {
+  "backup_20261023/share-mixed/project/": {
     "prefixes": [
-      "backup_20261023/share-mixed/project/",
-      "backup_20261023/share-mixed/projset/"
+      "backup_20261023/share-mixed/project/eai_pwm/",
+      "backup_20261023/share-mixed/project/yhzhang/"
     ],
     "objects": [],
     "truncated": false
   },
-  "backup_20261023/share-mixed/project/eai_pwm/datasets/TACO/": {
-    "prefixes": [],
+  "backup_20261023/share-mixed/projset/": {
+    "prefixes": [
+      "backup_20261023/share-mixed/projset/eai_pwm/"
+    ],
     "objects": [],
     "truncated": false
   },
-  "data/part_01/": {
-    "prefixes": [],
-    "objects": [
-      {
-        "key": "data/part_01/episode_1003_215102_76_110069_glove.hdf5",
-        "bytes": 831397804
-      }
+  "backup_20261023/share-mixed/project/eai_pwm/": {
+    "prefixes": [
+      "backup_20261023/share-mixed/project/eai_pwm/datasets/",
+      "backup_20261023/share-mixed/project/eai_pwm/home/",
+      "backup_20261023/share-mixed/project/eai_pwm/pipeline_store/",
+      "backup_20261023/share-mixed/project/eai_pwm/prepared_datasets/"
     ],
+    "objects": [],
     "truncated": false
   },
-  "data/part_06/": {
-    "prefixes": [],
-    "objects": [
-      {
-        "key": "data/part_06/episode_253_162657_75_120090_glove.hdf5",
-        "bytes": 1811013087
-      },
-      {
-        "key": "data/part_06/episode_254_153240_131_120105_glove.hdf5",
-        "bytes": 566895667
-      },
-      {
-        "key": "data/part_06/episode_255_153304_131_120105_glove.hdf5",
-        "bytes": 535086843
-      },
-      {
-        "key": "data/part_06/episode_256_153326_131_120105_glove.hdf5",
-        "bytes": 740177158
-      },
-      {
-        "key": "data/part_06/episode_257_153407_131_120105_glove.hdf5",
-        "bytes": 487611862
-      },
-      {
-        "key": "data/part_06/episode_258_153429_131_120105_glove.hdf5",
-        "bytes": 687097374
-      },
-      {
-        "key": "data/part_06/episode_259_153453_131_120105_glove.hdf5",
-        "bytes": 558862976
-      },
-      {
-        "key": "data/part_06/episode_260_153516_131_120105_glove.hdf5",
-        "bytes": 589701044
-      },
-      {
-        "key": "data/part_06/episode_261_153539_131_120105_glove.hdf5",
-        "bytes": 592950806
-      },
-      {
-        "key": "data/part_06/episode_262_153603_131_120105_glove.hdf5",
-        "bytes": 589290311
-      },
-      {
-        "key": "data/part_06/episode_263_153627_131_120105_glove.hdf5",
-        "bytes": 546087376
-      },
-      {
-        "key": "data/part_06/episode_264_153650_131_120105_glove.hdf5",
-        "bytes": 564324958
-      },
-      {
-        "key": "data/part_06/episode_265_153712_131_120105_glove.hdf5",
-        "bytes": 709394818
-      }
+  "backup_20261023/share-mixed/projset/eai_pwm/datasets/": {
+    "prefixes": [
+      "backup_20261023/share-mixed/projset/eai_pwm/datasets/Sekai/"
     ],
+    "objects": [],
     "truncated": false
   }
 }
