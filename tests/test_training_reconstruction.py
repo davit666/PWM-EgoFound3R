@@ -17,6 +17,16 @@ from egohandmetric_prompt.models.hand_keypoint_localization_head import decode_l
 
 
 class ReconstructionTests(unittest.TestCase):
+    def test_distributed_schedule_is_rank_independent_and_resumable(self):
+        from scripts.pwm.train_zero2 import microstep_schedule
+        rows=[{'dataset':'STERA'},{'dataset':'TACO'},{'dataset':'TACO'}]
+        sequence=[microstep_schedule(rows,0,i,[0,0,0,0,1]) for i in range(4)]
+        self.assertEqual(sequence[2:], [microstep_schedule(rows,0,i,[0,0,0,0,1]) for i in range(2,4)])
+        self.assertEqual({rows[candidates[0]]['dataset'] for candidates,_ in sequence}, {'STERA','TACO'})
+        for candidates,stride in sequence:
+            self.assertEqual(len({rows[i]['dataset'] for i in candidates}),1)
+            self.assertEqual(stride,5)
+
     def test_scalar_broadcast_preserves_parameter_identity_and_checkpoint_shape(self):
         from egohandmetric_prompt.training.zero_compat import broadcastable_scalars
         model=torch.nn.Module()

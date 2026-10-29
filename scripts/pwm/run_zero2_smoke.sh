@@ -14,6 +14,7 @@ export PYTHONPATH="$PWD/outputs/training-deps:$PWD${PYTHONPATH:+:$PYTHONPATH}"
 export DS_BUILD_OPS=0
 export OMP_NUM_THREADS=4
 export PWM_DISTRIBUTED_TIMEOUT_SECONDS=120
+export TORCH_DISTRIBUTED_DEBUG=DETAIL
 publish() {
   code=$?
   trap - EXIT
@@ -45,9 +46,9 @@ done
 "$PYTHON_BIN" scripts/pwm/combine_prepared_indices.py "$RUN/index.jsonl" "$BASE/index.jsonl" \
   /share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/training_smoke_20261029/index.jsonl
 common=(--config configs/pwm_baseline.toml --recipe "$RUN/recipe.json" --index "$RUN/index.jsonl" --output "$RUN/run")
-"$PYTHON_BIN" -m torch.distributed.run --standalone --nproc_per_node=2 scripts/pwm/train_zero2.py "${common[@]}" \
+timeout --kill-after=30s 8m "$PYTHON_BIN" -m torch.distributed.run --standalone --nproc_per_node=2 scripts/pwm/train_zero2.py "${common[@]}" \
   --initialize /home-mixed/liwenhao666/wm/PWM-EgoFound3R/checkpoints/EgoFound3R.pt --stop-after 1
-"$PYTHON_BIN" -m torch.distributed.run --standalone --nproc_per_node=2 scripts/pwm/train_zero2.py "${common[@]}" --resume
+timeout --kill-after=30s 8m "$PYTHON_BIN" -m torch.distributed.run --standalone --nproc_per_node=2 scripts/pwm/train_zero2.py "${common[@]}" --resume
 "$PYTHON_BIN" scripts/pwm/evaluate_prepared.py --config configs/pwm_baseline.toml --recipe "$RUN/recipe.json" \
   --index "$RUN/index.jsonl" --checkpoint "$RUN/run/inference.pt" --split train --output "$RUN/eval.json"
 nvidia-smi --query-compute-apps=pid,process_name,used_memory --format=csv > "$RESULT/final_gpu_processes.csv"

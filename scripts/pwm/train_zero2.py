@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 """torchrun entrypoint for bf16 ZeRO-2, with per-rank RNG and portable export.
 
-recipe.batch_size is clips per rank per optimizer step. Microbatch=1 allows
-different supervision keys; 8 accumulated clips x 8 GPUs gives effective64.
+recipe.batch_size is clips per rank per optimizer step. Each microstep uses one
+dataset on all ranks; 8 accumulated clips x 8 GPUs gives effective64.
 """
 import argparse
 from dataclasses import asdict
 from datetime import timedelta
 import hashlib
 import json
+import math
 import os
 from pathlib import Path
 import random
@@ -26,6 +27,30 @@ from egohandmetric_prompt.training.data import PreparedClips
 from egohandmetric_prompt.training.objectives import objective
 from egohandmetric_prompt.training.scene import gather_scene_targets
 from scripts.pwm.train_prepared import native_training_outputs,learning_rate
+
+SAMPLING_POLICY='dataset-uniform-synchronous-v1'
+
+
+def microstep_schedule(rows, seed, microstep, probabilities):
+    """Rank-independent dataset/stride choice; clip choice remains rank-local.
+
+    Dataset-uniform sampling is a declared reconstruction choice. Mixing scene
+    and hand-only graphs across ranks is not supported by this ZeRO-2 runner.
+    """
+    groups={}
+    for index,row in enumerate(rows):
+        groups.setdefault(row['dataset'],[]).append(index)
+    scheduler=random.Random(seed+microstep)
+    group=scheduler.choice(sorted(groups))
+    stride=scheduler.choices(range(1,6),weights=probabilities)[0]
+    return groups[group],stride
+
+
+def require_rank_agreement(signature, world):
+    signatures=[None]*world
+    dist.all_gather_object(signatures,signature)
+    if any(item!=signatures[0] for item in signatures):
+        raise ValueError(f'ZeRO-2 requires matching graphs across ranks: {signatures}')
 
 
 def zero_config(recipe,world_size):
@@ -79,7 +104,8 @@ def main():
     install_scalar_broadcast_compat()
     local_rank=int(os.environ['LOCAL_RANK'])
     torch.cuda.set_device(local_rank)
-    dist.init_process_group('nccl',timeout=timedelta(seconds=int(os.environ.get('PWM_DISTRIBUTED_TIMEOUT_SECONDS','600'))))
+    timeout=timedelta(seconds=int(os.environ.get('PWM_DISTRIBUTED_TIMEOUT_SECONDS','600')))
+    deepspeed.init_distributed(dist_backend='nccl',timeout=timeout)
     rank,world=dist.get_rank(),dist.get_world_size()
     recipe=json.loads(args.recipe.read_text())
     if not recipe.get('assumptions_acknowledged') or recipe['precision']!='bfloat16':
@@ -116,6 +142,8 @@ def main():
             raise FileNotFoundError('no complete DeepSpeed checkpoint')
         if state['recipe']!=recipe or state['index_hash']!=index_hash or state['config']!=asdict(config) or state['world_size']!=world or state.get('engine_config')!=settings:
             raise ValueError('resume recipe/index/config/world size mismatch')
+        if state.get('sampling_policy')!=SAMPLING_POLICY:
+            raise ValueError('resume sampling policy mismatch')
         restore_rng(state['rng_by_rank'][rank])
         start=state['step']
         if engine.global_steps!=start:
@@ -134,13 +162,14 @@ def main():
             group['lr']=lr
         reports=[]
         sources=[]
-        for _ in range(recipe['batch_size']):
-            sample=dataset[random.randrange(len(dataset))]
+        for microstep in range(recipe['batch_size']):
+            candidates,stride=microstep_schedule(dataset.rows,recipe['seed'],step*recipe['batch_size']+microstep,probabilities)
+            sample=dataset[random.choice(candidates)]
             sources.append(sample['identity']['dataset']+'/'+sample['identity']['source_episode_id'])
             images=sample['images'][None].to(engine.device)
             targets={k:(v[None].to(engine.device),m[None].to(engine.device)) for k,(v,m) in sample['targets'].items()}
             present=torch.ones(images.shape[:2],dtype=torch.bool,device=engine.device)
-            stride=random.choices(range(1,6),weights=probabilities)[0]
+            require_rank_agreement((sample['identity']['dataset'],tuple(images.shape),stride),world)
             mapping=build_multirate_frame_map(high_frame_present=present,high_temporal_pair_valid=present[:,:-1],
                 global_stride=stride,global_anchor_phase=min(2,stride-1))
             # The engine owns autocast; geometry modules explicitly retain fp32.
@@ -148,6 +177,7 @@ def main():
             output=native_training_outputs(engine(images,multirate_frame_map=mapping))
             total,terms=objective(output,gather_scene_targets(targets,mapping),recipe['loss_weights'],
                 confidence_alpha=recipe['confidence_alpha'],heatmap_positive_weight=recipe.get('heatmap_positive_weight',1.))
+            require_rank_agreement(sorted(terms),world)
             # DeepSpeed alone scales accumulated losses and clips/reduces gradients.
             print(json.dumps({'rank':rank,'step':step+1,'phase':'backward'}),flush=True)
             engine.backward(total)
@@ -156,14 +186,17 @@ def main():
             reports.append({k:float(v.detach()) for k,v in terms.items()})
         if engine.global_steps!=step+1:
             raise RuntimeError('unexpected DeepSpeed accumulation boundary')
-        record={'rank':rank,'world_size':world,'step':step+1,'lr':lr,'sources':sources,'terms':reports}
+        norm=float(engine.get_global_grad_norm())
+        if not math.isfinite(norm) or engine.skipped_steps:
+            raise FloatingPointError('nonfinite gradient norm or skipped optimizer update')
+        record={'rank':rank,'world_size':world,'step':step+1,'lr':lr,'gradient_norm':norm,'sources':sources,'terms':reports}
         log.write(json.dumps(record)+'\n'); log.flush()
         print(json.dumps(record),flush=True)
         if (step+1)%recipe['save_every']==0 or step+1==end:
             states=[None]*world
             dist.all_gather_object(states,rng_state())
             state={'step':step+1,'recipe':recipe,'index_hash':index_hash,'config':asdict(config),'engine_config':settings,
-                   'world_size':world,'rng_by_rank':states}
+                   'world_size':world,'rng_by_rank':states,'sampling_policy':SAMPLING_POLICY}
             engine.save_checkpoint(str(checkpoint_dir),tag=f'step-{step+1}',client_state=state)
             if rank==0:
                 export_model(engine.module,config,args.output/'inference.pt',step+1)
