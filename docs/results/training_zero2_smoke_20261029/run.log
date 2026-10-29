@@ -1,0 +1,128 @@
+Collecting deepspeed
+  Downloading deepspeed-0.19.8.tar.gz (2.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 16.4 MB/s  0:00:00
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: deepspeed
+  Building wheel for deepspeed (pyproject.toml): started
+  Building wheel for deepspeed (pyproject.toml): finished with status 'done'
+  Created wheel for deepspeed: filename=deepspeed-0.19.8-py3-none-any.whl size=2168952 sha256=315eff4ac63bccf7f6d12b246bb8b0bd5089d2dfcee65896fc5f78c129edd68b
+  Stored in directory: /tmp/pip-ephem-wheel-cache-swp4wnr_/wheels/bf/95/59/7ac51f546056b2b52e57b04a2aa2cb024e7035195906e45c4c
+Successfully built deepspeed
+Installing collected packages: deepspeed
+Successfully installed deepspeed-0.19.8
+WARNING: Target directory /home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/bin already exists. Specify --upgrade to force replacement.
+Collecting pydantic
+  Downloading pydantic-2.14.1-py3-none-any.whl.metadata (133 kB)
+Collecting psutil
+  Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl.metadata (22 kB)
+Collecting ninja
+  Downloading ninja-1.13.2-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.4 kB)
+Collecting hjson
+  Downloading hjson-3.1.0-py3-none-any.whl.metadata (2.6 kB)
+Collecting py-cpuinfo
+  Downloading py_cpuinfo-9.0.0-py3-none-any.whl.metadata (794 bytes)
+Collecting msgpack
+  Downloading msgpack-1.2.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.3 kB)
+Collecting annotated-types>=0.6.0 (from pydantic)
+  Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.50.1 (from pydantic)
+  Downloading pydantic_core-2.50.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.5 kB)
+Collecting typing-extensions>=4.16.0 (from pydantic)
+  Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting typing-inspection>=0.4.4 (from pydantic)
+  Downloading typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)
+Downloading pydantic-2.14.1-py3-none-any.whl (488 kB)
+Downloading pydantic_core-2.50.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 1.0 MB/s  0:00:02
+Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
+Downloading ninja-1.13.2-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (183 kB)
+Downloading hjson-3.1.0-py3-none-any.whl (54 kB)
+Downloading py_cpuinfo-9.0.0-py3-none-any.whl (22 kB)
+Downloading msgpack-1.2.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (475 kB)
+Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+Installing collected packages: py-cpuinfo, hjson, typing-extensions, psutil, ninja, msgpack, annotated-types, typing-inspection, pydantic-core, pydantic
+
+Successfully installed annotated-types-0.8.0 hjson-3.1.0 msgpack-1.2.4 ninja-1.13.2 psutil-7.2.2 py-cpuinfo-9.0.0 pydantic-2.14.1 pydantic-core-2.50.1 typing-extensions-4.16.0 typing-inspection-0.4.4
+WARNING: Target directory /home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/bin already exists. Specify --upgrade to force replacement.
+/home-mixed/liwenhao666/wm/PWM-training-reconstruction/egohandmetric_prompt/models/temporal_hand_prompt_adapter.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
+/home-mixed/liwenhao666/wm/PWM-training-reconstruction/egohandmetric_prompt/models/temporal_hand_prompt_adapter.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/scripts/pwm/train_zero2.py", line 169, in <module>
+[rank0]:     main()
+[rank0]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/scripts/pwm/train_zero2.py", line 103, in main
+[rank0]:     engine,_,_,_=deepspeed.initialize(model=model,optimizer=optimizer,config=settings,dist_init_required=False)
+[rank0]:                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/deepspeed/__init__.py", line 569, in initialize
+[rank0]:     engine = DeepSpeedEngine(args=args,
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/deepspeed/runtime/engine.py", line 621, in __init__
+[rank0]:     self._configure_distributed_model(model)
+[rank0]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/deepspeed/runtime/engine.py", line 2195, in _configure_distributed_model
+[rank0]:     self._broadcast_model()
+[rank0]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/deepspeed/runtime/engine.py", line 2059, in _broadcast_model
+[rank0]:     dist.broadcast(p.data.view(torch.uint8),
+[rank0]:                    ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: RuntimeError: self.dim() cannot be 0 to view BFloat16 as Byte (different element sizes)
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/scripts/pwm/train_zero2.py", line 169, in <module>
+[rank1]:     main()
+[rank1]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/scripts/pwm/train_zero2.py", line 103, in main
+[rank1]:     engine,_,_,_=deepspeed.initialize(model=model,optimizer=optimizer,config=settings,dist_init_required=False)
+[rank1]:                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/deepspeed/__init__.py", line 569, in initialize
+[rank1]:     engine = DeepSpeedEngine(args=args,
+[rank1]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/deepspeed/runtime/engine.py", line 621, in __init__
+[rank1]:     self._configure_distributed_model(model)
+[rank1]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/deepspeed/runtime/engine.py", line 2195, in _configure_distributed_model
+[rank1]:     self._broadcast_model()
+[rank1]:   File "/home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/deepspeed/runtime/engine.py", line 2059, in _broadcast_model
+[rank1]:     dist.broadcast(p.data.view(torch.uint8),
+[rank1]:                    ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]: RuntimeError: self.dim() cannot be 0 to view BFloat16 as Byte (different element sizes)
+[rank0]:[W1029 17:49:36.385818326 ProcessGroupNCCL.cpp:1601] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+E1029 17:49:37.332000 16268 torch/distributed/elastic/multiprocessing/api.py:988] failed (exitcode: 1) local_rank: 0 (pid: 16277) of binary: /home-mixed/liwenhao666/wm/PWM-EgoFound3R/.venv/bin/python
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/run.py", line 1020, in <module>
+    main()
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 367, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/run.py", line 1016, in main
+    run(args)
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/run.py", line 1007, in run
+    elastic_launch(
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/launcher/api.py", line 184, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/launcher/api.py", line 332, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+scripts/pwm/train_zero2.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2026-10-29_17:49:37
+  host      : job-18c466f4-db66-4b0d-bfb4-7c8531ce94f1-master-0
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 16278) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-10-29_17:49:37
+  host      : job-18c466f4-db66-4b0d-bfb4-7c8531ce94f1-master-0
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 16277) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
