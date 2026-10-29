@@ -30,7 +30,8 @@ from scripts.pwm.train_prepared import native_training_outputs,learning_rate
 def zero_config(recipe,world_size):
     return {'train_micro_batch_size_per_gpu':1,'gradient_accumulation_steps':recipe['batch_size'],
         'train_batch_size':recipe['batch_size']*world_size,'gradient_clipping':1.,
-        'bf16':{'enabled':True},'zero_optimization':{'stage':2,'overlap_comm':False,
+        'bf16':{'enabled':False},'torch_autocast':{'enabled':True,'dtype':'bfloat16'},
+        'zero_optimization':{'stage':2,'overlap_comm':False,
             'contiguous_gradients':True,'reduce_bucket_size':50000000,
             'allgather_bucket_size':50000000,'ignore_unused_parameters':True},
         'steps_per_print':1000,'wall_clock_breakdown':False}
@@ -110,7 +111,7 @@ def main():
         loaded,state=engine.load_checkpoint(str(checkpoint_dir))
         if not loaded:
             raise FileNotFoundError('no complete DeepSpeed checkpoint')
-        if state['recipe']!=recipe or state['index_hash']!=index_hash or state['config']!=asdict(config) or state['world_size']!=world:
+        if state['recipe']!=recipe or state['index_hash']!=index_hash or state['config']!=asdict(config) or state['world_size']!=world or state.get('engine_config')!=settings:
             raise ValueError('resume recipe/index/config/world size mismatch')
         restore_rng(state['rng_by_rank'][rank])
         start=state['step']
@@ -139,10 +140,10 @@ def main():
             stride=random.choices(range(1,6),weights=probabilities)[0]
             mapping=build_multirate_frame_map(high_frame_present=present,high_temporal_pair_valid=present[:,:-1],
                 global_stride=stride,global_anchor_phase=min(2,stride-1))
-            with torch.autocast('cuda',dtype=torch.bfloat16):
-                output=native_training_outputs(engine(images,multirate_frame_map=mapping))
-                total,terms=objective(output,gather_scene_targets(targets,mapping),recipe['loss_weights'],
-                    confidence_alpha=recipe['confidence_alpha'],heatmap_positive_weight=recipe.get('heatmap_positive_weight',1.))
+            # The engine owns autocast; geometry modules explicitly retain fp32.
+            output=native_training_outputs(engine(images,multirate_frame_map=mapping))
+            total,terms=objective(output,gather_scene_targets(targets,mapping),recipe['loss_weights'],
+                confidence_alpha=recipe['confidence_alpha'],heatmap_positive_weight=recipe.get('heatmap_positive_weight',1.))
             # DeepSpeed alone scales accumulated losses and clips/reduces gradients.
             engine.backward(total)
             engine.step()
@@ -155,7 +156,7 @@ def main():
         if (step+1)%recipe['save_every']==0 or step+1==end:
             states=[None]*world
             dist.all_gather_object(states,rng_state())
-            state={'step':step+1,'recipe':recipe,'index_hash':index_hash,'config':asdict(config),
+            state={'step':step+1,'recipe':recipe,'index_hash':index_hash,'config':asdict(config),'engine_config':settings,
                    'world_size':world,'rng_by_rank':states}
             engine.save_checkpoint(str(checkpoint_dir),tag=f'step-{step+1}',client_state=state)
             if rank==0:
