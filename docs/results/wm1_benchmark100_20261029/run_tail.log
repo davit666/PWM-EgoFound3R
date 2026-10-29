@@ -1,1 +1,15 @@
 df: /share/project: No such file or directory
+[pwm/training-reconstruction 05746b9] results: wm1 benchmark stage-starting at step 0
+ 2 files changed, 6 insertions(+), 1 deletion(-)
+ create mode 100644 docs/results/wm1_benchmark100_20261029/storage_before.txt
+To https://github.com/davit666/PWM-EgoFound3R.git
+   d4ce2dc..05746b9  HEAD -> pwm/wm1-benchmark100
+{"phase": "download", "file": "Egocentric_Camera_Parameters.zip", "bytes": 18689683}
+{"phase": "download", "file": "Egocentric_RGB_Videos.zip", "bytes": 24666017548}
+{"phase": "download", "file": "Hand_Poses.zip", "bytes": 15231790511}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{"phase": "verified", "file": "Egocentric_Camera_Parameters.zip", "sha256": "6e03b9e54d2de0e04bb968a8ec49de65e6737b44bf9b86d6dd3f27a756c01245"}
+{"phase": "download", "file": "Object_Poses.zip", "bytes": 34340303}
+{"phase": "verified", "file": "Object_Poses.zip", "sha256": "39c0478395529b550fd218fdbcb9d0c866282c4dfc0d5bac1116461b85e91b64"}
+{"phase": "download", "file": "Object_Models.zip", "bytes": 424209827}
+{"phase": "verified", "file": "Object_Models.zip", "sha256": "7b5209c7e856246cf20b379a599d756d18e8bbbbf7820bf9fe48a334f9a06cfe"}
