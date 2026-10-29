@@ -194,3 +194,35 @@ world size必须一致。`inference.pt`只供推理，不能拿它冒充完整�
 `run/sharded/`，便携推理权重为 `run/inference.pt`。
 8卡运行目录为同一outputs下的 `training_zero2_batch64_20261029/`，子目录契约相同。
 本地操作日志 `/home/zy/server_logs/2026-10-29/codex-local-cuihu-tac2/`。
+
+## 100步实验的就绪检查（2026-10-29）
+
+**100步实验尚未启动。** 此处记录准备工作，不是新的训练结果。
+再次检查上游HEAD仍为 `264f4df9fd42536aae4dba982d18272cc3334077`，只有main分支；
+[训练代码询问](https://github.com/MINT-SJTU/EgoFound3R/issues/1)尚无回复。
+[模型卡](https://huggingface.co/Frank-F2021/EgoFound3R)把`EgoFound3R.pt`定义为发布的推理
+权重，并未推荐它作为复现原训练的初始化。可以确定的是加载预训练VGGT-Ω并冻结；
+其余模块采用公开builder默认初始化属于我们的重建选择，尚无作者完整初始化配方佐证。
+
+tac2当前八张H100 80GB均空闲；原始数据目录找到六集，HOI4D在检查的候选路径仍未找到。
+六集目录存在不代表训练输入就绪。详细读盘检查见
+[就绪审计](results/benchmark100_readiness_20261029/)。控制窗口使用
+`codex-local-cuihu-tac2:pwm-benchmark`，只读检查内层为`pwm-benchmark100-readiness`。
+进一步检查HOT3D Aria的199个序列目录，其中136个有非空MANO标注，所有检查目录的
+直接子文件均没有`.vrs/.mp4/.avi/.mkv`；这不排除RGB存放在其他路径，但目前不能确认
+可用的HOT3D训练视频。HOI4D额外检查`dataset/ego/HOI4D`等候选也没有找到。
+
+代码已加入：
+
+- `preflight_benchmark_data.py`：检查显式数据集覆盖、固定帧数/256²、版本化adapter、
+  文件checksum、训练与验证episode隔离、内容不重复。默认训练七集、验证六集（不含STERA）；
+  每集至少8个不同训练clip是本次工程测速的最低要求，不是论文公布参数。
+- `train_zero2.py --save-initial`：保存第0步可训练模块，供相同验证集前后对比；记录
+  初始化来源、实际输入clip/stride/帧数、每卡显存峰值和每步同步耗时。
+- `timing.json`：区分初始化、训练step总时间、checkpoint开销和训练阶段wall time，
+  给出剔除前5步后的mean/median/p95及3200步时间外推。尚无正式100步测量值。
+- 正式测速应保留recipe.steps=3200、warmup_steps=100，通过`--stop-after 100`停止；
+  不能把总schedule改成100步，也不能把重复两个3帧样本的结果解释成七集正式训练。
+
+公开资料仍缺训练clip长度、stride配比、精确split、完整数据处理细节和部分损失系数。
+任何实跑都须明确这些选择，以及数据范围是七集混合还是两集子集，不能声称完全照搬作者流程。
