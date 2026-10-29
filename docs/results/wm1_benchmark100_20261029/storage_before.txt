@@ -1,5 +1,5 @@
 Filesystem                                                                               1B-blocks             Used        Available Use% Mounted on
-www.nfs.com:/mnt/zhiyuan/airs/sharefs/a5833582-1c4a-49af-8d0b-be91b4088ca3/PUBLIC 5629499534213120 2915228118417408 2714271415795712  52% /share-mixed/projset
+www.nfs.com:/mnt/zhiyuan/airs/sharefs/a5833582-1c4a-49af-8d0b-be91b4088ca3/PUBLIC 5629499534213120 2916347335933952 2713152198279168  52% /share-mixed/projset
 Filesystem                                                                        Type  Size  Used Avail Use% Mounted on
 www.nfs.com:/mnt/zhiyuan/airs/sharefs/a5833582-1c4a-49af-8d0b-be91b4088ca3/PUBLIC nfs   5.0P  2.6P  2.5P  52% /share-mixed/projset
 /share/project absent; no writes possible there
