@@ -1,0 +1,2 @@
+{"step": 1, "lr": 0.00025, "gradient_norm": 57.6307487487793, "terms": [{"scene_K": 9.58621597290039, "scene_depth": 0.04113202914595604, "scene_translation": 0.008321361616253853, "scene_rotation": 0.003938852809369564, "scene_metric": 0.0037322998978197575}]}
+{"step": 2, "lr": 0.00025, "gradient_norm": 61.84819030761719, "terms": [{"scene_K": 16.050479888916016, "scene_depth": 0.054540347307920456, "scene_translation": 0.0049504563212394714, "scene_rotation": 0.006152728106826544, "scene_metric": 0.01253527868539095}]}

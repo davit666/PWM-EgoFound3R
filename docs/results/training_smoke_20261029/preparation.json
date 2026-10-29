@@ -1,0 +1,58 @@
+{
+  "manifest": {
+    "dataset": "STERA-10M",
+    "source_episode_id": "session_data_20260330_014905",
+    "split": "train",
+    "path": "stera_scene.npz",
+    "sha256": "7959fceb5a95caef2b1f79415743a3266e78689069ef4b5b7d13d64842c316cf",
+    "adapter": "stera_scene_v1",
+    "source_frames": [
+      31,
+      32,
+      33
+    ],
+    "scope": "real scene labels; smoke only; no hand/contact labels",
+    "source": "/share-mixed/projset/eai_pwm/datasets/Stera-10M/session_data_20260330_014905",
+    "image_undistorted": true
+  },
+  "K": [
+    [
+      183.4646728515625,
+      0.0,
+      127.41876220703125
+    ],
+    [
+      0.0,
+      326.1594184027778,
+      127.95126953125
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "optical_to_link": [
+    [
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      -1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      -1.0
+    ]
+  ],
+  "depth_valid_pixels": [
+    65280,
+    65280,
+    65280
+  ],
+  "max_pose_time_error_s": 0.0
+}

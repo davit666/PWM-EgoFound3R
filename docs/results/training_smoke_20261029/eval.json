@@ -1,0 +1,59 @@
+{
+  "loaded_state_keys": 636,
+  "split": "train",
+  "windows": [
+    {
+      "identity": {
+        "dataset": "STERA-10M",
+        "source_episode_id": "session_data_20260330_014905",
+        "split": "train",
+        "path": "stera_scene.npz",
+        "sha256": "7959fceb5a95caef2b1f79415743a3266e78689069ef4b5b7d13d64842c316cf",
+        "adapter": "stera_scene_v1",
+        "source_frames": [
+          31,
+          32,
+          33
+        ],
+        "scope": "real scene labels; smoke only; no hand/contact labels",
+        "source": "/share-mixed/projset/eai_pwm/datasets/Stera-10M/session_data_20260330_014905",
+        "image_undistorted": true
+      },
+      "metrics": {
+        "loss": 5.737552165985107,
+        "loss/scene_K": 5.703800678253174,
+        "loss/scene_depth": 0.03059721738100052,
+        "loss/scene_translation": 0.002038809238001704,
+        "loss/scene_rotation": 0.0,
+        "loss/scene_metric": 0.0011153275845572352
+      }
+    }
+  ],
+  "macro": {
+    "loss": {
+      "mean": 5.737552165985107,
+      "windows": 1
+    },
+    "loss/scene_K": {
+      "mean": 5.703800678253174,
+      "windows": 1
+    },
+    "loss/scene_depth": {
+      "mean": 0.03059721738100052,
+      "windows": 1
+    },
+    "loss/scene_metric": {
+      "mean": 0.0011153275845572352,
+      "windows": 1
+    },
+    "loss/scene_rotation": {
+      "mean": 0.0,
+      "windows": 1
+    },
+    "loss/scene_translation": {
+      "mean": 0.002038809238001704,
+      "windows": 1
+    }
+  },
+  "protocol": "prepared-native-H-validation; not paper benchmark"
+}

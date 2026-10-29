@@ -1,0 +1,12 @@
+{"clips": 1, "input_shape": [3, 3, 256, 256], "targets": ["scene_K", "scene_depth", "scene_pose"], "index_sha256": "837b2ff09bc70e3e3f34bd3a0ec6968e006217999bc337c9fe76db19b9511681"}
+{"state": "validated", "clips_checked": 1}
+{"clips": 1, "input_shape": [3, 3, 256, 256], "targets": ["scene_K", "scene_depth", "scene_pose"], "index_sha256": "837b2ff09bc70e3e3f34bd3a0ec6968e006217999bc337c9fe76db19b9511681"}
+/home-mixed/liwenhao666/wm/PWM-training-reconstruction/egohandmetric_prompt/models/temporal_hand_prompt_adapter.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
+{"step": 1, "lr": 0.00025, "gradient_norm": 57.6307487487793, "terms": [{"scene_K": 9.58621597290039, "scene_depth": 0.04113202914595604, "scene_translation": 0.008321361616253853, "scene_rotation": 0.003938852809369564, "scene_metric": 0.0037322998978197575}]}
+{"clips": 1, "input_shape": [3, 3, 256, 256], "targets": ["scene_K", "scene_depth", "scene_pose"], "index_sha256": "837b2ff09bc70e3e3f34bd3a0ec6968e006217999bc337c9fe76db19b9511681"}
+/home-mixed/liwenhao666/wm/PWM-training-reconstruction/egohandmetric_prompt/models/temporal_hand_prompt_adapter.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
+{"step": 2, "lr": 0.00025, "gradient_norm": 61.84819030761719, "terms": [{"scene_K": 16.050479888916016, "scene_depth": 0.054540347307920456, "scene_translation": 0.0049504563212394714, "scene_rotation": 0.006152728106826544, "scene_metric": 0.01253527868539095}]}
+/home-mixed/liwenhao666/wm/PWM-training-reconstruction/egohandmetric_prompt/models/temporal_hand_prompt_adapter.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
