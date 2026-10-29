@@ -1,0 +1,777 @@
+{
+  "sources": {
+    "H2O": {
+      "root": "/share/project/eai_pwm/datasets/H2O",
+      "exists": false,
+      "samples": [],
+      "bounded": true
+    },
+    "HOT3D-Aria": {
+      "root": "/share/project/eai_pwm/datasets/Hot3DAria",
+      "exists": false,
+      "samples": [],
+      "bounded": true
+    },
+    "OakInk-v2": {
+      "root": "/share/project/eai_pwm/datasets/OakInk-v2",
+      "exists": false,
+      "samples": [],
+      "bounded": true
+    },
+    "TACO": {
+      "root": "/share/project/eai_pwm/datasets/TACO",
+      "exists": false,
+      "samples": [],
+      "bounded": true
+    },
+    "HOI4D": {
+      "root": "/share/project/eai_pwm/datasets/raw/data/HOI4D",
+      "exists": false,
+      "samples": [],
+      "bounded": true
+    },
+    "ARCTIC": {
+      "root": "/share/project/eai_pwm/datasets/ARCTIC",
+      "exists": false,
+      "samples": [],
+      "bounded": true
+    },
+    "STERA-10M": {
+      "root": "/share-mixed/projset/eai_pwm/datasets/Stera-10M",
+      "exists": true,
+      "samples": [
+        {
+          "path": "session_data_20260330_014905",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260404_113054",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260404_190131",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260405_215941",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260406_103718",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260406_193745",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260407_063503",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260410_061438",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260410_093518",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260411_163117",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260411_174820",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260411_195628",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260412_094422",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260412_111945",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260413_051653",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260413_212931",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260415_103013",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260415_194614",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260420_200240",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260421_204030",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260422_191449",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260422_202746",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260427_083314",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260502_110331",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260502_131003",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260502_224008",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260503_075512",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260504_105517",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260506_170829",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260506_184239",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260506_185516",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260506_203144",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260509_175527",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260509_194227",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260511_181701",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260403_205922",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260403_214758",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260404_082938",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260406_081250",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260406_175633",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260407_165235",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260408_060901",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260408_065131",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260409_124358",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260411_085502",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260411_091015",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260411_113910",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260413_083742",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260415_082803",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260417_104715",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260417_180836",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260418_105804",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260418_124536",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260421_184936",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260423_092024",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260423_162705",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260423_175222",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260427_180657",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260430_202957",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260501_064859",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260330_014905/rgb.mp4",
+          "directory": false,
+          "bytes": 4354377929
+        },
+        {
+          "path": "session_data_20260330_014905/mesh.ply",
+          "directory": false,
+          "bytes": 11037772
+        },
+        {
+          "path": "session_data_20260330_014905/hierarchy.json",
+          "directory": false,
+          "bytes": 20455
+        },
+        {
+          "path": "session_data_20260330_014905/thumbnail.jpg",
+          "directory": false,
+          "bytes": 169187
+        },
+        {
+          "path": "session_data_20260330_014905/visualization_2min.rrd",
+          "directory": false,
+          "bytes": 234889369
+        },
+        {
+          "path": "session_data_20260330_014905/calibrations",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260330_014905/annotation.hdf5",
+          "directory": false,
+          "bytes": 2323025494
+        },
+        {
+          "path": "session_data_20260330_014905/visualization.rrd",
+          "directory": false,
+          "bytes": 5550584294
+        },
+        {
+          "path": "session_data_20260404_113054/calibrations",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260404_113054/visualization.rrd",
+          "directory": false,
+          "bytes": 329596921
+        },
+        {
+          "path": "session_data_20260404_113054/hierarchy.json",
+          "directory": false,
+          "bytes": 6325
+        },
+        {
+          "path": "session_data_20260404_113054/rgb.mp4",
+          "directory": false,
+          "bytes": 274402613
+        },
+        {
+          "path": "session_data_20260404_113054/visualization_2min.rrd",
+          "directory": false,
+          "bytes": 130064070
+        },
+        {
+          "path": "session_data_20260404_113054/annotation.hdf5",
+          "directory": false,
+          "bytes": 182633706
+        },
+        {
+          "path": "session_data_20260404_113054/thumbnail.jpg",
+          "directory": false,
+          "bytes": 127663
+        },
+        {
+          "path": "session_data_20260404_113054/mesh.ply",
+          "directory": false,
+          "bytes": 20823955
+        },
+        {
+          "path": "session_data_20260404_190131/rgb.mp4",
+          "directory": false,
+          "bytes": 586832319
+        },
+        {
+          "path": "session_data_20260404_190131/annotation.hdf5",
+          "directory": false,
+          "bytes": 319889369
+        },
+        {
+          "path": "session_data_20260404_190131/visualization_2min.rrd",
+          "directory": false,
+          "bytes": 148114693
+        },
+        {
+          "path": "session_data_20260404_190131/visualization.rrd",
+          "directory": false,
+          "bytes": 868271400
+        },
+        {
+          "path": "session_data_20260404_190131/calibrations",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260404_190131/hierarchy.json",
+          "directory": false,
+          "bytes": 3818
+        },
+        {
+          "path": "session_data_20260404_190131/thumbnail.jpg",
+          "directory": false,
+          "bytes": 154633
+        },
+        {
+          "path": "session_data_20260404_190131/mesh.ply",
+          "directory": false,
+          "bytes": 659521
+        },
+        {
+          "path": "session_data_20260405_215941/hierarchy.json",
+          "directory": false,
+          "bytes": 8975
+        },
+        {
+          "path": "session_data_20260405_215941/thumbnail.jpg",
+          "directory": false,
+          "bytes": 124809
+        },
+        {
+          "path": "session_data_20260405_215941/mesh.ply",
+          "directory": false,
+          "bytes": 1817686
+        },
+        {
+          "path": "session_data_20260405_215941/rgb.mp4",
+          "directory": false,
+          "bytes": 276384836
+        },
+        {
+          "path": "session_data_20260405_215941/visualization_2min.rrd",
+          "directory": false,
+          "bytes": 128332992
+        },
+        {
+          "path": "session_data_20260405_215941/visualization.rrd",
+          "directory": false,
+          "bytes": 384345581
+        },
+        {
+          "path": "session_data_20260405_215941/calibrations",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260405_215941/annotation.hdf5",
+          "directory": false,
+          "bytes": 182692527
+        },
+        {
+          "path": "session_data_20260406_103718/visualization_2min.rrd",
+          "directory": false,
+          "bytes": 154652014
+        },
+        {
+          "path": "session_data_20260406_103718/calibrations",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260406_103718/mesh.ply",
+          "directory": false,
+          "bytes": 826023
+        },
+        {
+          "path": "session_data_20260406_103718/visualization.rrd",
+          "directory": false,
+          "bytes": 1357785755
+        },
+        {
+          "path": "session_data_20260406_103718/thumbnail.jpg",
+          "directory": false,
+          "bytes": 137001
+        },
+        {
+          "path": "session_data_20260406_103718/hierarchy.json",
+          "directory": false,
+          "bytes": 6508
+        },
+        {
+          "path": "session_data_20260406_103718/annotation.hdf5",
+          "directory": false,
+          "bytes": 615125821
+        },
+        {
+          "path": "session_data_20260406_103718/rgb.mp4",
+          "directory": false,
+          "bytes": 792701343
+        },
+        {
+          "path": "session_data_20260406_193745/visualization_2min.rrd",
+          "directory": false,
+          "bytes": 191776998
+        },
+        {
+          "path": "session_data_20260406_193745/calibrations",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260406_193745/annotation.hdf5",
+          "directory": false,
+          "bytes": 596794924
+        },
+        {
+          "path": "session_data_20260406_193745/thumbnail.jpg",
+          "directory": false,
+          "bytes": 196782
+        },
+        {
+          "path": "session_data_20260406_193745/visualization.rrd",
+          "directory": false,
+          "bytes": 1786050908
+        },
+        {
+          "path": "session_data_20260406_193745/hierarchy.json",
+          "directory": false,
+          "bytes": 4402
+        },
+        {
+          "path": "session_data_20260406_193745/mesh.ply",
+          "directory": false,
+          "bytes": 1694794
+        },
+        {
+          "path": "session_data_20260406_193745/rgb.mp4",
+          "directory": false,
+          "bytes": 924553084
+        },
+        {
+          "path": "session_data_20260407_063503/calibrations",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260407_063503/annotation.hdf5",
+          "directory": false,
+          "bytes": 623778802
+        },
+        {
+          "path": "session_data_20260407_063503/thumbnail.jpg",
+          "directory": false,
+          "bytes": 175701
+        },
+        {
+          "path": "session_data_20260407_063503/visualization.rrd",
+          "directory": false,
+          "bytes": 1677862745
+        },
+        {
+          "path": "session_data_20260407_063503/visualization_2min.rrd",
+          "directory": false,
+          "bytes": 160047791
+        },
+        {
+          "path": "session_data_20260407_063503/rgb.mp4",
+          "directory": false,
+          "bytes": 1147655463
+        },
+        {
+          "path": "session_data_20260407_063503/hierarchy.json",
+          "directory": false,
+          "bytes": 10112
+        },
+        {
+          "path": "session_data_20260407_063503/mesh.ply",
+          "directory": false,
+          "bytes": 3150241
+        },
+        {
+          "path": "session_data_20260410_061438/calibrations",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260410_061438/mesh.ply",
+          "directory": false,
+          "bytes": 2179943
+        },
+        {
+          "path": "session_data_20260410_061438/hierarchy.json",
+          "directory": false,
+          "bytes": 4779
+        },
+        {
+          "path": "session_data_20260410_061438/thumbnail.jpg",
+          "directory": false,
+          "bytes": 163727
+        },
+        {
+          "path": "session_data_20260410_061438/annotation.hdf5",
+          "directory": false,
+          "bytes": 224205877
+        },
+        {
+          "path": "session_data_20260410_061438/visualization_2min.rrd",
+          "directory": false,
+          "bytes": 151677438
+        },
+        {
+          "path": "session_data_20260410_061438/rgb.mp4",
+          "directory": false,
+          "bytes": 361776781
+        },
+        {
+          "path": "session_data_20260410_061438/visualization.rrd",
+          "directory": false,
+          "bytes": 533168460
+        },
+        {
+          "path": "session_data_20260410_093518/visualization_2min.rrd",
+          "directory": false,
+          "bytes": 127313583
+        },
+        {
+          "path": "session_data_20260410_093518/calibrations",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260410_093518/visualization.rrd",
+          "directory": false,
+          "bytes": 1382372581
+        },
+        {
+          "path": "session_data_20260410_093518/hierarchy.json",
+          "directory": false,
+          "bytes": 5480
+        },
+        {
+          "path": "session_data_20260410_093518/annotation.hdf5",
+          "directory": false,
+          "bytes": 590540114
+        },
+        {
+          "path": "session_data_20260410_093518/mesh.ply",
+          "directory": false,
+          "bytes": 800151
+        },
+        {
+          "path": "session_data_20260410_093518/rgb.mp4",
+          "directory": false,
+          "bytes": 779265251
+        },
+        {
+          "path": "session_data_20260410_093518/thumbnail.jpg",
+          "directory": false,
+          "bytes": 118878
+        },
+        {
+          "path": "session_data_20260411_163117/hierarchy.json",
+          "directory": false,
+          "bytes": 7677
+        },
+        {
+          "path": "session_data_20260411_163117/annotation.hdf5",
+          "directory": false,
+          "bytes": 367159447
+        },
+        {
+          "path": "session_data_20260411_163117/thumbnail.jpg",
+          "directory": false,
+          "bytes": 130111
+        },
+        {
+          "path": "session_data_20260411_163117/visualization_2min.rrd",
+          "directory": false,
+          "bytes": 128852534
+        },
+        {
+          "path": "session_data_20260411_163117/calibrations",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260411_163117/mesh.ply",
+          "directory": false,
+          "bytes": 733070
+        },
+        {
+          "path": "session_data_20260411_163117/visualization.rrd",
+          "directory": false,
+          "bytes": 847415407
+        },
+        {
+          "path": "session_data_20260411_163117/rgb.mp4",
+          "directory": false,
+          "bytes": 449111044
+        },
+        {
+          "path": "session_data_20260411_174820/visualization.rrd",
+          "directory": false,
+          "bytes": 463186280
+        },
+        {
+          "path": "session_data_20260411_174820/calibrations",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260411_174820/mesh.ply",
+          "directory": false,
+          "bytes": 1057254
+        },
+        {
+          "path": "session_data_20260411_174820/thumbnail.jpg",
+          "directory": false,
+          "bytes": 127096
+        },
+        {
+          "path": "session_data_20260411_174820/rgb.mp4",
+          "directory": false,
+          "bytes": 292134773
+        },
+        {
+          "path": "session_data_20260411_174820/hierarchy.json",
+          "directory": false,
+          "bytes": 3748
+        },
+        {
+          "path": "session_data_20260411_174820/annotation.hdf5",
+          "directory": false,
+          "bytes": 225810113
+        },
+        {
+          "path": "session_data_20260411_174820/visualization_2min.rrd",
+          "directory": false,
+          "bytes": 112057085
+        },
+        {
+          "path": "session_data_20260411_195628/calibrations",
+          "directory": true
+        },
+        {
+          "path": "session_data_20260411_195628/hierarchy.json",
+          "directory": false,
+          "bytes": 6000
+        },
+        {
+          "path": "session_data_20260411_195628/rgb.mp4",
+          "directory": false,
+          "bytes": 693286248
+        },
+        {
+          "path": "session_data_20260411_195628/annotation.hdf5",
+          "directory": false,
+          "bytes": 481891147
+        },
+        {
+          "path": "session_data_20260411_195628/visualization_2min.rrd",
+          "directory": false,
+          "bytes": 142507349
+        },
+        {
+          "path": "session_data_20260411_195628/visualization.rrd",
+          "directory": false,
+          "bytes": 1071383192
+        },
+        {
+          "path": "session_data_20260411_195628/mesh.ply",
+          "directory": false,
+          "bytes": 954354
+        },
+        {
+          "path": "session_data_20260411_195628/thumbnail.jpg",
+          "directory": false,
+          "bytes": 125208
+        },
+        {
+          "path": "session_data_20260412_094422/mesh.ply",
+          "directory": false,
+          "bytes": 685344
+        },
+        {
+          "path": "session_data_20260412_094422/visualization_2min.rrd",
+          "directory": false,
+          "bytes": 158378754
+        },
+        {
+          "path": "session_data_20260412_094422/visualization.rrd",
+          "directory": false,
+          "bytes": 1293656034
+        },
+        {
+          "path": "session_data_20260412_094422/rgb.mp4",
+          "directory": false,
+          "bytes": 697905590
+        }
+      ],
+      "bounded": true
+    }
+  },
+  "gpu": "0, NVIDIA H100 80GB HBM3, 0 MiB, 81559 MiB, 0 %\n1, NVIDIA H100 80GB HBM3, 0 MiB, 81559 MiB, 0 %\n2, NVIDIA H100 80GB HBM3, 0 MiB, 81559 MiB, 0 %\n3, NVIDIA H100 80GB HBM3, 0 MiB, 81559 MiB, 0 %\n4, NVIDIA H100 80GB HBM3, 0 MiB, 81559 MiB, 0 %\n5, NVIDIA H100 80GB HBM3, 0 MiB, 81559 MiB, 0 %\n6, NVIDIA H100 80GB HBM3, 0 MiB, 81559 MiB, 0 %\n7, NVIDIA H100 80GB HBM3, 0 MiB, 81559 MiB, 0 %\n",
+  "host": "job-18c466f4-db66-4b0d-bfb4-7c8531ce94f1-master-0"
+}
