@@ -76,3 +76,32 @@ To https://github.com/davit666/PWM-EgoFound3R.git
 {"dataset": "TACO", "split": "val", "prepared_sequences": 3, "clips": 35}
 {"dataset": "TACO", "split": "val", "prepared_sequences": 4, "clips": 36}
 {"rows": 36, "frames_per_clip": 60, "scope": "TACO/STERA pilot; not original seven-dataset training split", "native_taco_split": "train versus test_1/test_2", "stera_split": "our source-session holdout", "counts": {"TACO/train": 32, "TACO/val": 4, "STERA-10M/train": 0, "STERA-10M/val": 0}}
+[pwm/training-reconstruction b28c6aa] results: wm1 benchmark train-starting at step 0
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+To https://github.com/davit666/PWM-EgoFound3R.git
+   e0683cf..b28c6aa  HEAD -> pwm/wm1-benchmark100
+{"train": {"STERA-10M": {"clips": 32, "source_episodes": ["session_data_20260328_234041", "session_data_20260328_235204", "session_data_20260329_213432", "session_data_20260330_014905"], "targets": ["scene_K", "scene_depth", "scene_pose"]}, "TACO": {"clips": 32, "source_episodes": ["(brush, brush, cup)/20231026_014", "(brush, brush, plate)/20230929_035", "(cut, knife, plate)/20231020_219", "(cut, spatula, pan)/20231013_005", "(dust, brush, kettle)/20231103_156", "(dust, roller, pan)/20230927_032", "(empty, kettle, cup)/20231031_026", "(empty, kettle, kettle)/20231031_004", "(empty, kettle, plate)/20230930_152", "(empty, plate, box)/20230927_050", "(empty, plate, cup)/20230928_033", "(empty, plate, plate)/20230930_144", "(empty, plate, teapot)/20230927_046", "(empty, teapot, cup)/20230927_040", "(empty, teapot, plate)/20231031_097", "(measure, ruler, box)/20231102_022"], "targets": ["heatmap", "joint_contact", "joint_distance", "joint_offset", "offset2d", "projection_K", "reprojection", "vertex_contact", "vertex_distance", "vertex_offset"]}}, "val": {"STERA-10M": {"clips": 4, "source_episodes": ["session_data_20260330_090629", "session_data_20260330_093149"], "targets": ["scene_K", "scene_depth", "scene_pose"]}, "TACO": {"clips": 4, "source_episodes": ["(brush, brush, bowl)/20231005_188", "(brush, brush, box)/20231006_163", "(brush, brush, helmet)/20231027_011", "(brush, brush, pan)/20230927_023"], "targets": ["heatmap", "joint_contact", "joint_distance", "joint_offset", "offset2d", "projection_K", "reprojection", "vertex_contact", "vertex_distance", "vertex_offset"]}}, "frames_per_clip": 60, "image_hw": [256, 256], "scope": "prepared-contract check; original author preprocessing and splits are not certified"}
+/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/egohandmetric_prompt/models/temporal_hand_prompt_adapter.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
+/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/egohandmetric_prompt/models/temporal_hand_prompt_adapter.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
+/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/egohandmetric_prompt/models/temporal_hand_prompt_adapter.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
+/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/egohandmetric_prompt/models/temporal_hand_prompt_adapter.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
+/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/egohandmetric_prompt/models/temporal_hand_prompt_adapter.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
+/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/egohandmetric_prompt/models/temporal_hand_prompt_adapter.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
+/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/egohandmetric_prompt/models/temporal_hand_prompt_adapter.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
+/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/egohandmetric_prompt/models/temporal_hand_prompt_adapter.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
+{"rank": 4, "phase": "engine_initializing"}
+{"rank": 6, "phase": "engine_initializing"}
+{"rank": 7, "phase": "engine_initializing"}
+{"rank": 5, "phase": "engine_initializing"}
+{"rank": 0, "phase": "engine_initializing"}
+{"rank": 2, "phase": "engine_initializing"}
+{"rank": 3, "phase": "engine_initializing"}
+{"rank": 1, "phase": "engine_initializing"}
