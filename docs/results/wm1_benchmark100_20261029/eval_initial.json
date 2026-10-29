@@ -1,0 +1,1059 @@
+{
+  "loaded_state_keys": 636,
+  "split": "val",
+  "windows": [
+    {
+      "identity": {
+        "dataset": "TACO",
+        "source_episode_id": "(brush, brush, bowl)/20231005_188",
+        "split": "val",
+        "path": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_val_20231005_188/clip_00.npz",
+        "sha256": "b14810ed913182def3aad4e80516be16d181e81dcfd013df1c5f6a41c50d9b13",
+        "adapter": "taco_v1_hand_contact_v1",
+        "source_frames": [
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89
+        ],
+        "preparation_report": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_val_20231005_188/preparation.json",
+        "dataset_native_split": "test_3"
+      },
+      "metrics": {
+        "loss": 118.31351470947266,
+        "loss/joint_offset": 2.216383457183838,
+        "loss/joint_contact": 1.0266484022140503,
+        "loss/joint_distance": 3.3404335975646973,
+        "loss/vertex_offset": 2.222010850906372,
+        "loss/vertex_contact": 0.7738705277442932,
+        "loss/vertex_distance": 2.7528631687164307,
+        "loss/heatmap": 0.7320739030838013,
+        "loss/offset2d": 0.36076509952545166,
+        "loss/reprojection": 104.88846588134766,
+        "joint/native_root_relative_error_mm": 117.80875396728516,
+        "joint_contact/precision": 0.17422867513611615,
+        "joint_contact/recall": 0.8930232558139535,
+        "joint_contact/f1": 0.29157175398633256,
+        "joint/distance_mae_mm/all": 57.94273376464844,
+        "joint/distance_mae_mm/pred_contact": 56.76950454711914,
+        "joint/distance_mae_mm/gt_contact": 11.235458374023438,
+        "vertex/native_root_relative_error_mm": 144.92323303222656,
+        "vertex_contact/precision": 0.07106076210092688,
+        "vertex_contact/recall": 0.40033153750518025,
+        "vertex_contact/f1": 0.12069719497719747,
+        "vertex/distance_mae_mm/all": 59.78987121582031,
+        "vertex/distance_mae_mm/pred_contact": 68.51162719726562,
+        "vertex/distance_mae_mm/gt_contact": 7.126265048980713
+      }
+    },
+    {
+      "identity": {
+        "dataset": "TACO",
+        "source_episode_id": "(brush, brush, box)/20231006_163",
+        "split": "val",
+        "path": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_val_20231006_163/clip_00.npz",
+        "sha256": "117a3e29b5e1c5ac5cfa35b786f20bdbf8c3bb0125c1a10c02f1ccdbdd3a6d8c",
+        "adapter": "taco_v1_hand_contact_v1",
+        "source_frames": [
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89
+        ],
+        "preparation_report": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_val_20231006_163/preparation.json",
+        "dataset_native_split": "test_2"
+      },
+      "metrics": {
+        "loss": 3634.22412109375,
+        "loss/joint_offset": 2.4713191986083984,
+        "loss/joint_contact": 0.7777348756790161,
+        "loss/joint_distance": 2.3491225242614746,
+        "loss/vertex_offset": 2.5406856536865234,
+        "loss/vertex_contact": 0.7504656314849854,
+        "loss/vertex_distance": 2.1060848236083984,
+        "loss/heatmap": 0.7320881485939026,
+        "loss/offset2d": 0.36040571331977844,
+        "loss/reprojection": 3622.13623046875,
+        "joint/native_root_relative_error_mm": 107.57099914550781,
+        "joint_contact/precision": 0.476027397260274,
+        "joint_contact/recall": 0.9122231337161608,
+        "joint_contact/f1": 0.6255977496483826,
+        "joint/distance_mae_mm/all": 23.170490264892578,
+        "joint/distance_mae_mm/pred_contact": 23.203208923339844,
+        "joint/distance_mae_mm/gt_contact": 7.753378391265869,
+        "vertex/native_root_relative_error_mm": 127.89952850341797,
+        "vertex_contact/precision": 0.3755534383231519,
+        "vertex_contact/recall": 0.7547871142149133,
+        "vertex_contact/f1": 0.5015530855881142,
+        "vertex/distance_mae_mm/all": 24.935104370117188,
+        "vertex/distance_mae_mm/pred_contact": 24.95410919189453,
+        "vertex/distance_mae_mm/gt_contact": 5.674126148223877
+      }
+    },
+    {
+      "identity": {
+        "dataset": "TACO",
+        "source_episode_id": "(brush, brush, helmet)/20231027_011",
+        "split": "val",
+        "path": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_val_20231027_011/clip_00.npz",
+        "sha256": "3ca497b2140d4e914de05adb25a96cb1615a1d528733f03e344226dedd267b1e",
+        "adapter": "taco_v1_hand_contact_v1",
+        "source_frames": [
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89
+        ],
+        "preparation_report": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_val_20231027_011/preparation.json",
+        "dataset_native_split": "test_2"
+      },
+      "metrics": {
+        "loss": 174.8072967529297,
+        "loss/joint_offset": 2.01111102104187,
+        "loss/joint_contact": 0.8295575976371765,
+        "loss/joint_distance": 2.3734099864959717,
+        "loss/vertex_offset": 2.3011269569396973,
+        "loss/vertex_contact": 0.6756309866905212,
+        "loss/vertex_distance": 2.082266092300415,
+        "loss/heatmap": 0.7320699095726013,
+        "loss/offset2d": 0.3609766960144043,
+        "loss/reprojection": 163.44114685058594,
+        "joint/native_root_relative_error_mm": 106.79434967041016,
+        "joint_contact/precision": 0.5067934782608695,
+        "joint_contact/recall": 0.8594470046082949,
+        "joint_contact/f1": 0.6376068376068376,
+        "joint/distance_mae_mm/all": 28.10372543334961,
+        "joint/distance_mae_mm/pred_contact": 28.17760467529297,
+        "joint/distance_mae_mm/gt_contact": 7.755150318145752,
+        "vertex/native_root_relative_error_mm": 136.16407775878906,
+        "vertex_contact/precision": 0.5032613688562242,
+        "vertex_contact/recall": 0.5623075343871895,
+        "vertex_contact/f1": 0.5311484946914239,
+        "vertex/distance_mae_mm/all": 31.143787384033203,
+        "vertex/distance_mae_mm/pred_contact": 24.333280563354492,
+        "vertex/distance_mae_mm/gt_contact": 6.084658622741699
+      }
+    },
+    {
+      "identity": {
+        "dataset": "TACO",
+        "source_episode_id": "(brush, brush, pan)/20230927_023",
+        "split": "val",
+        "path": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_val_20230927_023/clip_00.npz",
+        "sha256": "9d2efc672690a8674e3332ba5c90c8daee165da99f67cc6609990fc1b56cbf56",
+        "adapter": "taco_v1_hand_contact_v1",
+        "source_frames": [
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89
+        ],
+        "preparation_report": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_val_20230927_023/preparation.json",
+        "dataset_native_split": "test_2"
+      },
+      "metrics": {
+        "loss": 117.15752410888672,
+        "loss/joint_offset": 2.3307206630706787,
+        "loss/joint_contact": 0.8111658692359924,
+        "loss/joint_distance": 2.323012351989746,
+        "loss/vertex_offset": 2.162933826446533,
+        "loss/vertex_contact": 0.7196707129478455,
+        "loss/vertex_distance": 1.9788204431533813,
+        "loss/heatmap": 0.7321462035179138,
+        "loss/offset2d": 0.3610394299030304,
+        "loss/reprojection": 105.7380142211914,
+        "joint/native_root_relative_error_mm": 118.1271743774414,
+        "joint_contact/precision": 0.46075433231396534,
+        "joint_contact/recall": 0.8293577981651377,
+        "joint_contact/f1": 0.5923984272608126,
+        "joint/distance_mae_mm/all": 23.663911819458008,
+        "joint/distance_mae_mm/pred_contact": 20.967866897583008,
+        "joint/distance_mae_mm/gt_contact": 9.089609146118164,
+        "vertex/native_root_relative_error_mm": 139.9287109375,
+        "vertex_contact/precision": 0.3116861979166667,
+        "vertex_contact/recall": 0.496049734490351,
+        "vertex_contact/f1": 0.38282772752261485,
+        "vertex/distance_mae_mm/all": 25.718427658081055,
+        "vertex/distance_mae_mm/pred_contact": 28.99783706665039,
+        "vertex/distance_mae_mm/gt_contact": 6.3859148025512695
+      }
+    },
+    {
+      "identity": {
+        "dataset": "STERA-10M",
+        "source_episode_id": "session_data_20260330_090629",
+        "split": "val",
+        "path": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/stera/stera_val_session_data_20260330_090629_00/clip_00.npz",
+        "sha256": "cadb4c93224dc7d670b77ecd63018830f1cbbeb5065a93e79418992f6f4d9b28",
+        "adapter": "stera_scene_v1",
+        "source_frames": [
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90
+        ],
+        "scope": "real scene labels; no hand/contact labels",
+        "source": "/share-mixed/projset/eai_pwm/datasets/Stera-10M/session_data_20260330_090629",
+        "image_undistorted": true,
+        "preparation_report": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/stera/stera_val_session_data_20260330_090629_00/preparation.json"
+      },
+      "metrics": {
+        "loss": 16.690330505371094,
+        "loss/scene_K": 15.926236152648926,
+        "loss/scene_depth": 0.13847669959068298,
+        "loss/scene_translation": 0.13845042884349823,
+        "loss/scene_rotation": 0.2507147490978241,
+        "loss/scene_metric": 0.23645144701004028,
+        "scene/depth_scale_aligned/abs_rel": 0.19915016859542492,
+        "scene/depth_scale_aligned/rmse_m": 0.2487771783075572,
+        "scene/depth_scale_aligned/delta1": 0.7204912173202613,
+        "scene/depth_scale_aligned/scale_ratio": 1.950408089075126,
+        "scene/camera/ate_m": 0.23318400325805239,
+        "scene/camera/rotation_deg": 14.334329917248066
+      }
+    },
+    {
+      "identity": {
+        "dataset": "STERA-10M",
+        "source_episode_id": "session_data_20260330_090629",
+        "split": "val",
+        "path": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/stera/stera_val_session_data_20260330_090629_01/clip_00.npz",
+        "sha256": "73224b159539f6ebb967fc944a5b2faafb886d67d22b0bdffe633413f6d6d547",
+        "adapter": "stera_scene_v1",
+        "source_frames": [
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120,
+          121,
+          122,
+          123,
+          124,
+          125,
+          126,
+          127,
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148,
+          149,
+          150
+        ],
+        "scope": "real scene labels; no hand/contact labels",
+        "source": "/share-mixed/projset/eai_pwm/datasets/Stera-10M/session_data_20260330_090629",
+        "image_undistorted": true,
+        "preparation_report": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/stera/stera_val_session_data_20260330_090629_01/preparation.json"
+      },
+      "metrics": {
+        "loss": 16.44082260131836,
+        "loss/scene_K": 15.709522247314453,
+        "loss/scene_depth": 0.38426855206489563,
+        "loss/scene_translation": 0.08861696720123291,
+        "loss/scene_rotation": 0.15938784182071686,
+        "loss/scene_metric": 0.09902677685022354,
+        "scene/depth_scale_aligned/abs_rel": 0.09188737707711338,
+        "scene/depth_scale_aligned/rmse_m": 0.11008946408268261,
+        "scene/depth_scale_aligned/delta1": 0.933141850490196,
+        "scene/depth_scale_aligned/scale_ratio": 1.3843259233657461,
+        "scene/camera/ate_m": 0.04688384099562853,
+        "scene/camera/rotation_deg": 9.087845554837116
+      }
+    },
+    {
+      "identity": {
+        "dataset": "STERA-10M",
+        "source_episode_id": "session_data_20260330_093149",
+        "split": "val",
+        "path": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/stera/stera_val_session_data_20260330_093149_00/clip_00.npz",
+        "sha256": "0a96abba477e51d91389860019684f335daa0feb0787b1ac8c4d511c89ef5c8d",
+        "adapter": "stera_scene_v1",
+        "source_frames": [
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90
+        ],
+        "scope": "real scene labels; no hand/contact labels",
+        "source": "/share-mixed/projset/eai_pwm/datasets/Stera-10M/session_data_20260330_093149",
+        "image_undistorted": true,
+        "preparation_report": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/stera/stera_val_session_data_20260330_093149_00/preparation.json"
+      },
+      "metrics": {
+        "loss": 82.05288696289062,
+        "loss/scene_K": 79.03964233398438,
+        "loss/scene_depth": 0.666777491569519,
+        "loss/scene_translation": 0.5224317908287048,
+        "loss/scene_rotation": 1.8235218524932861,
+        "loss/scene_metric": 0.0005087627796456218,
+        "scene/depth_scale_aligned/abs_rel": 3.5032116300237126,
+        "scene/depth_scale_aligned/rmse_m": 0.4362375065048197,
+        "scene/depth_scale_aligned/delta1": 0.269320618872549,
+        "scene/depth_scale_aligned/scale_ratio": 8.390415940078675,
+        "scene/camera/ate_m": 0.19586907256191294,
+        "scene/camera/rotation_deg": 104.46974057256523
+      }
+    },
+    {
+      "identity": {
+        "dataset": "STERA-10M",
+        "source_episode_id": "session_data_20260330_093149",
+        "split": "val",
+        "path": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/stera/stera_val_session_data_20260330_093149_01/clip_00.npz",
+        "sha256": "d1298610c5d8237e85b17e0e5e0b30fd6d06e478a4be867dc38eecff78ba9e7e",
+        "adapter": "stera_scene_v1",
+        "source_frames": [
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120,
+          121,
+          122,
+          123,
+          124,
+          125,
+          126,
+          127,
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148,
+          149,
+          150
+        ],
+        "scope": "real scene labels; no hand/contact labels",
+        "source": "/share-mixed/projset/eai_pwm/datasets/Stera-10M/session_data_20260330_093149",
+        "image_undistorted": true,
+        "preparation_report": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/stera/stera_val_session_data_20260330_093149_01/preparation.json"
+      },
+      "metrics": {
+        "loss": 86.36150360107422,
+        "loss/scene_K": 85.41096496582031,
+        "loss/scene_depth": 0.39534610509872437,
+        "loss/scene_translation": 0.32898733019828796,
+        "loss/scene_rotation": 0.21425971388816833,
+        "loss/scene_metric": 0.011944513767957687,
+        "scene/depth_scale_aligned/abs_rel": 0.27555102299437406,
+        "scene/depth_scale_aligned/rmse_m": 0.19304396207821473,
+        "scene/depth_scale_aligned/delta1": 0.6790185866013071,
+        "scene/depth_scale_aligned/scale_ratio": 3.7788252703776575,
+        "scene/camera/ate_m": 0.0950610426193546,
+        "scene/camera/rotation_deg": 12.252141414287923
+      }
+    }
+  ],
+  "macro": {
+    "joint/distance_mae_mm/all": {
+      "mean": 33.22021532058716,
+      "windows": 4
+    },
+    "joint/distance_mae_mm/gt_contact": {
+      "mean": 8.958399057388306,
+      "windows": 4
+    },
+    "joint/distance_mae_mm/pred_contact": {
+      "mean": 32.27954626083374,
+      "windows": 4
+    },
+    "joint/native_root_relative_error_mm": {
+      "mean": 112.57531929016113,
+      "windows": 4
+    },
+    "joint_contact/f1": {
+      "mean": 0.5367936921255914,
+      "windows": 4
+    },
+    "joint_contact/precision": {
+      "mean": 0.4044509707428062,
+      "windows": 4
+    },
+    "joint_contact/recall": {
+      "mean": 0.8735127980758868,
+      "windows": 4
+    },
+    "loss": {
+      "mean": 530.7560000419617,
+      "windows": 8
+    },
+    "loss/heatmap": {
+      "mean": 0.7320945411920547,
+      "windows": 4
+    },
+    "loss/joint_contact": {
+      "mean": 0.8612766861915588,
+      "windows": 4
+    },
+    "loss/joint_distance": {
+      "mean": 2.5964946150779724,
+      "windows": 4
+    },
+    "loss/joint_offset": {
+      "mean": 2.2573835849761963,
+      "windows": 4
+    },
+    "loss/offset2d": {
+      "mean": 0.3607967346906662,
+      "windows": 4
+    },
+    "loss/reprojection": {
+      "mean": 999.0509643554688,
+      "windows": 4
+    },
+    "loss/scene_K": {
+      "mean": 49.02159142494202,
+      "windows": 4
+    },
+    "loss/scene_depth": {
+      "mean": 0.3962172120809555,
+      "windows": 4
+    },
+    "loss/scene_metric": {
+      "mean": 0.08698287510196678,
+      "windows": 4
+    },
+    "loss/scene_rotation": {
+      "mean": 0.6119710393249989,
+      "windows": 4
+    },
+    "loss/scene_translation": {
+      "mean": 0.269621629267931,
+      "windows": 4
+    },
+    "loss/vertex_contact": {
+      "mean": 0.7299094647169113,
+      "windows": 4
+    },
+    "loss/vertex_distance": {
+      "mean": 2.2300086319446564,
+      "windows": 4
+    },
+    "loss/vertex_offset": {
+      "mean": 2.3066893219947815,
+      "windows": 4
+    },
+    "scene/camera/ate_m": {
+      "mean": 0.14274948985873712,
+      "windows": 4
+    },
+    "scene/camera/rotation_deg": {
+      "mean": 35.036014364734584,
+      "windows": 4
+    },
+    "scene/depth_scale_aligned/abs_rel": {
+      "mean": 1.0174500496726562,
+      "windows": 4
+    },
+    "scene/depth_scale_aligned/delta1": {
+      "mean": 0.6504930683210783,
+      "windows": 4
+    },
+    "scene/depth_scale_aligned/rmse_m": {
+      "mean": 0.24703702774331854,
+      "windows": 4
+    },
+    "scene/depth_scale_aligned/scale_ratio": {
+      "mean": 3.8759938057243013,
+      "windows": 4
+    },
+    "vertex/distance_mae_mm/all": {
+      "mean": 35.39679765701294,
+      "windows": 4
+    },
+    "vertex/distance_mae_mm/gt_contact": {
+      "mean": 6.31774115562439,
+      "windows": 4
+    },
+    "vertex/distance_mae_mm/pred_contact": {
+      "mean": 36.69921350479126,
+      "windows": 4
+    },
+    "vertex/native_root_relative_error_mm": {
+      "mean": 137.2288875579834,
+      "windows": 4
+    },
+    "vertex_contact/f1": {
+      "mean": 0.3840566256948376,
+      "windows": 4
+    },
+    "vertex_contact/precision": {
+      "mean": 0.3153904417992424,
+      "windows": 4
+    },
+    "vertex_contact/recall": {
+      "mean": 0.5533689801494085,
+      "windows": 4
+    }
+  },
+  "by_dataset": {
+    "STERA-10M": {
+      "loss": {
+        "mean": 50.386385917663574,
+        "windows": 4
+      },
+      "loss/scene_K": {
+        "mean": 49.02159142494202,
+        "windows": 4
+      },
+      "loss/scene_depth": {
+        "mean": 0.3962172120809555,
+        "windows": 4
+      },
+      "loss/scene_metric": {
+        "mean": 0.08698287510196678,
+        "windows": 4
+      },
+      "loss/scene_rotation": {
+        "mean": 0.6119710393249989,
+        "windows": 4
+      },
+      "loss/scene_translation": {
+        "mean": 0.269621629267931,
+        "windows": 4
+      },
+      "scene/camera/ate_m": {
+        "mean": 0.14274948985873712,
+        "windows": 4
+      },
+      "scene/camera/rotation_deg": {
+        "mean": 35.036014364734584,
+        "windows": 4
+      },
+      "scene/depth_scale_aligned/abs_rel": {
+        "mean": 1.0174500496726562,
+        "windows": 4
+      },
+      "scene/depth_scale_aligned/delta1": {
+        "mean": 0.6504930683210783,
+        "windows": 4
+      },
+      "scene/depth_scale_aligned/rmse_m": {
+        "mean": 0.24703702774331854,
+        "windows": 4
+      },
+      "scene/depth_scale_aligned/scale_ratio": {
+        "mean": 3.8759938057243013,
+        "windows": 4
+      }
+    },
+    "TACO": {
+      "joint/distance_mae_mm/all": {
+        "mean": 33.22021532058716,
+        "windows": 4
+      },
+      "joint/distance_mae_mm/gt_contact": {
+        "mean": 8.958399057388306,
+        "windows": 4
+      },
+      "joint/distance_mae_mm/pred_contact": {
+        "mean": 32.27954626083374,
+        "windows": 4
+      },
+      "joint/native_root_relative_error_mm": {
+        "mean": 112.57531929016113,
+        "windows": 4
+      },
+      "joint_contact/f1": {
+        "mean": 0.5367936921255914,
+        "windows": 4
+      },
+      "joint_contact/precision": {
+        "mean": 0.4044509707428062,
+        "windows": 4
+      },
+      "joint_contact/recall": {
+        "mean": 0.8735127980758868,
+        "windows": 4
+      },
+      "loss": {
+        "mean": 1011.1256141662598,
+        "windows": 4
+      },
+      "loss/heatmap": {
+        "mean": 0.7320945411920547,
+        "windows": 4
+      },
+      "loss/joint_contact": {
+        "mean": 0.8612766861915588,
+        "windows": 4
+      },
+      "loss/joint_distance": {
+        "mean": 2.5964946150779724,
+        "windows": 4
+      },
+      "loss/joint_offset": {
+        "mean": 2.2573835849761963,
+        "windows": 4
+      },
+      "loss/offset2d": {
+        "mean": 0.3607967346906662,
+        "windows": 4
+      },
+      "loss/reprojection": {
+        "mean": 999.0509643554688,
+        "windows": 4
+      },
+      "loss/vertex_contact": {
+        "mean": 0.7299094647169113,
+        "windows": 4
+      },
+      "loss/vertex_distance": {
+        "mean": 2.2300086319446564,
+        "windows": 4
+      },
+      "loss/vertex_offset": {
+        "mean": 2.3066893219947815,
+        "windows": 4
+      },
+      "vertex/distance_mae_mm/all": {
+        "mean": 35.39679765701294,
+        "windows": 4
+      },
+      "vertex/distance_mae_mm/gt_contact": {
+        "mean": 6.31774115562439,
+        "windows": 4
+      },
+      "vertex/distance_mae_mm/pred_contact": {
+        "mean": 36.69921350479126,
+        "windows": 4
+      },
+      "vertex/native_root_relative_error_mm": {
+        "mean": 137.2288875579834,
+        "windows": 4
+      },
+      "vertex_contact/f1": {
+        "mean": 0.3840566256948376,
+        "windows": 4
+      },
+      "vertex_contact/precision": {
+        "mean": 0.3153904417992424,
+        "windows": 4
+      },
+      "vertex_contact/recall": {
+        "mean": 0.5533689801494085,
+        "windows": 4
+      }
+    }
+  },
+  "protocol": "prepared-native-H-validation; not paper benchmark"
+}

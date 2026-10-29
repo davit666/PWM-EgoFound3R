@@ -1,0 +1,10 @@
+{
+  "backbone_checkpoint": "checkpoints/vggt_omega_1b_512.pt",
+  "marker_checkpoint": null,
+  "trainable_initialization": "released_builder_defaults",
+  "resumed": false,
+  "resumed_step": 0,
+  "sampling_policy": "dataset-uniform-synchronous-v1",
+  "trainable_parameters": 211651846,
+  "frozen_parameters": 1143814185
+}

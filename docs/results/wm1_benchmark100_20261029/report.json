@@ -1,0 +1,282 @@
+{
+  "ok": true,
+  "scope": "100-step TACO/STERA pilot; not original seven-dataset paper reproduction",
+  "timing": {
+    "measured_steps": 100,
+    "training_step_seconds_total": 539.4442958831787,
+    "steady_steps": 95,
+    "discarded_startup_steps": 5,
+    "steady_mean_step_seconds": 5.285832024659765,
+    "steady_median_step_seconds": 5.252426216378808,
+    "steady_p95_step_seconds": 5.803459053859115,
+    "projected_steps": 3200,
+    "projected_training_hours": 4.698517355253124,
+    "scope": "step time includes data loading and GPU work; excludes initialization, checkpoint saving and evaluation"
+  },
+  "world_size": 8,
+  "effective_batch_size": 64,
+  "frames_per_clip": [
+    60
+  ],
+  "peak_allocated_gib": 28.59262752532959,
+  "unique_training_clips_seen": 64,
+  "validation_windows": 8,
+  "comparison": {
+    "STERA-10M": {
+      "loss": {
+        "initial": 50.386385917663574,
+        "step100": 38.88438439369202,
+        "delta": -11.502001523971558,
+        "initial_windows": 4,
+        "final_windows": 4
+      },
+      "loss/scene_K": {
+        "initial": 49.02159142494202,
+        "step100": 36.68571972846985,
+        "delta": -12.335871696472168,
+        "initial_windows": 4,
+        "final_windows": 4
+      },
+      "loss/scene_depth": {
+        "initial": 0.3962172120809555,
+        "step100": 0.3365538939833641,
+        "delta": -0.0596633180975914,
+        "initial_windows": 4,
+        "final_windows": 4
+      },
+      "loss/scene_metric": {
+        "initial": 0.08698287510196678,
+        "step100": 1.0141315758228302,
+        "delta": 0.9271487007208634,
+        "initial_windows": 4,
+        "final_windows": 4
+      },
+      "loss/scene_rotation": {
+        "initial": 0.6119710393249989,
+        "step100": 0.5904957242310047,
+        "delta": -0.02147531509399414,
+        "initial_windows": 4,
+        "final_windows": 4
+      },
+      "loss/scene_translation": {
+        "initial": 0.269621629267931,
+        "step100": 0.2574831172823906,
+        "delta": -0.01213851198554039,
+        "initial_windows": 4,
+        "final_windows": 4
+      },
+      "scene/camera/ate_m": {
+        "initial": 0.14274948985873712,
+        "step100": 0.12813519301029172,
+        "delta": -0.014614296848445396,
+        "initial_windows": 4,
+        "final_windows": 4
+      },
+      "scene/camera/rotation_deg": {
+        "initial": 35.036014364734584,
+        "step100": 33.82095528671425,
+        "delta": -1.2150590780203316,
+        "initial_windows": 4,
+        "final_windows": 4
+      },
+      "scene/depth_scale_aligned/abs_rel": {
+        "initial": 1.0174500496726562,
+        "step100": 0.9764385704197722,
+        "delta": -0.04101147925288395,
+        "initial_windows": 4,
+        "final_windows": 4
+      },
+      "scene/depth_scale_aligned/delta1": {
+        "initial": 0.6504930683210783,
+        "step100": 0.6615055657679738,
+        "delta": 0.011012497446895475,
+        "initial_windows": 4,
+        "final_windows": 4
+      },
+      "scene/depth_scale_aligned/rmse_m": {
+        "initial": 0.24703702774331854,
+        "step100": 0.2392433444354277,
+        "delta": -0.007793683307890847,
+        "initial_windows": 4,
+        "final_windows": 4
+      },
+      "scene/depth_scale_aligned/scale_ratio": {
+        "initial": 3.8759938057243013,
+        "step100": 3.1448017950283234,
+        "delta": -0.731192010695978,
+        "initial_windows": 4,
+        "final_windows": 4
+      }
+    },
+    "TACO": {
+      "joint/distance_mae_mm/all": {
+        "initial": 33.22021532058716,
+        "step100": 68.85584449768066,
+        "delta": 35.635629177093506,
+        "initial_windows": 4,
+        "final_windows": 4
+      },
+      "joint/distance_mae_mm/gt_contact": {
+        "initial": 8.958399057388306,
+        "step100": 62.679884910583496,
+        "delta": 53.72148585319519,
+        "initial_windows": 4,
+        "final_windows": 4
+      },
+      "joint/distance_mae_mm/pred_contact": {
+        "initial": 32.27954626083374,
+        "step100": 18.53963613510132,
+        "delta": -13.739910125732422,
+        "initial_windows": 4,
+        "final_windows": 2
+      },
+      "joint/native_root_relative_error_mm": {
+        "initial": 112.57531929016113,
+        "step100": 384.8436508178711,
+        "delta": 272.26833152770996,
+        "initial_windows": 4,
+        "final_windows": 4
+      },
+      "joint_contact/f1": {
+        "initial": 0.5367936921255914,
+        "step100": 0.0842085450781103,
+        "delta": -0.45258514704748104,
+        "initial_windows": 4,
+        "final_windows": 4
+      },
+      "joint_contact/precision": {
+        "initial": 0.4044509707428062,
+        "step100": 0.40309412861136995,
+        "delta": -0.0013568421314362755,
+        "initial_windows": 4,
+        "final_windows": 2
+      },
+      "joint_contact/recall": {
+        "initial": 0.8735127980758868,
+        "step100": 0.10539790911030511,
+        "delta": -0.7681148889655817,
+        "initial_windows": 4,
+        "final_windows": 4
+      },
+      "loss": {
+        "initial": 1011.1256141662598,
+        "step100": 32.3445520401001,
+        "delta": -978.7810621261597,
+        "initial_windows": 4,
+        "final_windows": 4
+      },
+      "loss/heatmap": {
+        "initial": 0.7320945411920547,
+        "step100": 0.13918668776750565,
+        "delta": -0.5929078534245491,
+        "initial_windows": 4,
+        "final_windows": 4
+      },
+      "loss/joint_contact": {
+        "initial": 0.8612766861915588,
+        "step100": 0.7515861168503761,
+        "delta": -0.10969056934118271,
+        "initial_windows": 4,
+        "final_windows": 4
+      },
+      "loss/joint_distance": {
+        "initial": 2.5964946150779724,
+        "step100": 0.868308499455452,
+        "delta": -1.7281861156225204,
+        "initial_windows": 4,
+        "final_windows": 4
+      },
+      "loss/joint_offset": {
+        "initial": 2.2573835849761963,
+        "step100": 0.4078364446759224,
+        "delta": -1.849547140300274,
+        "initial_windows": 4,
+        "final_windows": 4
+      },
+      "loss/offset2d": {
+        "initial": 0.3607967346906662,
+        "step100": 0.30058205127716064,
+        "delta": -0.060214683413505554,
+        "initial_windows": 4,
+        "final_windows": 4
+      },
+      "loss/reprojection": {
+        "initial": 999.0509643554688,
+        "step100": 28.975221633911133,
+        "delta": -970.0757427215576,
+        "initial_windows": 4,
+        "final_windows": 4
+      },
+      "loss/vertex_contact": {
+        "initial": 0.7299094647169113,
+        "step100": 0.259383000433445,
+        "delta": -0.47052646428346634,
+        "initial_windows": 4,
+        "final_windows": 4
+      },
+      "loss/vertex_distance": {
+        "initial": 2.2300086319446564,
+        "step100": 0.33789677545428276,
+        "delta": -1.8921118564903736,
+        "initial_windows": 4,
+        "final_windows": 4
+      },
+      "loss/vertex_offset": {
+        "initial": 2.3066893219947815,
+        "step100": 0.30455005913972855,
+        "delta": -2.002139262855053,
+        "initial_windows": 4,
+        "final_windows": 4
+      },
+      "vertex/distance_mae_mm/all": {
+        "initial": 35.39679765701294,
+        "step100": 19.300615072250366,
+        "delta": -16.096182584762573,
+        "initial_windows": 4,
+        "final_windows": 4
+      },
+      "vertex/distance_mae_mm/gt_contact": {
+        "initial": 6.31774115562439,
+        "step100": 11.772462844848633,
+        "delta": 5.454721689224243,
+        "initial_windows": 4,
+        "final_windows": 4
+      },
+      "vertex/distance_mae_mm/pred_contact": {
+        "initial": 36.69921350479126,
+        "step100": 17.134146690368652,
+        "delta": -19.565066814422607,
+        "initial_windows": 4,
+        "final_windows": 4
+      },
+      "vertex/native_root_relative_error_mm": {
+        "initial": 137.2288875579834,
+        "step100": 153.6722011566162,
+        "delta": 16.443313598632812,
+        "initial_windows": 4,
+        "final_windows": 4
+      },
+      "vertex_contact/f1": {
+        "initial": 0.3840566256948376,
+        "step100": 0.44017469274277443,
+        "delta": 0.056118067047936815,
+        "initial_windows": 4,
+        "final_windows": 4
+      },
+      "vertex_contact/precision": {
+        "initial": 0.3153904417992424,
+        "step100": 0.6034173877145972,
+        "delta": 0.28802694591535477,
+        "initial_windows": 4,
+        "final_windows": 4
+      },
+      "vertex_contact/recall": {
+        "initial": 0.5533689801494085,
+        "step100": 0.35032908876977353,
+        "delta": -0.20303989137963496,
+        "initial_windows": 4,
+        "final_windows": 4
+      }
+    }
+  }
+}

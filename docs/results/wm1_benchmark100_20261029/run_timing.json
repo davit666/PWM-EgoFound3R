@@ -1,0 +1,19 @@
+{
+  "measured_steps": 99,
+  "training_step_seconds_total": 526.8386721964926,
+  "steady_steps": 94,
+  "discarded_startup_steps": 5,
+  "steady_mean_step_seconds": 5.282003168829102,
+  "steady_median_step_seconds": 5.2409916035830975,
+  "steady_p95_step_seconds": 5.803459053859115,
+  "projected_steps": 3200,
+  "projected_training_hours": 4.695113927848091,
+  "scope": "step time includes data loading and GPU work; excludes initialization, checkpoint saving and evaluation",
+  "setup_seconds": 41.35276862047613,
+  "checkpoint_seconds": 21.01224090717733,
+  "invocation_training_wall_seconds": 548.0945078972727,
+  "start_step": 1,
+  "end_step": 100,
+  "world_size": 8,
+  "effective_batch_size": 64
+}
