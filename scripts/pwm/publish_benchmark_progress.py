@@ -16,6 +16,21 @@ if path.exists():
         except json.JSONDecodeError: pass
 step=rows[-1]['step'] if rows else 0
 state={'phase':phase,'step':step,'target_steps':100,'world_size':8,'effective_batch_size':64}
+if phase.startswith('stage'):
+    directory=Path('outputs/data/TACO')
+    paths=list(directory.glob('*.zip'))+list(directory.glob('.cache/huggingface/download/*.incomplete'))
+    state['download_files']={str(path.relative_to(directory)):path.stat().st_size for path in paths if path.is_file() and not path.is_symlink()}
+    state['download_bytes']=sum(state['download_files'].values())
+for dataset in ('stera','taco'):
+    attempts=run/dataset/'attempts.json'
+    if attempts.is_file():
+        try:
+            records=json.loads(attempts.read_text())
+            state[dataset+'_adapter_attempts']=len(records)
+            state[dataset+'_adapter_successes']=sum(r['returncode']==0 for r in records)
+            if records and records[-1]['returncode']:
+                state[dataset+'_last_error']=Path(records[-1]['log']).read_text()[-2000:]
+        except json.JSONDecodeError: pass
 if rows:
     state.update(last_step_seconds=rows[-1]['step_seconds'],last_gradient_norm=rows[-1]['gradient_norm'])
 progress=result/'progress.json'

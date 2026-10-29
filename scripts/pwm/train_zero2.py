@@ -165,7 +165,7 @@ def main():
             if (args.output/'initial.pt').exists():
                 raise FileExistsError('refusing to overwrite the initial baseline')
             export_model(engine.module,config,args.output/'initial.pt',0)
-        (args.output/'initialization.json').write_text(json.dumps({
+        (args.output/('resume_initialization.json' if args.resume else 'initialization.json')).write_text(json.dumps({
             'backbone_checkpoint':str(config.marker_runtime.vggt_checkpoint_path),
             'marker_checkpoint':str(args.initialize) if args.initialize else None,
             'trainable_initialization':'resumed_shards' if args.resume else ('marker_checkpoint' if args.initialize else 'released_builder_defaults'),
