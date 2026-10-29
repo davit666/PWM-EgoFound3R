@@ -1,0 +1,49 @@
+{
+  "spreadsheet": "/home/zy/Downloads/EgoFound3R \u6570\u636e\u96c6\u63a8\u8350\u6e05\u5355.xlsx",
+  "table_paths": [
+    "/share/project/eai_pwm/datasets/raw/data/HOI4D",
+    "/share/project/eai_pwm/datasets/Hot3DAria"
+  ],
+  "roots": {
+    "/share/project/eai_pwm/datasets": false,
+    "/share/project/dataset/ego": false,
+    "/share/project/dataset/tactile": false,
+    "/share/projset/eai_pwm/datasets": false,
+    "/share/projset/dataset/ego": false,
+    "/share/projset/dataset/tactile": false,
+    "/share-mixed/project/eai_pwm/datasets": false,
+    "/share-mixed/project/dataset/ego": false,
+    "/share-mixed/project/dataset/tactile": false,
+    "/share-mixed/projset/eai_pwm/datasets": true,
+    "/share-mixed/projset/dataset/ego": false,
+    "/share-mixed/projset/dataset/tactile": false
+  },
+  "hits": [
+    {
+      "path": "/share-mixed/projset/eai_pwm/datasets/IndEgo/00_Data_Collection/User_8_Continual_2.vrs",
+      "directory": false,
+      "bytes": 9494359663
+    },
+    {
+      "path": "/share-mixed/projset/eai_pwm/datasets/IndEgo/00_Data_Collection/User_8_Continual_1.vrs",
+      "directory": false,
+      "bytes": 14385215555
+    },
+    {
+      "path": "/share-mixed/projset/eai_pwm/datasets/IndEgo/00_Data_Collection/User_1_Ikea_Kallax.vrs",
+      "directory": false,
+      "bytes": 25478259482
+    },
+    {
+      "path": "/share-mixed/projset/eai_pwm/datasets/IndEgo/00_Data_Collection/User_2_User_14_0412_21m_6.vrs",
+      "directory": false,
+      "bytes": 3295607790
+    }
+  ],
+  "errors": [],
+  "scope": "directory names, archive names and VRS/MP4 files near table paths; no content extraction",
+  "entries_scanned": 50000,
+  "directories_scanned": 5914,
+  "elapsed_seconds": 81.58661038056016,
+  "bounded_search_incomplete": true
+}
