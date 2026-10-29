@@ -15,4 +15,5 @@ publish() {
   exit "$code"
 }
 trap publish EXIT
-python3 scripts/pwm/audit_training_sources.py "$RESULT_DIR/inventory.json" > "$RESULT_DIR/run.log" 2>&1
+PYTHON_BIN=/home-mixed/liwenhao666/wm/PWM-EgoFound3R/.venv/bin/python
+"$PYTHON_BIN" scripts/pwm/audit_training_sources.py "$RESULT_DIR/inventory.json" > "$RESULT_DIR/run.log" 2>&1

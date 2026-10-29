@@ -49,10 +49,33 @@ def inventory(root):
     return result
 
 def main():
-    report = {'sources': {k: inventory(v) for k,v in ROOTS.items()},
+    sources = {}
+    for name, original in ROOTS.items():
+        candidates = [original]
+        if original.startswith('/share/project/'):
+            candidates += [original.replace('/share/project/', base) for base in
+                           ('/share-mixed/projset/', '/share-mixed/project/', '/share/projset/')]
+        selected = next((p for p in candidates if Path(p).is_dir()), original)
+        sources[name] = inventory(selected)
+        sources[name]['candidates'] = {p: Path(p).is_dir() for p in candidates}
+    report = {'sources': sources,
               'gpu': subprocess.run(['nvidia-smi', '--query-gpu=index,name,memory.used,memory.total,utilization.gpu',
                                      '--format=csv,noheader'], capture_output=True, text=True).stdout,
               'host': os.uname().nodename}
+    # HDF5 metadata only, no arrays read. Use the existing project's Python env.
+    try:
+        import h5py
+        session = Path(ROOTS['STERA-10M']) / 'session_data_20260330_014905'
+        with h5py.File(session / 'annotation.hdf5', 'r') as file:
+            schema = {}
+            def visit(name, obj):
+                if isinstance(obj, h5py.Dataset):
+                    schema[name] = {'shape': list(obj.shape), 'dtype': str(obj.dtype)}
+            file.visititems(visit)
+            report['stera_hdf5'] = schema
+        report['stera_calibration_files'] = [str(p.relative_to(session)) for p in (session / 'calibrations').iterdir()]
+    except Exception as error:
+        report['stera_schema_error'] = str(error)
     Path(sys.argv[1]).write_text(json.dumps(report, indent=2))
     print(json.dumps({k: {'exists': v['exists'], 'samples': len(v['samples'])} for k,v in report['sources'].items()}))
 
