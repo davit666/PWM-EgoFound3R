@@ -26,7 +26,7 @@ class ReconstructionTests(unittest.TestCase):
             self.assertEqual(model.gate.data.view(torch.uint8).numel(),2)
         self.assertIs(model.gate,original)
         self.assertEqual(model.state_dict()['gate'].shape,torch.Size([]))
-        self.assertEqual(float(model.gate),.25)
+        self.assertEqual(float(model.gate.detach()),.25)
         with self.assertRaises(RuntimeError):
             with broadcastable_scalars(model):
                 raise RuntimeError('broadcast failed')

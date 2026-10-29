@@ -32,9 +32,9 @@ for gpu in 0 1; do
   (( used < 100 )) || { echo "GPU${gpu} is busy"; exit 2; }
 done
 [[ ! -e "$RUN/run/sharded/latest" ]] || { echo 'existing run; explicitly resume instead'; exit 2; }
-"$PYTHON_BIN" -m pip install --disable-pip-version-check --target outputs/training-deps --no-deps --no-build-isolation deepspeed
+"$PYTHON_BIN" -m pip install --disable-pip-version-check --target outputs/training-deps --no-deps --no-build-isolation deepspeed==0.19.8
 "$PYTHON_BIN" -m pip install --disable-pip-version-check --target outputs/training-deps pydantic psutil ninja hjson py-cpuinfo msgpack
-"$PYTHON_BIN" scripts/pwm/make_training_smoke_recipe.py "$RUN/recipe.json"
+"$PYTHON_BIN" scripts/pwm/make_training_smoke_recipe.py "$RUN/recipe.json" 5
 "$PYTHON_BIN" scripts/pwm/combine_prepared_indices.py "$RUN/index.jsonl" "$BASE/index.jsonl" \
   /share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/training_smoke_20261029/index.jsonl
 common=(--config configs/pwm_baseline.toml --recipe "$RUN/recipe.json" --index "$RUN/index.jsonl" --output "$RUN/run")
