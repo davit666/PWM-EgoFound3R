@@ -16,7 +16,7 @@ publish() {
   code=$?
   trap - EXIT
   printf '{"exit_code":%s}\n' "$code" > "$RESULT_DIR/status.json"
-  for file in preparation.json train.log eval.json; do
+  for file in preparation.json train.log eval.json label_projection.png; do
     [[ ! -f "$RUN_ROOT/$file" ]] || cp "$RUN_ROOT/$file" "$RESULT_DIR/"
   done
   for file in metrics.jsonl status.json; do

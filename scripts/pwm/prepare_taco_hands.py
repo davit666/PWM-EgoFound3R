@@ -95,6 +95,12 @@ def main():
     Kt=torch.tensor(new_K,dtype=torch.float32).repeat(len(frames),1,1)
     pix=torch.einsum('tij,tsnj->tsni',Kt,j)
     uv=pix[...,:2]/pix[...,2:].clamp_min(1e-6)
+    preview=cv2.cvtColor(rgb[0],cv2.COLOR_RGB2BGR)
+    for side,color in enumerate(((0,255,0),(0,128,255))):
+        for x,y in uv[0,side].tolist():
+            if np.isfinite(x+y) and 0 <= x < 256 and 0 <= y < 256:
+                cv2.circle(preview,(round(x),round(y)),2,color,-1)
+    cv2.imwrite(str(args.output/'label_projection.png'),preview)
     targets.update(localization_labels(uv,(j[...,2]>0)&torch.isfinite(j).all(-1),(256,256),(32,32)))
     targets['projection_K']=(Kt,torch.ones_like(Kt,dtype=torch.bool))
     object_surfaces=[[] for _ in frames]
