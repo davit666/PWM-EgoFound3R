@@ -69,7 +69,7 @@ case "$MODE" in
     [[ "$MODE" != prepare-taco ]] || { dataset=TACO; subdir=taco; }
     python3 scripts/pwm/prepare_benchmark_subset.py --output "$RUN/$subdir" --datasets "$dataset" \
       --taco-root "$PWD/outputs/data/TACO" --stera-root /share-mixed/projset/eai_pwm/datasets/Stera-10M \
-      --taco-code "$PWD/outputs/TACO-Instructions" --mano-root "$PWD/outputs/data/mano" --frames 60
+      --taco-code "$PWD/outputs/TACO-Instructions" --mano-root "$PWD/outputs/data/mano" --frames 60 --taco-workers 8
     ;;
   train|resume)
     mkdir -p "$RUN/data"
