@@ -1,0 +1,71 @@
+{
+  "": {
+    "prefixes": [
+      "ARCTIC/",
+      "AffordPose/",
+      "BAAI-sharpa/",
+      "DexYCB/",
+      "Ego2HandsPose/",
+      "EgoDemo/",
+      "EgoPressure/"
+    ],
+    "objects": [
+      {
+        "key": "CausalVQA.zip",
+        "bytes": 16221178627
+      }
+    ],
+    "truncated": true
+  },
+  "data/": {
+    "prefixes": [
+      "data/part_01/",
+      "data/part_06/",
+      "data/part_07/",
+      "data/part_08/"
+    ],
+    "objects": [],
+    "truncated": false
+  },
+  "backup_20261023/": {
+    "prefixes": [
+      "backup_20261023/share-mixed/"
+    ],
+    "objects": [],
+    "truncated": true
+  },
+  "ARCTIC/body_models/mano/": {
+    "prefixes": [],
+    "objects": [
+      {
+        "key": "ARCTIC/body_models/mano/",
+        "bytes": 0
+      },
+      {
+        "key": "ARCTIC/body_models/mano/LICENSE.txt",
+        "bytes": 4330
+      },
+      {
+        "key": "ARCTIC/body_models/mano/MANO_LEFT.pkl",
+        "bytes": 3821391
+      },
+      {
+        "key": "ARCTIC/body_models/mano/MANO_RIGHT.pkl",
+        "bytes": 3821356
+      },
+      {
+        "key": "ARCTIC/body_models/mano/SMPLH_female.pkl",
+        "bytes": 130423021
+      },
+      {
+        "key": "ARCTIC/body_models/mano/SMPLH_male.pkl",
+        "bytes": 130422893
+      },
+      {
+        "key": "ARCTIC/body_models/mano/info.txt",
+        "bytes": 95
+      }
+    ],
+    "truncated": false
+  }
+}

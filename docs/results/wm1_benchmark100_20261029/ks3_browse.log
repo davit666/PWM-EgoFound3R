@@ -1,13 +1,1 @@
-Traceback (most recent call last):
-  File "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/scripts/pwm/browse_wm1_ks3.py", line 10, in <module>
-    response=api.list_objects(Bucket='baai-eai',Prefix=prefix,Delimiter='/',MaxKeys=1000)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/venv/lib/python3.12/site-packages/botocore/client.py", line 606, in _api_call
-    return self._make_api_call(operation_name, kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/venv/lib/python3.12/site-packages/botocore/context.py", line 123, in wrapper
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/venv/lib/python3.12/site-packages/botocore/client.py", line 1094, in _make_api_call
-    raise error_class(parsed_response, operation_name)
-botocore.exceptions.ClientError: An error occurred (SecondLevelDomainForbidden) when calling the ListObjects operation: The bucket you are attempting to access must be addressed using KS3 third level domain.
+{"": {"prefixes": ["ARCTIC/", "AffordPose/", "BAAI-sharpa/", "DexYCB/", "Ego2HandsPose/", "EgoDemo/", "EgoPressure/"], "objects": [{"key": "CausalVQA.zip", "bytes": 16221178627}], "truncated": true}, "data/": {"prefixes": ["data/part_01/", "data/part_06/", "data/part_07/", "data/part_08/"], "objects": [], "truncated": false}, "backup_20261023/": {"prefixes": ["backup_20261023/share-mixed/"], "objects": [], "truncated": true}, "ARCTIC/body_models/mano/": {"prefixes": [], "objects": [{"key": "ARCTIC/body_models/mano/", "bytes": 0}, {"key": "ARCTIC/body_models/mano/LICENSE.txt", "bytes": 4330}, {"key": "ARCTIC/body_models/mano/MANO_LEFT.pkl", "bytes": 3821391}, {"key": "ARCTIC/body_models/mano/MANO_RIGHT.pkl", "bytes": 3821356}, {"key": "ARCTIC/body_models/mano/SMPLH_female.pkl", "bytes": 130423021}, {"key": "ARCTIC/body_models/mano/SMPLH_male.pkl", "bytes": 130422893}, {"key": "ARCTIC/body_models/mano/info.txt", "bytes": 95}], "truncated": false}}
