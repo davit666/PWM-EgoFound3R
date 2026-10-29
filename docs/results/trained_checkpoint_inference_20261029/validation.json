@@ -1,0 +1,60 @@
+{
+  "clips": 1,
+  "frames": 3,
+  "inference_schema_version": "egofound3r.metric_inference.v1",
+  "ok": true,
+  "output_dir": "/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/training_smoke_taco_20261029/inference",
+  "schema_version": "pwm.egofound3r.validation.v1",
+  "tensors": {
+    "camera_pose": {
+      "dtype": "torch.float32",
+      "shape": [
+        3,
+        4,
+        4
+      ]
+    },
+    "intrinsics": {
+      "dtype": "torch.float32",
+      "shape": [
+        3,
+        3,
+        3
+      ]
+    },
+    "joint_contact_logits": {
+      "dtype": "torch.float32",
+      "shape": [
+        3,
+        2,
+        21
+      ]
+    },
+    "joint_xyz": {
+      "dtype": "torch.float32",
+      "shape": [
+        3,
+        2,
+        21,
+        3
+      ]
+    },
+    "vertex_contact_logits": {
+      "dtype": "torch.float32",
+      "shape": [
+        3,
+        2,
+        195
+      ]
+    },
+    "vertex_xyz": {
+      "dtype": "torch.float32",
+      "shape": [
+        3,
+        2,
+        195,
+        3
+      ]
+    }
+  }
+}
