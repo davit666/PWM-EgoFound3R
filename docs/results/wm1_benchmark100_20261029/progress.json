@@ -6,6 +6,6 @@
   "effective_batch_size": 64,
   "stera_adapter_attempts": 36,
   "stera_adapter_successes": 36,
-  "taco_adapter_attempts": 15,
-  "taco_adapter_successes": 7
+  "taco_adapter_attempts": 24,
+  "taco_adapter_successes": 15
 }
