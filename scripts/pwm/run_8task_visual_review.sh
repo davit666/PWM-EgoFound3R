@@ -21,6 +21,7 @@ STERA_ROOT="${STERA_ROOT:-/share-mixed/projset/eai_pwm/datasets/Stera-10M}"
 CHECKPOINT="${CHECKPOINT:-${REPO_ROOT}/checkpoints/EgoFound3R.pt}"
 CONFIG="${CONFIG:-${REPO_ROOT}/configs/pwm_baseline.toml}"
 PUBLISH_RESULTS="${PUBLISH_RESULTS:-1}"
+REQUIRE_UNDISTORTION="${REQUIRE_UNDISTORTION:-0}"
 GIT_RESULT_AUTHOR_NAME="${GIT_RESULT_AUTHOR_NAME:-Wenhao Li}"
 GIT_RESULT_AUTHOR_EMAIL="${GIT_RESULT_AUTHOR_EMAIL:-wl2655@columbia.edu}"
 FINALIZED=0
@@ -60,7 +61,13 @@ export CUDA_VISIBLE_DEVICES="${GPU_INDEX}"
 mkdir -p "${OUTPUT_ROOT}/inputs" "${OUTPUT_ROOT}/inference" "${PUBLISH_DIR}"
 write_status preparing \
   "task_count=${TASK_COUNT}" "clip_seconds=${CLIP_SECONDS}" \
-  "target_fps=${TARGET_FPS}" "gpu_index=${GPU_INDEX}"
+  "target_fps=${TARGET_FPS}" "gpu_index=${GPU_INDEX}" \
+  "require_undistortion=${REQUIRE_UNDISTORTION}"
+
+undistortion_arguments=()
+if [[ "${REQUIRE_UNDISTORTION}" == "1" ]]; then
+  undistortion_arguments+=(--require-undistortion)
+fi
 
 printf '[8task] preparing Guocai duration-matched tasks\n'
 "${PYTHON}" scripts/pwm/prepare_task_montage.py \
@@ -69,6 +76,7 @@ printf '[8task] preparing Guocai duration-matched tasks\n'
   --task-count "${TASK_COUNT}" --max-clip-seconds "${CLIP_SECONDS}" \
   --min-clip-seconds 2 --target-fps "${TARGET_FPS}" \
   --width "${WIDTH}" --height "${HEIGHT}" --overwrite \
+  "${undistortion_arguments[@]}" \
   > "${OUTPUT_ROOT}/prepare-guocai.log" 2>&1
 
 printf '[8task] preparing Jianzhi duration-matched tasks from MCAP camera2\n'
@@ -77,7 +85,8 @@ printf '[8task] preparing Jianzhi duration-matched tasks from MCAP camera2\n'
   --topic /robot0/sensor/camera2/compressed \
   --task-count "${TASK_COUNT}" --clip-seconds "${CLIP_SECONDS}" \
   --target-fps "${TARGET_FPS}" --width "${WIDTH}" --height "${HEIGHT}" \
-  --overwrite > "${OUTPUT_ROOT}/prepare-jianzhi.log" 2>&1
+  --overwrite "${undistortion_arguments[@]}" \
+  > "${OUTPUT_ROOT}/prepare-jianzhi.log" 2>&1
 
 printf '[8task] preparing Stera-10M duration-matched tasks\n'
 "${PYTHON}" scripts/pwm/prepare_task_montage.py \
@@ -86,6 +95,7 @@ printf '[8task] preparing Stera-10M duration-matched tasks\n'
   --task-count "${TASK_COUNT}" --max-clip-seconds "${CLIP_SECONDS}" \
   --min-clip-seconds 2 --target-fps "${TARGET_FPS}" \
   --width "${WIDTH}" --height "${HEIGHT}" --overwrite \
+  "${undistortion_arguments[@]}" \
   > "${OUTPUT_ROOT}/prepare-stera.log" 2>&1
 
 "${PYTHON}" scripts/pwm/preflight.py \

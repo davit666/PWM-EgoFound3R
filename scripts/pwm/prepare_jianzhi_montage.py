@@ -8,6 +8,7 @@ import json
 import os
 import shutil
 import subprocess
+import sys
 from dataclasses import asdict, dataclass
 from fractions import Fraction
 from pathlib import Path
@@ -15,8 +16,18 @@ from pathlib import Path
 import av
 import cv2
 import numpy as np
+from google.protobuf.json_format import MessageToDict
 from mcap.reader import make_reader
 from mcap_protobuf.decoder import DecoderFactory
+
+REPO_ROOT = Path(__file__).resolve().parents[2]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
+from egohandmetric_prompt.camera_undistortion import (
+    Rectification,
+    double_sphere_rectification,
+)
 
 
 NANOSECONDS = Fraction(1, 1_000_000_000)
@@ -106,6 +117,20 @@ def letterbox(frame: np.ndarray, width: int, height: int) -> np.ndarray:
     return canvas
 
 
+def camera_info_for_topic(path: Path, compressed_topic: str) -> dict[str, object]:
+    camera_root = compressed_topic.rsplit("/", 1)[0]
+    info_topic = f"{camera_root}/camera_info"
+    with path.open("rb") as stream:
+        reader = make_reader(stream, decoder_factories=[DecoderFactory()])
+        for _, _, _, decoded in reader.iter_decoded_messages(topics=[info_topic]):
+            return MessageToDict(
+                decoded,
+                preserving_proto_field_name=True,
+                always_print_fields_with_no_presence=True,
+            )
+    raise ValueError(f"camera_info topic absent from {path}: {info_topic}")
+
+
 def extract_clip(
     task: McapTask,
     output: Path,
@@ -116,6 +141,7 @@ def extract_clip(
     width: int,
     height: int,
     label: str,
+    require_undistortion: bool,
 ) -> dict[str, object]:
     center_ns = (task.start_time_ns + task.end_time_ns) // 2
     start_ns = center_ns - round(clip_seconds * 1e9 / 2)
@@ -163,6 +189,20 @@ def extract_clip(
     first_written_ns = None
     last_written_ns = None
     last_canvas: np.ndarray | None = None
+    if require_undistortion:
+        camera_info = camera_info_for_topic(Path(task.path), topic)
+        rectification: Rectification = double_sphere_rectification(camera_info)
+    else:
+        rectification = Rectification(
+            map_x=None,
+            map_y=None,
+            metadata={
+                "output_is_undistorted": False,
+                "undistortion_applied": False,
+                "source_already_rectified": False,
+                "method": "none (legacy/raw preparation)",
+            },
+        )
 
     def write_canvas(canvas: np.ndarray, timestamp_ns: int | None) -> None:
         nonlocal written, last_canvas, first_written_ns, last_written_ns
@@ -202,7 +242,10 @@ def extract_clip(
                         continue
                     if timestamp_ns >= end_ns or written >= target_frames:
                         break
-                    canvas = letterbox(frame.to_ndarray(format="bgr24"), width, height)
+                    source_frame = frame.to_ndarray(format="bgr24")
+                    if require_undistortion:
+                        source_frame = rectification.apply(source_frame)
+                    canvas = letterbox(source_frame, width, height)
                     cv2.rectangle(canvas, (0, 0), (width, 52), (0, 0, 0), -1)
                     cv2.putText(
                         canvas,
@@ -248,6 +291,7 @@ def extract_clip(
         "first_written_source_time_ns": first_written_ns,
         "last_written_source_time_ns": last_written_ns,
         "prepared_path": str(output),
+        "rectification": rectification.metadata,
     }
 
 
@@ -261,6 +305,7 @@ def main() -> None:
     parser.add_argument("--target-fps", type=int, default=10)
     parser.add_argument("--width", type=int, default=960)
     parser.add_argument("--height", type=int, default=540)
+    parser.add_argument("--require-undistortion", action="store_true")
     parser.add_argument("--overwrite", action="store_true")
     args = parser.parse_args()
     if args.task_count < 1 or args.clip_seconds <= 0 or args.target_fps < 1:
@@ -290,6 +335,7 @@ def main() -> None:
             width=args.width,
             height=args.height,
             label=f"jianzhi | task {index:02d} | {Path(task.path).stem}",
+            require_undistortion=args.require_undistortion,
         )
         record["selection_index"] = index
         clip_records.append(record)
@@ -338,6 +384,11 @@ def main() -> None:
         "common_clip_duration_seconds": args.clip_seconds,
         "montage_duration_seconds": args.clip_seconds * len(selected),
         "montage_path": str(montage),
+        "undistortion_required": args.require_undistortion,
+        "all_inputs_undistorted": all(
+            bool(record["rectification"]["output_is_undistorted"])
+            for record in clip_records
+        ),
         "tasks": clip_records,
     }
     atomic_json(output / "manifest.json", manifest)

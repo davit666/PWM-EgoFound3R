@@ -172,7 +172,12 @@ def _contact_distance_colors(values_m: np.ndarray) -> np.ndarray:
         0.0,
         1.0,
     )
-    color_indices = np.rint(normalized * 255.0).astype(np.uint8).reshape(-1, 1)
+    # Turbo is cold at index 0 and hot at index 255.  Contact distance is the
+    # opposite semantic direction: zero is touching (hot) and larger values
+    # are farther away (cold).
+    color_indices = (
+        np.rint((1.0 - normalized) * 255.0).astype(np.uint8).reshape(-1, 1)
+    )
     colors[finite] = cv2.applyColorMap(
         color_indices,
         cv2.COLORMAP_TURBO,

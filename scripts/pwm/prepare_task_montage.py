@@ -11,8 +11,22 @@ import re
 import shutil
 import statistics
 import subprocess
+import sys
 from dataclasses import asdict, dataclass
 from pathlib import Path
+
+import cv2
+import numpy as np
+
+REPO_ROOT = Path(__file__).resolve().parents[2]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
+from egohandmetric_prompt.camera_undistortion import (
+    Rectification,
+    guocai_equidistant_rectification,
+    stera_rgb_rectification,
+)
 
 
 @dataclass(frozen=True)
@@ -131,6 +145,167 @@ def safe_overlay_text(value: str) -> str:
     return value.replace("\\", "_").replace(":", "_").replace("'", "_")[:90]
 
 
+def letterbox(frame: np.ndarray, width: int, height: int) -> np.ndarray:
+    scale = min(width / frame.shape[1], height / frame.shape[0])
+    resized_width = max(1, round(frame.shape[1] * scale))
+    resized_height = max(1, round(frame.shape[0] * scale))
+    resized = cv2.resize(frame, (resized_width, resized_height), interpolation=cv2.INTER_AREA)
+    canvas = np.zeros((height, width, 3), dtype=np.uint8)
+    x = (width - resized_width) // 2
+    y = (height - resized_height) // 2
+    canvas[y : y + resized_height, x : x + resized_width] = resized
+    return canvas
+
+
+def task_rectification(dataset: str, item: TaskVideo) -> Rectification:
+    source = Path(item.path)
+    source_size = (item.width, item.height)
+    if dataset == "guocai":
+        session = source.parent.parent
+        return guocai_equidistant_rectification(
+            session / "calibrations" / "camera-camchain.yaml",
+            source_size,
+        )
+    if dataset == "stera":
+        return stera_rgb_rectification(source.parent, source_size)
+    raise ValueError(
+        f"{dataset} videos do not carry an auditable calibration here; "
+        "use prepare_jianzhi_montage.py for Jianzhi MCAP"
+    )
+
+
+def read_exact(stream: object, byte_count: int) -> bytes:
+    chunks = []
+    remaining = byte_count
+    while remaining:
+        chunk = stream.read(remaining)
+        if not chunk:
+            break
+        chunks.append(chunk)
+        remaining -= len(chunk)
+    return b"".join(chunks)
+
+
+def prepare_rectified_clip(
+    item: TaskVideo,
+    destination: Path,
+    *,
+    start_seconds: float,
+    clip_seconds: float,
+    target_fps: int,
+    width: int,
+    height: int,
+    overlay: str,
+    rectification: Rectification,
+) -> dict[str, int]:
+    target_frames = round(clip_seconds * target_fps)
+    frame_bytes = item.width * item.height * 3
+    decoder_command = [
+        "ffmpeg",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-ss",
+        f"{start_seconds:.6f}",
+        "-i",
+        item.path,
+        "-t",
+        f"{clip_seconds:.6f}",
+        "-an",
+        "-vf",
+        f"fps={target_fps}",
+        "-frames:v",
+        str(target_frames),
+        "-f",
+        "rawvideo",
+        "-pix_fmt",
+        "bgr24",
+        "-",
+    ]
+    temporary = destination.with_name(f".{destination.stem}.{os.getpid()}.part.mp4")
+    encoder_command = [
+        "ffmpeg",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-y",
+        "-f",
+        "rawvideo",
+        "-pix_fmt",
+        "bgr24",
+        "-s",
+        f"{width}x{height}",
+        "-r",
+        str(target_fps),
+        "-i",
+        "-",
+        "-an",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "fast",
+        "-crf",
+        "20",
+        "-pix_fmt",
+        "yuv420p",
+        "-movflags",
+        "+faststart",
+        str(temporary),
+    ]
+    decoder = subprocess.Popen(decoder_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    encoder = subprocess.Popen(encoder_command, stdin=subprocess.PIPE)
+    if decoder.stdout is None or decoder.stderr is None or encoder.stdin is None:
+        raise RuntimeError("ffmpeg pipe unavailable")
+    written = 0
+    duplicated = 0
+    last_canvas = None
+    try:
+        while written < target_frames:
+            raw = read_exact(decoder.stdout, frame_bytes)
+            if len(raw) != frame_bytes:
+                break
+            frame = np.frombuffer(raw, dtype=np.uint8).reshape(item.height, item.width, 3)
+            frame = rectification.apply(frame)
+            canvas = letterbox(frame, width, height)
+            cv2.rectangle(canvas, (0, 0), (width, 52), (0, 0, 0), -1)
+            cv2.putText(
+                canvas,
+                overlay,
+                (16, 34),
+                cv2.FONT_HERSHEY_SIMPLEX,
+                0.72,
+                (255, 255, 255),
+                2,
+                cv2.LINE_AA,
+            )
+            encoder.stdin.write(canvas.tobytes())
+            last_canvas = canvas
+            written += 1
+        decoder_error = decoder.stderr.read().decode("utf-8", errors="replace")
+        decoder_return_code = decoder.wait()
+        if decoder_return_code != 0:
+            raise RuntimeError(f"ffmpeg decode failed ({decoder_return_code}): {decoder_error}")
+        if last_canvas is None:
+            raise ValueError(f"no frames decoded from {item.path}")
+        while written < target_frames:
+            encoder.stdin.write(last_canvas.tobytes())
+            written += 1
+            duplicated += 1
+    except Exception:
+        decoder.kill()
+        encoder.stdin.close()
+        encoder.wait()
+        temporary.unlink(missing_ok=True)
+        raise
+    encoder.stdin.close()
+    encoder_return_code = encoder.wait()
+    if encoder_return_code != 0:
+        temporary.unlink(missing_ok=True)
+        raise subprocess.CalledProcessError(encoder_return_code, encoder_command)
+    temporary.replace(destination)
+    return {"written_frames": written, "duplicated_tail_frames": duplicated}
+
+
 def atomic_json(path: Path, data: object) -> None:
     temporary = path.with_name(f".{path.name}.{os.getpid()}.tmp")
     temporary.write_text(
@@ -179,44 +354,69 @@ def build(args: argparse.Namespace) -> dict[str, object]:
         overlay = safe_overlay_text(
             f"{args.dataset} | task {index:02d} | {item.group} | {item.label}"
         )
-        video_filter = (
-            f"fps={args.target_fps},"
-            f"scale={args.width}:{args.height}:force_original_aspect_ratio=decrease,"
-            f"pad={args.width}:{args.height}:(ow-iw)/2:(oh-ih)/2:color=black,"
-            "setsar=1,"
-            f"drawtext=text='{overlay}':x=18:y=16:fontsize=25:"
-            "fontcolor=white:borderw=2:bordercolor=black"
-        )
-        subprocess.run(
-            [
-                "ffmpeg",
-                "-hide_banner",
-                "-loglevel",
-                "error",
-                "-y",
-                "-ss",
-                f"{start_seconds:.6f}",
-                "-i",
-                item.path,
-                "-t",
-                f"{clip_seconds:.6f}",
-                "-an",
-                "-vf",
-                video_filter,
-                "-c:v",
-                "libx264",
-                "-preset",
-                "fast",
-                "-crf",
-                "20",
-                "-pix_fmt",
-                "yuv420p",
-                "-movflags",
-                "+faststart",
-                str(clip_path),
-            ],
-            check=True,
-        )
+        preparation: dict[str, object] = {}
+        if args.require_undistortion:
+            rectification = task_rectification(args.dataset, item)
+            preparation.update(
+                prepare_rectified_clip(
+                    item,
+                    clip_path,
+                    start_seconds=start_seconds,
+                    clip_seconds=clip_seconds,
+                    target_fps=args.target_fps,
+                    width=args.width,
+                    height=args.height,
+                    overlay=overlay,
+                    rectification=rectification,
+                )
+            )
+            preparation["rectification"] = rectification.metadata
+        else:
+            video_filter = (
+                f"fps={args.target_fps},"
+                f"scale={args.width}:{args.height}:force_original_aspect_ratio=decrease,"
+                f"pad={args.width}:{args.height}:(ow-iw)/2:(oh-ih)/2:color=black,"
+                "setsar=1,"
+                f"drawtext=text='{overlay}':x=18:y=16:fontsize=25:"
+                "fontcolor=white:borderw=2:bordercolor=black"
+            )
+            subprocess.run(
+                [
+                    "ffmpeg",
+                    "-hide_banner",
+                    "-loglevel",
+                    "error",
+                    "-y",
+                    "-ss",
+                    f"{start_seconds:.6f}",
+                    "-i",
+                    item.path,
+                    "-t",
+                    f"{clip_seconds:.6f}",
+                    "-an",
+                    "-vf",
+                    video_filter,
+                    "-c:v",
+                    "libx264",
+                    "-preset",
+                    "fast",
+                    "-crf",
+                    "20",
+                    "-pix_fmt",
+                    "yuv420p",
+                    "-movflags",
+                    "+faststart",
+                    str(clip_path),
+                ],
+                check=True,
+            )
+            preparation["rectification"] = {
+                "output_is_undistorted": False,
+                "undistortion_applied": False,
+                "source_already_rectified": False,
+                "method": "none (legacy/raw preparation)",
+                "source_size_wh": [item.width, item.height],
+            }
         clip_records.append(
             {
                 **asdict(item),
@@ -224,6 +424,7 @@ def build(args: argparse.Namespace) -> dict[str, object]:
                 "clip_start_seconds": start_seconds,
                 "clip_duration_seconds": clip_seconds,
                 "prepared_path": str(clip_path),
+                **preparation,
             }
         )
         print(f"[montage] prepared {index}/{len(selected)} {item.path}", flush=True)
@@ -268,6 +469,11 @@ def build(args: argparse.Namespace) -> dict[str, object]:
         "common_clip_duration_seconds": clip_seconds,
         "montage_duration_seconds": clip_seconds * len(selected),
         "montage_path": str(montage),
+        "undistortion_required": args.require_undistortion,
+        "all_inputs_undistorted": all(
+            bool(record["rectification"]["output_is_undistorted"])
+            for record in clip_records
+        ),
         "tasks": clip_records,
     }
     atomic_json(output / "manifest.json", manifest)
@@ -287,6 +493,7 @@ def main() -> None:
     parser.add_argument("--target-fps", type=int, default=10)
     parser.add_argument("--width", type=int, default=960)
     parser.add_argument("--height", type=int, default=540)
+    parser.add_argument("--require-undistortion", action="store_true")
     parser.add_argument("--overwrite", action="store_true")
     args = parser.parse_args()
     if args.task_count < 1 or args.target_fps < 1 or args.width < 2 or args.height < 2:

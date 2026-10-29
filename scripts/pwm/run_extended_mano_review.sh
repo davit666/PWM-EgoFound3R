@@ -108,8 +108,8 @@ for dataset in ${DATASETS}; do
     -show_entries format=duration,size -of json "${output}" \
     > "${PUBLISH_DIR}/${dataset}_media.json"
   ffmpeg -hide_banner -loglevel error -i "${output}" -f null -
-  if [[ -f "docs/results/egofound3r_8task_review_v0/${dataset}_manifest.json" ]]; then
-    cp "docs/results/egofound3r_8task_review_v0/${dataset}_manifest.json" \
+  if [[ -f "${BASE_ROOT}/inputs/${dataset}/manifest.json" ]]; then
+    cp "${BASE_ROOT}/inputs/${dataset}/manifest.json" \
       "${PUBLISH_DIR}/${dataset}_task_manifest.json"
   fi
   printf '[extended-mano] completed: %s\n' "${dataset}"
