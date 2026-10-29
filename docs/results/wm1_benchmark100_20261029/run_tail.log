@@ -1,15 +1,4 @@
-ributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
-[rank2]:W1030 00:07:56.311000 830361 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
-[rank0]:W1030 00:07:56.311000 830359 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
-[rank5]:W1030 00:07:56.311000 830364 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
-[rank7]:W1030 00:07:56.311000 830366 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
-[rank4]:W1030 00:07:56.311000 830363 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
-[rank6]:W1030 00:07:56.311000 830365 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
-[rank1]:W1030 00:07:56.311000 830360 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
-[rank2]:W1030 00:07:56.311000 830361 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
-[rank3]:W1030 00:07:56.311000 830362 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
-[rank0]:W1030 00:07:56.311000 830359 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
-[rank7]:W1030 00:07:56.311000 830366 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
+615755
 [rank5]:W1030 00:07:56.311000 830364 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
 [rank6]:W1030 00:07:56.311000 830365 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
 [rank4]:W1030 00:07:56.311000 830363 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
@@ -541,3 +530,12 @@ ributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 4447744793180615755
 [rank1]:W1030 00:07:58.221000 830360 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12220 hash value: 3233469087336925115
 [rank2]:W1030 00:07:58.221000 830361 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12220 hash value: 3233469087336925115
 [rank4]:W1030 00:07:58.221000 830363 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12220 hash value: 3233469087336925115
+[pwm/training-reconstruction b550980] results: wm1 benchmark evaluate-starting at step 100
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+To https://github.com/davit666/PWM-EgoFound3R.git
+   23dc266..b550980  HEAD -> pwm/wm1-benchmark100
+/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/egohandmetric_prompt/models/temporal_hand_prompt_adapter.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
+/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/egohandmetric_prompt/models/temporal_hand_prompt_adapter.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
+{"ok": true, "scope": "100-step TACO/STERA pilot; not original seven-dataset paper reproduction", "timing": {"measured_steps": 100, "training_step_seconds_total": 539.4442958831787, "steady_steps": 95, "discarded_startup_steps": 5, "steady_mean_step_seconds": 5.285832024659765, "steady_median_step_seconds": 5.252426216378808, "steady_p95_step_seconds": 5.803459053859115, "projected_steps": 3200, "projected_training_hours": 4.698517355253124, "scope": "step time includes data loading and GPU work; excludes initialization, checkpoint saving and evaluation"}, "world_size": 8, "effective_batch_size": 64, "frames_per_clip": [60], "peak_allocated_gib": 28.59262752532959, "unique_training_clips_seen": 64, "validation_windows": 8}
