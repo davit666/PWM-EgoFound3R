@@ -1,0 +1,524 @@
+{
+  "host": "job-18c466f4-db66-4b0d-bfb4-7c8531ce94f1-master-0",
+  "datasets": {
+    "H2O": {
+      "candidates": {
+        "/share/project/eai_pwm/datasets/H2O": false,
+        "/share/projset/eai_pwm/datasets/H2O": false,
+        "/share-mixed/project/eai_pwm/datasets/H2O": true,
+        "/share-mixed/projset/eai_pwm/datasets/H2O": false
+      },
+      "samples": {
+        "/share-mixed/project/eai_pwm/datasets/H2O": [
+          {
+            "name": "down.txt",
+            "directory": false,
+            "bytes": 1505
+          },
+          {
+            "name": "subject3_ego_v1_1.tar.gz",
+            "directory": false,
+            "bytes": 45494431398
+          },
+          {
+            "name": "manolabel_v1.1.tar.gz",
+            "directory": false,
+            "bytes": 496664722
+          },
+          {
+            "name": "subject1_pose_v1_1.tar.gz",
+            "directory": false,
+            "bytes": 78186705
+          },
+          {
+            "name": "subject2_pose_v1_1.tar.gz",
+            "directory": false,
+            "bytes": 75477672
+          },
+          {
+            "name": "subject1_ego_v1_1.tar.gz",
+            "directory": false,
+            "bytes": 37274083128
+          },
+          {
+            "name": "subject2_ego_v1_1.tar.gz",
+            "directory": false,
+            "bytes": 33747798905
+          },
+          {
+            "name": "subject1_v1_1.tar.gz",
+            "directory": false,
+            "bytes": 182093623926
+          },
+          {
+            "name": "subject3_pose_v1_1.tar.gz",
+            "directory": false,
+            "bytes": 81332903
+          },
+          {
+            "name": "subject4_v1_1.tar.gz",
+            "directory": false,
+            "bytes": 207840289808
+          },
+          {
+            "name": "subject4_ego_v1_1.tar.gz",
+            "directory": false,
+            "bytes": 43240098005
+          },
+          {
+            "name": "test_obj_labels.zip",
+            "directory": false,
+            "bytes": 186056772
+          },
+          {
+            "name": "object.zip",
+            "directory": false,
+            "bytes": 5586212
+          },
+          {
+            "name": "subject4_pose_v1_1.tar.gz",
+            "directory": false,
+            "bytes": 85402952
+          },
+          {
+            "name": "h2o_CASA.tar",
+            "directory": false,
+            "bytes": 36417177600
+          },
+          {
+            "name": "label_split.zip",
+            "directory": false,
+            "bytes": 252305
+          },
+          {
+            "name": "subject2_v1_1.tar.gz",
+            "directory": false,
+            "bytes": 176186888894
+          },
+          {
+            "name": "subject3_v1_1.tar.gz",
+            "directory": false,
+            "bytes": 201772770915
+          }
+        ]
+      }
+    },
+    "HOT3D-Aria": {
+      "candidates": {
+        "/share/project/eai_pwm/datasets/Hot3DAria": false,
+        "/share/projset/eai_pwm/datasets/Hot3DAria": false,
+        "/share-mixed/project/eai_pwm/datasets/Hot3DAria": true,
+        "/share-mixed/projset/eai_pwm/datasets/Hot3DAria": false
+      },
+      "samples": {
+        "/share-mixed/project/eai_pwm/datasets/Hot3DAria": [
+          {
+            "name": "download_summary.json",
+            "directory": false,
+            "bytes": 212
+          },
+          {
+            "name": "P0020_eed59f82",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "P0001_83b755aa",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "P0001_a9d6c83d",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "P0001_f6cc0cc8",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "P0004_df493ce2",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "P0005_c35d9c88",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "P0009_5bb7cc2a",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "P0010_1c9fe708",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "P0010_99385ad8",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "P0011_72efb935",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "P0011_7c7e8d86",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "P0012_ca1f6626",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "P0015_cc5dfd13",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "P0015_cc739faa",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "P0016_96c0228e",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "P0020_dd30b789",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "P0001_10a27bf7",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "P0001_4bf4e21a",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "P0002_016222d1",
+            "directory": true,
+            "bytes": 8192
+          }
+        ]
+      }
+    },
+    "OakInk-v2": {
+      "candidates": {
+        "/share/project/eai_pwm/datasets/OakInk-v2": false,
+        "/share/projset/eai_pwm/datasets/OakInk-v2": false,
+        "/share-mixed/project/eai_pwm/datasets/OakInk-v2": true,
+        "/share-mixed/projset/eai_pwm/datasets/OakInk-v2": false
+      },
+      "samples": {
+        "/share-mixed/project/eai_pwm/datasets/OakInk-v2": [
+          {
+            "name": "object_repair.tar",
+            "directory": false,
+            "bytes": 139714560
+          },
+          {
+            "name": "object_affordance.tar",
+            "directory": false,
+            "bytes": 169963520
+          },
+          {
+            "name": "program_extension.tar",
+            "directory": false,
+            "bytes": 19343360
+          },
+          {
+            "name": "object_raw.tar",
+            "directory": false,
+            "bytes": 15605760
+          },
+          {
+            "name": "program.tar",
+            "directory": false,
+            "bytes": 3594240
+          },
+          {
+            "name": "data",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "README.md",
+            "directory": false,
+            "bytes": 239
+          },
+          {
+            "name": "object_preview.tar",
+            "directory": false,
+            "bytes": 15605760
+          },
+          {
+            "name": "anno_preview",
+            "directory": true,
+            "bytes": 8192
+          }
+        ]
+      }
+    },
+    "TACO": {
+      "candidates": {
+        "/share/project/eai_pwm/datasets/TACO": false,
+        "/share/projset/eai_pwm/datasets/TACO": false,
+        "/share-mixed/project/eai_pwm/datasets/TACO": true,
+        "/share-mixed/projset/eai_pwm/datasets/TACO": false
+      },
+      "samples": {
+        "/share-mixed/project/eai_pwm/datasets/TACO": [
+          {
+            "name": "README.md",
+            "directory": false,
+            "bytes": 1279
+          },
+          {
+            "name": "Marker_Removed_Allocentric_RGB_Videos",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "Egocentric_Depth_Videos.zip",
+            "directory": false,
+            "bytes": 91396872846
+          },
+          {
+            "name": "Object_Models.zip",
+            "directory": false,
+            "bytes": 424209827
+          },
+          {
+            "name": "Object_Poses.zip",
+            "directory": false,
+            "bytes": 34340303
+          },
+          {
+            "name": "2D_Segmentation.zip",
+            "directory": false,
+            "bytes": 2591020290
+          },
+          {
+            "name": "Allocentric_RGB_Videos",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "Hand_Poses.zip",
+            "directory": false,
+            "bytes": 15231790511
+          },
+          {
+            "name": "Egocentric_RGB_Videos.zip",
+            "directory": false,
+            "bytes": 24666017548
+          },
+          {
+            "name": "Egocentric_Camera_Parameters_2.zip",
+            "directory": false,
+            "bytes": 18689683
+          },
+          {
+            "name": "Allocentric_Camera_Parameters.zip",
+            "directory": false,
+            "bytes": 7960127
+          }
+        ]
+      }
+    },
+    "HOI4D": {
+      "candidates": {
+        "/share/project/eai_pwm/datasets/raw/data/HOI4D": false,
+        "/share/projset/eai_pwm/datasets/raw/data/HOI4D": false,
+        "/share-mixed/project/eai_pwm/datasets/raw/data/HOI4D": false,
+        "/share-mixed/projset/eai_pwm/datasets/raw/data/HOI4D": false,
+        "/share/project/eai_pwm/datasets/HOI4D": false,
+        "/share/project/eai_pwm/datasets/hoi4d": false,
+        "/share/project/eai_pwm/datasets/raw/HOI4D": false,
+        "/share/project/eai_pwm/raw/data/HOI4D": false,
+        "/share/projset/eai_pwm/datasets/HOI4D": false,
+        "/share/projset/eai_pwm/datasets/hoi4d": false,
+        "/share/projset/eai_pwm/datasets/raw/HOI4D": false,
+        "/share/projset/eai_pwm/raw/data/HOI4D": false,
+        "/share-mixed/project/eai_pwm/datasets/HOI4D": false,
+        "/share-mixed/project/eai_pwm/datasets/hoi4d": false,
+        "/share-mixed/project/eai_pwm/datasets/raw/HOI4D": false,
+        "/share-mixed/project/eai_pwm/raw/data/HOI4D": false,
+        "/share-mixed/projset/eai_pwm/datasets/HOI4D": false,
+        "/share-mixed/projset/eai_pwm/datasets/hoi4d": false,
+        "/share-mixed/projset/eai_pwm/datasets/raw/HOI4D": false,
+        "/share-mixed/projset/eai_pwm/raw/data/HOI4D": false
+      }
+    },
+    "ARCTIC": {
+      "candidates": {
+        "/share/project/eai_pwm/datasets/ARCTIC": false,
+        "/share/projset/eai_pwm/datasets/ARCTIC": false,
+        "/share-mixed/project/eai_pwm/datasets/ARCTIC": true,
+        "/share-mixed/projset/eai_pwm/datasets/ARCTIC": false
+      },
+      "samples": {
+        "/share-mixed/project/eai_pwm/datasets/ARCTIC": [
+          {
+            "name": "body_models",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "downloads",
+            "directory": true,
+            "bytes": 8192
+          }
+        ]
+      }
+    },
+    "STERA-10M": {
+      "candidates": {
+        "/share/project/eai_pwm/datasets/Stera-10M": false,
+        "/share/projset/eai_pwm/datasets/Stera-10M": false,
+        "/share-mixed/project/eai_pwm/datasets/Stera-10M": false,
+        "/share-mixed/projset/eai_pwm/datasets/Stera-10M": true
+      },
+      "samples": {
+        "/share-mixed/projset/eai_pwm/datasets/Stera-10M": [
+          {
+            "name": "session_data_20260330_014905",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "session_data_20260404_113054",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "session_data_20260404_190131",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "session_data_20260405_215941",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "session_data_20260406_103718",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "session_data_20260406_193745",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "session_data_20260407_063503",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "session_data_20260410_061438",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "session_data_20260410_093518",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "session_data_20260411_163117",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "session_data_20260411_174820",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "session_data_20260411_195628",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "session_data_20260412_094422",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "session_data_20260412_111945",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "session_data_20260413_051653",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "session_data_20260413_212931",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "session_data_20260415_103013",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "session_data_20260415_194614",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "session_data_20260420_200240",
+            "directory": true,
+            "bytes": 8192
+          },
+          {
+            "name": "session_data_20260421_204030",
+            "directory": true,
+            "bytes": 8192
+          }
+        ]
+      }
+    }
+  },
+  "project": "/home-mixed/liwenhao666/wm/PWM-training-reconstruction",
+  "gpu": "0, NVIDIA H100 80GB HBM3, 81559 MiB, 0 MiB, 0 %\n1, NVIDIA H100 80GB HBM3, 81559 MiB, 0 MiB, 0 %\n2, NVIDIA H100 80GB HBM3, 81559 MiB, 0 MiB, 0 %\n3, NVIDIA H100 80GB HBM3, 81559 MiB, 0 MiB, 0 %\n4, NVIDIA H100 80GB HBM3, 81559 MiB, 0 MiB, 0 %\n5, NVIDIA H100 80GB HBM3, 81559 MiB, 0 MiB, 0 %\n6, NVIDIA H100 80GB HBM3, 81559 MiB, 0 MiB, 0 %\n7, NVIDIA H100 80GB HBM3, 81559 MiB, 0 MiB, 0 %\n",
+  "gpu_processes": "",
+  "paths": {
+    "/home-mixed/liwenhao666/wm/PWM-EgoFound3R/.venv/bin/python": {
+      "exists": true,
+      "writable": true
+    },
+    "/home-mixed/liwenhao666/wm/PWM-training-reconstruction": {
+      "exists": true,
+      "writable": true,
+      "free_bytes": 156591161606144
+    },
+    "/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs": {
+      "exists": true,
+      "writable": true,
+      "free_bytes": 156591161606144
+    },
+    "/share/project/eai_pwm/PWM-EgoFound3R/outputs": {
+      "exists": false,
+      "writable": false
+    }
+  }
+}
