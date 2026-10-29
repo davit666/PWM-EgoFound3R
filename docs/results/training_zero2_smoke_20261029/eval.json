@@ -1,0 +1,182 @@
+{
+  "loaded_state_keys": 636,
+  "split": "train",
+  "windows": [
+    {
+      "identity": {
+        "dataset": "TACO",
+        "source_episode_id": "(dust, roller, pan)/20230927_032",
+        "split": "train",
+        "path": "/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/training_smoke_taco_20261029/taco_hands.npz",
+        "sha256": "5de662949f64660469b4062743a25f2707e5a0a464df0515bc7857fc3ee5579f",
+        "adapter": "taco_v1_hand_contact_v1",
+        "source_frames": [
+          30,
+          31,
+          32
+        ]
+      },
+      "metrics": {
+        "loss": 18.602863311767578,
+        "loss/joint_offset": 0.852452278137207,
+        "loss/joint_contact": 0.29467764496803284,
+        "loss/joint_distance": 0.2842511236667633,
+        "loss/vertex_offset": 1.959082007408142,
+        "loss/vertex_contact": 0.3830675482749939,
+        "loss/vertex_distance": 0.6140218377113342,
+        "loss/heatmap": 0.07905977964401245,
+        "loss/offset2d": 0.1374794840812683,
+        "loss/reprojection": 13.998772621154785,
+        "joint_contact/precision": 0.6781609195402298,
+        "joint_contact/recall": 1.0,
+        "joint_contact/f1": 0.8082191780821918,
+        "joint/distance_mae_mm/all": 12.15917682647705,
+        "joint/distance_mae_mm/pred_contact": 8.285698890686035,
+        "joint/distance_mae_mm/gt_contact": 5.4272541999816895,
+        "vertex_contact/precision": 0.8823529411764706,
+        "vertex_contact/recall": 0.10714285714285714,
+        "vertex_contact/f1": 0.1910828025477707,
+        "vertex/distance_mae_mm/all": 36.363487243652344,
+        "vertex/distance_mae_mm/pred_contact": 9.866771697998047,
+        "vertex/distance_mae_mm/gt_contact": 31.902559280395508
+      }
+    },
+    {
+      "identity": {
+        "dataset": "STERA-10M",
+        "source_episode_id": "session_data_20260330_014905",
+        "split": "train",
+        "path": "/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/training_smoke_20261029/stera_scene.npz",
+        "sha256": "7959fceb5a95caef2b1f79415743a3266e78689069ef4b5b7d13d64842c316cf",
+        "adapter": "stera_scene_v1",
+        "source_frames": [
+          31,
+          32,
+          33
+        ],
+        "scope": "real scene labels; smoke only; no hand/contact labels",
+        "source": "/share-mixed/projset/eai_pwm/datasets/Stera-10M/session_data_20260330_014905",
+        "image_undistorted": true
+      },
+      "metrics": {
+        "loss": 8.612548828125,
+        "loss/scene_K": 8.537740707397461,
+        "loss/scene_depth": 0.0637945607304573,
+        "loss/scene_translation": 0.002439890056848526,
+        "loss/scene_rotation": 0.0,
+        "loss/scene_metric": 0.008574141189455986
+      }
+    }
+  ],
+  "macro": {
+    "joint/distance_mae_mm/all": {
+      "mean": 12.15917682647705,
+      "windows": 1
+    },
+    "joint/distance_mae_mm/gt_contact": {
+      "mean": 5.4272541999816895,
+      "windows": 1
+    },
+    "joint/distance_mae_mm/pred_contact": {
+      "mean": 8.285698890686035,
+      "windows": 1
+    },
+    "joint_contact/f1": {
+      "mean": 0.8082191780821918,
+      "windows": 1
+    },
+    "joint_contact/precision": {
+      "mean": 0.6781609195402298,
+      "windows": 1
+    },
+    "joint_contact/recall": {
+      "mean": 1.0,
+      "windows": 1
+    },
+    "loss": {
+      "mean": 13.607706069946289,
+      "windows": 2
+    },
+    "loss/heatmap": {
+      "mean": 0.07905977964401245,
+      "windows": 1
+    },
+    "loss/joint_contact": {
+      "mean": 0.29467764496803284,
+      "windows": 1
+    },
+    "loss/joint_distance": {
+      "mean": 0.2842511236667633,
+      "windows": 1
+    },
+    "loss/joint_offset": {
+      "mean": 0.852452278137207,
+      "windows": 1
+    },
+    "loss/offset2d": {
+      "mean": 0.1374794840812683,
+      "windows": 1
+    },
+    "loss/reprojection": {
+      "mean": 13.998772621154785,
+      "windows": 1
+    },
+    "loss/scene_K": {
+      "mean": 8.537740707397461,
+      "windows": 1
+    },
+    "loss/scene_depth": {
+      "mean": 0.0637945607304573,
+      "windows": 1
+    },
+    "loss/scene_metric": {
+      "mean": 0.008574141189455986,
+      "windows": 1
+    },
+    "loss/scene_rotation": {
+      "mean": 0.0,
+      "windows": 1
+    },
+    "loss/scene_translation": {
+      "mean": 0.002439890056848526,
+      "windows": 1
+    },
+    "loss/vertex_contact": {
+      "mean": 0.3830675482749939,
+      "windows": 1
+    },
+    "loss/vertex_distance": {
+      "mean": 0.6140218377113342,
+      "windows": 1
+    },
+    "loss/vertex_offset": {
+      "mean": 1.959082007408142,
+      "windows": 1
+    },
+    "vertex/distance_mae_mm/all": {
+      "mean": 36.363487243652344,
+      "windows": 1
+    },
+    "vertex/distance_mae_mm/gt_contact": {
+      "mean": 31.902559280395508,
+      "windows": 1
+    },
+    "vertex/distance_mae_mm/pred_contact": {
+      "mean": 9.866771697998047,
+      "windows": 1
+    },
+    "vertex_contact/f1": {
+      "mean": 0.1910828025477707,
+      "windows": 1
+    },
+    "vertex_contact/precision": {
+      "mean": 0.8823529411764706,
+      "windows": 1
+    },
+    "vertex_contact/recall": {
+      "mean": 0.10714285714285714,
+      "windows": 1
+    }
+  },
+  "protocol": "prepared-native-H-validation; not paper benchmark"
+}

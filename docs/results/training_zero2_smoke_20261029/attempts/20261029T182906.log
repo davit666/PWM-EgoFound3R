@@ -1,0 +1,86 @@
+Collecting deepspeed==0.19.8
+  Downloading deepspeed-0.19.8.tar.gz (2.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 17.1 MB/s  0:00:00
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: deepspeed
+  Building wheel for deepspeed (pyproject.toml): started
+  Building wheel for deepspeed (pyproject.toml): finished with status 'done'
+  Created wheel for deepspeed: filename=deepspeed-0.19.8-py3-none-any.whl size=2168951 sha256=c38ef66c61bef0145e120197b839596f96a8e3974cae4d9fe22a515f3025ebb1
+  Stored in directory: /tmp/pip-ephem-wheel-cache-jm8r4qkp/wheels/bf/95/59/7ac51f546056b2b52e57b04a2aa2cb024e7035195906e45c4c
+Successfully built deepspeed
+Installing collected packages: deepspeed
+Successfully installed deepspeed-0.19.8
+WARNING: Target directory /home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/deepspeed already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/deepspeed-0.19.8.dist-info already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/bin already exists. Specify --upgrade to force replacement.
+Collecting pydantic
+  Downloading pydantic-2.14.1-py3-none-any.whl.metadata (133 kB)
+Collecting psutil
+  Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl.metadata (22 kB)
+Collecting ninja
+  Downloading ninja-1.13.2-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.4 kB)
+Collecting hjson
+  Downloading hjson-3.1.0-py3-none-any.whl.metadata (2.6 kB)
+Collecting py-cpuinfo
+  Downloading py_cpuinfo-9.0.0-py3-none-any.whl.metadata (794 bytes)
+Collecting msgpack
+  Downloading msgpack-1.2.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.3 kB)
+Collecting annotated-types>=0.6.0 (from pydantic)
+  Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.50.1 (from pydantic)
+  Downloading pydantic_core-2.50.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.5 kB)
+Collecting typing-extensions>=4.16.0 (from pydantic)
+  Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting typing-inspection>=0.4.4 (from pydantic)
+  Downloading typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)
+Downloading pydantic-2.14.1-py3-none-any.whl (488 kB)
+Downloading pydantic_core-2.50.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 32.0 MB/s  0:00:00
+Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
+Downloading ninja-1.13.2-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (183 kB)
+Downloading hjson-3.1.0-py3-none-any.whl (54 kB)
+Downloading py_cpuinfo-9.0.0-py3-none-any.whl (22 kB)
+Downloading msgpack-1.2.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (475 kB)
+Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+Installing collected packages: py-cpuinfo, hjson, typing-extensions, psutil, ninja, msgpack, annotated-types, typing-inspection, pydantic-core, pydantic
+
+Successfully installed annotated-types-0.8.0 hjson-3.1.0 msgpack-1.2.4 ninja-1.13.2 psutil-7.2.2 py-cpuinfo-9.0.0 pydantic-2.14.1 pydantic-core-2.50.1 typing-extensions-4.16.0 typing-inspection-0.4.4
+WARNING: Target directory /home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/cpuinfo already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/py_cpuinfo-9.0.0.dist-info already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/hjson already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/hjson-3.1.0.dist-info already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/typing_extensions.py already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/typing_extensions-4.16.0.dist-info already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/__pycache__ already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/psutil already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/psutil-7.2.2.dist-info already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/ninja already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/ninja-1.13.2.dist-info already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/msgpack already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/msgpack-1.2.4.dist-info already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/annotated_types already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/annotated_types-0.8.0.dist-info already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/typing_inspection already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/typing_inspection-0.4.4.dist-info already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/pydantic_core already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/pydantic_core-2.50.1.dist-info already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/pydantic already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/pydantic-2.14.1.dist-info already exists. Specify --upgrade to force replacement.
+WARNING: Target directory /home-mixed/liwenhao666/wm/PWM-training-reconstruction/outputs/training-deps/bin already exists. Specify --upgrade to force replacement.
+/home-mixed/liwenhao666/wm/PWM-training-reconstruction/egohandmetric_prompt/models/temporal_hand_prompt_adapter.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
+/home-mixed/liwenhao666/wm/PWM-training-reconstruction/egohandmetric_prompt/models/temporal_hand_prompt_adapter.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
+{"rank": 0, "phase": "engine_initializing"}
+{"rank": 1, "phase": "engine_initializing"}
+{"rank": 0, "phase": "engine_ready"}
+{"rank": 1, "phase": "engine_ready"}
+{"rank": 0, "step": 1, "phase": "forward", "source": "STERA-10M/session_data_20260330_014905"}
+{"rank": 1, "step": 1, "phase": "forward", "source": "TACO/(dust, roller, pan)/20230927_032"}
+{"rank": 0, "step": 1, "phase": "backward"}
+{"rank": 1, "step": 1, "phase": "backward"}
+{"rank": 0, "step": 1, "phase": "optimizer_step"}
+{"rank": 1, "step": 1, "phase": "optimizer_step"}

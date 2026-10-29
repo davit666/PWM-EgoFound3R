@@ -1,13 +1,13 @@
 Collecting deepspeed==0.19.8
   Downloading deepspeed-0.19.8.tar.gz (2.0 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 17.1 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 16.6 MB/s  0:00:00
   Preparing metadata (pyproject.toml): started
   Preparing metadata (pyproject.toml): finished with status 'done'
 Building wheels for collected packages: deepspeed
   Building wheel for deepspeed (pyproject.toml): started
   Building wheel for deepspeed (pyproject.toml): finished with status 'done'
-  Created wheel for deepspeed: filename=deepspeed-0.19.8-py3-none-any.whl size=2168951 sha256=c38ef66c61bef0145e120197b839596f96a8e3974cae4d9fe22a515f3025ebb1
-  Stored in directory: /tmp/pip-ephem-wheel-cache-jm8r4qkp/wheels/bf/95/59/7ac51f546056b2b52e57b04a2aa2cb024e7035195906e45c4c
+  Created wheel for deepspeed: filename=deepspeed-0.19.8-py3-none-any.whl size=2168949 sha256=969e346593166aaea4eb829f298bd7c7b00df5d23c563fbae2eda14b1c3125ec
+  Stored in directory: /tmp/pip-ephem-wheel-cache-gzlwv9l0/wheels/bf/95/59/7ac51f546056b2b52e57b04a2aa2cb024e7035195906e45c4c
 Successfully built deepspeed
 Installing collected packages: deepspeed
 Successfully installed deepspeed-0.19.8
@@ -36,7 +36,7 @@ Collecting typing-inspection>=0.4.4 (from pydantic)
   Downloading typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)
 Downloading pydantic-2.14.1-py3-none-any.whl (488 kB)
 Downloading pydantic_core-2.50.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.2 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 32.0 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 21.4 MB/s  0:00:00
 Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
 Downloading ninja-1.13.2-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (183 kB)
 Downloading hjson-3.1.0-py3-none-any.whl (54 kB)
@@ -74,13 +74,69 @@ WARNING: Target directory /home-mixed/liwenhao666/wm/PWM-training-reconstruction
   self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
 /home-mixed/liwenhao666/wm/PWM-training-reconstruction/egohandmetric_prompt/models/temporal_hand_prompt_adapter.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
   self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
+{"rank": 1, "phase": "engine_initializing"}
+{"rank": 0, "phase": "engine_initializing"}
+{"rank": 0, "phase": "engine_ready"}
+{"rank": 1, "phase": "engine_ready"}
+[rank0]:W1029 18:29:50.511000 17512 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 38 hash value: 3676289025768376095
+[rank1]:W1029 18:29:50.529000 17513 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 38 hash value: 3676289025768376095
+[rank1]:W1029 18:29:50.838000 17513 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 864059870231930311
+[rank0]:W1029 18:29:50.838000 17512 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 864059870231930311
+[rank0]:W1029 18:29:50.838000 17512 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 864059870231930311
+[rank1]:W1029 18:29:50.838000 17513 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 864059870231930311
+{"rank": 1, "step": 1, "phase": "forward", "source": "TACO/(dust, roller, pan)/20230927_032"}
+{"rank": 0, "step": 1, "phase": "forward", "source": "TACO/(dust, roller, pan)/20230927_032"}
+[rank1]:W1029 18:29:52.449000 17513 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 151 hash value: 7661788585133374117
+[rank0]:W1029 18:29:52.454000 17512 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 151 hash value: 7661788585133374117
+[rank0]:W1029 18:29:52.455000 17512 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 14823054302472573722
+[rank1]:W1029 18:29:52.455000 17513 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 14823054302472573722
+[rank0]:W1029 18:29:52.456000 17512 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 14823054302472573722
+[rank1]:W1029 18:29:52.456000 17513 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 14823054302472573722
+{"rank": 0, "step": 1, "phase": "backward"}
+{"rank": 1, "step": 1, "phase": "backward"}
+{"rank": 1, "step": 1, "phase": "optimizer_step"}
+{"rank": 0, "step": 1, "phase": "optimizer_step"}
+{"rank": 0, "world_size": 2, "step": 1, "lr": 0.00025, "gradient_norm": 2453.584228515625, "sources": ["TACO/(dust, roller, pan)/20230927_032"], "terms": [{"joint_offset": 2.813539981842041, "joint_contact": 0.41711029410362244, "joint_distance": 0.2893575131893158, "vertex_offset": 3.4048657417297363, "vertex_contact": 0.348528116941452, "vertex_distance": 0.28121957182884216, "heatmap": 0.11154190450906754, "offset2d": 0.15051336586475372, "reprojection": 10.20395278930664}]}
+{"rank": 1, "world_size": 2, "step": 1, "lr": 0.00025, "gradient_norm": 2453.584228515625, "sources": ["TACO/(dust, roller, pan)/20230927_032"], "terms": [{"joint_offset": 2.813539981842041, "joint_contact": 0.41711029410362244, "joint_distance": 0.2893575131893158, "vertex_offset": 3.4053633213043213, "vertex_contact": 0.3485412001609802, "vertex_distance": 0.28124672174453735, "heatmap": 0.11154190450906754, "offset2d": 0.15051336586475372, "reprojection": 10.20395278930664}]}
+[rank0]:W1029 18:29:53.343000 17512 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 12195 hash value: 4743474093416982134
+[rank1]:W1029 18:29:53.343000 17513 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 12173 hash value: 8204185436573161384
+[rank1]:W1029 18:29:53.345000 17513 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 1056177320713703304
+[rank0]:W1029 18:29:53.345000 17512 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 1056177320713703304
+[rank0]:W1029 18:29:53.346000 17512 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 1056177320713703304
+[rank1]:W1029 18:29:53.346000 17513 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 1056177320713703304
+/home-mixed/liwenhao666/wm/PWM-training-reconstruction/egohandmetric_prompt/models/temporal_hand_prompt_adapter.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
+/home-mixed/liwenhao666/wm/PWM-training-reconstruction/egohandmetric_prompt/models/temporal_hand_prompt_adapter.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
 {"rank": 0, "phase": "engine_initializing"}
 {"rank": 1, "phase": "engine_initializing"}
 {"rank": 0, "phase": "engine_ready"}
 {"rank": 1, "phase": "engine_ready"}
-{"rank": 0, "step": 1, "phase": "forward", "source": "STERA-10M/session_data_20260330_014905"}
-{"rank": 1, "step": 1, "phase": "forward", "source": "TACO/(dust, roller, pan)/20230927_032"}
-{"rank": 0, "step": 1, "phase": "backward"}
-{"rank": 1, "step": 1, "phase": "backward"}
-{"rank": 0, "step": 1, "phase": "optimizer_step"}
-{"rank": 1, "step": 1, "phase": "optimizer_step"}
+[rank0]:W1029 18:30:56.863000 17583 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 43 hash value: 8954927260915207375
+[rank1]:W1029 18:30:57.551000 17584 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 43 hash value: 8954927260915207375
+[rank1]:W1029 18:30:57.860000 17584 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 12891888808383714077
+[rank0]:W1029 18:30:57.860000 17583 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 12891888808383714077
+[rank1]:W1029 18:30:57.861000 17584 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 12891888808383714077
+[rank0]:W1029 18:30:57.861000 17583 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 12891888808383714077
+{"rank": 1, "step": 2, "phase": "forward", "source": "STERA-10M/session_data_20260330_014905"}
+{"rank": 0, "step": 2, "phase": "forward", "source": "STERA-10M/session_data_20260330_014905"}
+[rank1]:W1029 18:30:59.458000 17584 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 92 hash value: 12729080418547729598
+[rank0]:W1029 18:30:59.487000 17583 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 92 hash value: 12729080418547729598
+[rank0]:W1029 18:30:59.489000 17583 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 8032226216140711757
+[rank1]:W1029 18:30:59.489000 17584 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 8032226216140711757
+[rank0]:W1029 18:30:59.489000 17583 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 8032226216140711757
+[rank1]:W1029 18:30:59.489000 17584 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 8032226216140711757
+{"rank": 0, "step": 2, "phase": "backward"}{"rank": 1, "step": 2, "phase": "backward"}
+
+{"rank": 0, "step": 2, "phase": "optimizer_step"}
+{"rank": 1, "step": 2, "phase": "optimizer_step"}
+{"rank": 0, "world_size": 2, "step": 2, "lr": 0.00025, "gradient_norm": 98.4255599975586, "sources": ["STERA-10M/session_data_20260330_014905"], "terms": [{"scene_K": 3.352412700653076, "scene_depth": 0.04764828830957413, "scene_translation": 0.0006043931934982538, "scene_rotation": 4.715768753271732e-08, "scene_metric": 0.0008589910576120019}]}
+{"rank": 1, "world_size": 2, "step": 2, "lr": 0.00025, "gradient_norm": 98.4255599975586, "sources": ["STERA-10M/session_data_20260330_014905"], "terms": [{"scene_K": 3.352412700653076, "scene_depth": 0.04764828830957413, "scene_translation": 0.0006043931934982538, "scene_rotation": 4.715768753271732e-08, "scene_metric": 0.0008589910576120019}]}
+[rank1]:W1029 18:31:00.007000 17584 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 12175 hash value: 2283963267190623311
+[rank0]:W1029 18:31:00.007000 17583 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 12195 hash value: 17387642335796261035
+[rank1]:W1029 18:31:00.008000 17584 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 1105653443263052443
+[rank0]:W1029 18:31:00.008000 17583 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 1105653443263052443
+[rank1]:W1029 18:31:00.009000 17584 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 1105653443263052443
+[rank0]:W1029 18:31:00.009000 17583 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 1105653443263052443
+/home-mixed/liwenhao666/wm/PWM-training-reconstruction/egohandmetric_prompt/models/temporal_hand_prompt_adapter.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
