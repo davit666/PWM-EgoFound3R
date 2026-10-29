@@ -19,6 +19,7 @@ def main():
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--frames', type=int, default=3)
     parser.add_argument('--start', type=int, default=31)
+    parser.add_argument('--split',choices=['train','val'],default='train')
     args = parser.parse_args()
     args.output.mkdir(parents=True,exist_ok=True)
     cal = args.session / 'calibrations'
@@ -69,10 +70,10 @@ def main():
         target__scene_depth=depth,valid__scene_depth=mask,
         target__scene_K=Kall,valid__scene_K=np.ones_like(Kall,dtype=bool),
         target__scene_pose=w2c,valid__scene_pose=np.ones_like(w2c,dtype=bool))
-    row = {'dataset':'STERA-10M','source_episode_id':args.session.name,'split':'train',
+    row = {'dataset':'STERA-10M','source_episode_id':args.session.name,'split':args.split,
            'path':target.name,'sha256':hashlib.sha256(target.read_bytes()).hexdigest(),
            'adapter':'stera_scene_v1','source_frames':frames.tolist(),
-           'scope':'real scene labels; smoke only; no hand/contact labels',
+           'scope':'real scene labels; no hand/contact labels',
            'source':str(args.session),'image_undistorted':True}
     (args.output/'index.jsonl').write_text(json.dumps(row)+'\n')
     (args.output/'preparation.json').write_text(json.dumps({'manifest':row,'K':new_K.tolist(),

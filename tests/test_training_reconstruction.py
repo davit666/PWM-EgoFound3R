@@ -17,6 +17,23 @@ from egohandmetric_prompt.models.hand_keypoint_localization_head import decode_l
 
 
 class ReconstructionTests(unittest.TestCase):
+    def test_window_split_preserves_masks_times_and_episode_identity(self):
+        from scripts.pwm.prepare_benchmark_subset import split_prepared
+        with tempfile.TemporaryDirectory() as directory:
+            p=Path(directory)
+            np.savez(p/'source.npz',rgb=np.zeros((6,16,16,3),dtype=np.uint8),timestamp=np.arange(6)/30,
+                frame_present=np.ones(6,dtype=bool),target__joint_distance=np.arange(6)[:,None],
+                valid__joint_distance=np.ones((6,1),dtype=bool))
+            (p/'index.jsonl').write_text(json.dumps({'path':'source.npz','dataset':'TACO','split':'train',
+                'source_episode_id':'episode','source_frames':list(range(6))}))
+            rows=split_prepared(p,p,3)
+            self.assertEqual([r['source_frames'] for r in rows],[[0,1,2],[3,4,5]])
+            self.assertNotEqual(rows[0]['sha256'],rows[1]['sha256'])
+            self.assertTrue(all(r['source_episode_id']=='episode' and r['split']=='train' for r in rows))
+            with np.load(rows[1]['path']) as clip:
+                np.testing.assert_allclose(clip['timestamp'],np.arange(3,6)/30)
+                self.assertEqual(clip['valid__joint_distance'].dtype,np.bool_)
+
     def test_timing_excludes_startup_and_rejects_bad_measurements(self):
         from egohandmetric_prompt.training.timing import summarize_step_times
         rows=[{'step_seconds':100.}]*5+[{'step_seconds':60.}]*95

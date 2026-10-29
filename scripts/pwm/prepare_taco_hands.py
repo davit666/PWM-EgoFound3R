@@ -33,6 +33,7 @@ def main():
     parser.add_argument('--sequence',default='20230927_032')
     parser.add_argument('--start',type=int,default=30)
     parser.add_argument('--frames',type=int,default=3)
+    parser.add_argument('--split',choices=['train','val'],default='train')
     args = parser.parse_args()
     # Compatibility for the original dataset's chumpy-based MANO loader.
     for name, value in {'bool':bool,'int':int,'float':float,'complex':complex,'object':object,'str':str,'unicode':str}.items():
@@ -137,7 +138,7 @@ def main():
         arrays['valid__'+key]=mask.numpy()
     output=args.output/'taco_hands.npz'
     np.savez_compressed(output,rgb=np.stack(rgb),timestamp=frames/fps,frame_present=np.ones(len(frames),dtype=bool),**arrays)
-    row={'dataset':'TACO','source_episode_id':prefix,'split':'train','path':output.name,
+    row={'dataset':'TACO','source_episode_id':prefix,'split':args.split,'path':output.name,
          'sha256':hashlib.sha256(output.read_bytes()).hexdigest(),'adapter':'taco_v1_hand_contact_v1','source_frames':frames.tolist()}
     (args.output/'index.jsonl').write_text(json.dumps(row)+'\n')
     report={'manifest':row,'source_sha256':hashes,'targets':list(targets),'K':new_K.tolist(),
