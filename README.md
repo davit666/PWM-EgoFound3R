@@ -9,6 +9,13 @@ See [docs/PWM_BASELINE.md](docs/PWM_BASELINE.md) for the exact environment,
 checkpoint, data and validation workflow. Model/package names that form part
 of the published checkpoint contract remain unchanged for compatibility.
 
+The `pwm/training-reconstruction` branch adds prepared-data adapters, masked
+training objectives, single-GPU and DeepSpeed ZeRO-2 trainers, resume support,
+and inference-compatible exports. See [the reproduction record](docs/TRAINING_REPRODUCTION.md)
+for verified real-data runs, commands, and the remaining data/recipe/evaluation
+gaps. These are engineering checks, not a completed reproduction of the paper's
+benchmark results.
+
 ## Upstream project
 
 ### EgoFound3R: End-to-End Egocentric Hand Reconstruction in World Space with Point-Wise Interaction Attributes

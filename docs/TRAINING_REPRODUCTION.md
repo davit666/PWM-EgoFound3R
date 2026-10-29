@@ -23,7 +23,7 @@
 | 2D Eq.7 | weighted heatmap BCE、offset、reprojection | labels.py + objectives；像素/格点坐标与上游 decoder 一致 |
 | Scene Eq.8 | confidence depth、K、归一化 translation、rotation geodesic | scene.py；尺度来自反投影点，轨迹统一第一相机 gauge |
 | 训练 Table 5 | AdamW、3200 steps、warmup100、cosine、bf16、clip1 | train_prepared.py 单设备入口，支持梯度累积/恢复 |
-| 分布式 | 8 H20、8/device、ZeRO-2、effective64 | **未实现/未验收**；当前单设备 batch8 不等价 |
+| 分布式 | 8 H20、8/device、ZeRO-2、effective64 | 已在8 H100上验证microbatch1累积8、effective64的2步训练/恢复；未做3200步正式训练 |
 | 手几何评测 | Raw/RR/PA/Sim3/W/WA | evaluation.py 函数；未跑正式 benchmark |
 | 属性评测 | per-window P/R/F1；distance All/Pred/GT | evaluate_prepared.py；macro average 排除 undefined |
 | 时序/场景评测 | 速度/加速度、ATE/rotation、AbsRel/RMSE/δ1 | evaluation.py 函数；待正式数据集接入 |
@@ -82,9 +82,9 @@ python scripts/pwm/evaluate_prepared.py --config configs/pwm_baseline.toml \
 
 `--initialize` 是 posttraining，省略它则随机初始化可训练部分（仍加载冻结 backbone）。
 不能把短程 posttraining 称为完整从头复现。Checkpoint 包含非 backbone 权重、immutable
-architecture contract、optimizer、step、Python/Torch/CUDA RNG、recipe、index hash。
+architecture contract、optimizer、step、Python/NumPy/Torch/CUDA RNG、recipe、config、index hash。
 未带内容 hash 的 index 无法防止 NPZ 被外部替换。`--stop-after` 可用于恢复测试且不改 LR
-schedule。保存采用临时文件原子替换。当前没有分布式状态恢复保证。
+schedule。单卡保存采用临时文件原子替换；分布式入口已通过同world-size的短程分片恢复。
 
 ## 数据与评测验收门槛
 
@@ -118,3 +118,79 @@ STERA 本地实际文件采用 `hand-pose/frame_idx, side, joints_cam_lidar,...`
 完整完成条件：7集 adapter 实测、固定可追溯 split、所有可用监督接通、实际完整模型
 backward/恢复/推理回载、8卡ZeRO-2训练3200步、正式2378窗口评测及与论文差异分析。
 在这些条件满足前，只报告具体通过的检查和实际训练步数。
+
+## 已执行验证（2026-10-29）
+
+- 本地26项测试通过（22项训练重建、4项既有相机/可视化回归），覆盖ZeRO-2有效batch、
+  portable export、scalar gate广播恢复、几何/距离/掩码梯度和评测定义。
+- tac2 H100 GPU0，真实 STERA session 的31–33帧，256×256，官方权重初始化。
+  原生场景输出完成两步 AdamW；第1步保存后重启进程，从 optimizer/RNG checkpoint
+  恢复到第2步。训练 loss 的梯度范数分别57.63、61.85（裁剪前），均有限。
+- 新进程通过原 `load_marker_model_weights` 加载636个状态项，stride5前向完成，
+  终态 exit_code=0。记录在 [training_smoke_20261029](results/training_smoke_20261029/)。
+- eval使用同一个训练窗口，仅验证权重回载及输出有限性；不能解释为泛化指标。训练为
+  stride1，eval为stride5，二者的 loss 不可直接比较。当前三帧窗口的stride5只有一个
+  G anchor，rotation loss为0属预期，不能视为相机精度。
+- 该试验覆盖scene/K/translation/rotation/metric，未覆盖真实hand/contact loss；
+  TACO adapter 的验证单独记录，不能由STERA结果推断。
+- TACO `(dust, roller, pan)/20230927_032` 第30–32帧也完成两步真实训练及断点恢复。
+  使用[数据集原始 MANO 实现](https://github.com/leolyliu/TACO-Instructions)
+  `fd3b5a6b39565ca6935a91d35d5e91dde03c5142`，flat_hand_mean=True、center_idx=0；
+  world坐标经发布的 W2C 变换，工具/目标模型厘米转米。已目视核对
+  [GT投影](results/training_smoke_taco_20261029/label_projection.png)。
+- TACO 已验证 joint/vertex geometry、contact、distance、heatmap、offset、projection
+  的非零梯度，记录包含各模块 gradient norm。裁剪前总梯度范数约2429.82和4562.24，
+  按论文规则裁剪到1；这只是短程连通性检查，不说明该重建权重配比已经合适。
+  未生成 visibility 标签，也未把画面内可见当成无遮挡。详细日志见
+  [TACO smoke](results/training_smoke_taco_20261029/)。
+- 训练出的TACO checkpoint已通过原 `infer_marker_video.py` 完整推理路径：3帧、
+  原生195点、778 MANO加密及overlay视频均成功导出；`validate_output.py`报告ok=true，
+  `hand_778_exported=true`。结果见
+  [完整推理检查](results/trained_checkpoint_inference_20261029/)。GPU进程已释放。
+- tac2 GPU0/1 的ZeRO-2双卡验收通过：TACO第1步→保存分片→新torchrun恢复→STERA第2步。
+  两rank裁剪前gradient norm均为2453.5842、98.42556，均有限；有效batch=2。
+  独立进程加载portable inference checkpoint的636个状态项，在TACO和STERA各前向一次。
+  总入口exit_code=0、training state=completed、最后GPU进程清单为空。记录在
+  [双卡训练/恢复](results/training_zero2_smoke_20261029/)。两个dataset各只有一个3帧
+  clip，因此同一步各rank使用相同样本；这验证通信/恢复，不验证数据多样性或泛化。
+- 8卡、每卡8次梯度累积、有效batch64的两步测试也完成；第1步后退出torchrun，
+  第2步由新进程从分片恢复。每步混合TACO/scene监督，裁剪前gradient norm分别
+  924.0079、2301.366，独立推理回载636项，入口exit_code=0，GPU进程已释放。
+  见 [8卡batch64结果](results/training_zero2_batch64_20261029/)。同样仅使用上述两个
+  3帧clip，硬件为H100而非论文H20，不代表全数据训练、长窗口容量或论文数值复现。
+
+## ZeRO-2 入口
+
+```bash
+torchrun --standalone --nproc_per_node=8 scripts/pwm/train_zero2.py \
+  --config configs/pwm_baseline.toml --recipe configs/training_reconstruction_example.json \
+  --index /path/index.jsonl --output /path/zero2_run
+```
+
+省略`--initialize`为随机初始化可训练模块；加官方marker checkpoint为posttraining。
+`--resume`从输出目录`sharded/`恢复DeepSpeed模型/optimizer/step及所有rank的RNG。
+world size必须一致。`inference.pt`只供推理，不能拿它冒充完整的分布式训练恢复点。
+每卡累积8个clip、8卡有效batch64；采用microbatch1是为兼容不同数据集的标签集合，
+并非声称逐bit复制作者的batch组织。实测不同rank分别用scene和hand监督时，首步在
+优化器阶段阻塞，因此不支持跨rank任意混用监督图。当前采用确定性的dataset-uniform
+调度：同一microstep所有rank使用同一个dataset/stride，各rank在该dataset内独立抽clip；
+前向前检查图像shape一致，反向前检查有效loss项一致，不匹配则明确报错。
+数据集权重均匀也是重建选择，不能视为论文公开参数。该策略写入checkpoint恢复契约。
+已验证双卡跨step混合，以及8卡同一步内累积不同dataset的短测；全量训练尚未执行。
+
+运行采用DeepSpeed 0.19.8的`torch_autocast` bf16模式，FP32参数/optimizer及显式FP32
+几何运算得以保留，避免引擎禁用外部autocast引起DINO卷积dtype冲突。该版本初始化
+广播还需要`zero_compat.py`处理原模型的零维gate，广播结束立即恢复原shape。修改
+不改变checkpoint topology；它属于运行兼容实现，而非论文额外网络层。
+
+复现分支 `pwm/training-reconstruction`，未合并到现有推理main。远程独立工作树：
+`/home-mixed/liwenhao666/wm/PWM-training-reconstruction`。
+外层 `codex-local-cuihu-tac2:pwm-training`；内层短测使用 `pwm-training-smoke`、
+`pwm-training-taco-smoke`、`pwm-trained-inference-smoke`、`pwm-zero2-smoke`、
+`pwm-zero2-batch64`，结束后退出。
+原始运行产物位于
+`/share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/training_smoke*_20261029`。
+双卡运行目录为同一outputs下的 `training_zero2_smoke_20261029/`；分布式续训读取
+`run/sharded/`，便携推理权重为 `run/inference.pt`。
+8卡运行目录为同一outputs下的 `training_zero2_batch64_20261029/`，子目录契约相同。
+本地操作日志 `/home/zy/server_logs/2026-10-29/codex-local-cuihu-tac2/`。
