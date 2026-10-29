@@ -93,7 +93,25 @@ schedule。保存采用临时文件原子替换。当前没有分布式状态恢
 训练 sequences 数分别138、136、565、839、1431、226，STERA all。作者未提供具体 id。
 重新划分只能注明为我们自己的复现划分，不能直接与论文表格声称相同测试集。
 
-2026-10-29 在 tac2 发现旧表六个 `/share/project/...` 路径不可见，正在复核其他挂载。
+2026-10-29 在 tac2 发现旧表六个 `/share/project/...` 路径不可见。实测找到以下位置：
+
+| 数据集 | 当前 tac2 可读位置 | 实际存储形态 |
+|---|---|---|
+| H2O | `/share-mixed/project/eai_pwm/datasets/H2O` | tar.gz；MANO标签抽样可读 |
+| HOT3D Aria | `/share-mixed/project/eai_pwm/datasets/Hot3DAria` | sequence目录 |
+| OakInk-v2 | `/share-mixed/project/eai_pwm/datasets/OakInk-v2` | tar + anno_preview，版本须核对 |
+| TACO | `/share-mixed/project/eai_pwm/datasets/TACO` | 手/相机/物体/视频各自ZIP；成员索引可读 |
+| ARCTIC | `/share-mixed/project/eai_pwm/datasets/ARCTIC` | downloads/data + body_models |
+| HOI4D | 尚未在本次候选路径找到 | 不代表其他挂载或服务器没有 |
+| STERA-10M | `/share-mixed/projset/eai_pwm/datasets/Stera-10M` | session RGB/HDF5/calibrations |
+
+STERA 本地实际文件采用 `hand-pose/frame_idx, side, joints_cam_lidar,...` 稀疏 detection
+表；当前[官方 schema](https://www.fpvlabs.ai/stera/docs/process/concepts/hdf5-schema)
+描述的是 per-frame left/right 数组，不能直接照搬。scene adapter 明确按本地 schema
+读取 RGB 时间戳，再以20ms上限匹配相机和深度，应用 `R_optical_to_link`，将 C2W
+转为 W2C。RGB/depth 都按标定重采样到同一256×256射线网格。首轮 smoke 不使用
+尚未核实左右手/拓扑含义的稀疏手标注。
+
 目录存在、文件数/大小验收、标签 schema 可用、转换完成、训练验证通过是不同状态。
 原始标注审计见 `docs/results/training_source_audit_20261029/`，这是有界抽样而非全量验收。
 
