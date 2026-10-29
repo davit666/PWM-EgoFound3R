@@ -45,6 +45,9 @@ if phase not in ('preparing','training'):
     for source in (run/'run').glob('rank*.jsonl'): shutil.copy2(source,result/('training_'+source.name))
     for name in ('gpu.csv','final_gpu_processes.csv'):
         if (run/name).exists(): shutil.copy2(run/name,result/name)
+if phase=='visualize-completed':
+    for source in (run/'previews').glob('*_initial_vs_step100.mp4'): shutil.copy2(source,result/source.name)
+    shutil.copy2(run/'previews/manifest.json',result/'preview_manifest.json')
 if (run/'run.log').exists():
     with (run/'run.log').open('rb') as file:
         file.seek(max(0,(run/'run.log').stat().st_size-100000))

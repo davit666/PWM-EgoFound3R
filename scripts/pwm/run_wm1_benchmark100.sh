@@ -101,6 +101,9 @@ case "$MODE" in
     done
     python3 scripts/pwm/report_benchmark100.py "$RUN"
     ;;
+  visualize)
+    python3 scripts/pwm/preview_benchmark100.py "$RUN"
+    ;;
   *) echo 'unknown phase'; exit 2 ;;
 esac
 PHASE_OK=1
