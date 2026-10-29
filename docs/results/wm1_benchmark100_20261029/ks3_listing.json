@@ -1,69 +1,86 @@
 {
-  "": {
-    "prefixes": [
-      "ARCTIC/",
-      "AffordPose/",
-      "BAAI-sharpa/",
-      "DexYCB/",
-      "Ego2HandsPose/",
-      "EgoDemo/",
-      "EgoPressure/"
-    ],
-    "objects": [
-      {
-        "key": "CausalVQA.zip",
-        "bytes": 16221178627
-      }
-    ],
-    "truncated": true
+  "TACO/": {
+    "prefixes": [],
+    "objects": [],
+    "truncated": false
   },
-  "data/": {
+  "backup_20261023/share-mixed/": {
     "prefixes": [
-      "data/part_01/",
-      "data/part_06/",
-      "data/part_07/",
-      "data/part_08/"
+      "backup_20261023/share-mixed/project/",
+      "backup_20261023/share-mixed/projset/"
     ],
     "objects": [],
     "truncated": false
   },
-  "backup_20261023/": {
-    "prefixes": [
-      "backup_20261023/share-mixed/"
-    ],
+  "backup_20261023/share-mixed/project/eai_pwm/datasets/TACO/": {
+    "prefixes": [],
     "objects": [],
-    "truncated": true
+    "truncated": false
   },
-  "ARCTIC/body_models/mano/": {
+  "data/part_01/": {
     "prefixes": [],
     "objects": [
       {
-        "key": "ARCTIC/body_models/mano/",
-        "bytes": 0
+        "key": "data/part_01/episode_1003_215102_76_110069_glove.hdf5",
+        "bytes": 831397804
+      }
+    ],
+    "truncated": false
+  },
+  "data/part_06/": {
+    "prefixes": [],
+    "objects": [
+      {
+        "key": "data/part_06/episode_253_162657_75_120090_glove.hdf5",
+        "bytes": 1811013087
       },
       {
-        "key": "ARCTIC/body_models/mano/LICENSE.txt",
-        "bytes": 4330
+        "key": "data/part_06/episode_254_153240_131_120105_glove.hdf5",
+        "bytes": 566895667
       },
       {
-        "key": "ARCTIC/body_models/mano/MANO_LEFT.pkl",
-        "bytes": 3821391
+        "key": "data/part_06/episode_255_153304_131_120105_glove.hdf5",
+        "bytes": 535086843
       },
       {
-        "key": "ARCTIC/body_models/mano/MANO_RIGHT.pkl",
-        "bytes": 3821356
+        "key": "data/part_06/episode_256_153326_131_120105_glove.hdf5",
+        "bytes": 740177158
       },
       {
-        "key": "ARCTIC/body_models/mano/SMPLH_female.pkl",
-        "bytes": 130423021
+        "key": "data/part_06/episode_257_153407_131_120105_glove.hdf5",
+        "bytes": 487611862
       },
       {
-        "key": "ARCTIC/body_models/mano/SMPLH_male.pkl",
-        "bytes": 130422893
+        "key": "data/part_06/episode_258_153429_131_120105_glove.hdf5",
+        "bytes": 687097374
       },
       {
-        "key": "ARCTIC/body_models/mano/info.txt",
-        "bytes": 95
+        "key": "data/part_06/episode_259_153453_131_120105_glove.hdf5",
+        "bytes": 558862976
+      },
+      {
+        "key": "data/part_06/episode_260_153516_131_120105_glove.hdf5",
+        "bytes": 589701044
+      },
+      {
+        "key": "data/part_06/episode_261_153539_131_120105_glove.hdf5",
+        "bytes": 592950806
+      },
+      {
+        "key": "data/part_06/episode_262_153603_131_120105_glove.hdf5",
+        "bytes": 589290311
+      },
+      {
+        "key": "data/part_06/episode_263_153627_131_120105_glove.hdf5",
+        "bytes": 546087376
+      },
+      {
+        "key": "data/part_06/episode_264_153650_131_120105_glove.hdf5",
+        "bytes": 564324958
+      },
+      {
+        "key": "data/part_06/episode_265_153712_131_120105_glove.hdf5",
+        "bytes": 709394818
       }
     ],
     "truncated": false
