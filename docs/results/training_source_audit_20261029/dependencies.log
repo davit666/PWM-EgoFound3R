@@ -1,0 +1,6 @@
+Collecting h5py
+  Downloading h5py-3.16.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (3.0 kB)
+Downloading h5py-3.16.0-cp312-cp312-manylinux_2_28_x86_64.whl (5.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 13.3 MB/s  0:00:00
+Installing collected packages: h5py
+Successfully installed h5py-3.16.0
