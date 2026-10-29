@@ -35,10 +35,12 @@ done
 "$PYTHON_BIN" -m pip install --disable-pip-version-check --target outputs/training-deps --no-deps --no-build-isolation deepspeed
 "$PYTHON_BIN" -m pip install --disable-pip-version-check --target outputs/training-deps pydantic psutil ninja hjson py-cpuinfo msgpack
 "$PYTHON_BIN" scripts/pwm/make_training_smoke_recipe.py "$RUN/recipe.json"
-common=(--config configs/pwm_baseline.toml --recipe "$RUN/recipe.json" --index "$BASE/index.jsonl" --output "$RUN/run")
+"$PYTHON_BIN" scripts/pwm/combine_prepared_indices.py "$RUN/index.jsonl" "$BASE/index.jsonl" \
+  /share-mixed/project/eai_pwm/PWM-EgoFound3R/outputs/training_smoke_20261029/index.jsonl
+common=(--config configs/pwm_baseline.toml --recipe "$RUN/recipe.json" --index "$RUN/index.jsonl" --output "$RUN/run")
 "$PYTHON_BIN" -m torch.distributed.run --standalone --nproc_per_node=2 scripts/pwm/train_zero2.py "${common[@]}" \
   --initialize /home-mixed/liwenhao666/wm/PWM-EgoFound3R/checkpoints/EgoFound3R.pt --stop-after 1
 "$PYTHON_BIN" -m torch.distributed.run --standalone --nproc_per_node=2 scripts/pwm/train_zero2.py "${common[@]}" --resume
 "$PYTHON_BIN" scripts/pwm/evaluate_prepared.py --config configs/pwm_baseline.toml --recipe "$RUN/recipe.json" \
-  --index "$BASE/index.jsonl" --checkpoint "$RUN/run/inference.pt" --split train --output "$RUN/eval.json"
+  --index "$RUN/index.jsonl" --checkpoint "$RUN/run/inference.pt" --split train --output "$RUN/eval.json"
 nvidia-smi --query-compute-apps=pid,process_name,used_memory --format=csv > "$RESULT/final_gpu_processes.csv"

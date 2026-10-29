@@ -44,8 +44,8 @@ def rng_state():
 def restore_rng(state):
     random.setstate(state['python'])
     np.random.set_state(state['numpy'])
-    torch.set_rng_state(state['torch'])
-    torch.cuda.set_rng_state(state['cuda'])
+    torch.set_rng_state(state['torch'].cpu())
+    torch.cuda.set_rng_state(state['cuda'].cpu())
 
 
 def export_model(model,config,path,step):
@@ -127,8 +127,10 @@ def main():
         for group in engine.optimizer.param_groups:
             group['lr']=lr
         reports=[]
+        sources=[]
         for _ in range(recipe['batch_size']):
             sample=dataset[random.randrange(len(dataset))]
+            sources.append(sample['identity']['dataset']+'/'+sample['identity']['source_episode_id'])
             images=sample['images'][None].to(engine.device)
             targets={k:(v[None].to(engine.device),m[None].to(engine.device)) for k,(v,m) in sample['targets'].items()}
             present=torch.ones(images.shape[:2],dtype=torch.bool,device=engine.device)
@@ -145,7 +147,7 @@ def main():
             reports.append({k:float(v.detach()) for k,v in terms.items()})
         if engine.global_steps!=step+1:
             raise RuntimeError('unexpected DeepSpeed accumulation boundary')
-        record={'rank':rank,'world_size':world,'step':step+1,'lr':lr,'terms':reports}
+        record={'rank':rank,'world_size':world,'step':step+1,'lr':lr,'sources':sources,'terms':reports}
         log.write(json.dumps(record)+'\n'); log.flush()
         print(json.dumps(record),flush=True)
         if (step+1)%recipe['save_every']==0 or step+1==end:

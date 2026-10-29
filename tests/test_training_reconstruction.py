@@ -17,6 +17,23 @@ from egohandmetric_prompt.models.hand_keypoint_localization_head import decode_l
 
 
 class ReconstructionTests(unittest.TestCase):
+    def test_zero2_effective_batch_and_export_contract(self):
+        from scripts.pwm.train_zero2 import zero_config, export_model
+        from egohandmetric_prompt.configs import load_project_config
+        from egohandmetric_prompt.checkpoints import load_marker_model_weights
+        recipe=json.loads(Path('configs/training_reconstruction_example.json').read_text())
+        settings=zero_config(recipe,8)
+        self.assertEqual(settings['train_batch_size'],64)
+        self.assertEqual(settings['train_micro_batch_size_per_gpu']*settings['gradient_accumulation_steps']*8,64)
+        config=load_project_config(Path('configs/pwm_baseline.toml'))
+        model=torch.nn.Linear(2,1).bfloat16()
+        with tempfile.TemporaryDirectory() as d:
+            checkpoint=Path(d)/'export.pt'
+            export_model(model,config,checkpoint,1)
+            loaded=torch.nn.Linear(2,1)
+            load_marker_model_weights(loaded,checkpoint,model_config=config.marker_model,align_model_floating_dtype=True)
+            torch.testing.assert_close(loaded.weight,model.weight)
+
     def test_localization_cell_convention_roundtrip(self):
         uv = torch.full((1,2,21,2), 63.5)
         labels = localization_labels(uv, torch.ones(1,2,21,dtype=torch.bool), (256,256),(32,32))
