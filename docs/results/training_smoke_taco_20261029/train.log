@@ -1,0 +1,45 @@
+Cloning into 'outputs/TACO-Instructions'...
+Updating files:  54% (38/70)Updating files:  55% (39/70)Updating files:  57% (40/70)Updating files:  58% (41/70)Updating files:  60% (42/70)Updating files:  61% (43/70)Updating files:  62% (44/70)Updating files:  64% (45/70)Updating files:  65% (46/70)Updating files:  67% (47/70)Updating files:  68% (48/70)Updating files:  70% (49/70)Updating files:  71% (50/70)Updating files:  72% (51/70)Updating files:  74% (52/70)Updating files:  75% (53/70)Updating files:  77% (54/70)Updating files:  78% (55/70)Updating files:  80% (56/70)Updating files:  81% (57/70)Updating files:  82% (58/70)Updating files:  84% (59/70)Updating files:  85% (60/70)Updating files:  87% (61/70)Updating files:  88% (62/70)Updating files:  90% (63/70)Updating files:  91% (64/70)Updating files:  92% (65/70)Updating files:  94% (66/70)Updating files:  95% (67/70)Updating files:  97% (68/70)Updating files:  98% (69/70)Updating files: 100% (70/70)Updating files: 100% (70/70), done.
+HEAD is now at fd3b5a6 Update README with additional dataset links
+Collecting chumpy
+  Downloading chumpy-0.70.tar.gz (50 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'error'
+  error: subprocess-exited-with-error
+  
+  × Getting requirements to build wheel did not run successfully.
+  │ exit code: 1
+  ╰─> [27 lines of output]
+      Traceback (most recent call last):
+        File "<string>", line 9, in <module>
+      ModuleNotFoundError: No module named 'pip'
+      
+      During handling of the above exception, another exception occurred:
+      
+      Traceback (most recent call last):
+        File "/home-mixed/liwenhao666/wm/PWM-EgoFound3R/.venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 389, in <module>
+          main()
+        File "/home-mixed/liwenhao666/wm/PWM-EgoFound3R/.venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 373, in main
+          json_out["return_val"] = hook(**hook_input["kwargs"])
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/home-mixed/liwenhao666/wm/PWM-EgoFound3R/.venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 143, in get_requires_for_build_wheel
+          return hook(config_settings)
+                 ^^^^^^^^^^^^^^^^^^^^^
+        File "/tmp/pip-build-env-durc4lnl/overlay/lib/python3.12/site-packages/setuptools/build_meta.py", line 333, in get_requires_for_build_wheel
+          return self._get_build_requires(config_settings, requirements=[])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/tmp/pip-build-env-durc4lnl/overlay/lib/python3.12/site-packages/setuptools/build_meta.py", line 301, in _get_build_requires
+          self.run_setup()
+        File "/tmp/pip-build-env-durc4lnl/overlay/lib/python3.12/site-packages/setuptools/build_meta.py", line 520, in run_setup
+          super().run_setup(setup_script=setup_script)
+        File "/tmp/pip-build-env-durc4lnl/overlay/lib/python3.12/site-packages/setuptools/build_meta.py", line 317, in run_setup
+          exec(code, locals())  # noqa: S102 # exec is intentional here
+          ^^^^^^^^^^^^^^^^^^^^
+        File "<string>", line 11, in <module>
+      ModuleNotFoundError: No module named 'pip'
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+ERROR: Failed to build 'chumpy' when getting requirements to build wheel
