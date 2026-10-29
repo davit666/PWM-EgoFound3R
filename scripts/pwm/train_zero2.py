@@ -73,6 +73,8 @@ def main():
     if args.initialize and args.resume:
         parser.error('initialization and resume are mutually exclusive')
     import deepspeed
+    from egohandmetric_prompt.training.zero_compat import install_scalar_broadcast_compat
+    install_scalar_broadcast_compat()
     local_rank=int(os.environ['LOCAL_RANK'])
     torch.cuda.set_device(local_rank)
     dist.init_process_group('nccl')

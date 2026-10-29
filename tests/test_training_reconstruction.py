@@ -17,6 +17,21 @@ from egohandmetric_prompt.models.hand_keypoint_localization_head import decode_l
 
 
 class ReconstructionTests(unittest.TestCase):
+    def test_scalar_broadcast_preserves_parameter_identity_and_checkpoint_shape(self):
+        from egohandmetric_prompt.training.zero_compat import broadcastable_scalars
+        model=torch.nn.Module()
+        model.gate=torch.nn.Parameter(torch.tensor(.25,dtype=torch.bfloat16))
+        original=model.gate
+        with broadcastable_scalars(model):
+            self.assertEqual(model.gate.data.view(torch.uint8).numel(),2)
+        self.assertIs(model.gate,original)
+        self.assertEqual(model.state_dict()['gate'].shape,torch.Size([]))
+        self.assertEqual(float(model.gate),.25)
+        with self.assertRaises(RuntimeError):
+            with broadcastable_scalars(model):
+                raise RuntimeError('broadcast failed')
+        self.assertEqual(model.gate.ndim,0)
+
     def test_zero2_effective_batch_and_export_contract(self):
         from scripts.pwm.train_zero2 import zero_config, export_model
         from egohandmetric_prompt.configs import load_project_config
