@@ -53,8 +53,8 @@ for path in "${PYTHON}" "${GUOCAI_ROOT}" "${JIANZHI_ROOT}" "${STERA_ROOT}" \
   }
 done
 case "${OUTPUT_ROOT}" in
-  /share/mixed/projset/*|/share-mixed/projset/*) ;;
-  *) printf 'refusing non-mixed output root: %s\n' "${OUTPUT_ROOT}" >&2; exit 2 ;;
+  /share-mixed/projset/*|/share-mixed/project/*|/home-mixed/liwenhao666/*) ;;
+  *) printf 'refusing non-persistent output root: %s\n' "${OUTPUT_ROOT}" >&2; exit 2 ;;
 esac
 
 export CUDA_VISIBLE_DEVICES="${GPU_INDEX}"

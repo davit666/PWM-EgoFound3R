@@ -68,8 +68,8 @@ for path in "${PYTHON}" "${BASE_ROOT}" "${MANO_LEFT_TEMPLATE}" "${MANO_RIGHT_TEM
   }
 done
 case "${OUTPUT_ROOT}" in
-  /share/mixed/projset/*|/share-mixed/projset/*) ;;
-  *) printf 'refusing non-mixed output root: %s\n' "${OUTPUT_ROOT}" >&2; exit 2 ;;
+  /share-mixed/projset/*|/share-mixed/project/*|/home-mixed/liwenhao666/*) ;;
+  *) printf 'refusing non-persistent output root: %s\n' "${OUTPUT_ROOT}" >&2; exit 2 ;;
 esac
 
 mkdir -p "${OUTPUT_ROOT}" "${PUBLISH_DIR}"
