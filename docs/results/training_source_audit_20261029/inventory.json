@@ -1,40 +1,2481 @@
 {
   "sources": {
     "H2O": {
-      "root": "/share/project/eai_pwm/datasets/H2O",
-      "exists": false,
-      "samples": [],
-      "bounded": true
+      "root": "/share-mixed/project/eai_pwm/datasets/H2O",
+      "exists": true,
+      "samples": [
+        {
+          "path": "down.txt",
+          "directory": false,
+          "bytes": 1505
+        },
+        {
+          "path": "subject3_ego_v1_1.tar.gz",
+          "directory": false,
+          "bytes": 45494431398
+        },
+        {
+          "path": "manolabel_v1.1.tar.gz",
+          "directory": false,
+          "bytes": 496664722
+        },
+        {
+          "path": "subject1_pose_v1_1.tar.gz",
+          "directory": false,
+          "bytes": 78186705
+        },
+        {
+          "path": "subject2_pose_v1_1.tar.gz",
+          "directory": false,
+          "bytes": 75477672
+        },
+        {
+          "path": "subject1_ego_v1_1.tar.gz",
+          "directory": false,
+          "bytes": 37274083128
+        },
+        {
+          "path": "subject2_ego_v1_1.tar.gz",
+          "directory": false,
+          "bytes": 33747798905
+        },
+        {
+          "path": "subject1_v1_1.tar.gz",
+          "directory": false,
+          "bytes": 182093623926
+        },
+        {
+          "path": "subject3_pose_v1_1.tar.gz",
+          "directory": false,
+          "bytes": 81332903
+        },
+        {
+          "path": "subject4_v1_1.tar.gz",
+          "directory": false,
+          "bytes": 207840289808
+        },
+        {
+          "path": "subject4_ego_v1_1.tar.gz",
+          "directory": false,
+          "bytes": 43240098005
+        },
+        {
+          "path": "test_obj_labels.zip",
+          "directory": false,
+          "bytes": 186056772
+        },
+        {
+          "path": "object.zip",
+          "directory": false,
+          "bytes": 5586212
+        },
+        {
+          "path": "subject4_pose_v1_1.tar.gz",
+          "directory": false,
+          "bytes": 85402952
+        },
+        {
+          "path": "h2o_CASA.tar",
+          "directory": false,
+          "bytes": 36417177600
+        },
+        {
+          "path": "label_split.zip",
+          "directory": false,
+          "bytes": 252305
+        },
+        {
+          "path": "subject2_v1_1.tar.gz",
+          "directory": false,
+          "bytes": 176186888894
+        },
+        {
+          "path": "subject3_v1_1.tar.gz",
+          "directory": false,
+          "bytes": 201772770915
+        }
+      ],
+      "bounded": true,
+      "candidates": {
+        "/share/project/eai_pwm/datasets/H2O": false,
+        "/share-mixed/projset/eai_pwm/datasets/H2O": false,
+        "/share-mixed/project/eai_pwm/datasets/H2O": true,
+        "/share/projset/eai_pwm/datasets/H2O": false
+      }
     },
     "HOT3D-Aria": {
-      "root": "/share/project/eai_pwm/datasets/Hot3DAria",
-      "exists": false,
-      "samples": [],
-      "bounded": true
+      "root": "/share-mixed/project/eai_pwm/datasets/Hot3DAria",
+      "exists": true,
+      "samples": [
+        {
+          "path": "download_summary.json",
+          "directory": false,
+          "bytes": 212
+        },
+        {
+          "path": "P0020_eed59f82",
+          "directory": true
+        },
+        {
+          "path": "P0001_83b755aa",
+          "directory": true
+        },
+        {
+          "path": "P0001_a9d6c83d",
+          "directory": true
+        },
+        {
+          "path": "P0001_f6cc0cc8",
+          "directory": true
+        },
+        {
+          "path": "P0004_df493ce2",
+          "directory": true
+        },
+        {
+          "path": "P0005_c35d9c88",
+          "directory": true
+        },
+        {
+          "path": "P0009_5bb7cc2a",
+          "directory": true
+        },
+        {
+          "path": "P0010_1c9fe708",
+          "directory": true
+        },
+        {
+          "path": "P0010_99385ad8",
+          "directory": true
+        },
+        {
+          "path": "P0011_72efb935",
+          "directory": true
+        },
+        {
+          "path": "P0011_7c7e8d86",
+          "directory": true
+        },
+        {
+          "path": "P0012_ca1f6626",
+          "directory": true
+        },
+        {
+          "path": "P0015_cc5dfd13",
+          "directory": true
+        },
+        {
+          "path": "P0015_cc739faa",
+          "directory": true
+        },
+        {
+          "path": "P0016_96c0228e",
+          "directory": true
+        },
+        {
+          "path": "P0020_dd30b789",
+          "directory": true
+        },
+        {
+          "path": "P0001_10a27bf7",
+          "directory": true
+        },
+        {
+          "path": "P0001_4bf4e21a",
+          "directory": true
+        },
+        {
+          "path": "P0002_016222d1",
+          "directory": true
+        },
+        {
+          "path": "P0002_2ea9af5b",
+          "directory": true
+        },
+        {
+          "path": "P0005_e2003fdf",
+          "directory": true
+        },
+        {
+          "path": "P0005_e8e42ed9",
+          "directory": true
+        },
+        {
+          "path": "P0009_8c95667c",
+          "directory": true
+        },
+        {
+          "path": "P0009_e27ad19f",
+          "directory": true
+        },
+        {
+          "path": "P0010_573b2de6",
+          "directory": true
+        },
+        {
+          "path": "P0010_e481fd15",
+          "directory": true
+        },
+        {
+          "path": "P0011_0c2d00ed",
+          "directory": true
+        },
+        {
+          "path": "P0011_b0c895c1",
+          "directory": true
+        },
+        {
+          "path": "P0011_ccc678c7",
+          "directory": true
+        },
+        {
+          "path": "P0014_6db96fd0",
+          "directory": true
+        },
+        {
+          "path": "P0014_84ea2dcc",
+          "directory": true
+        },
+        {
+          "path": "P0014_e40eec5d",
+          "directory": true
+        },
+        {
+          "path": "P0015_1eb4f17f",
+          "directory": true
+        },
+        {
+          "path": "P0020_36591f8c",
+          "directory": true
+        },
+        {
+          "path": "P0009_02511c2f",
+          "directory": true
+        },
+        {
+          "path": "P0004_a7cec59e",
+          "directory": true
+        },
+        {
+          "path": "P0005_3d1dad0f",
+          "directory": true
+        },
+        {
+          "path": "P0009_24af5475",
+          "directory": true
+        },
+        {
+          "path": "P0010_0ecbf39f",
+          "directory": true
+        },
+        {
+          "path": "P0010_b152143e",
+          "directory": true
+        },
+        {
+          "path": "P0012_915e71c6",
+          "directory": true
+        },
+        {
+          "path": "P0012_f1a33781",
+          "directory": true
+        },
+        {
+          "path": "P0014_24cb3bf0",
+          "directory": true
+        },
+        {
+          "path": "P0015_3c7f5241",
+          "directory": true
+        },
+        {
+          "path": "P0015_3f46732d",
+          "directory": true
+        },
+        {
+          "path": "P0001_9c030609",
+          "directory": true
+        },
+        {
+          "path": "P0002_c68438ce",
+          "directory": true
+        },
+        {
+          "path": "P0004_3be90927",
+          "directory": true
+        },
+        {
+          "path": "P0015_e3f96b3f",
+          "directory": true
+        },
+        {
+          "path": "P0001_550ea2ac",
+          "directory": true
+        },
+        {
+          "path": "P0004_abaa9885",
+          "directory": true
+        },
+        {
+          "path": "P0009_cf323827",
+          "directory": true
+        },
+        {
+          "path": "P0012_44c5f677",
+          "directory": true
+        },
+        {
+          "path": "P0015_e7458eb3",
+          "directory": true
+        },
+        {
+          "path": "P0016_8c80479f",
+          "directory": true
+        },
+        {
+          "path": "P0020_78ef7ed3",
+          "directory": true
+        },
+        {
+          "path": "P0012_73e66984",
+          "directory": true
+        },
+        {
+          "path": "P0012_e846d3cc",
+          "directory": true
+        },
+        {
+          "path": "P0014_0de48e2c",
+          "directory": true
+        },
+        {
+          "path": "P0020_eed59f82/video_main_rgb",
+          "directory": true
+        },
+        {
+          "path": "P0020_eed59f82/summary.json",
+          "directory": false,
+          "bytes": 387
+        },
+        {
+          "path": "P0020_eed59f82/closed_loop_trajectory.csv",
+          "directory": false,
+          "bytes": 46427595
+        },
+        {
+          "path": "P0020_eed59f82/camera_models.json",
+          "directory": false,
+          "bytes": 3709
+        },
+        {
+          "path": "P0020_eed59f82/box2d_hands.csv",
+          "directory": false,
+          "bytes": 108
+        },
+        {
+          "path": "P0020_eed59f82/semidense_points.csv.gz",
+          "directory": false,
+          "bytes": 25173010
+        },
+        {
+          "path": "P0020_eed59f82/semidense_observations.csv.gz",
+          "directory": false,
+          "bytes": 477994885
+        },
+        {
+          "path": "P0020_eed59f82/open_loop_trajectory.csv",
+          "directory": false,
+          "bytes": 34962443
+        },
+        {
+          "path": "P0020_eed59f82/online_calibration.jsonl",
+          "directory": false,
+          "bytes": 17445164
+        },
+        {
+          "path": "P0020_eed59f82/general_eye_gaze.csv",
+          "directory": false,
+          "bytes": 351644
+        },
+        {
+          "path": "P0020_eed59f82/license.txt",
+          "directory": false,
+          "bytes": 1729
+        },
+        {
+          "path": "P0020_eed59f82/umetrack_hand_user_profile.json",
+          "directory": false,
+          "bytes": 0
+        },
+        {
+          "path": "P0020_eed59f82/dynamic_objects.csv",
+          "directory": false,
+          "bytes": 84
+        },
+        {
+          "path": "P0020_eed59f82/eye_gaze",
+          "directory": true
+        },
+        {
+          "path": "P0020_eed59f82/umetrack_hand_pose_trajectory.jsonl",
+          "directory": false,
+          "bytes": 0
+        },
+        {
+          "path": "P0020_eed59f82/hand_tracking",
+          "directory": true
+        },
+        {
+          "path": "P0020_eed59f82/logs",
+          "directory": true
+        },
+        {
+          "path": "P0020_eed59f82/main_vrs",
+          "directory": true
+        },
+        {
+          "path": "P0020_eed59f82/slam",
+          "directory": true
+        },
+        {
+          "path": "P0020_eed59f82/personalized_eye_gaze.csv",
+          "directory": false,
+          "bytes": 352163
+        },
+        {
+          "path": "P0020_eed59f82/metadata.json",
+          "directory": false,
+          "bytes": 603
+        },
+        {
+          "path": "P0020_eed59f82/headset_trajectory.csv",
+          "directory": false,
+          "bytes": 1247865
+        },
+        {
+          "path": "P0020_eed59f82/mano_hand_pose_trajectory.jsonl",
+          "directory": false,
+          "bytes": 0
+        },
+        {
+          "path": "P0020_eed59f82/box2d_objects.csv",
+          "directory": false,
+          "bytes": 108
+        },
+        {
+          "path": "P0020_eed59f82/timecode_devicetime_mapping.csv",
+          "directory": false,
+          "bytes": 231473
+        },
+        {
+          "path": "P0001_83b755aa/logs",
+          "directory": true
+        },
+        {
+          "path": "P0001_83b755aa/slam",
+          "directory": true
+        },
+        {
+          "path": "P0001_83b755aa/video_main_rgb",
+          "directory": true
+        },
+        {
+          "path": "P0001_83b755aa/online_calibration.jsonl",
+          "directory": false,
+          "bytes": 17740573
+        },
+        {
+          "path": "P0001_83b755aa/camera_models.json",
+          "directory": false,
+          "bytes": 3694
+        },
+        {
+          "path": "P0001_83b755aa/summary.json",
+          "directory": false,
+          "bytes": 389
+        },
+        {
+          "path": "P0001_83b755aa/timecode_devicetime_mapping.csv",
+          "directory": false,
+          "bytes": 351195
+        },
+        {
+          "path": "P0001_83b755aa/general_eye_gaze.csv",
+          "directory": false,
+          "bytes": 357539
+        },
+        {
+          "path": "P0001_83b755aa/closed_loop_trajectory.csv",
+          "directory": false,
+          "bytes": 47388117
+        },
+        {
+          "path": "P0001_83b755aa/box2d_objects.csv",
+          "directory": false,
+          "bytes": 4115496
+        },
+        {
+          "path": "P0001_83b755aa/semidense_points.csv.gz",
+          "directory": false,
+          "bytes": 32903278
+        },
+        {
+          "path": "P0001_83b755aa/metadata.json",
+          "directory": false,
+          "bytes": 609
+        },
+        {
+          "path": "P0001_83b755aa/umetrack_hand_pose_trajectory.jsonl",
+          "directory": false,
+          "bytes": 15259525
+        },
+        {
+          "path": "P0001_83b755aa/eye_gaze",
+          "directory": true
+        },
+        {
+          "path": "P0001_83b755aa/license.txt",
+          "directory": false,
+          "bytes": 1729
+        },
+        {
+          "path": "P0001_83b755aa/open_loop_trajectory.csv",
+          "directory": false,
+          "bytes": 35748021
+        },
+        {
+          "path": "P0001_83b755aa/masks",
+          "directory": true
+        },
+        {
+          "path": "P0001_83b755aa/main_vrs",
+          "directory": true
+        },
+        {
+          "path": "P0001_83b755aa/dynamic_objects.csv",
+          "directory": false,
+          "bytes": 11147863
+        },
+        {
+          "path": "P0001_83b755aa/semidense_observations.csv.gz",
+          "directory": false,
+          "bytes": 379282563
+        },
+        {
+          "path": "P0001_83b755aa/personalized_eye_gaze.csv",
+          "directory": false,
+          "bytes": 358778
+        },
+        {
+          "path": "P0001_83b755aa/box2d_hands.csv",
+          "directory": false,
+          "bytes": 1288564
+        },
+        {
+          "path": "P0001_83b755aa/headset_trajectory.csv",
+          "directory": false,
+          "bytes": 1934646
+        },
+        {
+          "path": "P0001_83b755aa/umetrack_hand_user_profile.json",
+          "directory": false,
+          "bytes": 592275
+        },
+        {
+          "path": "P0001_83b755aa/mano_hand_pose_trajectory.jsonl",
+          "directory": false,
+          "bytes": 17065127
+        },
+        {
+          "path": "P0001_83b755aa/hand_tracking",
+          "directory": true
+        },
+        {
+          "path": "P0001_a9d6c83d/video_main_rgb",
+          "directory": true
+        },
+        {
+          "path": "P0001_a9d6c83d/slam",
+          "directory": true
+        },
+        {
+          "path": "P0001_a9d6c83d/semidense_observations.csv.gz",
+          "directory": false,
+          "bytes": 406374380
+        },
+        {
+          "path": "P0001_a9d6c83d/mano_hand_pose_trajectory.jsonl",
+          "directory": false,
+          "bytes": 11632655
+        },
+        {
+          "path": "P0001_a9d6c83d/license.txt",
+          "directory": false,
+          "bytes": 1729
+        },
+        {
+          "path": "P0001_a9d6c83d/personalized_eye_gaze.csv",
+          "directory": false,
+          "bytes": 362275
+        },
+        {
+          "path": "P0001_a9d6c83d/metadata.json",
+          "directory": false,
+          "bytes": 634
+        },
+        {
+          "path": "P0001_a9d6c83d/umetrack_hand_pose_trajectory.jsonl",
+          "directory": false,
+          "bytes": 10409048
+        },
+        {
+          "path": "P0001_a9d6c83d/box2d_hands.csv",
+          "directory": false,
+          "bytes": 1336697
+        },
+        {
+          "path": "P0001_a9d6c83d/open_loop_trajectory.csv",
+          "directory": false,
+          "bytes": 36112118
+        },
+        {
+          "path": "P0001_a9d6c83d/dynamic_objects.csv",
+          "directory": false,
+          "bytes": 7844604
+        },
+        {
+          "path": "P0001_a9d6c83d/hand_tracking",
+          "directory": true
+        },
+        {
+          "path": "P0001_a9d6c83d/eye_gaze",
+          "directory": true
+        },
+        {
+          "path": "P0001_a9d6c83d/logs",
+          "directory": true
+        },
+        {
+          "path": "P0001_a9d6c83d/main_vrs",
+          "directory": true
+        },
+        {
+          "path": "P0001_a9d6c83d/summary.json",
+          "directory": false,
+          "bytes": 386
+        },
+        {
+          "path": "P0001_a9d6c83d/general_eye_gaze.csv",
+          "directory": false,
+          "bytes": 361719
+        },
+        {
+          "path": "P0001_a9d6c83d/masks",
+          "directory": true
+        },
+        {
+          "path": "P0001_a9d6c83d/headset_trajectory.csv",
+          "directory": false,
+          "bytes": 1313018
+        },
+        {
+          "path": "P0001_a9d6c83d/online_calibration.jsonl",
+          "directory": false,
+          "bytes": 18039461
+        },
+        {
+          "path": "P0001_a9d6c83d/timecode_devicetime_mapping.csv",
+          "directory": false,
+          "bytes": 231867
+        },
+        {
+          "path": "P0001_a9d6c83d/camera_models.json",
+          "directory": false,
+          "bytes": 3700
+        },
+        {
+          "path": "P0001_a9d6c83d/umetrack_hand_user_profile.json",
+          "directory": false,
+          "bytes": 592275
+        },
+        {
+          "path": "P0001_a9d6c83d/closed_loop_trajectory.csv",
+          "directory": false,
+          "bytes": 48140753
+        },
+        {
+          "path": "P0001_a9d6c83d/box2d_objects.csv",
+          "directory": false,
+          "bytes": 4351963
+        },
+        {
+          "path": "P0001_a9d6c83d/semidense_points.csv.gz",
+          "directory": false,
+          "bytes": 36860497
+        },
+        {
+          "path": "P0001_f6cc0cc8/headset_trajectory.csv",
+          "directory": false,
+          "bytes": 1861088
+        },
+        {
+          "path": "P0001_f6cc0cc8/video_main_rgb",
+          "directory": true
+        },
+        {
+          "path": "P0001_f6cc0cc8/closed_loop_trajectory.csv",
+          "directory": false,
+          "bytes": 45505692
+        },
+        {
+          "path": "P0001_f6cc0cc8/eye_gaze",
+          "directory": true
+        },
+        {
+          "path": "P0001_f6cc0cc8/dynamic_objects.csv",
+          "directory": false,
+          "bytes": 11214821
+        },
+        {
+          "path": "P0001_f6cc0cc8/semidense_observations.csv.gz",
+          "directory": false,
+          "bytes": 419902282
+        },
+        {
+          "path": "P0001_f6cc0cc8/slam",
+          "directory": true
+        },
+        {
+          "path": "P0001_f6cc0cc8/general_eye_gaze.csv",
+          "directory": false,
+          "bytes": 342106
+        },
+        {
+          "path": "P0001_f6cc0cc8/personalized_eye_gaze.csv",
+          "directory": false,
+          "bytes": 342346
+        },
+        {
+          "path": "P0001_f6cc0cc8/hand_tracking",
+          "directory": true
+        },
+        {
+          "path": "P0001_f6cc0cc8/summary.json",
+          "directory": false,
+          "bytes": 384
+        },
+        {
+          "path": "P0001_f6cc0cc8/online_calibration.jsonl",
+          "directory": false,
+          "bytes": 16968547
+        },
+        {
+          "path": "P0001_f6cc0cc8/box2d_hands.csv",
+          "directory": false,
+          "bytes": 1249181
+        },
+        {
+          "path": "P0001_f6cc0cc8/logs",
+          "directory": true
+        },
+        {
+          "path": "P0001_f6cc0cc8/masks",
+          "directory": true
+        },
+        {
+          "path": "P0001_f6cc0cc8/umetrack_hand_user_profile.json",
+          "directory": false,
+          "bytes": 592275
+        },
+        {
+          "path": "P0001_f6cc0cc8/main_vrs",
+          "directory": true
+        },
+        {
+          "path": "P0001_f6cc0cc8/umetrack_hand_pose_trajectory.jsonl",
+          "directory": false,
+          "bytes": 14969831
+        },
+        {
+          "path": "P0001_f6cc0cc8/camera_models.json",
+          "directory": false,
+          "bytes": 3704
+        },
+        {
+          "path": "P0001_f6cc0cc8/timecode_devicetime_mapping.csv",
+          "directory": false,
+          "bytes": 327537
+        },
+        {
+          "path": "P0001_f6cc0cc8/license.txt",
+          "directory": false,
+          "bytes": 1729
+        },
+        {
+          "path": "P0001_f6cc0cc8/metadata.json",
+          "directory": false,
+          "bytes": 602
+        },
+        {
+          "path": "P0001_f6cc0cc8/semidense_points.csv.gz",
+          "directory": false,
+          "bytes": 33411561
+        }
+      ],
+      "bounded": true,
+      "candidates": {
+        "/share/project/eai_pwm/datasets/Hot3DAria": false,
+        "/share-mixed/projset/eai_pwm/datasets/Hot3DAria": false,
+        "/share-mixed/project/eai_pwm/datasets/Hot3DAria": true,
+        "/share/projset/eai_pwm/datasets/Hot3DAria": false
+      }
     },
     "OakInk-v2": {
-      "root": "/share/project/eai_pwm/datasets/OakInk-v2",
-      "exists": false,
-      "samples": [],
-      "bounded": true
+      "root": "/share-mixed/project/eai_pwm/datasets/OakInk-v2",
+      "exists": true,
+      "samples": [
+        {
+          "path": "object_repair.tar",
+          "directory": false,
+          "bytes": 139714560
+        },
+        {
+          "path": "object_affordance.tar",
+          "directory": false,
+          "bytes": 169963520
+        },
+        {
+          "path": "program_extension.tar",
+          "directory": false,
+          "bytes": 19343360
+        },
+        {
+          "path": "object_raw.tar",
+          "directory": false,
+          "bytes": 15605760
+        },
+        {
+          "path": "program.tar",
+          "directory": false,
+          "bytes": 3594240
+        },
+        {
+          "path": "data",
+          "directory": true
+        },
+        {
+          "path": "README.md",
+          "directory": false,
+          "bytes": 239
+        },
+        {
+          "path": "object_preview.tar",
+          "directory": false,
+          "bytes": 15605760
+        },
+        {
+          "path": "anno_preview",
+          "directory": true
+        },
+        {
+          "path": "data/scene_03__A004++seq__667dd3e0c94947396317__2023-04-22-19-52-38.tar",
+          "directory": false,
+          "bytes": 2376560640
+        },
+        {
+          "path": "data/scene_03__A004++seq__6ece6fbebb2067474253__2023-04-22-20-42-59.tar",
+          "directory": false,
+          "bytes": 4172953600
+        },
+        {
+          "path": "data/scene_02__A002++seq__fbf4bb7b08408aa2bb85__2023-04-17-15-05-35.tar",
+          "directory": false,
+          "bytes": 1281331200
+        },
+        {
+          "path": "data/scene_03__A008++seq__ed9bccd4e58ae94decb6__2023-04-23-10-50-05.tar",
+          "directory": false,
+          "bytes": 1280194560
+        },
+        {
+          "path": "data/scene_01__A003++seq__de088ef0fd274c39348d__2023-04-18-10-11-07.tar",
+          "directory": false,
+          "bytes": 6558781440
+        },
+        {
+          "path": "data/scene_02__A005++seq__e04db873d94e3ad37cbe__2023-04-25-19-12-10.tar",
+          "directory": false,
+          "bytes": 5505996800
+        },
+        {
+          "path": "data/scene_01__A005++seq__a15ff124580d494fb406__2023-04-15-14-46-19.tar",
+          "directory": false,
+          "bytes": 3047895040
+        },
+        {
+          "path": "data/scene_03__A001++seq__53be15af2c1f6371a18c__2023-04-27-18-18-03.tar",
+          "directory": false,
+          "bytes": 3695360000
+        },
+        {
+          "path": "data/scene_01__A005++seq__d74f8262735a1aaedccd__2023-04-15-15-06-01.tar",
+          "directory": false,
+          "bytes": 1712230400
+        },
+        {
+          "path": "data/scene_03__A007++seq__1c5d6079fefe79cd077d__2023-04-20-16-30-36.tar",
+          "directory": false,
+          "bytes": 3097927680
+        },
+        {
+          "path": "data/scene_02__A008++seq__e9e88b5bd12c76d18641__2023-04-23-10-31-03.tar",
+          "directory": false,
+          "bytes": 1006950400
+        },
+        {
+          "path": "data/scene_02__A004++seq__1a81a62693413b1d5c8c__2023-04-26-20-19-25.tar",
+          "directory": false,
+          "bytes": 3375554560
+        },
+        {
+          "path": "data/scene_01__A003++seq__ab9750a9667f80a27e93__2023-04-15-10-43-33.tar",
+          "directory": false,
+          "bytes": 2052321280
+        },
+        {
+          "path": "data/scene_01__A003++seq__2966d387c888ecca94d1__2023-04-16-10-23-13.tar",
+          "directory": false,
+          "bytes": 4783912960
+        },
+        {
+          "path": "data/scene_03__A004++seq__70bf7db171a7430a59a3__2023-04-22-20-30-56.tar",
+          "directory": false,
+          "bytes": 3612293120
+        },
+        {
+          "path": "data/scene_03__A004++seq__6490867837c3654b8150__2023-04-22-20-28-38.tar",
+          "directory": false,
+          "bytes": 3048386560
+        },
+        {
+          "path": "data/scene_01__A003++seq__263ad4d9bbcceec34ac5__2023-04-15-11-11-40.tar",
+          "directory": false,
+          "bytes": 8366284800
+        },
+        {
+          "path": "data/scene_02__A002++seq__e1fa69abb1738c8fea90__2023-04-17-14-54-52.tar",
+          "directory": false,
+          "bytes": 2318264320
+        },
+        {
+          "path": "data/scene_01__A003++seq__4664f66e0c783b858b10__2023-04-15-10-35-58.tar",
+          "directory": false,
+          "bytes": 2583377920
+        },
+        {
+          "path": "data/scene_01__A003++seq__9ace5e2df7edd544061f__2023-04-16-11-39-02.tar",
+          "directory": false,
+          "bytes": 3962408960
+        },
+        {
+          "path": "data/scene_03__A004++seq__b7853a8caac0b26347c1__2023-04-26-19-19-49.tar",
+          "directory": false,
+          "bytes": 5735782400
+        },
+        {
+          "path": "data/scene_02__A002++seq__a6b3a1258c39966e97b3__2023-04-17-14-47-52.tar",
+          "directory": false,
+          "bytes": 823470080
+        },
+        {
+          "path": "data/scene_03__A004++seq__db0a0f81cabbdbbcecfc__2023-04-26-19-44-56.tar",
+          "directory": false,
+          "bytes": 8613140480
+        },
+        {
+          "path": "data/scene_02__A002++seq__338b1e8d115be91c9473__2023-04-17-14-49-08.tar",
+          "directory": false,
+          "bytes": 1014661120
+        },
+        {
+          "path": "data/scene_01__A003++seq__7cc685df14ba8096034f__2023-04-16-09-37-10.tar",
+          "directory": false,
+          "bytes": 6824273920
+        },
+        {
+          "path": "data/scene_02__A005++seq__f0b722436e99d448cd74__2023-04-25-18-55-27.tar",
+          "directory": false,
+          "bytes": 4825374720
+        },
+        {
+          "path": "data/scene_02__O001++seq__f62ac3be7c610c6718fd__2023-04-04-16-02-37.tar",
+          "directory": false,
+          "bytes": 1356687360
+        },
+        {
+          "path": "data/scene_01__O001++seq__77461f70ecd1a035625b__2023-04-04-15-57-58.tar",
+          "directory": false,
+          "bytes": 1931704320
+        },
+        {
+          "path": "data/scene_03__A007++seq__9d98fb4b811e27f5f9ed__2023-04-19-10-48-13.tar",
+          "directory": false,
+          "bytes": 1203138560
+        },
+        {
+          "path": "data/scene_02__A004++seq__9cf448429878c58036ef__2023-05-07-18-47-31.tar",
+          "directory": false,
+          "bytes": 4377722880
+        },
+        {
+          "path": "data/scene_01__A001++seq__7b8bfa2d60ad55249cd8__2023-04-27-19-13-45.tar",
+          "directory": false,
+          "bytes": 2600826880
+        },
+        {
+          "path": "data/scene_01__A005++seq__4fd8e3393331c29e3291__2023-04-15-14-27-29.tar",
+          "directory": false,
+          "bytes": 1359360000
+        },
+        {
+          "path": "data/scene_01__A001++seq__e3cf9b2340d538131f4e__2023-04-27-19-23-39.tar",
+          "directory": false,
+          "bytes": 2032977920
+        },
+        {
+          "path": "data/scene_03__A004++seq__b0b131f2fc3d47f22ee3__2023-04-26-19-37-03.tar",
+          "directory": false,
+          "bytes": 7154944000
+        },
+        {
+          "path": "data/scene_02__A005++seq__e965dd3f42c13082d017__2023-04-20-10-01-26.tar",
+          "directory": false,
+          "bytes": 1542819840
+        },
+        {
+          "path": "data/scene_01__A003++seq__5da24047ae42adea82f3__2023-04-15-09-40-46.tar",
+          "directory": false,
+          "bytes": 1579612160
+        },
+        {
+          "path": "data/scene_01__A005++seq__fccd810e2fd673b25c86__2023-04-15-14-30-47.tar",
+          "directory": false,
+          "bytes": 1155696640
+        },
+        {
+          "path": "data/scene_04__A005++seq__d41bc19324e0d1ed05c3__2023-04-20-11-07-09.tar",
+          "directory": false,
+          "bytes": 2007101440
+        },
+        {
+          "path": "data/scene_01__A003++seq__537f3c2c80b34e0903d5__2023-04-16-09-55-43.tar",
+          "directory": false,
+          "bytes": 4383836160
+        },
+        {
+          "path": "data/scene_03__A004++seq__facbce031fe123b84569__2023-04-26-18-25-35.tar",
+          "directory": false,
+          "bytes": 5755125760
+        },
+        {
+          "path": "data/scene_01__A001++seq__c3e9947ed401e54181b6__2023-04-27-20-27-08.tar",
+          "directory": false,
+          "bytes": 6060226560
+        },
+        {
+          "path": "data/scene_01__A001++seq__083f7a577484ba7929a9__2023-04-27-19-25-24.tar",
+          "directory": false,
+          "bytes": 2519132160
+        },
+        {
+          "path": "data/scene_03__A007++seq__d6fe3d7a900337a7efc5__2023-04-21-09-25-27.tar",
+          "directory": false,
+          "bytes": 4144773120
+        },
+        {
+          "path": "data/scene_02__A008++seq__afea3bee7d688ce1a062__2023-04-23-09-43-47.tar",
+          "directory": false,
+          "bytes": 694272000
+        },
+        {
+          "path": "data/scene_01__O001++seq__9ed971eba20293345ab6__2023-04-13-20-25-04.tar",
+          "directory": false,
+          "bytes": 1352314880
+        },
+        {
+          "path": "data/scene_03__A007++seq__ff220c4666f169c19334__2023-04-19-11-43-56.tar",
+          "directory": false,
+          "bytes": 2213908480
+        },
+        {
+          "path": "data/scene_01__O001++seq__8ec658be365180b783c2__2023-04-13-19-04-55.tar",
+          "directory": false,
+          "bytes": 1675520000
+        },
+        {
+          "path": "data/scene_03__A007++seq__b379133add535ba8d4a3__2023-04-20-15-45-42.tar",
+          "directory": false,
+          "bytes": 1760163840
+        },
+        {
+          "path": "data/scene_02__A005++seq__fb9699b5af2e75883b2a__2023-04-25-18-34-18.tar",
+          "directory": false,
+          "bytes": 3541145600
+        },
+        {
+          "path": "data/scene_03__A007++seq__639d4665846c3affb1cc__2023-04-20-16-44-08.tar",
+          "directory": false,
+          "bytes": 4170188800
+        },
+        {
+          "path": "data/scene_01__A003++seq__15c29df1995fa2ed3ea5__2023-04-16-09-31-02.tar",
+          "directory": false,
+          "bytes": 2507489280
+        },
+        {
+          "path": "data/scene_03__A008++seq__122ba05c0cbf110ec037__2023-04-23-10-45-36.tar",
+          "directory": false,
+          "bytes": 2099138560
+        },
+        {
+          "path": "data/scene_03__A004++seq__e98067a2336ade7d2edc__2023-04-22-19-50-20.tar",
+          "directory": false,
+          "bytes": 3151472640
+        },
+        {
+          "path": "data/scene_02__A004++seq__380a384622fbf36ca0f1__2023-04-26-20-50-19.tar",
+          "directory": false,
+          "bytes": 2979307520
+        },
+        {
+          "path": "data/scene_01__A005++seq__cfb07d741cfacfe08a3f__2023-04-15-15-04-10.tar",
+          "directory": false,
+          "bytes": 1498152960
+        },
+        {
+          "path": "data/scene_02__A002++seq__37576cfe40029aca15ea__2023-04-22-09-43-29.tar",
+          "directory": false,
+          "bytes": 1527470080
+        },
+        {
+          "path": "data/scene_02__A005++seq__0ec0d3a6fdd6b9e0faf5__2023-04-20-10-37-52.tar",
+          "directory": false,
+          "bytes": 1547264000
+        },
+        {
+          "path": "data/scene_03__A004++seq__89667ef51c43f56a5d07__2023-04-22-18-31-50.tar",
+          "directory": false,
+          "bytes": 3244861440
+        },
+        {
+          "path": "data/scene_03__A004++seq__cf9b2eeea82d3a0ccfdc__2023-04-22-20-33-49.tar",
+          "directory": false,
+          "bytes": 2801909760
+        },
+        {
+          "path": "data/scene_01__A003++seq__3bf15f40d9cd6c9f8b5c__2023-04-21-19-02-57.tar",
+          "directory": false,
+          "bytes": 11205611520
+        },
+        {
+          "path": "anno_preview/scene_03__A007++seq__1c5d6079fefe79cd077d__2023-04-20-16-30-36.pkl",
+          "directory": false,
+          "bytes": 54462929
+        },
+        {
+          "path": "anno_preview/scene_02__A008++seq__b908c89b32ec6eadd3b0__2023-04-23-09-33-00.pkl",
+          "directory": false,
+          "bytes": 9460741
+        },
+        {
+          "path": "anno_preview/scene_02__A001++seq__3599b99612c08fedc88a__2023-04-15-18-43-51.pkl",
+          "directory": false,
+          "bytes": 43657385
+        },
+        {
+          "path": "anno_preview/scene_03__A007++seq__b4d4456ced6f3803440c__2023-04-19-11-32-19.pkl",
+          "directory": false,
+          "bytes": 41297294
+        },
+        {
+          "path": "anno_preview/scene_04__A005++seq__d41bc19324e0d1ed05c3__2023-04-20-11-07-09.pkl",
+          "directory": false,
+          "bytes": 32059203
+        },
+        {
+          "path": "anno_preview/scene_02__A007++seq__8e4b0023921526f5c201__2023-04-19-09-55-18.pkl",
+          "directory": false,
+          "bytes": 19894174
+        },
+        {
+          "path": "anno_preview/scene_01__A008++seq__aef7ccef2947d1344274__2023-05-09-19-04-10.pkl",
+          "directory": false,
+          "bytes": 45670259
+        },
+        {
+          "path": "anno_preview/scene_02__A002++seq__a6b3a1258c39966e97b3__2023-04-17-14-47-52.pkl",
+          "directory": false,
+          "bytes": 14847365
+        },
+        {
+          "path": "anno_preview/scene_01__A004++seq__95a63dbb3016c9502247__2023-04-28-19-33-36.pkl",
+          "directory": false,
+          "bytes": 68071603
+        },
+        {
+          "path": "anno_preview/scene_01__A003++seq__ab9750a9667f80a27e93__2023-04-15-10-43-33.pkl",
+          "directory": false,
+          "bytes": 33512689
+        },
+        {
+          "path": "anno_preview/scene_01__A003++seq__263ad4d9bbcceec34ac5__2023-04-15-11-11-40.pkl",
+          "directory": false,
+          "bytes": 145770041
+        },
+        {
+          "path": "anno_preview/scene_01__A003++seq__43deae0c0feb3fb65d80__2023-04-15-10-09-27.pkl",
+          "directory": false,
+          "bytes": 43190181
+        },
+        {
+          "path": "anno_preview/scene_03__A007++seq__cffb94f7d9de086d3604__2023-04-20-15-33-14.pkl",
+          "directory": false,
+          "bytes": 58793919
+        },
+        {
+          "path": "anno_preview/scene_01__A003++seq__9f436c64de60cdc5d3b6__2023-04-21-19-23-21.pkl",
+          "directory": false,
+          "bytes": 213428105
+        },
+        {
+          "path": "anno_preview/scene_03__A004++seq__facbce031fe123b84569__2023-04-26-18-25-35.pkl",
+          "directory": false,
+          "bytes": 105612930
+        },
+        {
+          "path": "anno_preview/scene_02__A005++seq__e965dd3f42c13082d017__2023-04-20-10-01-26.pkl",
+          "directory": false,
+          "bytes": 25479409
+        },
+        {
+          "path": "anno_preview/scene_02__A005++seq__7e62ca93ce2c772e1229__2023-04-25-19-09-36.pkl",
+          "directory": false,
+          "bytes": 85923798
+        },
+        {
+          "path": "anno_preview/scene_03__A004++seq__b0b131f2fc3d47f22ee3__2023-04-26-19-37-03.pkl",
+          "directory": false,
+          "bytes": 130077424
+        },
+        {
+          "path": "anno_preview/scene_02__A004++seq__486fccbc8bd722e4d8df__2023-05-07-18-53-42.pkl",
+          "directory": false,
+          "bytes": 168821925
+        },
+        {
+          "path": "anno_preview/scene_01__A005++seq__d74f8262735a1aaedccd__2023-04-15-15-06-01.pkl",
+          "directory": false,
+          "bytes": 28591070
+        },
+        {
+          "path": "anno_preview/scene_02__A008++seq__e9e88b5bd12c76d18641__2023-04-23-10-31-03.pkl",
+          "directory": false,
+          "bytes": 15728291
+        },
+        {
+          "path": "anno_preview/scene_01__A005++seq__4fd8e3393331c29e3291__2023-04-15-14-27-29.pkl",
+          "directory": false,
+          "bytes": 20975810
+        },
+        {
+          "path": "anno_preview/scene_01__A003++seq__2966d387c888ecca94d1__2023-04-16-10-23-13.pkl",
+          "directory": false,
+          "bytes": 83965106
+        },
+        {
+          "path": "anno_preview/scene_03__A001++seq__53be15af2c1f6371a18c__2023-04-27-18-18-03.pkl",
+          "directory": false,
+          "bytes": 60923424
+        },
+        {
+          "path": "anno_preview/scene_01__A001++seq__e3cf9b2340d538131f4e__2023-04-27-19-23-39.pkl",
+          "directory": false,
+          "bytes": 34735508
+        },
+        {
+          "path": "anno_preview/scene_02__A002++seq__e1fa69abb1738c8fea90__2023-04-17-14-54-52.pkl",
+          "directory": false,
+          "bytes": 39286016
+        },
+        {
+          "path": "anno_preview/scene_02__A002++seq__fd02f5494eb920248002__2023-04-17-15-36-56.pkl",
+          "directory": false,
+          "bytes": 20956437
+        },
+        {
+          "path": "anno_preview/scene_02__O001++seq__f62ac3be7c610c6718fd__2023-04-04-16-02-37.pkl",
+          "directory": false,
+          "bytes": 21391529
+        },
+        {
+          "path": "anno_preview/scene_03__A007++seq__9d98fb4b811e27f5f9ed__2023-04-19-10-48-13.pkl",
+          "directory": false,
+          "bytes": 20899791
+        },
+        {
+          "path": "anno_preview/scene_01__A003++seq__0b3a0a3dba029a07ad90__2023-04-21-19-16-37.pkl",
+          "directory": false,
+          "bytes": 188885949
+        },
+        {
+          "path": "anno_preview/scene_03__A004++seq__79eb5155002e6d5fdb7a__2023-04-22-18-59-18.pkl",
+          "directory": false,
+          "bytes": 58871415
+        },
+        {
+          "path": "anno_preview/scene_03__A004++seq__db0a0f81cabbdbbcecfc__2023-04-26-19-44-56.pkl",
+          "directory": false,
+          "bytes": 160295764
+        },
+        {
+          "path": "anno_preview/scene_03__A004++seq__acc89e84f8c0f3db3525__2023-04-22-20-22-40.pkl",
+          "directory": false,
+          "bytes": 57935091
+        },
+        {
+          "path": "anno_preview/scene_01__A007++seq__90724a6acd7d7f462f5a__2023-04-21-10-17-48.pkl",
+          "directory": false,
+          "bytes": 19705804
+        },
+        {
+          "path": "anno_preview/scene_01__A001++seq__9decc2b1d56c0e6351a8__2023-04-27-18-48-27.pkl",
+          "directory": false,
+          "bytes": 30055258
+        },
+        {
+          "path": "anno_preview/scene_02__A004++seq__e983778af409037ac690__2023-04-26-20-32-21.pkl",
+          "directory": false,
+          "bytes": 15914236
+        },
+        {
+          "path": "anno_preview/scene_01__A007++seq__0b666c7b299d875e5f1e__2023-04-21-11-38-16.pkl",
+          "directory": false,
+          "bytes": 249637510
+        },
+        {
+          "path": "anno_preview/scene_02__A004++seq__a3e1fabd832fd970ef2a__2023-04-28-18-32-25.pkl",
+          "directory": false,
+          "bytes": 25177440
+        },
+        {
+          "path": "anno_preview/scene_03__A004++seq__cf9b2eeea82d3a0ccfdc__2023-04-22-20-33-49.pkl",
+          "directory": false,
+          "bytes": 47802095
+        },
+        {
+          "path": "anno_preview/scene_01__A001++seq__c3e9947ed401e54181b6__2023-04-27-20-27-08.pkl",
+          "directory": false,
+          "bytes": 101236486
+        },
+        {
+          "path": "anno_preview/scene_01__O001++seq__9ed971eba20293345ab6__2023-04-13-20-25-04.pkl",
+          "directory": false,
+          "bytes": 22578318
+        },
+        {
+          "path": "anno_preview/scene_02__A002++seq__37576cfe40029aca15ea__2023-04-22-09-43-29.pkl",
+          "directory": false,
+          "bytes": 27400516
+        },
+        {
+          "path": "anno_preview/scene_01__A004++seq__1469a06acb399dbd2b65__2023-04-28-18-40-56.pkl",
+          "directory": false,
+          "bytes": 18966110
+        },
+        {
+          "path": "anno_preview/scene_03__A004++seq__720b2ff49d71cc7dd56b__2023-04-22-19-01-39.pkl",
+          "directory": false,
+          "bytes": 53202081
+        },
+        {
+          "path": "anno_preview/scene_01__O001++seq__598a5433c7f9d14d1697__2023-04-13-20-33-59.pkl",
+          "directory": false,
+          "bytes": 30884694
+        },
+        {
+          "path": "anno_preview/scene_03__A007++seq__639d4665846c3affb1cc__2023-04-20-16-44-08.pkl",
+          "directory": false,
+          "bytes": 72410085
+        },
+        {
+          "path": "anno_preview/scene_01__A001++seq__7b8bfa2d60ad55249cd8__2023-04-27-19-13-45.pkl",
+          "directory": false,
+          "bytes": 42256969
+        },
+        {
+          "path": "anno_preview/scene_01__A007++seq__2979cde795c345f5b70b__2023-04-21-10-35-54.pkl",
+          "directory": false,
+          "bytes": 23635196
+        },
+        {
+          "path": "anno_preview/scene_03__A004++seq__419a3a06276de7db2371__2023-04-22-20-25-48.pkl",
+          "directory": false,
+          "bytes": 59673614
+        },
+        {
+          "path": "anno_preview/scene_02__A005++seq__efd166c0cffda247d1e9__2023-04-20-10-04-31.pkl",
+          "directory": false,
+          "bytes": 20534277
+        },
+        {
+          "path": "anno_preview/scene_01__A004++seq__f4786e64ba8f8a092976__2023-04-28-19-47-32.pkl",
+          "directory": false,
+          "bytes": 55724555
+        },
+        {
+          "path": "anno_preview/scene_01__A003++seq__d5cfcf3a1d88ba7b6c48__2023-04-16-11-10-55.pkl",
+          "directory": false,
+          "bytes": 73184154
+        },
+        {
+          "path": "anno_preview/scene_03__A007++seq__384b1f11cfff348ec215__2023-04-19-10-39-36.pkl",
+          "directory": false,
+          "bytes": 38225675
+        },
+        {
+          "path": "anno_preview/scene_02__A005++seq__6b5c334699d51ff0993a__2023-04-25-20-43-37.pkl",
+          "directory": false,
+          "bytes": 37296723
+        },
+        {
+          "path": "anno_preview/scene_03__A007++seq__ff220c4666f169c19334__2023-04-19-11-43-56.pkl",
+          "directory": false,
+          "bytes": 36940299
+        },
+        {
+          "path": "anno_preview/scene_02__A004++seq__2bbf9a16d1da3c76cb79__2023-04-26-20-26-01.pkl",
+          "directory": false,
+          "bytes": 24045138
+        },
+        {
+          "path": "anno_preview/scene_02__A005++seq__1ad80ac24ce6491d2bba__2023-04-20-10-00-01.pkl",
+          "directory": false,
+          "bytes": 18166796
+        },
+        {
+          "path": "anno_preview/scene_03__A004++seq__b5fa37e582ac84807337__2023-04-26-19-53-13.pkl",
+          "directory": false,
+          "bytes": 123193195
+        },
+        {
+          "path": "anno_preview/scene_02__A007++seq__82851505eab82005b6e2__2023-05-15-18-55-06.pkl",
+          "directory": false,
+          "bytes": 199487393
+        },
+        {
+          "path": "anno_preview/scene_01__A003++seq__a068789362978fe97452__2023-04-16-11-18-43.pkl",
+          "directory": false,
+          "bytes": 94484109
+        }
+      ],
+      "bounded": true,
+      "candidates": {
+        "/share/project/eai_pwm/datasets/OakInk-v2": false,
+        "/share-mixed/projset/eai_pwm/datasets/OakInk-v2": false,
+        "/share-mixed/project/eai_pwm/datasets/OakInk-v2": true,
+        "/share/projset/eai_pwm/datasets/OakInk-v2": false
+      }
     },
     "TACO": {
-      "root": "/share/project/eai_pwm/datasets/TACO",
-      "exists": false,
-      "samples": [],
-      "bounded": true
+      "root": "/share-mixed/project/eai_pwm/datasets/TACO",
+      "exists": true,
+      "samples": [
+        {
+          "path": "README.md",
+          "directory": false,
+          "bytes": 1279
+        },
+        {
+          "path": "Marker_Removed_Allocentric_RGB_Videos",
+          "directory": true
+        },
+        {
+          "path": "Egocentric_Depth_Videos.zip",
+          "directory": false,
+          "bytes": 91396872846
+        },
+        {
+          "path": "Object_Models.zip",
+          "directory": false,
+          "bytes": 424209827
+        },
+        {
+          "path": "Object_Poses.zip",
+          "directory": false,
+          "bytes": 34340303
+        },
+        {
+          "path": "2D_Segmentation.zip",
+          "directory": false,
+          "bytes": 2591020290
+        },
+        {
+          "path": "Allocentric_RGB_Videos",
+          "directory": true
+        },
+        {
+          "path": "Hand_Poses.zip",
+          "directory": false,
+          "bytes": 15231790511
+        },
+        {
+          "path": "Egocentric_RGB_Videos.zip",
+          "directory": false,
+          "bytes": 24666017548
+        },
+        {
+          "path": "Egocentric_Camera_Parameters_2.zip",
+          "directory": false,
+          "bytes": 18689683
+        },
+        {
+          "path": "Allocentric_Camera_Parameters.zip",
+          "directory": false,
+          "bytes": 7960127
+        },
+        {
+          "path": "Marker_Removed_Allocentric_RGB_Videos/22139908.zip",
+          "directory": false,
+          "bytes": 37515515336
+        },
+        {
+          "path": "Marker_Removed_Allocentric_RGB_Videos/22139909.zip",
+          "directory": false,
+          "bytes": 31006073236
+        },
+        {
+          "path": "Marker_Removed_Allocentric_RGB_Videos/21218078.zip",
+          "directory": false,
+          "bytes": 14960890331
+        },
+        {
+          "path": "Marker_Removed_Allocentric_RGB_Videos/22139916.zip",
+          "directory": false,
+          "bytes": 31945991282
+        },
+        {
+          "path": "Marker_Removed_Allocentric_RGB_Videos/22139914.zip",
+          "directory": false,
+          "bytes": 66048600946
+        },
+        {
+          "path": "Marker_Removed_Allocentric_RGB_Videos/22070938.zip",
+          "directory": false,
+          "bytes": 32257743559
+        },
+        {
+          "path": "Marker_Removed_Allocentric_RGB_Videos/22139910.zip",
+          "directory": false,
+          "bytes": 28304374164
+        },
+        {
+          "path": "Marker_Removed_Allocentric_RGB_Videos/22139911.zip",
+          "directory": false,
+          "bytes": 30212545565
+        },
+        {
+          "path": "Marker_Removed_Allocentric_RGB_Videos/22139905.zip",
+          "directory": false,
+          "bytes": 26220025944
+        },
+        {
+          "path": "Marker_Removed_Allocentric_RGB_Videos/22139913.zip",
+          "directory": false,
+          "bytes": 31348128553
+        },
+        {
+          "path": "Marker_Removed_Allocentric_RGB_Videos/22139946.zip",
+          "directory": false,
+          "bytes": 27636426386
+        },
+        {
+          "path": "Marker_Removed_Allocentric_RGB_Videos/22139906.zip",
+          "directory": false,
+          "bytes": 71632569141
+        },
+        {
+          "path": "Allocentric_RGB_Videos/22139913.zip",
+          "directory": false,
+          "bytes": 34108524276
+        },
+        {
+          "path": "Allocentric_RGB_Videos/22139916.zip",
+          "directory": false,
+          "bytes": 35498720550
+        },
+        {
+          "path": "Allocentric_RGB_Videos/22139905.zip",
+          "directory": false,
+          "bytes": 29447667841
+        },
+        {
+          "path": "Allocentric_RGB_Videos/22139909.zip",
+          "directory": false,
+          "bytes": 34615585912
+        },
+        {
+          "path": "Allocentric_RGB_Videos/22070938.zip",
+          "directory": false,
+          "bytes": 35047668784
+        },
+        {
+          "path": "Allocentric_RGB_Videos/22139910.zip",
+          "directory": false,
+          "bytes": 31624481954
+        },
+        {
+          "path": "Allocentric_RGB_Videos/22139914.zip",
+          "directory": false,
+          "bytes": 77244933494
+        },
+        {
+          "path": "Allocentric_RGB_Videos/21218078.zip",
+          "directory": false,
+          "bytes": 17039802110
+        },
+        {
+          "path": "Allocentric_RGB_Videos/22139911.zip",
+          "directory": false,
+          "bytes": 32892021668
+        },
+        {
+          "path": "Allocentric_RGB_Videos/22139946.zip",
+          "directory": false,
+          "bytes": 30378737211
+        },
+        {
+          "path": "Allocentric_RGB_Videos/22139908.zip",
+          "directory": false,
+          "bytes": 42700141087
+        },
+        {
+          "path": "Allocentric_RGB_Videos/22139906.zip",
+          "directory": false,
+          "bytes": 63532202536
+        }
+      ],
+      "bounded": true,
+      "candidates": {
+        "/share/project/eai_pwm/datasets/TACO": false,
+        "/share-mixed/projset/eai_pwm/datasets/TACO": false,
+        "/share-mixed/project/eai_pwm/datasets/TACO": true,
+        "/share/projset/eai_pwm/datasets/TACO": false
+      }
     },
     "HOI4D": {
       "root": "/share/project/eai_pwm/datasets/raw/data/HOI4D",
       "exists": false,
       "samples": [],
-      "bounded": true
+      "bounded": true,
+      "candidates": {
+        "/share/project/eai_pwm/datasets/raw/data/HOI4D": false,
+        "/share-mixed/projset/eai_pwm/datasets/raw/data/HOI4D": false,
+        "/share-mixed/project/eai_pwm/datasets/raw/data/HOI4D": false,
+        "/share/projset/eai_pwm/datasets/raw/data/HOI4D": false
+      }
     },
     "ARCTIC": {
-      "root": "/share/project/eai_pwm/datasets/ARCTIC",
-      "exists": false,
-      "samples": [],
-      "bounded": true
+      "root": "/share-mixed/project/eai_pwm/datasets/ARCTIC",
+      "exists": true,
+      "samples": [
+        {
+          "path": "body_models",
+          "directory": true
+        },
+        {
+          "path": "downloads",
+          "directory": true
+        },
+        {
+          "path": "body_models/mano",
+          "directory": true
+        },
+        {
+          "path": "body_models/smplx",
+          "directory": true
+        },
+        {
+          "path": "downloads/data",
+          "directory": true
+        },
+        {
+          "path": "downloads/mano_v1_2.zip",
+          "directory": false,
+          "bytes": 175200815
+        },
+        {
+          "path": "downloads/models.zip",
+          "directory": false,
+          "bytes": 6338918533
+        },
+        {
+          "path": "downloads/models_smplx_v1_1.zip",
+          "directory": false,
+          "bytes": 870108517
+        },
+        {
+          "path": "downloads/mano_v1_2",
+          "directory": true
+        },
+        {
+          "path": "body_models/mano/SMPLH_female.pkl",
+          "directory": false,
+          "bytes": 130423021
+        },
+        {
+          "path": "body_models/mano/MANO_RIGHT.pkl",
+          "directory": false,
+          "bytes": 3821356
+        },
+        {
+          "path": "body_models/mano/LICENSE.txt",
+          "directory": false,
+          "bytes": 4330
+        },
+        {
+          "path": "body_models/mano/SMPLH_male.pkl",
+          "directory": false,
+          "bytes": 130422893
+        },
+        {
+          "path": "body_models/mano/MANO_LEFT.pkl",
+          "directory": false,
+          "bytes": 3821391
+        },
+        {
+          "path": "body_models/mano/info.txt",
+          "directory": false,
+          "bytes": 95
+        },
+        {
+          "path": "body_models/smplx/SMPLX_MALE.npz",
+          "directory": false,
+          "bytes": 108753445
+        },
+        {
+          "path": "body_models/smplx/SMPLX_MALE.pkl",
+          "directory": false,
+          "bytes": 544477159
+        },
+        {
+          "path": "body_models/smplx/SMPLX_FEMALE.pkl",
+          "directory": false,
+          "bytes": 544434140
+        },
+        {
+          "path": "body_models/smplx/SMPLX_NEUTRAL.npz",
+          "directory": false,
+          "bytes": 108752058
+        },
+        {
+          "path": "body_models/smplx/SMPLX_FEMALE.npz",
+          "directory": false,
+          "bytes": 108794146
+        },
+        {
+          "path": "body_models/smplx/SMPLX_NEUTRAL.pkl",
+          "directory": false,
+          "bytes": 544173380
+        },
+        {
+          "path": "body_models/smplx/smplx_npz.zip",
+          "directory": false,
+          "bytes": 90885221
+        },
+        {
+          "path": "body_models/smplx/version.txt",
+          "directory": false,
+          "bytes": 33
+        },
+        {
+          "path": "downloads/data/splits.zip",
+          "directory": false,
+          "bytes": 18602586094
+        },
+        {
+          "path": "downloads/data/mocap_npy.zip",
+          "directory": false,
+          "bytes": 260181950
+        },
+        {
+          "path": "downloads/data/images_zips",
+          "directory": true
+        },
+        {
+          "path": "downloads/data/raw_seqs.zip",
+          "directory": false,
+          "bytes": 225334351
+        },
+        {
+          "path": "downloads/data/meta.zip",
+          "directory": false,
+          "bytes": 95270963
+        },
+        {
+          "path": "downloads/data/splits_json.zip",
+          "directory": false,
+          "bytes": 2734
+        },
+        {
+          "path": "downloads/data/feat.zip",
+          "directory": false,
+          "bytes": 14637874021
+        },
+        {
+          "path": "downloads/data/smplx_corres.zip",
+          "directory": false,
+          "bytes": 33228
+        },
+        {
+          "path": "downloads/data/mocap_c3d.zip",
+          "directory": false,
+          "bytes": 245366341
+        },
+        {
+          "path": "downloads/mano_v1_2/webuser",
+          "directory": true
+        },
+        {
+          "path": "downloads/mano_v1_2/models",
+          "directory": true
+        },
+        {
+          "path": "downloads/data/images_zips/s09",
+          "directory": true
+        },
+        {
+          "path": "downloads/data/images_zips/s02",
+          "directory": true
+        },
+        {
+          "path": "downloads/data/images_zips/s04",
+          "directory": true
+        },
+        {
+          "path": "downloads/data/images_zips/s06",
+          "directory": true
+        },
+        {
+          "path": "downloads/data/images_zips/s08",
+          "directory": true
+        },
+        {
+          "path": "downloads/data/images_zips/backgrounds.zip",
+          "directory": false,
+          "bytes": 18945694
+        },
+        {
+          "path": "downloads/data/images_zips/s01",
+          "directory": true
+        },
+        {
+          "path": "downloads/data/images_zips/s03",
+          "directory": true
+        },
+        {
+          "path": "downloads/data/images_zips/s05",
+          "directory": true
+        },
+        {
+          "path": "downloads/data/images_zips/s07",
+          "directory": true
+        },
+        {
+          "path": "downloads/data/images_zips/s10",
+          "directory": true
+        },
+        {
+          "path": "downloads/mano_v1_2/webuser/hello_world",
+          "directory": true
+        },
+        {
+          "path": "downloads/data/images_zips/s09/waffleiron_use_01.zip",
+          "directory": false,
+          "bytes": 1903377675
+        },
+        {
+          "path": "downloads/data/images_zips/s09/capsulemachine_use_03.zip",
+          "directory": false,
+          "bytes": 1820366483
+        },
+        {
+          "path": "downloads/data/images_zips/s09/ketchup_use_02.zip",
+          "directory": false,
+          "bytes": 1791466825
+        },
+        {
+          "path": "downloads/data/images_zips/s09/espressomachine_use_02.zip",
+          "directory": false,
+          "bytes": 1601901104
+        },
+        {
+          "path": "downloads/data/images_zips/s09/waffleiron_use_03.zip",
+          "directory": false,
+          "bytes": 1765177784
+        },
+        {
+          "path": "downloads/data/images_zips/s09/waffleiron_use_02.zip",
+          "directory": false,
+          "bytes": 2014665946
+        },
+        {
+          "path": "downloads/data/images_zips/s09/microwave_use_04.zip",
+          "directory": false,
+          "bytes": 1779516177
+        },
+        {
+          "path": "downloads/data/images_zips/s09/mixer_use_03.zip",
+          "directory": false,
+          "bytes": 1812824986
+        },
+        {
+          "path": "downloads/data/images_zips/s09/ketchup_use_03.zip",
+          "directory": false,
+          "bytes": 1736635141
+        },
+        {
+          "path": "downloads/data/images_zips/s09/espressomachine_use_03.zip",
+          "directory": false,
+          "bytes": 1723532964
+        },
+        {
+          "path": "downloads/data/images_zips/s09/espressomachine_use_01.zip",
+          "directory": false,
+          "bytes": 2307070257
+        },
+        {
+          "path": "downloads/data/images_zips/s09/notebook_use_04.zip",
+          "directory": false,
+          "bytes": 1939852399
+        },
+        {
+          "path": "downloads/data/images_zips/s09/waffleiron_use_04.zip",
+          "directory": false,
+          "bytes": 1749432100
+        },
+        {
+          "path": "downloads/data/images_zips/s09/notebook_use_02.zip",
+          "directory": false,
+          "bytes": 1926923430
+        },
+        {
+          "path": "downloads/data/images_zips/s09/microwave_use_02.zip",
+          "directory": false,
+          "bytes": 2004571503
+        },
+        {
+          "path": "downloads/data/images_zips/s09/phone_use_02.zip",
+          "directory": false,
+          "bytes": 1843118180
+        },
+        {
+          "path": "downloads/data/images_zips/s09/ketchup_use_01.zip",
+          "directory": false,
+          "bytes": 1703185177
+        },
+        {
+          "path": "downloads/data/images_zips/s09/espressomachine_use_04.zip",
+          "directory": false,
+          "bytes": 1694203979
+        },
+        {
+          "path": "downloads/data/images_zips/s09/ketchup_use_04.zip",
+          "directory": false,
+          "bytes": 1704421242
+        },
+        {
+          "path": "downloads/data/images_zips/s09/microwave_use_01.zip",
+          "directory": false,
+          "bytes": 2074914510
+        },
+        {
+          "path": "downloads/data/images_zips/s09/capsulemachine_use_01.zip",
+          "directory": false,
+          "bytes": 1847327699
+        },
+        {
+          "path": "downloads/data/images_zips/s09/laptop_use_02.zip",
+          "directory": false,
+          "bytes": 1791043441
+        },
+        {
+          "path": "downloads/data/images_zips/s09/mixer_use_04.zip",
+          "directory": false,
+          "bytes": 1752000271
+        },
+        {
+          "path": "downloads/data/images_zips/s09/notebook_use_01.zip",
+          "directory": false,
+          "bytes": 1849026616
+        },
+        {
+          "path": "downloads/data/images_zips/s09/scissors_use_04.zip",
+          "directory": false,
+          "bytes": 1843739268
+        },
+        {
+          "path": "downloads/data/images_zips/s09/phone_use_03.zip",
+          "directory": false,
+          "bytes": 1919242083
+        },
+        {
+          "path": "downloads/data/images_zips/s09/scissors_use_01.zip",
+          "directory": false,
+          "bytes": 2054308794
+        },
+        {
+          "path": "downloads/data/images_zips/s09/notebook_use_03.zip",
+          "directory": false,
+          "bytes": 1851936833
+        },
+        {
+          "path": "downloads/data/images_zips/s09/laptop_use_04.zip",
+          "directory": false,
+          "bytes": 1693232937
+        },
+        {
+          "path": "downloads/data/images_zips/s09/mixer_use_01.zip",
+          "directory": false,
+          "bytes": 1841189704
+        },
+        {
+          "path": "downloads/data/images_zips/s09/capsulemachine_use_04.zip",
+          "directory": false,
+          "bytes": 1868897603
+        },
+        {
+          "path": "downloads/data/images_zips/s09/laptop_use_01.zip",
+          "directory": false,
+          "bytes": 1771131306
+        },
+        {
+          "path": "downloads/data/images_zips/s09/capsulemachine_use_02.zip",
+          "directory": false,
+          "bytes": 1903330544
+        },
+        {
+          "path": "downloads/data/images_zips/s09/scissors_use_02.zip",
+          "directory": false,
+          "bytes": 1873669352
+        },
+        {
+          "path": "downloads/data/images_zips/s09/laptop_use_03.zip",
+          "directory": false,
+          "bytes": 1546860019
+        },
+        {
+          "path": "downloads/data/images_zips/s09/mixer_use_02.zip",
+          "directory": false,
+          "bytes": 1791756946
+        },
+        {
+          "path": "downloads/data/images_zips/s09/microwave_use_03.zip",
+          "directory": false,
+          "bytes": 1652178687
+        },
+        {
+          "path": "downloads/data/images_zips/s02/microwave_use_01.zip",
+          "directory": false,
+          "bytes": 2193374118
+        },
+        {
+          "path": "downloads/data/images_zips/s02/scissors_use_02.zip",
+          "directory": false,
+          "bytes": 2245871047
+        },
+        {
+          "path": "downloads/data/images_zips/s02/scissors_use_01.zip",
+          "directory": false,
+          "bytes": 1864335334
+        },
+        {
+          "path": "downloads/data/images_zips/s02/box_use_01.zip",
+          "directory": false,
+          "bytes": 2038867849
+        },
+        {
+          "path": "downloads/data/images_zips/s02/microwave_grab_01.zip",
+          "directory": false,
+          "bytes": 1892795778
+        },
+        {
+          "path": "downloads/data/images_zips/s02/laptop_use_01.zip",
+          "directory": false,
+          "bytes": 1832912230
+        },
+        {
+          "path": "downloads/data/images_zips/s02/mixer_use_03.zip",
+          "directory": false,
+          "bytes": 1833328655
+        },
+        {
+          "path": "downloads/data/images_zips/s02/phone_use_01.zip",
+          "directory": false,
+          "bytes": 1853656327
+        },
+        {
+          "path": "downloads/data/images_zips/s02/espressomachine_use_01.zip",
+          "directory": false,
+          "bytes": 2303460621
+        },
+        {
+          "path": "downloads/data/images_zips/s02/mixer_grab_01.zip",
+          "directory": false,
+          "bytes": 2645020866
+        },
+        {
+          "path": "downloads/data/images_zips/s02/waffleiron_grab_01.zip",
+          "directory": false,
+          "bytes": 1623908582
+        },
+        {
+          "path": "downloads/data/images_zips/s02/mixer_use_02.zip",
+          "directory": false,
+          "bytes": 1943255350
+        },
+        {
+          "path": "downloads/data/images_zips/s02/notebook_use_02.zip",
+          "directory": false,
+          "bytes": 1985909019
+        },
+        {
+          "path": "downloads/data/images_zips/s02/mixer_use_04.zip",
+          "directory": false,
+          "bytes": 1867538406
+        },
+        {
+          "path": "downloads/data/images_zips/s02/espressomachine_grab_01.zip",
+          "directory": false,
+          "bytes": 1888082271
+        },
+        {
+          "path": "downloads/data/images_zips/s02/microwave_use_02.zip",
+          "directory": false,
+          "bytes": 1718119448
+        },
+        {
+          "path": "downloads/data/images_zips/s02/capsulemachine_use_02.zip",
+          "directory": false,
+          "bytes": 1945563872
+        },
+        {
+          "path": "downloads/data/images_zips/s02/ketchup_use_03.zip",
+          "directory": false,
+          "bytes": 1874514063
+        },
+        {
+          "path": "downloads/data/images_zips/s02/waffleiron_use_02.zip",
+          "directory": false,
+          "bytes": 1820902966
+        },
+        {
+          "path": "downloads/data/images_zips/s02/phone_grab_01.zip",
+          "directory": false,
+          "bytes": 1820100728
+        },
+        {
+          "path": "downloads/data/images_zips/s02/capsulemachine_use_01.zip",
+          "directory": false,
+          "bytes": 1771379726
+        },
+        {
+          "path": "downloads/data/images_zips/s02/phone_use_02.zip",
+          "directory": false,
+          "bytes": 1769631371
+        },
+        {
+          "path": "downloads/data/images_zips/s02/capsulemachine_grab_01.zip",
+          "directory": false,
+          "bytes": 1903973197
+        },
+        {
+          "path": "downloads/data/images_zips/s02/mixer_use_01.zip",
+          "directory": false,
+          "bytes": 1889489256
+        },
+        {
+          "path": "downloads/data/images_zips/s02/ketchup_use_02.zip",
+          "directory": false,
+          "bytes": 1650997033
+        },
+        {
+          "path": "downloads/data/images_zips/s02/laptop_grab_01.zip",
+          "directory": false,
+          "bytes": 2104775309
+        },
+        {
+          "path": "downloads/data/images_zips/s02/box_use_02.zip",
+          "directory": false,
+          "bytes": 1647334150
+        },
+        {
+          "path": "downloads/data/images_zips/s02/laptop_use_02.zip",
+          "directory": false,
+          "bytes": 2097942709
+        },
+        {
+          "path": "downloads/data/images_zips/s02/ketchup_use_01.zip",
+          "directory": false,
+          "bytes": 1800645396
+        },
+        {
+          "path": "downloads/data/images_zips/s02/box_grab_01.zip",
+          "directory": false,
+          "bytes": 1597043533
+        },
+        {
+          "path": "downloads/data/images_zips/s02/ketchup_use_04.zip",
+          "directory": false,
+          "bytes": 2123754223
+        },
+        {
+          "path": "downloads/data/images_zips/s02/microwave_use_01_retake.zip",
+          "directory": false,
+          "bytes": 1710894439
+        },
+        {
+          "path": "downloads/data/images_zips/s02/scissors_grab_01.zip",
+          "directory": false,
+          "bytes": 2002296087
+        },
+        {
+          "path": "downloads/data/images_zips/s02/waffleiron_use_01.zip",
+          "directory": false,
+          "bytes": 2029426500
+        },
+        {
+          "path": "downloads/data/images_zips/s02/notebook_use_01.zip",
+          "directory": false,
+          "bytes": 1997156846
+        },
+        {
+          "path": "downloads/data/images_zips/s02/espressomachine_use_02.zip",
+          "directory": false,
+          "bytes": 1985851493
+        },
+        {
+          "path": "downloads/data/images_zips/s02/ketchup_grab_01.zip",
+          "directory": false,
+          "bytes": 2596655202
+        },
+        {
+          "path": "downloads/data/images_zips/s04/microwave_use_01.zip",
+          "directory": false,
+          "bytes": 2162938636
+        },
+        {
+          "path": "downloads/data/images_zips/s04/scissors_use_02.zip",
+          "directory": false,
+          "bytes": 2294325643
+        },
+        {
+          "path": "downloads/data/images_zips/s04/laptop_grab_01.zip",
+          "directory": false,
+          "bytes": 2485083800
+        },
+        {
+          "path": "downloads/data/images_zips/s04/microwave_grab_01.zip",
+          "directory": false,
+          "bytes": 2225457256
+        },
+        {
+          "path": "downloads/data/images_zips/s04/espressomachine_use_02.zip",
+          "directory": false,
+          "bytes": 1987331455
+        },
+        {
+          "path": "downloads/data/images_zips/s04/microwave_use_02.zip",
+          "directory": false,
+          "bytes": 2269974336
+        },
+        {
+          "path": "downloads/data/images_zips/s04/espressomachine_use_01_retake.zip",
+          "directory": false,
+          "bytes": 1878362789
+        },
+        {
+          "path": "downloads/data/images_zips/s04/box_grab_01.zip",
+          "directory": false,
+          "bytes": 2175769583
+        },
+        {
+          "path": "downloads/data/images_zips/s04/phone_use_01.zip",
+          "directory": false,
+          "bytes": 2247869645
+        },
+        {
+          "path": "downloads/data/images_zips/s04/mixer_use_02.zip",
+          "directory": false,
+          "bytes": 1694367532
+        },
+        {
+          "path": "downloads/data/images_zips/s04/waffleiron_use_02.zip",
+          "directory": false,
+          "bytes": 2100058988
+        },
+        {
+          "path": "downloads/data/images_zips/s04/scissors_grab_01.zip",
+          "directory": false,
+          "bytes": 2140780704
+        },
+        {
+          "path": "downloads/data/images_zips/s04/laptop_use_02.zip",
+          "directory": false,
+          "bytes": 2135532634
+        },
+        {
+          "path": "downloads/data/images_zips/s04/espressomachine_grab_01.zip",
+          "directory": false,
+          "bytes": 2186748985
+        },
+        {
+          "path": "downloads/data/images_zips/s04/notebook_use_01.zip",
+          "directory": false,
+          "bytes": 2164325433
+        },
+        {
+          "path": "downloads/data/images_zips/s04/ketchup_use_02.zip",
+          "directory": false,
+          "bytes": 1955463536
+        },
+        {
+          "path": "downloads/data/images_zips/s04/capsulemachine_grab_01.zip",
+          "directory": false,
+          "bytes": 2623512018
+        },
+        {
+          "path": "downloads/data/images_zips/s04/phone_use_02.zip",
+          "directory": false,
+          "bytes": 2238119330
+        },
+        {
+          "path": "downloads/data/images_zips/s04/notebook_use_02.zip",
+          "directory": false,
+          "bytes": 2551980046
+        },
+        {
+          "path": "downloads/data/images_zips/s04/laptop_use_01.zip",
+          "directory": false,
+          "bytes": 2706326287
+        },
+        {
+          "path": "downloads/data/images_zips/s04/mixer_grab_01.zip",
+          "directory": false,
+          "bytes": 1976816241
+        },
+        {
+          "path": "downloads/data/images_zips/s04/waffleiron_use_01.zip",
+          "directory": false,
+          "bytes": 2079810118
+        },
+        {
+          "path": "downloads/data/images_zips/s04/box_use_02.zip",
+          "directory": false,
+          "bytes": 1954146482
+        },
+        {
+          "path": "downloads/data/images_zips/s04/scissors_use_01.zip",
+          "directory": false,
+          "bytes": 2117085616
+        },
+        {
+          "path": "downloads/data/images_zips/s04/capsulemachine_use_02.zip",
+          "directory": false,
+          "bytes": 2275027494
+        },
+        {
+          "path": "downloads/data/images_zips/s04/phone_grab_01.zip",
+          "directory": false,
+          "bytes": 2160839947
+        },
+        {
+          "path": "downloads/data/images_zips/s04/ketchup_grab_01.zip",
+          "directory": false,
+          "bytes": 2554455860
+        },
+        {
+          "path": "downloads/data/images_zips/s04/mixer_use_01.zip",
+          "directory": false,
+          "bytes": 2023028934
+        },
+        {
+          "path": "downloads/data/images_zips/s04/capsulemachine_use_01.zip",
+          "directory": false,
+          "bytes": 2194124998
+        },
+        {
+          "path": "downloads/data/images_zips/s04/box_use_01.zip",
+          "directory": false,
+          "bytes": 2219195127
+        },
+        {
+          "path": "downloads/data/images_zips/s04/notebook_grab_01.zip",
+          "directory": false,
+          "bytes": 2585017079
+        },
+        {
+          "path": "downloads/data/images_zips/s06/scissors_grab_01.zip",
+          "directory": false,
+          "bytes": 1750494062
+        },
+        {
+          "path": "downloads/data/images_zips/s06/espressomachine_use_02.zip",
+          "directory": false,
+          "bytes": 1699116589
+        },
+        {
+          "path": "downloads/data/images_zips/s06/waffleiron_grab_01_retake.zip",
+          "directory": false,
+          "bytes": 1962977750
+        },
+        {
+          "path": "downloads/data/images_zips/s06/laptop_use_01_retake.zip",
+          "directory": false,
+          "bytes": 1918397297
+        },
+        {
+          "path": "downloads/data/images_zips/s06/capsulemachine_use_01.zip",
+          "directory": false,
+          "bytes": 2322799247
+        },
+        {
+          "path": "downloads/data/images_zips/s06/espressomachine_grab_01.zip",
+          "directory": false,
+          "bytes": 2116047467
+        },
+        {
+          "path": "downloads/data/images_zips/s06/espressomachine_use_04.zip",
+          "directory": false,
+          "bytes": 1906484125
+        },
+        {
+          "path": "downloads/data/images_zips/s06/phone_use_02.zip",
+          "directory": false,
+          "bytes": 1892729986
+        },
+        {
+          "path": "downloads/data/images_zips/s06/waffleiron_use_02.zip",
+          "directory": false,
+          "bytes": 1994568032
+        }
+      ],
+      "bounded": true,
+      "candidates": {
+        "/share/project/eai_pwm/datasets/ARCTIC": false,
+        "/share-mixed/projset/eai_pwm/datasets/ARCTIC": false,
+        "/share-mixed/project/eai_pwm/datasets/ARCTIC": true,
+        "/share/projset/eai_pwm/datasets/ARCTIC": false
+      }
     },
     "STERA-10M": {
       "root": "/share-mixed/projset/eai_pwm/datasets/Stera-10M",
@@ -769,9 +3210,13 @@
           "bytes": 697905590
         }
       ],
-      "bounded": true
+      "bounded": true,
+      "candidates": {
+        "/share-mixed/projset/eai_pwm/datasets/Stera-10M": true
+      }
     }
   },
   "gpu": "0, NVIDIA H100 80GB HBM3, 0 MiB, 81559 MiB, 0 %\n1, NVIDIA H100 80GB HBM3, 0 MiB, 81559 MiB, 0 %\n2, NVIDIA H100 80GB HBM3, 0 MiB, 81559 MiB, 0 %\n3, NVIDIA H100 80GB HBM3, 0 MiB, 81559 MiB, 0 %\n4, NVIDIA H100 80GB HBM3, 0 MiB, 81559 MiB, 0 %\n5, NVIDIA H100 80GB HBM3, 0 MiB, 81559 MiB, 0 %\n6, NVIDIA H100 80GB HBM3, 0 MiB, 81559 MiB, 0 %\n7, NVIDIA H100 80GB HBM3, 0 MiB, 81559 MiB, 0 %\n",
-  "host": "job-18c466f4-db66-4b0d-bfb4-7c8531ce94f1-master-0"
+  "host": "job-18c466f4-db66-4b0d-bfb4-7c8531ce94f1-master-0",
+  "stera_schema_error": "No module named 'h5py'"
 }
