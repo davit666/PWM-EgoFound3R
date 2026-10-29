@@ -27,7 +27,10 @@ publish() {
   exec 1>&3 2>&4
   [[ -z "${LOG_TEE_PID:-}" ]] || wait "$LOG_TEE_PID" || true
   printf '{"exit_code":%s}\n' "$code" > "$RESULT/status.json"
-  for file in rank0.jsonl rank1.jsonl deepspeed_config.json status.json; do
+  for source in "$RUN"/run/rank*.jsonl; do
+    [[ ! -f "$source" ]] || cp "$source" "$RESULT/training_$(basename "$source")"
+  done
+  for file in deepspeed_config.json status.json; do
     [[ ! -f "$RUN/run/$file" ]] || cp "$RUN/run/$file" "$RESULT/training_$file"
   done
   [[ ! -f "$RUN/eval.json" ]] || cp "$RUN/eval.json" "$RESULT/"
