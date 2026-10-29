@@ -1,0 +1,15 @@
+{
+  "ok": true,
+  "world_size": 8,
+  "optimizer_steps": 2,
+  "clips_per_rank_per_step": 8,
+  "effective_batch_size": 64,
+  "gradient_norms": [
+    924.0079345703125,
+    2301.365966796875
+  ],
+  "portable_checkpoint_sha256": "f35e74ef9b55f45d7fb99edb7b8fdc59644a1e037c0750b070d0b1007d25547a",
+  "loaded_state_keys": 636,
+  "evaluation_scope": "two training clips, 3 frames each; engineering validation only",
+  "gpu_processes_released": true
+}
