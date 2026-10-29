@@ -1,6 +1,6 @@
 {
   "phase": "train",
-  "step": 7,
+  "step": 19,
   "target_steps": 100,
   "world_size": 8,
   "effective_batch_size": 64,
@@ -8,6 +8,6 @@
   "stera_adapter_successes": 36,
   "taco_adapter_attempts": 40,
   "taco_adapter_successes": 29,
-  "last_step_seconds": 5.169572155922651,
-  "last_gradient_norm": 656.1710205078125
+  "last_step_seconds": 5.536339998245239,
+  "last_gradient_norm": 483.9402160644531
 }
