@@ -68,4 +68,7 @@ def scene_losses(outputs, targets, alpha):
         gt_local[...,:3,3] / b[:,None,None], frame_valid[...,None].expand(-1,-1,3))
     result['scene_rotation'] = rotation_angle(pred_local[...,:3,:3][frame_valid],
                                              gt_local[...,:3,:3][frame_valid]).mean()
+    if 'log_metric_value' in outputs:
+        prediction = outputs['log_metric_value'].float().reshape_as(b)
+        result['scene_metric'] = masked_loss(prediction,b.log(),torch.ones_like(b,dtype=torch.bool),'smooth_l1')
     return result

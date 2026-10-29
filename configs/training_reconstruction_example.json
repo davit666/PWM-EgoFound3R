@@ -19,6 +19,6 @@
     "joint_distance": 1.0, "vertex_distance": 1.0,
     "heatmap": 1.0, "offset2d": 1.0, "in_view": 1.0, "log_metric": 1.0,
     "reprojection": 1.0, "scene_depth": 1.0, "scene_K": 1.0,
-    "scene_translation": 1.0, "scene_rotation": 1.0
+    "scene_translation": 1.0, "scene_rotation": 1.0, "scene_metric": 1.0
   }
 }
