@@ -43,7 +43,7 @@ if [[ "$KIND" == stera ]]; then
 else
   [[ -d outputs/TACO-Instructions/.git ]] || git clone https://github.com/leolyliu/TACO-Instructions.git outputs/TACO-Instructions
   git -C outputs/TACO-Instructions checkout --detach fd3b5a6b39565ca6935a91d35d5e91dde03c5142
-  "$PYTHON_BIN" -m pip install --disable-pip-version-check --target outputs/training-deps --no-deps chumpy
+  "$PYTHON_BIN" -m pip install --disable-pip-version-check --target outputs/training-deps --no-deps --no-build-isolation chumpy
   "$PYTHON_BIN" scripts/pwm/prepare_taco_hands.py \
     --root /share-mixed/project/eai_pwm/datasets/TACO --taco-code outputs/TACO-Instructions \
     --mano-root /share-mixed/project/eai_pwm/datasets/ARCTIC/body_models/mano --output "$RUN_ROOT"
