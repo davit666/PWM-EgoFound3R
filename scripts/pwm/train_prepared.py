@@ -7,6 +7,7 @@ not an assertion of the unpublished authors' dataloader or training recipe.
 from __future__ import annotations
 
 import argparse
+from dataclasses import asdict
 import hashlib
 import json
 import math
@@ -58,6 +59,7 @@ def save_checkpoint(path, model, optimizer, step, config, recipe, index_hash):
         "root_geometry_contract": ROOT_GEOMETRY_RUNTIME_CONTRACT,
         "model": {k: v.detach().cpu() for k, v in model.state_dict().items() if not k.startswith("backbone.")},
         "optimizer": optimizer.state_dict(), "step": step, "recipe": recipe,
+        "config": asdict(config), "rng_numpy": np.random.get_state(),
         "index_sha256": index_hash, "rng_python": random.getstate(),
         "rng_torch": torch.get_rng_state(),
         "rng_cuda": torch.cuda.get_rng_state_all() if torch.cuda.is_available() else [],
@@ -129,9 +131,12 @@ def main():
         saved = torch.load(args.resume, map_location="cpu", weights_only=False)
         if saved["recipe"] != recipe or saved["index_sha256"] != index_hash:
             raise ValueError("resume recipe/index mismatch")
+        if saved.get('config') != asdict(config):
+            raise ValueError('resume runtime config mismatch or missing config snapshot')
         optimizer.load_state_dict(saved["optimizer"])
         start = saved["step"]
         random.setstate(saved["rng_python"])
+        np.random.set_state(saved['rng_numpy'])
         torch.set_rng_state(saved["rng_torch"])
         if saved["rng_cuda"]:
             torch.cuda.set_rng_state_all(saved["rng_cuda"])
@@ -166,9 +171,16 @@ def main():
                                                  heatmap_positive_weight=recipe.get('heatmap_positive_weight', 1.))
                     (total / recipe["batch_size"]).backward()
                     reports.append({k: float(v.detach()) for k, v in terms.items()})
+                gradient_groups = {}
+                for name, parameter in model.named_parameters():
+                    if parameter.grad is not None:
+                        group = '.'.join(name.split('.')[:2])
+                        gradient_groups[group] = gradient_groups.get(group, 0.) + float(parameter.grad.detach().float().square().sum())
+                gradient_groups = {k: math.sqrt(v) for k,v in gradient_groups.items()}
                 norm = torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0, error_if_nonfinite=True)
                 optimizer.step()
-                record = {"step": step + 1, "lr": rate, "gradient_norm": float(norm), "terms": reports}
+                record = {"step": step + 1, "lr": rate, "gradient_norm": float(norm),
+                          "gradient_groups": gradient_groups, "terms": reports}
                 log.write(json.dumps(record) + "\n")
                 log.flush()
                 print(json.dumps(record), flush=True)
