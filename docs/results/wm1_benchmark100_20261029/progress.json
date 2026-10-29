@@ -1,15 +1,7 @@
 {
-  "phase": "stage-completed",
+  "phase": "prepare-stera-starting",
   "step": 0,
   "target_steps": 100,
   "world_size": 8,
-  "effective_batch_size": 64,
-  "download_files": {
-    "Egocentric_Camera_Parameters.zip": 18689683,
-    "Object_Poses.zip": 34340303,
-    "Object_Models.zip": 424209827,
-    "Hand_Poses.zip": 15231790511,
-    "Egocentric_RGB_Videos.zip": 24666017548
-  },
-  "download_bytes": 40375047872
+  "effective_batch_size": 64
 }
