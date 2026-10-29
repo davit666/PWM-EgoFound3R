@@ -6,7 +6,6 @@
   "effective_batch_size": 64,
   "stera_adapter_attempts": 36,
   "stera_adapter_successes": 36,
-  "taco_adapter_attempts": 5,
-  "taco_adapter_successes": 2,
-  "taco_last_error": "Traceback (most recent call last):\n  File \"/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/scripts/pwm/prepare_taco_hands.py\", line 155, in <module>\n    main()\n  File \"/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/scripts/pwm/prepare_taco_hands.py\", line 61, in main\n    w2c=torch.from_numpy(poses[frames]).float()\n                         ~~~~~^^^^^^^^\nIndexError: index 129 is out of bounds for axis 0 with size 129\n"
+  "taco_adapter_attempts": 6,
+  "taco_adapter_successes": 3
 }
