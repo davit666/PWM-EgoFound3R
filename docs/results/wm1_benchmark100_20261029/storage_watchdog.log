@@ -32,3 +32,5 @@ Filesystem                                                                      
 www.nfs.com:/mnt/zhiyuan/airs/sharefs/a5833582-1c4a-49af-8d0b-be91b4088ca3/PUBLIC 5629499534213120 2915127194025984 2714372340187136  52% /share-mixed/projset
 Filesystem                                                                               1B-blocks             Used        Available Use% Mounted on
 www.nfs.com:/mnt/zhiyuan/airs/sharefs/a5833582-1c4a-49af-8d0b-be91b4088ca3/PUBLIC 5629499534213120 2915336856797184 2714162677415936  52% /share-mixed/projset
+Filesystem                                                                               1B-blocks             Used        Available Use% Mounted on
+www.nfs.com:/mnt/zhiyuan/airs/sharefs/a5833582-1c4a-49af-8d0b-be91b4088ca3/PUBLIC 5629499534213120 2915448651776000 2714050882437120  52% /share-mixed/projset

@@ -1,0 +1,23 @@
+{
+  "train_micro_batch_size_per_gpu": 1,
+  "gradient_accumulation_steps": 8,
+  "train_batch_size": 64,
+  "gradient_clipping": 1.0,
+  "bf16": {
+    "enabled": false
+  },
+  "torch_autocast": {
+    "enabled": true,
+    "dtype": "bfloat16"
+  },
+  "zero_optimization": {
+    "stage": 2,
+    "overlap_comm": false,
+    "contiguous_gradients": true,
+    "reduce_bucket_size": 50000000,
+    "allgather_bucket_size": 50000000,
+    "ignore_unused_parameters": true
+  },
+  "steps_per_print": 1000,
+  "wall_clock_breakdown": false
+}

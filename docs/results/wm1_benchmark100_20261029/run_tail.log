@@ -1,107 +1,577 @@
-df: /share/project: No such file or directory
-[pwm/training-reconstruction 05746b9] results: wm1 benchmark stage-starting at step 0
- 2 files changed, 6 insertions(+), 1 deletion(-)
- create mode 100644 docs/results/wm1_benchmark100_20261029/storage_before.txt
-To https://github.com/davit666/PWM-EgoFound3R.git
-   d4ce2dc..05746b9  HEAD -> pwm/wm1-benchmark100
-{"phase": "download", "file": "Egocentric_Camera_Parameters.zip", "bytes": 18689683}
-{"phase": "download", "file": "Egocentric_RGB_Videos.zip", "bytes": 24666017548}
-{"phase": "download", "file": "Hand_Poses.zip", "bytes": 15231790511}
-Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-{"phase": "verified", "file": "Egocentric_Camera_Parameters.zip", "sha256": "6e03b9e54d2de0e04bb968a8ec49de65e6737b44bf9b86d6dd3f27a756c01245"}
-{"phase": "download", "file": "Object_Poses.zip", "bytes": 34340303}
-{"phase": "verified", "file": "Object_Poses.zip", "sha256": "39c0478395529b550fd218fdbcb9d0c866282c4dfc0d5bac1116461b85e91b64"}
-{"phase": "download", "file": "Object_Models.zip", "bytes": 424209827}
-{"phase": "verified", "file": "Object_Models.zip", "sha256": "7b5209c7e856246cf20b379a599d756d18e8bbbbf7820bf9fe48a334f9a06cfe"}
-{"phase": "verified", "file": "Egocentric_RGB_Videos.zip", "sha256": "fc2c472091bfb6a170efa681c8eab099fab4f78294ef2dace43ebcb54f618f29"}
-{"phase": "verified", "file": "Hand_Poses.zip", "sha256": "db649d185ae818e63e9f14577067c1318d0751d35b213de8a06688637a1ece51"}
-STAGING_COMPLETE
-[pwm/training-reconstruction bdb4ea4] results: wm1 benchmark prepare-stera-starting at step 0
- 2 files changed, 3 insertions(+), 11 deletions(-)
-To https://github.com/davit666/PWM-EgoFound3R.git
-   cbdaacc..bdb4ea4  HEAD -> pwm/wm1-benchmark100
-{"dataset": "STERA-10M", "split": "train", "prepared_sessions": 1, "clips": 8}
-{"dataset": "STERA-10M", "split": "train", "prepared_sessions": 2, "clips": 16}
-{"dataset": "STERA-10M", "split": "train", "prepared_sessions": 3, "clips": 24}
-{"dataset": "STERA-10M", "split": "train", "prepared_sessions": 4, "clips": 32}
-{"dataset": "STERA-10M", "split": "val", "prepared_sessions": 1, "clips": 34}
-{"dataset": "STERA-10M", "split": "val", "prepared_sessions": 2, "clips": 36}
-{"rows": 36, "frames_per_clip": 60, "scope": "TACO/STERA pilot; not original seven-dataset training split", "native_taco_split": "train versus test_1/test_2", "stera_split": "our source-session holdout", "counts": {"TACO/train": 0, "TACO/val": 0, "STERA-10M/train": 32, "STERA-10M/val": 4}}
-[pwm/training-reconstruction d8fff86] results: wm1 benchmark prepare-taco-starting at step 0
- 2 files changed, 2 insertions(+), 2 deletions(-)
-To https://github.com/davit666/PWM-EgoFound3R.git
-   f9a961c..d8fff86  HEAD -> pwm/wm1-benchmark100
-{"dataset": "TACO", "split": "train", "prepared_sequences": 1, "clips": 2}
-{"skipped": "20230930_044", "log": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_train_20230930_044/adapter.log"}
-{"dataset": "TACO", "split": "train", "prepared_sequences": 2, "clips": 4}
-{"skipped": "20230930_054", "log": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_train_20230930_054/adapter.log"}
-{"skipped": "20231019_221", "log": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_train_20231019_221/adapter.log"}
-{"dataset": "TACO", "split": "train", "prepared_sequences": 3, "clips": 6}
-{"dataset": "TACO", "split": "train", "prepared_sequences": 4, "clips": 8}
-{"skipped": "20231005_033", "log": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_train_20231005_033/adapter.log"}
-{"skipped": "20231103_189", "log": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_train_20231103_189/adapter.log"}
-[pwm/training-reconstruction b8626c4] results: wm1 benchmark prepare-taco-starting at step 0
- 2 files changed, 2 insertions(+), 2 deletions(-)
-To https://github.com/davit666/PWM-EgoFound3R.git
-   2893e0c..b8626c4  HEAD -> pwm/wm1-benchmark100
-{"dataset": "TACO", "split": "train", "prepared_sequences": 1, "clips": 2}
-{"skipped": "20230930_044", "log": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_train_20230930_044/adapter.log"}
-{"dataset": "TACO", "split": "train", "prepared_sequences": 2, "clips": 4}
-{"skipped": "20230930_054", "log": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_train_20230930_054/adapter.log"}
-{"skipped": "20231019_221", "log": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_train_20231019_221/adapter.log"}
-{"dataset": "TACO", "split": "train", "prepared_sequences": 3, "clips": 6}
-{"dataset": "TACO", "split": "train", "prepared_sequences": 4, "clips": 8}
-{"skipped": "20231005_033", "log": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_train_20231005_033/adapter.log"}
-{"skipped": "20231103_189", "log": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_train_20231103_189/adapter.log"}
-{"dataset": "TACO", "split": "train", "prepared_sequences": 5, "clips": 10}
-{"skipped": "20231104_018", "log": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_train_20231104_018/adapter.log"}
-{"skipped": "20231103_124", "log": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_train_20231103_124/adapter.log"}
-{"dataset": "TACO", "split": "train", "prepared_sequences": 6, "clips": 12}
-{"skipped": "20230930_124", "log": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_train_20230930_124/adapter.log"}
-{"dataset": "TACO", "split": "train", "prepared_sequences": 7, "clips": 14}
-{"dataset": "TACO", "split": "train", "prepared_sequences": 8, "clips": 16}
-{"dataset": "TACO", "split": "train", "prepared_sequences": 9, "clips": 18}
-{"dataset": "TACO", "split": "train", "prepared_sequences": 10, "clips": 20}
-{"dataset": "TACO", "split": "train", "prepared_sequences": 11, "clips": 22}
-{"dataset": "TACO", "split": "train", "prepared_sequences": 12, "clips": 24}
-{"dataset": "TACO", "split": "train", "prepared_sequences": 13, "clips": 26}
-{"dataset": "TACO", "split": "train", "prepared_sequences": 14, "clips": 28}
-{"dataset": "TACO", "split": "train", "prepared_sequences": 15, "clips": 30}
-{"skipped": "20231002_063", "log": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_train_20231002_063/adapter.log"}
-{"dataset": "TACO", "split": "train", "prepared_sequences": 16, "clips": 32}
-{"skipped": "20230930_123", "log": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_train_20230930_123/adapter.log"}
-{"skipped": "20231024_246", "log": "/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/outputs/benchmark100_taco_stera_20261029/taco/taco_train_20231024_246/adapter.log"}
-{"dataset": "TACO", "split": "val", "prepared_sequences": 1, "clips": 33}
-{"dataset": "TACO", "split": "val", "prepared_sequences": 2, "clips": 34}
-{"dataset": "TACO", "split": "val", "prepared_sequences": 3, "clips": 35}
-{"dataset": "TACO", "split": "val", "prepared_sequences": 4, "clips": 36}
-{"rows": 36, "frames_per_clip": 60, "scope": "TACO/STERA pilot; not original seven-dataset training split", "native_taco_split": "train versus test_1/test_2", "stera_split": "our source-session holdout", "counts": {"TACO/train": 32, "TACO/val": 4, "STERA-10M/train": 0, "STERA-10M/val": 0}}
-[pwm/training-reconstruction b28c6aa] results: wm1 benchmark train-starting at step 0
- 2 files changed, 2 insertions(+), 2 deletions(-)
-To https://github.com/davit666/PWM-EgoFound3R.git
-   e0683cf..b28c6aa  HEAD -> pwm/wm1-benchmark100
-{"train": {"STERA-10M": {"clips": 32, "source_episodes": ["session_data_20260328_234041", "session_data_20260328_235204", "session_data_20260329_213432", "session_data_20260330_014905"], "targets": ["scene_K", "scene_depth", "scene_pose"]}, "TACO": {"clips": 32, "source_episodes": ["(brush, brush, cup)/20231026_014", "(brush, brush, plate)/20230929_035", "(cut, knife, plate)/20231020_219", "(cut, spatula, pan)/20231013_005", "(dust, brush, kettle)/20231103_156", "(dust, roller, pan)/20230927_032", "(empty, kettle, cup)/20231031_026", "(empty, kettle, kettle)/20231031_004", "(empty, kettle, plate)/20230930_152", "(empty, plate, box)/20230927_050", "(empty, plate, cup)/20230928_033", "(empty, plate, plate)/20230930_144", "(empty, plate, teapot)/20230927_046", "(empty, teapot, cup)/20230927_040", "(empty, teapot, plate)/20231031_097", "(measure, ruler, box)/20231102_022"], "targets": ["heatmap", "joint_contact", "joint_distance", "joint_offset", "offset2d", "projection_K", "reprojection", "vertex_contact", "vertex_distance", "vertex_offset"]}}, "val": {"STERA-10M": {"clips": 4, "source_episodes": ["session_data_20260330_090629", "session_data_20260330_093149"], "targets": ["scene_K", "scene_depth", "scene_pose"]}, "TACO": {"clips": 4, "source_episodes": ["(brush, brush, bowl)/20231005_188", "(brush, brush, box)/20231006_163", "(brush, brush, helmet)/20231027_011", "(brush, brush, pan)/20230927_023"], "targets": ["heatmap", "joint_contact", "joint_distance", "joint_offset", "offset2d", "projection_K", "reprojection", "vertex_contact", "vertex_distance", "vertex_offset"]}}, "frames_per_clip": 60, "image_hw": [256, 256], "scope": "prepared-contract check; original author preprocessing and splits are not certified"}
-/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/egohandmetric_prompt/models/temporal_hand_prompt_adapter.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
-  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
-/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/egohandmetric_prompt/models/temporal_hand_prompt_adapter.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
-  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
-/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/egohandmetric_prompt/models/temporal_hand_prompt_adapter.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
-  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
-/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/egohandmetric_prompt/models/temporal_hand_prompt_adapter.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
-  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
-/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/egohandmetric_prompt/models/temporal_hand_prompt_adapter.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
-  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
-/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/egohandmetric_prompt/models/temporal_hand_prompt_adapter.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
-  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
-/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/egohandmetric_prompt/models/temporal_hand_prompt_adapter.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
-  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
-/share-mixed/projset/eai_pwm/experiments/PWM-benchmark100/egohandmetric_prompt/models/temporal_hand_prompt_adapter.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
-  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
-{"rank": 4, "phase": "engine_initializing"}
-{"rank": 6, "phase": "engine_initializing"}
-{"rank": 7, "phase": "engine_initializing"}
-{"rank": 5, "phase": "engine_initializing"}
-{"rank": 0, "phase": "engine_initializing"}
-{"rank": 2, "phase": "engine_initializing"}
-{"rank": 3, "phase": "engine_initializing"}
-{"rank": 1, "phase": "engine_initializing"}
+/distributed/distributed_c10d.py:3249] _object_to_tensor size: 38 hash value: 16261839844664125888
+[rank6]:W1029 23:57:56.702000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank5]:W1029 23:57:56.702000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank4]:W1029 23:57:56.702000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank3]:W1029 23:57:56.702000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank0]:W1029 23:57:56.702000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank2]:W1029 23:57:56.702000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank1]:W1029 23:57:56.702000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank7]:W1029 23:57:56.702000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank4]:W1029 23:57:56.703000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank6]:W1029 23:57:56.703000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank5]:W1029 23:57:56.703000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank0]:W1029 23:57:56.703000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank3]:W1029 23:57:56.703000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank7]:W1029 23:57:56.703000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank2]:W1029 23:57:56.703000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank1]:W1029 23:57:56.703000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank6]:W1029 23:57:56.703000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank4]:W1029 23:57:56.703000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank5]:W1029 23:57:56.703000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank0]:W1029 23:57:56.703000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank3]:W1029 23:57:56.703000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank7]:W1029 23:57:56.703000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank2]:W1029 23:57:56.703000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank1]:W1029 23:57:56.703000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank6]:W1029 23:57:56.703000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank4]:W1029 23:57:56.703000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank5]:W1029 23:57:56.703000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank0]:W1029 23:57:56.703000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank3]:W1029 23:57:56.703000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank7]:W1029 23:57:56.703000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank2]:W1029 23:57:56.703000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank1]:W1029 23:57:56.703000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank6]:W1029 23:57:56.703000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank4]:W1029 23:57:56.703000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank5]:W1029 23:57:56.703000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank0]:W1029 23:57:56.703000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank7]:W1029 23:57:56.703000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank3]:W1029 23:57:56.703000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank2]:W1029 23:57:56.703000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank1]:W1029 23:57:56.703000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank6]:W1029 23:57:56.703000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank4]:W1029 23:57:56.703000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank5]:W1029 23:57:56.703000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank7]:W1029 23:57:56.703000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank0]:W1029 23:57:56.703000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank3]:W1029 23:57:56.703000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank1]:W1029 23:57:56.703000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank2]:W1029 23:57:56.703000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank6]:W1029 23:57:56.703000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank4]:W1029 23:57:56.703000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank5]:W1029 23:57:56.703000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank7]:W1029 23:57:56.703000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank0]:W1029 23:57:56.703000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank3]:W1029 23:57:56.703000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank1]:W1029 23:57:56.703000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank2]:W1029 23:57:56.703000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank6]:W1029 23:57:56.703000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank4]:W1029 23:57:56.703000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank5]:W1029 23:57:56.703000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank7]:W1029 23:57:56.703000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank0]:W1029 23:57:56.703000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank3]:W1029 23:57:56.703000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank1]:W1029 23:57:56.703000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+[rank2]:W1029 23:57:56.703000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 2018119860199677002
+{"rank": 6, "step": 1, "phase": "forward", "source": "TACO/(dust, brush, kettle)/20231103_156"}{"rank": 7, "step": 1, "phase": "forward", "source": "TACO/(cut, spatula, pan)/20231013_005"}
+
+{"rank": 5, "step": 1, "phase": "forward", "source": "TACO/(brush, brush, plate)/20230929_035"}
+{"rank": 4, "step": 1, "phase": "forward", "source": "TACO/(dust, brush, kettle)/20231103_156"}
+{"rank": 0, "step": 1, "phase": "forward", "source": "TACO/(empty, plate, teapot)/20230927_046"}
+{"rank": 2, "step": 1, "phase": "forward", "source": "TACO/(empty, plate, box)/20230927_050"}
+{"rank": 3, "step": 1, "phase": "forward", "source": "TACO/(brush, brush, cup)/20231026_014"}
+{"rank": 1, "step": 1, "phase": "forward", "source": "TACO/(empty, teapot, plate)/20231031_097"}
+[rank6]:W1029 23:57:56.968000 830046 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 151 hash value: 7661788585133374117
+[rank0]:W1029 23:57:56.970000 830040 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 151 hash value: 7661788585133374117
+[rank7]:W1029 23:57:56.970000 830047 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 151 hash value: 7661788585133374117
+[rank5]:W1029 23:57:56.971000 830045 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 151 hash value: 7661788585133374117
+[rank4]:W1029 23:57:56.971000 830044 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 151 hash value: 7661788585133374117
+[rank1]:W1029 23:57:56.978000 830041 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 151 hash value: 7661788585133374117
+[rank2]:W1029 23:57:56.979000 830042 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 151 hash value: 7661788585133374117
+[rank3]:W1029 23:57:56.980000 830043 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 151 hash value: 7661788585133374117
+[rank2]:W1029 23:57:56.984000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank4]:W1029 23:57:56.984000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank3]:W1029 23:57:56.984000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank5]:W1029 23:57:56.984000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank6]:W1029 23:57:56.984000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank1]:W1029 23:57:56.984000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank7]:W1029 23:57:56.984000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank0]:W1029 23:57:56.984000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank4]:W1029 23:57:56.984000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank2]:W1029 23:57:56.984000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank5]:W1029 23:57:56.984000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank3]:W1029 23:57:56.984000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank6]:W1029 23:57:56.985000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank0]:W1029 23:57:56.985000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank7]:W1029 23:57:56.985000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank1]:W1029 23:57:56.985000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank4]:W1029 23:57:56.985000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank2]:W1029 23:57:56.985000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank5]:W1029 23:57:56.985000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank3]:W1029 23:57:56.985000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank6]:W1029 23:57:56.985000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank4]:W1029 23:57:56.985000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank0]:W1029 23:57:56.985000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank7]:W1029 23:57:56.985000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank1]:W1029 23:57:56.985000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank2]:W1029 23:57:56.985000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank3]:W1029 23:57:56.985000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank5]:W1029 23:57:56.985000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank6]:W1029 23:57:56.985000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank4]:W1029 23:57:56.985000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank0]:W1029 23:57:56.985000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank7]:W1029 23:57:56.985000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank3]:W1029 23:57:56.985000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank1]:W1029 23:57:56.985000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank2]:W1029 23:57:56.985000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank5]:W1029 23:57:56.985000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank6]:W1029 23:57:56.985000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank4]:W1029 23:57:56.985000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank0]:W1029 23:57:56.985000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank7]:W1029 23:57:56.985000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank3]:W1029 23:57:56.985000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank2]:W1029 23:57:56.985000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank5]:W1029 23:57:56.985000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank1]:W1029 23:57:56.985000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank6]:W1029 23:57:56.985000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank4]:W1029 23:57:56.985000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank0]:W1029 23:57:56.985000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank7]:W1029 23:57:56.985000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank3]:W1029 23:57:56.985000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank5]:W1029 23:57:56.985000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank2]:W1029 23:57:56.985000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank1]:W1029 23:57:56.985000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank6]:W1029 23:57:56.985000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank4]:W1029 23:57:56.985000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank0]:W1029 23:57:56.985000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank5]:W1029 23:57:56.985000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank7]:W1029 23:57:56.985000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank2]:W1029 23:57:56.985000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank3]:W1029 23:57:56.985000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank1]:W1029 23:57:56.985000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank6]:W1029 23:57:56.985000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+{"rank": 4, "step": 1, "phase": "backward"}
+{"rank": 5, "step": 1, "phase": "backward"}
+{"rank": 2, "step": 1, "phase": "backward"}{"rank": 3, "step": 1, "phase": "backward"}
+
+[rank0]:W1029 23:57:56.985000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank7]:W1029 23:57:56.985000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank1]:W1029 23:57:56.985000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+{"rank": 6, "step": 1, "phase": "backward"}
+{"rank": 0, "step": 1, "phase": "backward"}{"rank": 7, "step": 1, "phase": "backward"}
+
+{"rank": 1, "step": 1, "phase": "backward"}
+{"rank": 6, "step": 1, "phase": "optimizer_step"}
+{"rank": 4, "step": 1, "phase": "optimizer_step"}
+{"rank": 5, "step": 1, "phase": "optimizer_step"}
+{"rank": 3, "step": 1, "phase": "optimizer_step"}
+{"rank": 1, "step": 1, "phase": "optimizer_step"}
+{"rank": 2, "step": 1, "phase": "optimizer_step"}
+{"rank": 0, "step": 1, "phase": "optimizer_step"}
+{"rank": 7, "step": 1, "phase": "optimizer_step"}
+[rank3]:W1029 23:57:57.248000 830043 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 43 hash value: 4826518358586131530
+[rank6]:W1029 23:57:57.263000 830046 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 43 hash value: 4826518358586131530
+[rank1]:W1029 23:57:57.264000 830041 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 43 hash value: 4826518358586131530
+[rank5]:W1029 23:57:57.267000 830045 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 43 hash value: 4826518358586131530
+[rank4]:W1029 23:57:57.269000 830044 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 43 hash value: 4826518358586131530
+[rank2]:W1029 23:57:57.272000 830042 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 43 hash value: 4826518358586131530
+[rank0]:W1029 23:57:57.274000 830040 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 43 hash value: 4826518358586131530
+[rank7]:W1029 23:57:57.274000 830047 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 43 hash value: 4826518358586131530
+[rank3]:W1029 23:57:57.278000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank6]:W1029 23:57:57.278000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank4]:W1029 23:57:57.278000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank5]:W1029 23:57:57.278000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank0]:W1029 23:57:57.278000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank7]:W1029 23:57:57.278000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank2]:W1029 23:57:57.278000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank1]:W1029 23:57:57.278000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank5]:W1029 23:57:57.278000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank6]:W1029 23:57:57.278000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank4]:W1029 23:57:57.278000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank3]:W1029 23:57:57.278000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank7]:W1029 23:57:57.278000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank2]:W1029 23:57:57.278000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank0]:W1029 23:57:57.278000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank1]:W1029 23:57:57.279000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank6]:W1029 23:57:57.279000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank5]:W1029 23:57:57.279000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank4]:W1029 23:57:57.279000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank3]:W1029 23:57:57.279000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank7]:W1029 23:57:57.279000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank2]:W1029 23:57:57.279000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank0]:W1029 23:57:57.279000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank1]:W1029 23:57:57.279000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank6]:W1029 23:57:57.279000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank5]:W1029 23:57:57.279000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank3]:W1029 23:57:57.279000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank4]:W1029 23:57:57.279000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank7]:W1029 23:57:57.279000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank2]:W1029 23:57:57.279000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank0]:W1029 23:57:57.279000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank1]:W1029 23:57:57.279000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank6]:W1029 23:57:57.279000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank3]:W1029 23:57:57.279000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank5]:W1029 23:57:57.279000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank4]:W1029 23:57:57.279000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank7]:W1029 23:57:57.279000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank2]:W1029 23:57:57.279000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank0]:W1029 23:57:57.279000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank1]:W1029 23:57:57.279000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank6]:W1029 23:57:57.279000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank3]:W1029 23:57:57.279000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank5]:W1029 23:57:57.279000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank7]:W1029 23:57:57.279000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank4]:W1029 23:57:57.279000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank0]:W1029 23:57:57.279000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank2]:W1029 23:57:57.279000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank1]:W1029 23:57:57.279000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank6]:W1029 23:57:57.279000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank3]:W1029 23:57:57.279000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank7]:W1029 23:57:57.279000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank5]:W1029 23:57:57.279000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank4]:W1029 23:57:57.279000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank0]:W1029 23:57:57.279000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank2]:W1029 23:57:57.279000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank1]:W1029 23:57:57.279000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank6]:W1029 23:57:57.279000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank7]:W1029 23:57:57.279000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank3]:W1029 23:57:57.279000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank5]:W1029 23:57:57.279000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank4]:W1029 23:57:57.279000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank0]:W1029 23:57:57.279000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank2]:W1029 23:57:57.279000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+[rank1]:W1029 23:57:57.279000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 43 hash value: 15164658111663384332
+{"rank": 6, "step": 1, "phase": "forward", "source": "STERA-10M/session_data_20260330_014905"}
+{"rank": 7, "step": 1, "phase": "forward", "source": "STERA-10M/session_data_20260329_213432"}{"rank": 5, "step": 1, "phase": "forward", "source": "STERA-10M/session_data_20260328_235204"}
+
+{"rank": 4, "step": 1, "phase": "forward", "source": "STERA-10M/session_data_20260328_234041"}
+{"rank": 0, "step": 1, "phase": "forward", "source": "STERA-10M/session_data_20260329_213432"}
+{"rank": 2, "step": 1, "phase": "forward", "source": "STERA-10M/session_data_20260329_213432"}
+{"rank": 1, "step": 1, "phase": "forward", "source": "STERA-10M/session_data_20260330_014905"}
+{"rank": 3, "step": 1, "phase": "forward", "source": "STERA-10M/session_data_20260330_014905"}
+[rank6]:W1029 23:57:57.566000 830046 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 92 hash value: 12729080418547729598
+[rank0]:W1029 23:57:57.568000 830040 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 92 hash value: 12729080418547729598
+[rank5]:W1029 23:57:57.569000 830045 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 92 hash value: 12729080418547729598
+[rank7]:W1029 23:57:57.569000 830047 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 92 hash value: 12729080418547729598
+[rank4]:W1029 23:57:57.570000 830044 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 92 hash value: 12729080418547729598
+[rank2]:W1029 23:57:57.574000 830042 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 92 hash value: 12729080418547729598
+[rank1]:W1029 23:57:57.578000 830041 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 92 hash value: 12729080418547729598
+[rank3]:W1029 23:57:57.579000 830043 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 92 hash value: 12729080418547729598
+[rank3]:W1029 23:57:57.583000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank6]:W1029 23:57:57.583000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank5]:W1029 23:57:57.583000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank0]:W1029 23:57:57.583000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank7]:W1029 23:57:57.583000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank4]:W1029 23:57:57.583000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank2]:W1029 23:57:57.583000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank1]:W1029 23:57:57.583000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank6]:W1029 23:57:57.583000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank0]:W1029 23:57:57.583000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank3]:W1029 23:57:57.583000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank5]:W1029 23:57:57.583000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank7]:W1029 23:57:57.583000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank2]:W1029 23:57:57.583000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank4]:W1029 23:57:57.583000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank1]:W1029 23:57:57.583000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank0]:W1029 23:57:57.583000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank3]:W1029 23:57:57.583000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank5]:W1029 23:57:57.583000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank6]:W1029 23:57:57.583000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank7]:W1029 23:57:57.583000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank4]:W1029 23:57:57.583000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank2]:W1029 23:57:57.583000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank1]:W1029 23:57:57.583000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank0]:W1029 23:57:57.583000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank3]:W1029 23:57:57.583000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank5]:W1029 23:57:57.583000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank6]:W1029 23:57:57.583000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank7]:W1029 23:57:57.583000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank4]:W1029 23:57:57.583000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank2]:W1029 23:57:57.583000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank1]:W1029 23:57:57.583000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank0]:W1029 23:57:57.583000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank3]:W1029 23:57:57.583000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank5]:W1029 23:57:57.583000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank6]:W1029 23:57:57.583000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank7]:W1029 23:57:57.583000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank2]:W1029 23:57:57.583000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank4]:W1029 23:57:57.583000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank1]:W1029 23:57:57.583000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank0]:W1029 23:57:57.584000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank3]:W1029 23:57:57.584000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank5]:W1029 23:57:57.584000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank6]:W1029 23:57:57.584000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank7]:W1029 23:57:57.584000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank4]:W1029 23:57:57.584000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank2]:W1029 23:57:57.584000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank1]:W1029 23:57:57.584000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank0]:W1029 23:57:57.584000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank3]:W1029 23:57:57.584000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank5]:W1029 23:57:57.584000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank6]:W1029 23:57:57.584000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank7]:W1029 23:57:57.584000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank4]:W1029 23:57:57.584000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank2]:W1029 23:57:57.584000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank1]:W1029 23:57:57.584000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank0]:W1029 23:57:57.584000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank5]:W1029 23:57:57.584000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank3]:W1029 23:57:57.584000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank6]:W1029 23:57:57.584000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank7]:W1029 23:57:57.584000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank4]:W1029 23:57:57.584000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank2]:W1029 23:57:57.584000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+[rank1]:W1029 23:57:57.584000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 92 hash value: 2277890854370801092
+{"rank": 0, "step": 1, "phase": "backward"}
+{"rank": 3, "step": 1, "phase": "backward"}
+{"rank": 5, "step": 1, "phase": "backward"}{"rank": 6, "step": 1, "phase": "backward"}
+
+{"rank": 7, "step": 1, "phase": "backward"}
+{"rank": 4, "step": 1, "phase": "backward"}
+{"rank": 2, "step": 1, "phase": "backward"}
+{"rank": 1, "step": 1, "phase": "backward"}
+{"rank": 6, "step": 1, "phase": "optimizer_step"}
+{"rank": 4, "step": 1, "phase": "optimizer_step"}
+{"rank": 5, "step": 1, "phase": "optimizer_step"}
+{"rank": 1, "step": 1, "phase": "optimizer_step"}
+{"rank": 3, "step": 1, "phase": "optimizer_step"}
+{"rank": 2, "step": 1, "phase": "optimizer_step"}
+{"rank": 0, "step": 1, "phase": "optimizer_step"}
+{"rank": 7, "step": 1, "phase": "optimizer_step"}
+[rank5]:W1029 23:57:57.850000 830045 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 38 hash value: 16261839844668082439
+[rank2]:W1029 23:57:57.856000 830042 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 38 hash value: 16261839844668082439
+[rank0]:W1029 23:57:57.856000 830040 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 38 hash value: 16261839844668082439
+[rank6]:W1029 23:57:57.873000 830046 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 38 hash value: 16261839844668082439
+[rank4]:W1029 23:57:57.875000 830044 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 38 hash value: 16261839844668082439
+[rank3]:W1029 23:57:57.876000 830043 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 38 hash value: 16261839844668082439
+[rank7]:W1029 23:57:57.877000 830047 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 38 hash value: 16261839844668082439
+[rank1]:W1029 23:57:57.879000 830041 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 38 hash value: 16261839844668082439
+[rank5]:W1029 23:57:57.883000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank4]:W1029 23:57:57.883000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank6]:W1029 23:57:57.883000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank3]:W1029 23:57:57.883000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank0]:W1029 23:57:57.883000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank7]:W1029 23:57:57.883000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank2]:W1029 23:57:57.883000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank1]:W1029 23:57:57.883000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank6]:W1029 23:57:57.884000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank5]:W1029 23:57:57.884000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank4]:W1029 23:57:57.884000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank3]:W1029 23:57:57.884000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank0]:W1029 23:57:57.884000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank7]:W1029 23:57:57.884000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank2]:W1029 23:57:57.884000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank1]:W1029 23:57:57.884000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank6]:W1029 23:57:57.884000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank4]:W1029 23:57:57.884000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank5]:W1029 23:57:57.884000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank3]:W1029 23:57:57.884000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank0]:W1029 23:57:57.884000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank7]:W1029 23:57:57.884000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank2]:W1029 23:57:57.884000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank1]:W1029 23:57:57.884000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank6]:W1029 23:57:57.884000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank4]:W1029 23:57:57.884000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank5]:W1029 23:57:57.884000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank0]:W1029 23:57:57.884000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank3]:W1029 23:57:57.884000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank7]:W1029 23:57:57.884000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank2]:W1029 23:57:57.884000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank1]:W1029 23:57:57.884000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank6]:W1029 23:57:57.884000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank4]:W1029 23:57:57.884000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank5]:W1029 23:57:57.884000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank0]:W1029 23:57:57.884000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank7]:W1029 23:57:57.884000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank3]:W1029 23:57:57.884000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank2]:W1029 23:57:57.884000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank1]:W1029 23:57:57.884000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank6]:W1029 23:57:57.884000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank4]:W1029 23:57:57.884000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank5]:W1029 23:57:57.884000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank0]:W1029 23:57:57.884000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank7]:W1029 23:57:57.884000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank2]:W1029 23:57:57.884000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank3]:W1029 23:57:57.884000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank1]:W1029 23:57:57.884000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank6]:W1029 23:57:57.884000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank4]:W1029 23:57:57.884000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank5]:W1029 23:57:57.884000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank0]:W1029 23:57:57.884000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank7]:W1029 23:57:57.884000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank2]:W1029 23:57:57.884000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank3]:W1029 23:57:57.884000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank1]:W1029 23:57:57.884000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank6]:W1029 23:57:57.884000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank4]:W1029 23:57:57.884000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank5]:W1029 23:57:57.884000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank0]:W1029 23:57:57.884000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank7]:W1029 23:57:57.884000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank2]:W1029 23:57:57.884000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank3]:W1029 23:57:57.884000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+[rank1]:W1029 23:57:57.884000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 38 hash value: 13334292102562681793
+{"rank": 6, "step": 1, "phase": "forward", "source": "TACO/(empty, plate, plate)/20230930_144"}
+{"rank": 5, "step": 1, "phase": "forward", "source": "TACO/(cut, spatula, pan)/20231013_005"}{"rank": 7, "step": 1, "phase": "forward", "source": "TACO/(brush, brush, plate)/20230929_035"}
+
+{"rank": 4, "step": 1, "phase": "forward", "source": "TACO/(cut, knife, plate)/20231020_219"}
+{"rank": 0, "step": 1, "phase": "forward", "source": "TACO/(measure, ruler, box)/20231102_022"}
+{"rank": 2, "step": 1, "phase": "forward", "source": "TACO/(empty, kettle, cup)/20231031_026"}
+{"rank": 3, "step": 1, "phase": "forward", "source": "TACO/(empty, kettle, plate)/20230930_152"}
+{"rank": 1, "step": 1, "phase": "forward", "source": "TACO/(empty, plate, teapot)/20230927_046"}
+[rank6]:W1029 23:57:58.405000 830046 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 151 hash value: 7661788585133374117
+[rank7]:W1029 23:57:58.406000 830047 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 151 hash value: 7661788585133374117
+[rank5]:W1029 23:57:58.408000 830045 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 151 hash value: 7661788585133374117
+[rank4]:W1029 23:57:58.408000 830044 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 151 hash value: 7661788585133374117
+[rank0]:W1029 23:57:58.408000 830040 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 151 hash value: 7661788585133374117
+[rank2]:W1029 23:57:58.417000 830042 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 151 hash value: 7661788585133374117
+[rank3]:W1029 23:57:58.419000 830043 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 151 hash value: 7661788585133374117
+[rank1]:W1029 23:57:58.421000 830041 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 151 hash value: 7661788585133374117
+[rank2]:W1029 23:57:58.425000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank4]:W1029 23:57:58.425000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank3]:W1029 23:57:58.425000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank5]:W1029 23:57:58.425000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank6]:W1029 23:57:58.426000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank0]:W1029 23:57:58.426000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank1]:W1029 23:57:58.426000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank7]:W1029 23:57:58.426000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank4]:W1029 23:57:58.426000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank3]:W1029 23:57:58.426000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank2]:W1029 23:57:58.426000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank5]:W1029 23:57:58.426000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank6]:W1029 23:57:58.426000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank4]:W1029 23:57:58.426000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank3]:W1029 23:57:58.426000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank2]:W1029 23:57:58.426000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank7]:W1029 23:57:58.426000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank0]:W1029 23:57:58.426000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank1]:W1029 23:57:58.426000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank5]:W1029 23:57:58.426000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank4]:W1029 23:57:58.426000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank6]:W1029 23:57:58.426000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank3]:W1029 23:57:58.426000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank2]:W1029 23:57:58.426000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank5]:W1029 23:57:58.426000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank7]:W1029 23:57:58.426000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank0]:W1029 23:57:58.426000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank1]:W1029 23:57:58.426000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank4]:W1029 23:57:58.426000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank3]:W1029 23:57:58.426000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank6]:W1029 23:57:58.426000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank2]:W1029 23:57:58.426000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank5]:W1029 23:57:58.426000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank7]:W1029 23:57:58.426000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank0]:W1029 23:57:58.426000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank1]:W1029 23:57:58.426000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank4]:W1029 23:57:58.426000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank3]:W1029 23:57:58.426000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank6]:W1029 23:57:58.426000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank2]:W1029 23:57:58.426000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank5]:W1029 23:57:58.426000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank7]:W1029 23:57:58.426000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank0]:W1029 23:57:58.426000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank4]:W1029 23:57:58.426000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank1]:W1029 23:57:58.426000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank3]:W1029 23:57:58.426000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank6]:W1029 23:57:58.426000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank2]:W1029 23:57:58.426000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank5]:W1029 23:57:58.426000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank7]:W1029 23:57:58.426000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank0]:W1029 23:57:58.426000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank4]:W1029 23:57:58.426000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank1]:W1029 23:57:58.426000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank3]:W1029 23:57:58.426000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank6]:W1029 23:57:58.426000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank2]:W1029 23:57:58.426000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank5]:W1029 23:57:58.426000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank7]:W1029 23:57:58.426000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+{"rank": 4, "step": 1, "phase": "backward"}
+[rank0]:W1029 23:57:58.426000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+{"rank": 3, "step": 1, "phase": "backward"}
+[rank1]:W1029 23:57:58.426000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank6]:W1029 23:57:58.426000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+{"rank": 2, "step": 1, "phase": "backward"}
+{"rank": 5, "step": 1, "phase": "backward"}
+[rank7]:W1029 23:57:58.426000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+[rank0]:W1029 23:57:58.426000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+{"rank": 6, "step": 1, "phase": "backward"}[rank1]:W1029 23:57:58.426000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 151 hash value: 2298493599114662934
+
+{"rank": 7, "step": 1, "phase": "backward"}
+{"rank": 0, "step": 1, "phase": "backward"}
+{"rank": 1, "step": 1, "phase": "backward"}
+{"rank": 6, "step": 1, "phase": "optimizer_step"}
+{"rank": 5, "step": 1, "phase": "optimizer_step"}
+{"rank": 4, "step": 1, "phase": "optimizer_step"}
+{"rank": 3, "step": 1, "phase": "optimizer_step"}
+{"rank": 1, "step": 1, "phase": "optimizer_step"}
+{"rank": 2, "step": 1, "phase": "optimizer_step"}
+{"rank": 0, "step": 1, "phase": "optimizer_step"}
+{"rank": 7, "step": 1, "phase": "optimizer_step"}
+{"rank": 6, "world_size": 8, "step": 1, "lr": 2.5e-06, "gradient_norm": 21016352.0, "sources": ["TACO/(cut, knife, plate)/20231020_219", "STERA-10M/session_data_20260330_014905", "STERA-10M/session_data_20260329_213432", "STERA-10M/session_data_20260328_234041", "STERA-10M/session_data_20260328_234041", "TACO/(dust, brush, kettle)/20231103_156", "STERA-10M/session_data_20260330_014905", "TACO/(empty, plate, plate)/20230930_144"], "terms": [{"joint_offset": 2.523850917816162, "joint_contact": 0.7887811660766602, "joint_distance": 2.366835355758667, "vertex_offset": 2.4533591270446777, "vertex_contact": 0.7555616497993469, "vertex_distance": 1.992350697517395, "heatmap": 0.7320882678031921, "offset2d": 0.3612779676914215, "reprojection": 538.3627319335938}, {"scene_K": 15.422246932983398, "scene_depth": 0.03691096231341362, "scene_translation": 0.020803015679121017, "scene_rotation": 0.03493954613804817, "scene_metric": 0.0004633848730009049}, {"scene_K": 16.27422332763672, "scene_depth": 0.024978304281830788, "scene_translation": 0.0064089419320225716, "scene_rotation": 0.017498599365353584, "scene_metric": 0.1042151153087616}, {"scene_K": 16.64820098876953, "scene_depth": 0.09531554579734802, "scene_translation": 0.06239079311490059, "scene_rotation": 0.13998620212078094, "scene_metric": 0.01161299180239439}, {"scene_K": 15.847297668457031, "scene_depth": 0.07770556211471558, "scene_translation": 0.047353386878967285, "scene_rotation": 0.038312967866659164, "scene_metric": 0.009278071112930775}, {"joint_offset": 2.3017325401306152, "joint_contact": 0.8139299750328064, "joint_distance": 2.3970754146575928, "vertex_offset": 2.5610625743865967, "vertex_contact": 0.7716434001922607, "vertex_distance": 2.1779890060424805, "heatmap": 0.7313912510871887, "offset2d": 0.35845518112182617, "reprojection": 807.1309204101562}, {"scene_K": 15.29539680480957, "scene_depth": 0.11291808634996414, "scene_translation": 0.011096499860286713, "scene_rotation": 0.022506505250930786, "scene_metric": 0.008890860714018345}, {"joint_offset": 2.492003917694092, "joint_contact": 0.8012523055076599, "joint_distance": 2.6673593521118164, "vertex_offset": 2.502751111984253, "vertex_contact": 0.7602924704551697, "vertex_distance": 2.522090435028076, "heatmap": 0.7320834994316101, "offset2d": 0.35899314284324646, "reprojection": 66.14340209960938}], "clip_ids": ["60db36ad2cdd6845b7baee4463fefd303c818fe6e67a15a1174220e474dd4d8e", "7e22d7b5786feadfae6a114d362aedc8b83dd3193b5cfe656ac177c087c2f356", "80eba215bbedc404791017412c1b137cafb67cfff856d07aae8977eacfc0c6ba", "0ba429f0bcd62cdabe430caca6037064cec5c22f7d7f771bf3f6fc7a7f7e619c", "099793aae9444e9d8fcf184dd61a8ac310c3543690dd53373d6d64921fc80cd9", "a3f3a8fbd1971f9b5562d7283a3a01ddc7cb5b8931d732dfe4b5b753c7959e6e", "7d264ff5d87d5b4f3e65fc2f39c7bcc3fae24e1607fb74e90cd4a53f8dfdbd12", "903411c3c321951b82014ef2e66fd6fda223e8a1d19d3f1a41a9aa728da149c8"], "strides": [4, 3, 1, 3, 2, 4, 3, 5], "frames_per_clip": [60, 60, 60, 60, 60, 60, 60, 60], "step_seconds": 12.605623686686158, "rank_step_seconds": 12.605623686686158, "peak_memory_allocated_bytes": 30340525568, "peak_memory_reserved_bytes": 30561796096}
+{"rank": 5, "world_size": 8, "step": 1, "lr": 2.5e-06, "gradient_norm": 21016352.0, "sources": ["TACO/(empty, kettle, plate)/20230930_152", "STERA-10M/session_data_20260329_213432", "STERA-10M/session_data_20260328_234041", "STERA-10M/session_data_20260330_014905", "STERA-10M/session_data_20260328_235204", "TACO/(brush, brush, plate)/20230929_035", "STERA-10M/session_data_20260328_235204", "TACO/(cut, spatula, pan)/20231013_005"], "terms": [{"joint_offset": 2.471372127532959, "joint_contact": 0.7538385391235352, "joint_distance": 2.6041059494018555, "vertex_offset": 2.4555370807647705, "vertex_contact": 0.795753002166748, "vertex_distance": 2.2212934494018555, "heatmap": 0.7322033047676086, "offset2d": 0.3608342409133911, "reprojection": 72.07793426513672}, {"scene_K": 15.588726043701172, "scene_depth": 0.02761783078312874, "scene_translation": 0.025357358157634735, "scene_rotation": 0.16679643094539642, "scene_metric": 0.0036840937100350857}, {"scene_K": 16.186809539794922, "scene_depth": 0.11035702377557755, "scene_translation": 0.01594509929418564, "scene_rotation": 0.020380623638629913, "scene_metric": 4.508963229454821e-06}, {"scene_K": 15.349296569824219, "scene_depth": 0.010317130014300346, "scene_translation": 0.01719929650425911, "scene_rotation": 0.013567390851676464, "scene_metric": 0.015764258801937103}, {"scene_K": 14.896505355834961, "scene_depth": 0.06293000280857086, "scene_translation": 0.02198159135878086, "scene_rotation": 0.036919549107551575, "scene_metric": 0.004609689582139254}, {"joint_offset": 2.381162405014038, "joint_contact": 0.9534769654273987, "joint_distance": 2.8535091876983643, "vertex_offset": 2.4635560512542725, "vertex_contact": 0.7259547114372253, "vertex_distance": 2.4973247051239014, "heatmap": 0.7320114970207214, "offset2d": 0.3610546886920929, "reprojection": 351.0359191894531}, {"scene_K": 15.395454406738281, "scene_depth": 0.036172617226839066, "scene_translation": 0.009219648316502571, "scene_rotation": 0.014548462815582752, "scene_metric": 0.0008569078636355698}, {"joint_offset": 2.6405575275421143, "joint_contact": 0.7880704402923584, "joint_distance": 1.9821263551712036, "vertex_offset": 2.427116870880127, "vertex_contact": 0.6315084099769592, "vertex_distance": 1.8139606714248657, "heatmap": 0.7293480634689331, "offset2d": 0.3612024188041687, "reprojection": 118.6921157836914}], "clip_ids": ["ad1cca09041aa8c81817feea9231116f2d8a80f2267ef611409b64c40de2994a", "41f354cd81fc3fc85418087c9f42d2f3a9ad4003462b79ff663bc56bc46d305f", "55698f971cc8b4fa186dbcb40384002f058bf4ed07fbf314756ea7eca160117d", "620547f10a69aba9d3437d71fa19c1484dbf89a20ae21807c6272a8cae6158a3", "fd954ad949158ffe54ae94e7d43043c5588368b344b9ae249760fd1bf50d997a", "cacf5199831bf4dea60b6d64380ec28c6e92f75ef35531863674eaa7df124d78", "5f97ee9d0b561172fefcc49d551a7f229d1581eb64c4a3f3e419769891e61c7b", "5d2521fc3fbe24a44fe7eac6f60534944972ec88a3be5b722b5aa2b992546e48"], "strides": [4, 3, 1, 3, 2, 4, 3, 5], "frames_per_clip": [60, 60, 60, 60, 60, 60, 60, 60], "step_seconds": 12.605623686686158, "rank_step_seconds": 12.602164147421718, "peak_memory_allocated_bytes": 30338888192, "peak_memory_reserved_bytes": 30561796096}
+{"rank": 3, "world_size": 8, "step": 1, "lr": 2.5e-06, "gradient_norm": 21016352.0, "sources": ["TACO/(empty, kettle, kettle)/20231031_004", "STERA-10M/session_data_20260328_235204", "STERA-10M/session_data_20260329_213432", "STERA-10M/session_data_20260330_014905", "STERA-10M/session_data_20260328_234041", "TACO/(brush, brush, cup)/20231026_014", "STERA-10M/session_data_20260330_014905", "TACO/(empty, kettle, plate)/20230930_152"], "terms": [{"joint_offset": 2.0673158168792725, "joint_contact": 0.7046337127685547, "joint_distance": 2.0685458183288574, "vertex_offset": 2.4056174755096436, "vertex_contact": 0.709644079208374, "vertex_distance": 1.714738368988037, "heatmap": 0.7319635152816772, "offset2d": 0.3610411584377289, "reprojection": 396.9816589355469}, {"scene_K": 15.753228187561035, "scene_depth": 0.07954410463571548, "scene_translation": 0.029869645833969116, "scene_rotation": 0.07078281044960022, "scene_metric": 0.05370701104402542}, {"scene_K": 15.62546443939209, "scene_depth": 0.021055735647678375, "scene_translation": 0.04318995028734207, "scene_rotation": 0.10562537610530853, "scene_metric": 0.12469817698001862}, {"scene_K": 15.298893928527832, "scene_depth": 0.11268017441034317, "scene_translation": 0.011112929321825504, "scene_rotation": 0.02244339883327484, "scene_metric": 0.009191705845296383}, {"scene_K": 16.29357147216797, "scene_depth": 0.08397234976291656, "scene_translation": 0.07309701293706894, "scene_rotation": 0.08578880876302719, "scene_metric": 0.6240572929382324}, {"joint_offset": 2.338791847229004, "joint_contact": 0.7965707778930664, "joint_distance": 2.5176408290863037, "vertex_offset": 2.2340171337127686, "vertex_contact": 0.7117214202880859, "vertex_distance": 2.220968723297119, "heatmap": 0.732086181640625, "offset2d": 0.3604574501514435, "reprojection": 73.0008773803711}, {"scene_K": 15.29539680480957, "scene_depth": 0.11291808634996414, "scene_translation": 0.011096499860286713, "scene_rotation": 0.022506505250930786, "scene_metric": 0.008890860714018345}, {"joint_offset": 2.471846580505371, "joint_contact": 0.7521255016326904, "joint_distance": 2.604832410812378, "vertex_offset": 2.457324266433716, "vertex_contact": 0.7980260252952576, "vertex_distance": 2.226358413696289, "heatmap": 0.7322033047676086, "offset2d": 0.3608342409133911, "reprojection": 69.52386474609375}], "clip_ids": ["ccac17cfdc850dca29dd287160a5cda3a6a6d1563da8a7a8dda22c6440ad5508", "eff5fea19cc396cdf865c53a830b73b2c3ffa11e8134eba464daf938e7cc3da1", "2d1da489141231add6e80b76fa5e7e2200a5820c1ebcd49d969bab1f70fea9b9", "7d264ff5d87d5b4f3e65fc2f39c7bcc3fae24e1607fb74e90cd4a53f8dfdbd12", "be6a3a80552ae02e0772500b8d0e75c69d012652c2a4b6eef99c99216ef84d34", "ab5a4e9ef1d1b4f5c99782e51e5d069d370e1d45de76b7815ca675a3b07695a5", "7d264ff5d87d5b4f3e65fc2f39c7bcc3fae24e1607fb74e90cd4a53f8dfdbd12", "ad1cca09041aa8c81817feea9231116f2d8a80f2267ef611409b64c40de2994a"], "strides": [4, 3, 1, 3, 2, 4, 3, 5], "frames_per_clip": [60, 60, 60, 60, 60, 60, 60, 60], "step_seconds": 12.605623686686158, "rank_step_seconds": 12.574459318071604, "peak_memory_allocated_bytes": 30345777664, "peak_memory_reserved_bytes": 30561796096}
+{"rank": 7, "world_size": 8, "step": 1, "lr": 2.5e-06, "gradient_norm": 21016352.0, "sources": ["TACO/(empty, plate, cup)/20230928_033", "STERA-10M/session_data_20260328_235204", "STERA-10M/session_data_20260330_014905", "STERA-10M/session_data_20260328_234041", "STERA-10M/session_data_20260328_234041", "TACO/(cut, spatula, pan)/20231013_005", "STERA-10M/session_data_20260329_213432", "TACO/(brush, brush, plate)/20230929_035"], "terms": [{"joint_offset": 2.41917085647583, "joint_contact": 0.8701398968696594, "joint_distance": 3.0497426986694336, "vertex_offset": 2.5092997550964355, "vertex_contact": 0.7643868327140808, "vertex_distance": 2.75282621383667, "heatmap": 0.732124388217926, "offset2d": 0.36160334944725037, "reprojection": 104.84483337402344}, {"scene_K": 15.794011116027832, "scene_depth": 0.09001706540584564, "scene_translation": 0.023785894736647606, "scene_rotation": 0.11003303527832031, "scene_metric": 0.1613762378692627}, {"scene_K": 15.294294357299805, "scene_depth": -0.008986308239400387, "scene_translation": 0.023121831938624382, "scene_rotation": 0.05154688283801079, "scene_metric": 4.918864942737855e-05}, {"scene_K": 16.199033737182617, "scene_depth": 0.08546771854162216, "scene_translation": 0.03797150030732155, "scene_rotation": 0.12708957493305206, "scene_metric": 0.009582901373505592}, {"scene_K": 16.29357147216797, "scene_depth": 0.08397234976291656, "scene_translation": 0.07309701293706894, "scene_rotation": 0.08578880876302719, "scene_metric": 0.6240572929382324}, {"joint_offset": 2.634824514389038, "joint_contact": 0.7927009463310242, "joint_distance": 2.0211074352264404, "vertex_offset": 2.378624677658081, "vertex_contact": 0.6270798444747925, "vertex_distance": 1.7327641248703003, "heatmap": 0.7305701375007629, "offset2d": 0.3594900369644165, "reprojection": 308.6387023925781}, {"scene_K": 15.682500839233398, "scene_depth": 0.021021010354161263, "scene_translation": 0.03899963200092316, "scene_rotation": 0.10092673450708389, "scene_metric": 0.13310353457927704}, {"joint_offset": 2.3820855617523193, "joint_contact": 0.9529102444648743, "joint_distance": 2.854358196258545, "vertex_offset": 2.4643805027008057, "vertex_contact": 0.7274579405784607, "vertex_distance": 2.5018386840820312, "heatmap": 0.7320114970207214, "offset2d": 0.3610546886920929, "reprojection": 155.88189697265625}], "clip_ids": ["e4addc37c189ecfd5b353528daf9daf522aa13371e4592eefbd9371ca9d114f7", "ef66f1c548f0c190875fe7151c59c5d099eb55e30727acc897215951df7990e1", "a87cefe4e5479851178da6f234824e3744f8219f02df47c1a9f4d2ce182440c3", "bc4a66825e55ccca92ca36d0ff27915b7ac23eafefeb8e244bd2be1fee67e22f", "be6a3a80552ae02e0772500b8d0e75c69d012652c2a4b6eef99c99216ef84d34", "587622a949e2d06c0727b942ecfbbaa88b4ab3a6e74d5f398c8c1f4dcf363bfd", "2d1da489141231add6e80b76fa5e7e2200a5820c1ebcd49d969bab1f70fea9b9", "cacf5199831bf4dea60b6d64380ec28c6e92f75ef35531863674eaa7df124d78"], "strides": [4, 3, 1, 3, 2, 4, 3, 5], "frames_per_clip": [60, 60, 60, 60, 60, 60, 60, 60], "step_seconds": 12.605623686686158, "rank_step_seconds": 12.59903577156365, "peak_memory_allocated_bytes": 30352530432, "peak_memory_reserved_bytes": 30565990400}
+{"rank": 4, "world_size": 8, "step": 1, "lr": 2.5e-06, "gradient_norm": 21016352.0, "sources": ["TACO/(empty, kettle, kettle)/20231031_004", "STERA-10M/session_data_20260329_213432", "STERA-10M/session_data_20260328_234041", "STERA-10M/session_data_20260330_014905", "STERA-10M/session_data_20260330_014905", "TACO/(dust, brush, kettle)/20231103_156", "STERA-10M/session_data_20260328_234041", "TACO/(cut, knife, plate)/20231020_219"], "terms": [{"joint_offset": 2.0673158168792725, "joint_contact": 0.7046337127685547, "joint_distance": 2.0685458183288574, "vertex_offset": 2.4056143760681152, "vertex_contact": 0.7096267938613892, "vertex_distance": 1.7147082090377808, "heatmap": 0.7319635152816772, "offset2d": 0.3610411584377289, "reprojection": 396.9816589355469}, {"scene_K": 15.668752670288086, "scene_depth": 0.025750210508704185, "scene_translation": 0.019271839410066605, "scene_rotation": 0.11229672282934189, "scene_metric": 0.043867822736501694}, {"scene_K": 16.48177719116211, "scene_depth": 0.11315624415874481, "scene_translation": 0.0825863927602768, "scene_rotation": 0.3267638683319092, "scene_metric": 0.2929496765136719}, {"scene_K": 15.358480453491211, "scene_depth": 0.007075862493366003, "scene_translation": 0.02890252135694027, "scene_rotation": 0.052482761442661285, "scene_metric": 8.442257239948958e-06}, {"scene_K": 15.158778190612793, "scene_depth": 0.09290506690740585, "scene_translation": 0.010410371236503124, "scene_rotation": 0.02034112811088562, "scene_metric": 0.007505620829761028}, {"joint_offset": 2.3017325401306152, "joint_contact": 0.8139299750328064, "joint_distance": 2.3970754146575928, "vertex_offset": 2.5610580444335938, "vertex_contact": 0.7716541290283203, "vertex_distance": 2.1779253482818604, "heatmap": 0.7313912510871887, "offset2d": 0.35845518112182617, "reprojection": 807.1309204101562}, {"scene_K": 16.177488327026367, "scene_depth": 0.38895314931869507, "scene_translation": 0.0771583616733551, "scene_rotation": 0.1071668416261673, "scene_metric": 0.601449728012085}, {"joint_offset": 2.4365012645721436, "joint_contact": 0.8785314559936523, "joint_distance": 2.5942442417144775, "vertex_offset": 2.5066115856170654, "vertex_contact": 0.7337526679039001, "vertex_distance": 2.276897668838501, "heatmap": 0.7320700883865356, "offset2d": 0.3606148064136505, "reprojection": 318.6319580078125}], "clip_ids": ["ccac17cfdc850dca29dd287160a5cda3a6a6d1563da8a7a8dda22c6440ad5508", "0a45ea7fc6d20fbf1841fcc402f0d890437e0ea0540682af1d4b0564d471230b", "758795bb9d077c2cba5d51ced534a776ac2c3cc42f2e819ae798975d7c0ca43f", "a87cefe4e5479851178da6f234824e3744f8219f02df47c1a9f4d2ce182440c3", "7d264ff5d87d5b4f3e65fc2f39c7bcc3fae24e1607fb74e90cd4a53f8dfdbd12", "a3f3a8fbd1971f9b5562d7283a3a01ddc7cb5b8931d732dfe4b5b753c7959e6e", "0b298e2eef3703ba0b53101828118ee2d14bd5842435157a93f4944daf5f6207", "7da526fa92e14471fb7d77292ef8a315f1b19cbeb6f56619a51a0a0d4d6cc7b0"], "strides": [4, 3, 1, 3, 2, 4, 3, 5], "frames_per_clip": [60, 60, 60, 60, 60, 60, 60, 60], "step_seconds": 12.605623686686158, "rank_step_seconds": 12.586148168891668, "peak_memory_allocated_bytes": 30338888192, "peak_memory_reserved_bytes": 30561796096}
+{"rank": 2, "world_size": 8, "step": 1, "lr": 2.5e-06, "gradient_norm": 21016352.0, "sources": ["TACO/(brush, brush, plate)/20230929_035", "STERA-10M/session_data_20260328_234041", "STERA-10M/session_data_20260328_234041", "STERA-10M/session_data_20260329_213432", "STERA-10M/session_data_20260328_235204", "TACO/(empty, plate, box)/20230927_050", "STERA-10M/session_data_20260329_213432", "TACO/(empty, kettle, cup)/20231031_026"], "terms": [{"joint_offset": 2.3789916038513184, "joint_contact": 0.9548208117485046, "joint_distance": 2.852856397628784, "vertex_offset": 2.463496208190918, "vertex_contact": 0.7245438694953918, "vertex_distance": 2.4975013732910156, "heatmap": 0.7320114970207214, "offset2d": 0.3610546886920929, "reprojection": 171.11532592773438}, {"scene_K": 16.178442001342773, "scene_depth": 0.3888588547706604, "scene_translation": 0.07718461006879807, "scene_rotation": 0.10708804428577423, "scene_metric": 0.601449728012085}, {"scene_K": 16.081586837768555, "scene_depth": 0.43935754895210266, "scene_translation": 0.09034544974565506, "scene_rotation": 0.10143496096134186, "scene_metric": 0.7066609859466553}, {"scene_K": 15.681035041809082, "scene_depth": 0.021091334521770477, "scene_translation": 0.039063964039087296, "scene_rotation": 0.10131757706403732, "scene_metric": 0.1319553554058075}, {"scene_K": 15.294639587402344, "scene_depth": 0.03467487916350365, "scene_translation": 0.0069749620743095875, "scene_rotation": 0.00903013814240694, "scene_metric": 0.0008257610606960952}, {"joint_offset": 2.300626754760742, "joint_contact": 0.89058917760849, "joint_distance": 2.6103336811065674, "vertex_offset": 2.261218786239624, "vertex_contact": 0.7038393616676331, "vertex_distance": 2.4616715908050537, "heatmap": 0.7320029139518738, "offset2d": 0.36005428433418274, "reprojection": 75.74331665039062}, {"scene_K": 16.22338104248047, "scene_depth": 0.02154480293393135, "scene_translation": 0.004889915697276592, "scene_rotation": 0.01085755042731762, "scene_metric": 0.15079636871814728}, {"joint_offset": 2.1406784057617188, "joint_contact": 0.8260058164596558, "joint_distance": 2.510477066040039, "vertex_offset": 2.414090633392334, "vertex_contact": 0.7428963780403137, "vertex_distance": 1.9401288032531738, "heatmap": 0.7281642556190491, "offset2d": 0.35974594950675964, "reprojection": 106.70068359375}], "clip_ids": ["cacf5199831bf4dea60b6d64380ec28c6e92f75ef35531863674eaa7df124d78", "0b298e2eef3703ba0b53101828118ee2d14bd5842435157a93f4944daf5f6207", "0b298e2eef3703ba0b53101828118ee2d14bd5842435157a93f4944daf5f6207", "2d1da489141231add6e80b76fa5e7e2200a5820c1ebcd49d969bab1f70fea9b9", "5f97ee9d0b561172fefcc49d551a7f229d1581eb64c4a3f3e419769891e61c7b", "4e7ac0e816edd853c2d32671b28d9e5724bc00c9ce90b04bcc1f2594bc386b43", "80eba215bbedc404791017412c1b137cafb67cfff856d07aae8977eacfc0c6ba", "91d5a93c9243de9f4a4157893f3947e01cd255c327dcc6045feccf8f1e570281"], "strides": [4, 3, 1, 3, 2, 4, 3, 5], "frames_per_clip": [60, 60, 60, 60, 60, 60, 60, 60], "step_seconds": 12.605623686686158, "rank_step_seconds": 12.577668968588114, "peak_memory_allocated_bytes": 30341353984, "peak_memory_reserved_bytes": 30561796096}
+{"rank": 0, "world_size": 8, "step": 1, "lr": 2.5e-06, "gradient_norm": 21016352.0, "sources": ["TACO/(empty, plate, teapot)/20230927_046", "STERA-10M/session_data_20260330_014905", "STERA-10M/session_data_20260328_234041", "STERA-10M/session_data_20260329_213432", "STERA-10M/session_data_20260330_014905", "TACO/(empty, plate, teapot)/20230927_046", "STERA-10M/session_data_20260329_213432", "TACO/(measure, ruler, box)/20231102_022"], "terms": [{"joint_offset": 2.163590431213379, "joint_contact": 0.8657441735267639, "joint_distance": 2.7002906799316406, "vertex_offset": 2.3432979583740234, "vertex_contact": 0.7235919237136841, "vertex_distance": 2.5903091430664062, "heatmap": 0.732177734375, "offset2d": 0.36045220494270325, "reprojection": 134.0714569091797}, {"scene_K": 15.735308647155762, "scene_depth": 0.04268781095743179, "scene_translation": 0.03967200219631195, "scene_rotation": 0.11026151478290558, "scene_metric": 0.03330292925238609}, {"scene_K": 16.538496017456055, "scene_depth": 0.09933003783226013, "scene_translation": 0.07422773540019989, "scene_rotation": 0.1557934582233429, "scene_metric": 0.009710656479001045}, {"scene_K": 16.22341537475586, "scene_depth": 0.021475477144122124, "scene_translation": 0.0049390667118132114, "scene_rotation": 0.010835240595042706, "scene_metric": 0.14957384765148163}, {"scene_K": 15.470146179199219, "scene_depth": 0.03454964607954025, "scene_translation": 0.024374136701226234, "scene_rotation": 0.03807922452688217, "scene_metric": 0.0022897496819496155}, {"joint_offset": 2.3807175159454346, "joint_contact": 0.8829002976417542, "joint_distance": 2.7564163208007812, "vertex_offset": 2.2973551750183105, "vertex_contact": 0.7166439294815063, "vertex_distance": 2.5348880290985107, "heatmap": 0.7321708798408508, "offset2d": 0.36071568727493286, "reprojection": 110.0779037475586}, {"scene_K": 15.667976379394531, "scene_depth": 0.02574428729712963, "scene_translation": 0.019254270941019058, "scene_rotation": 0.11228916794061661, "scene_metric": 0.04420022293925285}, {"joint_offset": 2.306830406188965, "joint_contact": 0.9338470101356506, "joint_distance": 2.606116533279419, "vertex_offset": 2.5365092754364014, "vertex_contact": 0.690599262714386, "vertex_distance": 2.2666850090026855, "heatmap": 0.7324231863021851, "offset2d": 0.35856306552886963, "reprojection": 70.59120178222656}], "clip_ids": ["cc5001edd342839209258ca1dfd525d2d5f7c6c723ddd08baf4d883c2699b40b", "285efb7755a31f4b1a5d3bcbb13c4b622bf45d6d6495df5676d637ebc42be7b0", "0ba429f0bcd62cdabe430caca6037064cec5c22f7d7f771bf3f6fc7a7f7e619c", "80eba215bbedc404791017412c1b137cafb67cfff856d07aae8977eacfc0c6ba", "7e22d7b5786feadfae6a114d362aedc8b83dd3193b5cfe656ac177c087c2f356", "0278aaf7959d206eb7acafe63bd0855cb745822077ec1bf61cc09324d55a01cf", "0a45ea7fc6d20fbf1841fcc402f0d890437e0ea0540682af1d4b0564d471230b", "5fea1ab6fe7cebada5def01537bec71c6c57f87d6ea8ce3f79340d268b50d4f2"], "strides": [4, 3, 1, 3, 2, 4, 3, 5], "frames_per_clip": [60, 60, 60, 60, 60, 60, 60, 60], "step_seconds": 12.605623686686158, "rank_step_seconds": 12.580751430243254, "peak_memory_allocated_bytes": 30337132032, "peak_memory_reserved_bytes": 30561796096}{"rank": 1, "world_size": 8, "step": 1, "lr": 2.5e-06, "gradient_norm": 21016352.0, "sources": ["TACO/(dust, brush, kettle)/20231103_156", "STERA-10M/session_data_20260328_234041", "STERA-10M/session_data_20260329_213432", "STERA-10M/session_data_20260328_234041", "STERA-10M/session_data_20260330_014905", "TACO/(empty, teapot, plate)/20231031_097", "STERA-10M/session_data_20260330_014905", "TACO/(empty, plate, teapot)/20230927_046"], "terms": [{"joint_offset": 2.4505393505096436, "joint_contact": 0.8089824318885803, "joint_distance": 2.3756589889526367, "vertex_offset": 2.634068250656128, "vertex_contact": 0.7690365314483643, "vertex_distance": 2.1348459720611572, "heatmap": 0.7311693429946899, "offset2d": 0.3593837320804596, "reprojection": 973.9186401367188}, {"scene_K": 16.37678337097168, "scene_depth": 0.07359527796506882, "scene_translation": 0.0899832621216774, "scene_rotation": 0.10876431316137314, "scene_metric": 0.702696681022644}, {"scene_K": 16.27422332763672, "scene_depth": 0.024978304281830788, "scene_translation": 0.0064089419320225716, "scene_rotation": 0.017498599365353584, "scene_metric": 0.1042151153087616}, {"scene_K": 16.707693099975586, "scene_depth": 0.3383350968360901, "scene_translation": 0.0640329122543335, "scene_rotation": 0.10053688287734985, "scene_metric": 1.0517783164978027}, {"scene_K": 15.470146179199219, "scene_depth": 0.03454964607954025, "scene_translation": 0.024374136701226234, "scene_rotation": 0.03807922452688217, "scene_metric": 0.0022897496819496155}, {"joint_offset": 2.355074644088745, "joint_contact": 0.761814534664154, "joint_distance": 2.3685030937194824, "vertex_offset": 2.6055619716644287, "vertex_contact": 0.7178797721862793, "vertex_distance": 2.2800302505493164, "heatmap": 0.731394350528717, "offset2d": 0.35970228910446167, "reprojection": 65.04963684082031}, {"scene_K": 15.29539680480957, "scene_depth": 0.11291808634996414, "scene_translation": 0.011096499860286713, "scene_rotation": 0.022506505250930786, "scene_metric": 0.008890860714018345}, {"joint_offset": 2.1663966178894043, "joint_contact": 0.8636636734008789, "joint_distance": 2.701373815536499, "vertex_offset": 2.343453884124756, "vertex_contact": 0.7263302803039551, "vertex_distance": 2.593862771987915, "heatmap": 0.732177734375, "offset2d": 0.36045220494270325, "reprojection": 83.80388641357422}], "clip_ids": ["8bcbc0b174a3b936c33d8b8426f33baf4ef042c83491798e322cad7364fc68f3", "be6a3a80552ae02e0772500b8d0e75c69d012652c2a4b6eef99c99216ef84d34", "80eba215bbedc404791017412c1b137cafb67cfff856d07aae8977eacfc0c6ba", "4f496d2934b77a8c55a2eba9aee5009360559eedd39cd6abe2566067a0c558c0", "7e22d7b5786feadfae6a114d362aedc8b83dd3193b5cfe656ac177c087c2f356", "4eca4b55392ba1976f267d0ff1da003dd18ae8e937adb7b17c7e0830ca04ee47", "7d264ff5d87d5b4f3e65fc2f39c7bcc3fae24e1607fb74e90cd4a53f8dfdbd12", "cc5001edd342839209258ca1dfd525d2d5f7c6c723ddd08baf4d883c2699b40b"], "strides": [4, 3, 1, 3, 2, 4, 3, 5], "frames_per_clip": [60, 60, 60, 60, 60, 60, 60, 60], "step_seconds": 12.605623686686158, "rank_step_seconds": 12.571379389613867, "peak_memory_allocated_bytes": 30334217728, "peak_memory_reserved_bytes": 30553407488}
+
+[rank5]:W1029 23:57:58.780000 830045 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 12151 hash value: 12304960333976511356
+[rank6]:W1029 23:57:58.780000 830046 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 12147 hash value: 4724907581487298468
+[rank7]:W1029 23:57:58.780000 830047 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 12185 hash value: 15836573557215293138
+[rank4]:W1029 23:57:58.780000 830044 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 12195 hash value: 1023340681099085239
+[rank3]:W1029 23:57:58.780000 830043 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 12171 hash value: 15469952031631300467
+[rank0]:W1029 23:57:58.780000 830040 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 12195 hash value: 5682641386381112268
+[rank2]:W1029 23:57:58.780000 830042 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 12167 hash value: 8197432129496263310
+[rank1]:W1029 23:57:58.780000 830041 torch/distributed/distributed_c10d.py:3249] _object_to_tensor size: 12175 hash value: 12277940743964480596
+[rank4]:W1029 23:57:58.784000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank5]:W1029 23:57:58.784000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank6]:W1029 23:57:58.784000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank3]:W1029 23:57:58.784000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank0]:W1029 23:57:58.784000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank7]:W1029 23:57:58.784000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank2]:W1029 23:57:58.784000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank1]:W1029 23:57:58.784000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank5]:W1029 23:57:58.785000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank4]:W1029 23:57:58.785000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank6]:W1029 23:57:58.785000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank0]:W1029 23:57:58.785000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank3]:W1029 23:57:58.785000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank2]:W1029 23:57:58.785000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank1]:W1029 23:57:58.785000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank7]:W1029 23:57:58.785000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank6]:W1029 23:57:58.785000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank5]:W1029 23:57:58.785000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank4]:W1029 23:57:58.785000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank0]:W1029 23:57:58.785000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank3]:W1029 23:57:58.786000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank2]:W1029 23:57:58.786000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank7]:W1029 23:57:58.786000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank1]:W1029 23:57:58.786000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank5]:W1029 23:57:58.786000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank6]:W1029 23:57:58.786000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank4]:W1029 23:57:58.786000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank0]:W1029 23:57:58.786000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank3]:W1029 23:57:58.786000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank2]:W1029 23:57:58.786000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank7]:W1029 23:57:58.786000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank1]:W1029 23:57:58.786000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank5]:W1029 23:57:58.787000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank6]:W1029 23:57:58.787000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank4]:W1029 23:57:58.787000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank0]:W1029 23:57:58.787000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank3]:W1029 23:57:58.787000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank7]:W1029 23:57:58.787000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank2]:W1029 23:57:58.787000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank1]:W1029 23:57:58.787000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank6]:W1029 23:57:58.787000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank5]:W1029 23:57:58.787000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank4]:W1029 23:57:58.787000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank0]:W1029 23:57:58.787000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank3]:W1029 23:57:58.787000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank2]:W1029 23:57:58.787000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank7]:W1029 23:57:58.787000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank1]:W1029 23:57:58.787000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank6]:W1029 23:57:58.788000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank4]:W1029 23:57:58.788000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank5]:W1029 23:57:58.788000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank0]:W1029 23:57:58.788000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank3]:W1029 23:57:58.788000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank2]:W1029 23:57:58.788000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank7]:W1029 23:57:58.788000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank1]:W1029 23:57:58.788000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank6]:W1029 23:57:58.788000 830046 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank5]:W1029 23:57:58.788000 830045 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank4]:W1029 23:57:58.788000 830044 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank0]:W1029 23:57:58.788000 830040 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank3]:W1029 23:57:58.788000 830043 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank2]:W1029 23:57:58.788000 830042 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank7]:W1029 23:57:58.788000 830047 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
+[rank1]:W1029 23:57:58.788000 830041 torch/distributed/distributed_c10d.py:3264] _tensor_to_object size: 12195 hash value: 10916008981977404682
