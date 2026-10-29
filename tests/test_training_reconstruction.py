@@ -17,6 +17,17 @@ from egohandmetric_prompt.models.hand_keypoint_localization_head import decode_l
 
 
 class ReconstructionTests(unittest.TestCase):
+    def test_timing_excludes_startup_and_rejects_bad_measurements(self):
+        from egohandmetric_prompt.training.timing import summarize_step_times
+        rows=[{'step_seconds':100.}]*5+[{'step_seconds':60.}]*95
+        result=summarize_step_times(rows)
+        self.assertEqual(result['measured_steps'],100)
+        self.assertEqual(result['steady_steps'],95)
+        self.assertEqual(result['steady_mean_step_seconds'],60.)
+        self.assertAlmostEqual(result['projected_training_hours'],3200/60)
+        with self.assertRaises(ValueError):
+            summarize_step_times([{'step_seconds':float('nan')}])
+
     def test_distributed_schedule_is_rank_independent_and_resumable(self):
         from scripts.pwm.train_zero2 import microstep_schedule
         rows=[{'dataset':'STERA'},{'dataset':'TACO'},{'dataset':'TACO'}]

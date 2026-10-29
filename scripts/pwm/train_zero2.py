@@ -14,6 +14,7 @@ import os
 from pathlib import Path
 import random
 import sys
+import time
 sys.path.insert(0,str(Path(__file__).resolve().parents[2]))
 import numpy as np
 import torch
@@ -27,6 +28,7 @@ from egohandmetric_prompt.training.data import PreparedClips
 from egohandmetric_prompt.training.objectives import objective
 from egohandmetric_prompt.training.scene import gather_scene_targets
 from scripts.pwm.train_prepared import native_training_outputs,learning_rate
+from egohandmetric_prompt.training.timing import summarize_step_times
 
 SAMPLING_POLICY='dataset-uniform-synchronous-v1'
 
@@ -90,15 +92,19 @@ def export_model(model,config,path,step):
 
 
 def main():
+    launched=time.perf_counter()
     parser=argparse.ArgumentParser(description=__doc__)
     for name in ('config','recipe','index','output'):
         parser.add_argument('--'+name,type=Path,required=True)
     parser.add_argument('--initialize',type=Path)
     parser.add_argument('--resume',action='store_true')
     parser.add_argument('--stop-after',type=int)
+    parser.add_argument('--save-initial',action='store_true',help='export initialized trainable weights for before/after validation')
     args=parser.parse_args()
     if args.initialize and args.resume:
         parser.error('initialization and resume are mutually exclusive')
+    if args.save_initial and args.resume:
+        parser.error('initial weights may only be exported on a fresh run')
     import deepspeed
     from egohandmetric_prompt.training.zero_compat import install_scalar_broadcast_compat
     install_scalar_broadcast_compat()
@@ -155,17 +161,43 @@ def main():
         raise ValueError('stop step must exceed resumed step')
     if rank==0:
         (args.output/'deepspeed_config.json').write_text(json.dumps(settings,indent=2))
+        if args.save_initial:
+            if (args.output/'initial.pt').exists():
+                raise FileExistsError('refusing to overwrite the initial baseline')
+            export_model(engine.module,config,args.output/'initial.pt',0)
+        (args.output/'initialization.json').write_text(json.dumps({
+            'backbone_checkpoint':str(config.marker_runtime.vggt_checkpoint_path),
+            'marker_checkpoint':str(args.initialize) if args.initialize else None,
+            'trainable_initialization':'resumed_shards' if args.resume else ('marker_checkpoint' if args.initialize else 'released_builder_defaults'),
+            'resumed':args.resume,'resumed_step':start,'sampling_policy':SAMPLING_POLICY,
+            'trainable_parameters':sum(p.numel() for p in model.parameters() if p.requires_grad),
+            'frozen_parameters':sum(p.numel() for p in model.parameters() if not p.requires_grad)},indent=2))
+    dist.barrier()
+    torch.cuda.synchronize()
+    setup_seconds=time.perf_counter()-launched
+    invocation_started=time.perf_counter()
     log=(args.output/f'rank{rank}.jsonl').open('a')
+    measured=[]
+    checkpoint_seconds=0.
     for step in range(start,end):
+        torch.cuda.synchronize()
+        torch.cuda.reset_peak_memory_stats()
+        step_started=time.perf_counter()
         lr=learning_rate(step,recipe)
         for group in engine.optimizer.param_groups:
             group['lr']=lr
         reports=[]
         sources=[]
+        clips=[]
+        strides=[]
+        frame_counts=[]
         for microstep in range(recipe['batch_size']):
             candidates,stride=microstep_schedule(dataset.rows,recipe['seed'],step*recipe['batch_size']+microstep,probabilities)
             sample=dataset[random.choice(candidates)]
             sources.append(sample['identity']['dataset']+'/'+sample['identity']['source_episode_id'])
+            clips.append(sample['identity']['sha256'] if sample['identity'].get('sha256') else sample['identity']['path'])
+            strides.append(stride)
+            frame_counts.append(len(sample['images']))
             images=sample['images'][None].to(engine.device)
             targets={k:(v[None].to(engine.device),m[None].to(engine.device)) for k,(v,m) in sample['targets'].items()}
             present=torch.ones(images.shape[:2],dtype=torch.bool,device=engine.device)
@@ -189,10 +221,20 @@ def main():
         norm=float(engine.get_global_grad_norm())
         if not math.isfinite(norm) or engine.skipped_steps:
             raise FloatingPointError('nonfinite gradient norm or skipped optimizer update')
-        record={'rank':rank,'world_size':world,'step':step+1,'lr':lr,'gradient_norm':norm,'sources':sources,'terms':reports}
+        torch.cuda.synchronize()
+        local_seconds=time.perf_counter()-step_started
+        maximum=torch.tensor(local_seconds,device=engine.device,dtype=torch.float64)
+        dist.all_reduce(maximum,op=dist.ReduceOp.MAX)
+        record={'rank':rank,'world_size':world,'step':step+1,'lr':lr,'gradient_norm':norm,'sources':sources,'terms':reports,
+            'clip_ids':clips,'strides':strides,'frames_per_clip':frame_counts,
+            'step_seconds':float(maximum),'rank_step_seconds':local_seconds,
+            'peak_memory_allocated_bytes':torch.cuda.max_memory_allocated(),
+            'peak_memory_reserved_bytes':torch.cuda.max_memory_reserved()}
+        measured.append(record)
         log.write(json.dumps(record)+'\n'); log.flush()
         print(json.dumps(record),flush=True)
         if (step+1)%recipe['save_every']==0 or step+1==end:
+            checkpoint_started=time.perf_counter()
             states=[None]*world
             dist.all_gather_object(states,rng_state())
             state={'step':step+1,'recipe':recipe,'index_hash':index_hash,'config':asdict(config),'engine_config':settings,
@@ -201,8 +243,15 @@ def main():
             if rank==0:
                 export_model(engine.module,config,args.output/'inference.pt',step+1)
             dist.barrier()
+            torch.cuda.synchronize()
+            checkpoint_seconds+=time.perf_counter()-checkpoint_started
     log.close()
     if rank==0:
+        summary=summarize_step_times(measured,projected_steps=recipe['steps'])
+        summary.update(setup_seconds=setup_seconds,checkpoint_seconds=checkpoint_seconds,
+            invocation_training_wall_seconds=time.perf_counter()-invocation_started,
+            start_step=start,end_step=end,world_size=world,effective_batch_size=recipe['batch_size']*world)
+        (args.output/'timing.json').write_text(json.dumps(summary,indent=2)+'\n')
         (args.output/'status.json').write_text(json.dumps({'state':'completed' if end==recipe['steps'] else 'stopped_at_requested_step',
             'steps':end,'world_size':world,'effective_batch_size':recipe['batch_size']*world}))
     dist.destroy_process_group()
