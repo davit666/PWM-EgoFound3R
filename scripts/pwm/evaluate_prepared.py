@@ -10,6 +10,7 @@ from pathlib import Path
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 import torch
+import torch.nn.functional as F
 from egohandmetric_prompt.builders import build_runtime_marker_model
 from egohandmetric_prompt.checkpoints import load_marker_model_weights
 from egohandmetric_prompt.configs import load_project_config
@@ -56,8 +57,17 @@ def main():
                     key = f'{side}_{attr}'
                     if key in targets:
                         t,m = targets[key]
-                        scores = classification(output[f'dense_{side}_{attr}_logits'],t,m)
+                        logits = output[f'dense_{side}_{attr}_logits']
+                        scores = classification(logits,t,m)
                         metrics.update({key+'/'+k:v for k,v in scores.items() if k != 'count'})
+                        if attr == 'contact':
+                            valid = m & torch.isfinite(t)
+                            confidence = output[f'dense_{side}_contact_log_conf']
+                            metrics[key+'/target_positive_fraction'] = float(t[valid].float().mean())
+                            metrics[key+'/predicted_positive_fraction'] = float((logits[valid] >= 0).float().mean())
+                            metrics[key+'/unweighted_bce'] = float(F.binary_cross_entropy_with_logits(logits[valid],t[valid]))
+                            metrics[key+'/log_confidence_mean'] = float(confidence[valid].mean())
+                            metrics[key+'/confidence_weight_mean'] = float(confidence[valid].exp().mean())
                 if side+'_distance' in targets and side+'_contact' in targets:
                     d,dm = targets[side+'_distance']
                     c,cm = targets[side+'_contact']
